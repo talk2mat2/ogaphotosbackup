@@ -5,17 +5,27 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
 const About = () => {
+  // useEffect(() => {
+  //   Scripts.forEach((item) => {
+  //     const script = document.createElement("script");
+  //     script.src = item.src;
+  //     script.async = true;
+  //     document.body.appendChild(script);
+  //   });
+  // }, []);
   useEffect(() => {
-    Scripts.forEach((item) => {
-      const script = document.createElement("script");
-      script.src = item.src;
-      script.async = true;
-      document.body.appendChild(script);
+    window.addEventListener("load", (event) => {
+      Scripts.forEach((item) => {
+        const script = document.createElement("script");
+        script.src = item.src;
+        script.async = "";
+        document.body.appendChild(script);
+      });
     });
-  }, []);
+  });
   return (
     <div>
-      <Header/>
+      <Header />
       <section id="home" className="pt-0 mt-0">
         <div
           className="wrapper image-wrapper bg-image inverse-text"
@@ -62,9 +72,15 @@ const About = () => {
   </div> */}
       {/* /section */}
       <section id="about">
-        <div className="wrapper dark-wrapper inverse-text">
+        <div
+          // className="wrapper dark-wrapper inverse-text"
+          style={{ backgroundColor: "rgb(0, 162, 149)" }}
+        >
           <div className="container inner">
-            <h2 className="section-title section-title-upper text-center">
+            <h2
+              style={{ color: "#ffff" }}
+              className="section-title section-title-upper text-center"
+            >
               About ogaphotos
             </h2>
             <div className="space20" />
@@ -77,13 +93,13 @@ const About = () => {
               {/* /column */}
               <div className="space30 d-lg-none d-xl-none" />
               <div className="col-lg-7">
-                <p className="lead larger">
+                <p style={{ color: "#ffff" }} className="lead larger">
                   With our vast network of photographers and cinimatographers,
                   you can book a photo-shoot session for your birthdays,
                   weddings, commercials meeting etc. and within minuetes, a
                   competent photographer of cinematographer is assigned to you.{" "}
                 </p>
-                <p>
+                <p style={{ color: "#ffff" }}>
                   It is simple and fast. no need to worry about your location,
                   as creatives from your chosen location will be readily
                   available to you.
@@ -101,17 +117,10 @@ const About = () => {
                   data-responsive="on"
                   data-responsive_offset="on"
                   style={{ zIndex: 9, marginTop: "20px" }}
-                  href="sign_up.html"
+                  href="about.html"
                 >
-                  Get Started
+                  Learn More
                 </a>
-                {/* <ul class="social social-mute social-s">
-            <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-500px"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-          </ul> */}
               </div>
               {/* /column */}
             </div>
@@ -121,13 +130,17 @@ const About = () => {
         </div>
         {/* /.wrapper */}
         <div
-          className="wrapper image-wrapper bg-image inverse-text"
+          // className="wrapper image-wrapper bg-image inverse-text"
           data-image-src="style/images/art/bg20.jpg"
         >
           <div className="container inner pt-150 pb-150">
             <h2 className="heading text-center">
-              "Photography is a record <br className="d-none d-md-block" />
-              of your living..."
+              Life is an adventure.
+              <br className="d-none d-md-block" />
+              <span style={{ color: "rgb(0, 162, 149)" }}>
+                {" "}
+                Capture every minute
+              </span>
             </h2>
           </div>
           {/* /.container */}
@@ -420,7 +433,7 @@ const About = () => {
         </div>
         {/* /.container */}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

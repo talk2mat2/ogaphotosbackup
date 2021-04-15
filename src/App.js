@@ -2,6 +2,7 @@
 import React from "react";
 import BaseRoute from "./components/BaseRoute";
 import { useSelector } from "react-redux";
+import Homepage from "./views/pages/Homepage";
 // import About from "./views/pages/About";
 // import Portfolio from "./views/pages/portfolio";
 // import How_it_works from "./views/pages/how_it_works";
@@ -9,6 +10,7 @@ import { useSelector } from "react-redux";
 // import Contact from "./views/pages/ContactPage";
 // import { Scripts } from "./script";
 // import './style.css'
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const CurrentUser = useSelector((state) => state.user.currentUser);
@@ -30,23 +32,28 @@ function App() {
   // },[])
 
   React.useEffect(() => {
-    userData &&
+    if (userData) {
       OneSignal.push(function () {
         OneSignal.setExternalUserId(userData._id);
       });
-    !userData &&
-      OneSignal.removeExternalUserId((results) => console.log(results));
-  });
+    } else {
+      OneSignal.push(function () {
+        OneSignal.removeExternalUserId((results) => console.log(results));
+      });
+    }
+  }, [userData]);
 
   return (
-    <>
-      {/* <AuthLoading> */}
+    <Router>
       <BaseRoute />
+      {/* <AuthLoading> */}
+      {/* <BaseRoute /> */}
       {/* <SignUp />
         <About />
+        
         <Contact /> */}
       {/* </AuthLoading> */}
-    </>
+    </Router>
   );
 }
 

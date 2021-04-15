@@ -7,9 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import languageJson from "../../config/language";
 import AlertDialog from "../../components/AlertDialog";
 import { clearSignupError, signUp } from "../../actions/authactions";
-import axios from "axios"
-import {LOGINSUCCESS} from "../../redux/action"
-import CircularProgress from '@material-ui/core/CircularProgress'
+import axios from "axios";
+import { LOGINSUCCESS } from "../../redux/action";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const PhotographysignUppage = (props) => {
   // const auth = useSelector((state) => state.auth);
@@ -22,10 +22,8 @@ const PhotographysignUppage = (props) => {
   const [mobile, setMobile] = useState("");
   const [confpass, setConfPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [ErrorMessage, setErrorMessage] = useState('')
-  const [mylocation, setMylocation] = useState(null)
-
-
+  const [ErrorMessage, setErrorMessage] = useState("");
+  const [mylocation, setMylocation] = useState(null);
 
   const handleEmailChange = (e) => setEmail(e.target.value);
 
@@ -36,55 +34,66 @@ const PhotographysignUppage = (props) => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfPasswordChange = (e) => setConfPassword(e.target.value);
   const option = {
-		enableHighAccuracy: true,
-		timeout: 5000,
-		maximumAge: 0,
-	}
-  useEffect(()=>{
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  useEffect(() => {
     if (mylocation === null) {
-			navigator.geolocation.getCurrentPosition(
-				(position) => {
-					setMylocation({
-							lat: position.coords.latitude,
-							lng: position.coords.longitude,
-					
-					})
-					// alert(position.coords.latitude)
-				},
-				(err) => console.log(err),
-				option
-			)
-		}
-  },[])
-const handleSignup=(values)=>{
-  setLoading(true);
-      axios
-        .post(`${process.env.REACT_APP_API_URL}/photographer/Register`, values)
-        .then((res) => {
-          setLoading(false);
-          console.log(res.data);
-          history.push("/dashboard");
-          dispatch(LOGINSUCCESS(res.data));
-        })
-        .catch((err) => {
-          setLoading(false);
-          if (err.response) {
-            console.log(err.response.data.message);
-            err.response.data.message &&
-              setErrorMessage(err.response.data.message);
-          }
-          console.log(err);
-        })
-}
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setMylocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+          // alert(position.coords.latitude)
+        },
+        (err) => console.log(err),
+        option
+      );
+    }
+  }, []);
+  const handleSignup = (values) => {
+    setLoading(true);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/photographer/Register`, values)
+      .then((res) => {
+        setLoading(false);
+        console.log(res.data);
+        history.push("/dashboard");
+        dispatch(LOGINSUCCESS(res.data));
+      })
+      .catch((err) => {
+        setLoading(false);
+        if (err.response) {
+          console.log(err.response.data.message);
+          err.response.data.message &&
+            setErrorMessage(err.response.data.message);
+        }
+        console.log(err);
+      });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
- if(password !==confpass){
-   return setErrorMessage('Both password dont match')}
-  //  updateMyLocation
+    if (password !== confpass) {
+      return setErrorMessage("Both password dont match");
+    }
+    //  updateMyLocation
     // dispatch(signUp(email, password, mobile, fname, lname));handle
-    if(mylocation){handleSignup({email,password,fname,lname,mobile,lat:mylocation.lat,lng:mylocation.lng})}
- else{handleSignup({email,password,fname,lname,mobile})}
+    if (mylocation) {
+      handleSignup({
+        email,
+        password,
+        fname,
+        lname,
+        mobile,
+        lat: mylocation.lat,
+        lng: mylocation.lng,
+      });
+    } else {
+      handleSignup({ email, password, fname, lname, mobile });
+    }
   };
 
   const handleClose = () => {
@@ -95,7 +104,7 @@ const handleSignup=(values)=>{
     setLname("");
     setMobile("");
     // dispatch(clearSignupError());
-    setErrorMessage('')
+    setErrorMessage("");
   };
   return (
     <div className="form-wrap" id="sign-up">
@@ -119,20 +128,42 @@ const handleSignup=(values)=>{
       <form onSubmit={handleSubmit}>
         <div className="sign-up-heading">
           <h4 className="headings">
-            <Link href="#sign-up" className="su" id="sup" >
-            
+            <Link href="#sign-up" className="su" id="sup">
               SIGN UP
             </Link>
           </h4>
           <h4 className="heading">
-            <Link onClick={() => props.handleLoginPage()} id="log" >
+            <Link onClick={() => props.handleLoginPage()} id="log">
               {" "}
               LOGIN
             </Link>{" "}
           </h4>
-          {loading? <CircularProgress size={24} style={{fontSize:20,color:"white",position:"absolute",zIndex:3,marginLeft:"auto",marginRight:"auto",top:4}} />:null}
+          {loading ? (
+            <CircularProgress
+              size={24}
+              style={{
+                fontSize: 20,
+                color: "white",
+                position: "absolute",
+                zIndex: 3,
+                marginLeft: "auto",
+                marginRight: "auto",
+                top: 4,
+              }}
+            />
+          ) : null}
         </div>
-        <div style={{display:'flex',flexDirection:'row',width:'100%',justifyContent:'center'}}>    <small >Photographers Sign Up</small></div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
+          {" "}
+          <small>Photographers Sign Up</small>
+        </div>
         <input
           onChange={handleFnameChange}
           value={fname}
@@ -175,14 +206,19 @@ const handleSignup=(values)=>{
           placeholder="Confirm Password"
           required
         />
-        <input onch type="submit" defaultValue="Sign Up" />
+        <input
+          className="submitBtn"
+          onch
+          type="submit"
+          defaultValue="Sign Up"
+        />
         <p style={{ color: "#fff" }}>
           Already have an account?{" "}
           <Link onClick={() => props.handleLoginPage()}>Sign in </Link>
         </p>
       </form>
       <AlertDialog open={ErrorMessage} onClose={handleClose}>
-      {ErrorMessage}
+        {ErrorMessage}
       </AlertDialog>
     </div>
   );

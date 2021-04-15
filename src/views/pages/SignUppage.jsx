@@ -7,9 +7,9 @@ import { signIn, clearLoginError } from "../../actions/authactions";
 import languageJson from "../../config/language";
 import AlertDialog from "../../components/AlertDialog";
 import { clearSignupError, signUp } from "../../actions/authactions";
-import axios from "axios"
-import {LOGINSUCCESS} from "../../redux/action"
-import CircularProgress from '@material-ui/core/CircularProgress'
+import axios from "axios";
+import { LOGINSUCCESS } from "../../redux/action";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Singuppage = (props) => {
   const auth = useSelector((state) => state.auth);
@@ -22,9 +22,7 @@ const Singuppage = (props) => {
   const [mobile, setMobile] = useState("");
   const [confpass, setConfPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [ErrorMessage, setErrorMessage] = useState('')
-
-
+  const [ErrorMessage, setErrorMessage] = useState("");
 
   const handleEmailChange = (e) => setEmail(e.target.value);
 
@@ -35,33 +33,34 @@ const Singuppage = (props) => {
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfPasswordChange = (e) => setConfPassword(e.target.value);
 
-const handleSignup=(values)=>{
-  setLoading(true);
-      axios
-        .post(`${process.env.REACT_APP_API_URL}/users/Register`, values)
-        .then((res) => {
-          setLoading(false);
-          console.log(res.data);
-          history.push("/dashboard");
-          dispatch(LOGINSUCCESS(res.data));
-        })
-        .catch((err) => {
-          setLoading(false);
-          if (err.response) {
-            console.log(err.response.data.message);
-            err.response.data.message &&
-              setErrorMessage(err.response.data.message);
-          }
-          console.log(err);
-        })
-}
+  const handleSignup = (values) => {
+    setLoading(true);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/users/Register`, values)
+      .then((res) => {
+        setLoading(false);
+        console.log(res.data);
+        history.push("/dashboard");
+        dispatch(LOGINSUCCESS(res.data));
+      })
+      .catch((err) => {
+        setLoading(false);
+        if (err.response) {
+          console.log(err.response.data.message);
+          err.response.data.message &&
+            setErrorMessage(err.response.data.message);
+        }
+        console.log(err);
+      });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
- if(password !==confpass){
-   return setErrorMessage('Both password dont match')}
+    if (password !== confpass) {
+      return setErrorMessage("Both password dont match");
+    }
     // dispatch(signUp(email, password, mobile, fname, lname));handle
-    handleSignup({email,password,fname,lname,mobile})
+    handleSignup({ email, password, fname, lname, mobile });
   };
 
   const handleClose = () => {
@@ -72,14 +71,14 @@ const handleSignup=(values)=>{
     setLname("");
     setMobile("");
     // dispatch(clearSignupError());
-    setErrorMessage('')
+    setErrorMessage("");
   };
   return (
-    <div className="form-wrap" id="sign-up">
+    <div className="form-wrap AuthPage" id="sign-up">
       {/* <p style="text-align:center; font-size: 20px; color: #fff;"><a href="index.html " style="color: #fff;">Ogaphotos</a></p>  */}
-      <Link
+      <a
         className="nav-link scroll"
-        to="/"
+        href="/"
         style={{
           textAlign: "center",
           marginTop: "-10p",
@@ -92,7 +91,7 @@ const handleSignup=(values)=>{
           height={80}
           alt="img"
         />
-      </Link>
+      </a>
       <form onSubmit={handleSubmit}>
         <div className="sign-up-heading">
           <h4 className="headings">
@@ -102,12 +101,29 @@ const handleSignup=(values)=>{
             </Link>
           </h4>
           <h4 className="heading">
-            <Link onClick={() => props.handleLoginPage()} id="log" onclick="login()">
+            <Link
+              onClick={() => props.handleLoginPage()}
+              id="log"
+              onclick="login()"
+            >
               {" "}
               LOGIN
             </Link>{" "}
           </h4>
-          {loading? <CircularProgress size={24} style={{fontSize:20,color:"white",position:"absolute",zIndex:3,marginLeft:"auto",marginRight:"auto",top:4}} />:null}
+          {loading ? (
+            <CircularProgress
+              size={24}
+              style={{
+                fontSize: 20,
+                color: "white",
+                position: "absolute",
+                zIndex: 3,
+                marginLeft: "auto",
+                marginRight: "auto",
+                top: 4,
+              }}
+            />
+          ) : null}
         </div>
         <input
           onChange={handleFnameChange}
@@ -151,18 +167,22 @@ const handleSignup=(values)=>{
           placeholder="Confirm Password"
           required
         />
-        <input onch type="submit" defaultValue="Sign Up" />
+        <input
+          className="submitBtn"
+          onch
+          type="submit"
+          defaultValue="Sign Up"
+        />
         <p style={{ color: "#fff" }}>
           Already have an account?{" "}
           <Link onClick={() => props.handleLoginPage()}>Sign in </Link>
         </p>
-        <Link to="photographer/signup"><small>
-         Sign Up as A photographer{" "}
-         
-        </small></Link>
+        <Link to="photographer/signup">
+          <small>Sign Up as A photographer </small>
+        </Link>
       </form>
       <AlertDialog open={ErrorMessage} onClose={handleClose}>
-      {ErrorMessage}
+        {ErrorMessage}
       </AlertDialog>
     </div>
   );

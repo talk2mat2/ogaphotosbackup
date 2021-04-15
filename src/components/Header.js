@@ -20,17 +20,29 @@ const Header = () => {
     dispatch(LOGINOUTUSER());
   };
 
+  // React.useEffect(() => {
+  //   const loadScript = async () => {
+  //     await Scripts.forEach(async (item) => {
+  //       const script = document.createElement("script");
+  //       script.src = item.src;
+  //       script.async = true;
+  //       document.body.appendChild(script);
+  //     });
+  //   };
+  //   setTimeout(() => {
+  //     loadScript();
+  //   }, 1000);
+  // }, []);
   React.useEffect(() => {
-    const loadScript = async () => {
-      await Scripts.forEach(async (item) => {
+    window.addEventListener("load", (event) => {
+      Scripts.forEach((item) => {
         const script = document.createElement("script");
         script.src = item.src;
-        script.async = true;
+        script.async = "";
         document.body.appendChild(script);
       });
-    };
-    loadScript();
-  }, []);
+    });
+  });
   return (
     <nav
       className="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-lg text-uppercase"
@@ -59,52 +71,48 @@ const Header = () => {
         </div>
 
         <div className="collapse navbar-collapse">
-          <Link className="nav-link scroll" to="/">
+          <a className="nav-link scroll" href="/">
             <img
               src="media/ogaphotos_favicon.png"
-              width="80"
-              height="80"
+              width="90"
+              height="90"
               alt="img"
             />
-          </Link>
+          </a>
 
           <ul className="nav navbar-nav ml-auto">
             <li className="nav-item">
-              <Link
-                className="nav-link scroll"
-                to="/"
-                style={{ color: "#000" }}
-              >
+              <a className="nav-link scroll" href="/" style={{ color: "grey" }}>
                 Home
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link scroll"
-                to="about"
-                style={{ color: "#000" }}
+                href="about"
+                style={{ color: "grey" }}
               >
                 About
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link scroll"
-                to="/How_it_works"
-                style={{ color: "#000" }}
+                href="/How_it_works"
+                style={{ color: "grey" }}
               >
                 How It Works
-              </Link>
+              </a>
             </li>
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link scroll dropdown-toggle"
-                to="/Portfolio"
-                style={{ color: "#000" }}
+            <li className="nav-item ">
+              <a
+                className="nav-link  "
+                href="/Portfolio"
+                style={{ color: "grey" }}
               >
                 Portfolio
-              </Link>
-              <ul className="dropdown-menu dropdown-menu-left">
+              </a>
+              {/* <ul className="dropdown-menu dropdown-menu-left">
                 <li className="nav-item">
                   <a className="dropdown-item scroll" href="#portfolio">
                     Portrait Portfolio
@@ -115,30 +123,30 @@ const Header = () => {
                     Advertorial Portfolio
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </li>
 
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link scroll"
-                to="/contact"
-                style={{ color: "#000" }}
+                href="/contact"
+                style={{ color: "grey" }}
               >
                 Contact
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
               {!CurrentUser ? (
                 <Link
                   className="nav-link scroll"
                   to="/SignUp"
-                  style={{ color: "#000" }}
+                  style={{ color: "grey" }}
                 >
                   Login/Sign UP
                 </Link>
               ) : (
                 <Link
-                  style={{ color: "#000" }}
+                  style={{ color: "grey" }}
                   className="nav-link scroll"
                   to="/dashboard"
                 >{`${userData.fname || userData.Email}`}</Link>
@@ -148,21 +156,21 @@ const Header = () => {
               <Link
                 className="nav-link scroll"
                 to="/signUp"
-                style={{ color: "#000" }}
+                style={{ color: "grey" }}
               >
                 <button className="signup">Hire A Photographer</button>
               </Link>
             </li>
             {CurrentUser ? (
               <li className="nav-item">
-                <Link
+                <a
                   onClick={LogOut}
                   className="nav-link scroll"
-                  to="/"
-                  style={{ color: "#000" }}
+                  href="/"
+                  style={{ color: "grey" }}
                 >
                   logout
-                </Link>
+                </a>
               </li>
             ) : null}
           </ul>

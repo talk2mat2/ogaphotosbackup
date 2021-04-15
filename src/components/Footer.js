@@ -1,10 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable prettier/prettier */
 // import React from 'react'
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="light-wrapper inverse-text">
+    <footer
+      style={{ marginBottom: "0px" }}
+      className="light-wrapper inverse-text"
+    >
       <div className="sub-footer">
         <div className="container inner text-center">
           {" "}
@@ -16,7 +20,7 @@ const Footer = () => {
           <div className="space25"></div>
           <a
             className="section-title section-title-upper text-center "
-            style={{ color: "grey" }}
+            style={{ color: "rgb(0, 162, 149)", fontWeight: "bold" }}
           >
             © 2021 ogaphotos. All rights reserved.
           </a>

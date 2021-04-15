@@ -7,17 +7,27 @@ import Header from "../../components/Header";
 import { Scripts } from "../../script";
 
 const Homepage = () => {
+  // useEffect(() => {
+  //   const loadScript = async () => {
+  //     await Scripts.forEach(async (item) => {
+  //       const script = document.createElement("script");
+  //       script.src = item.src;
+  //       script.async = true;
+  //       document.body.appendChild(script);
+  //     });
+  //   };
+  //   loadScript();
+  // });
   useEffect(() => {
-    const loadScript = async () => {
-      await Scripts.forEach(async (item) => {
+    window.addEventListener("load", (event) => {
+      Scripts.forEach((item) => {
         const script = document.createElement("script");
         script.src = item.src;
-        script.async = true;
+        script.async = "";
         document.body.appendChild(script);
       });
-    };
-    loadScript();
-  }, []);
+    });
+  });
   return (
     <div>
       <Header />
@@ -94,7 +104,11 @@ const Homepage = () => {
                 data-endslide={3}
                 data-responsive="on"
                 data-responsive_offset="on"
-                style={{ zIndex: 9 }}
+                style={{
+                  zIndex: 9,
+                  backgroundColor: "rgb(0, 162, 149)",
+                  color: "#ffff",
+                }}
                 href="how_it_works.html"
               >
                 learn more
@@ -107,7 +121,7 @@ const Homepage = () => {
         {/* /.rev_slider_wrapper */}
       </section>
       <div
-        className="wrapper image-wrapper bg-image inverse-text"
+        // className="wrapper image-wrapper bg-image inverse-text"
         data-image-src="style/images/art/bg22.jpg"
       >
         <div className="container inner pt-150 pb-150">
@@ -127,7 +141,12 @@ const Homepage = () => {
               data-endslide={3}
               data-responsive="on"
               data-responsive_offset="on"
-              style={{ zIndex: 9, marginTop: "20px" }}
+              style={{
+                zIndex: 9,
+                marginTop: "20px",
+                backgroundColor: "rgb(0, 162, 149)",
+                color: "#ffff",
+              }}
               to="/dashboard"
             >
               Hire a photographer
@@ -144,7 +163,12 @@ const Homepage = () => {
               data-endslide={3}
               data-responsive="on"
               data-responsive_offset="on"
-              style={{ zIndex: 9, marginTop: "20px" }}
+              style={{
+                zIndex: 9,
+                marginTop: "20px",
+
+                border: " 1px solid rgb(0, 162, 149)",
+              }}
               to="photographer/signup"
             >
               Become a photographer
@@ -155,9 +179,15 @@ const Homepage = () => {
       </div>
       {/* /section */}
       <section id="about">
-        <div className="wrapper dark-wrapper inverse-text">
+        <div
+          // className="wrapper dark-wrapper inverse-text"
+          style={{ backgroundColor: "rgb(0, 162, 149)" }}
+        >
           <div className="container inner">
-            <h2 className="section-title section-title-upper text-center">
+            <h2
+              style={{ color: "#ffff" }}
+              className="section-title section-title-upper text-center"
+            >
               About ogaphotos
             </h2>
             <div className="space20" />
@@ -170,13 +200,13 @@ const Homepage = () => {
               {/* /column */}
               <div className="space30 d-lg-none d-xl-none" />
               <div className="col-lg-7">
-                <p className="lead larger">
+                <p style={{ color: "#ffff" }} className="lead larger">
                   With our vast network of photographers and cinimatographers,
                   you can book a photo-shoot session for your birthdays,
                   weddings, commercials meeting etc. and within minuetes, a
                   competent photographer of cinematographer is assigned to you.{" "}
                 </p>
-                <p>
+                <p style={{ color: "#ffff" }}>
                   It is simple and fast. no need to worry about your location,
                   as creatives from your chosen location will be readily
                   available to you.
@@ -207,7 +237,7 @@ const Homepage = () => {
         </div>
         {/* /.wrapper */}
         <div
-          className="wrapper image-wrapper bg-image inverse-text"
+          // className="wrapper image-wrapper bg-image inverse-text"
           data-image-src="style/images/art/bg20.jpg"
         >
           <div className="container inner pt-150 pb-150">
@@ -223,7 +253,8 @@ const Homepage = () => {
       </section>
       {/* /section */}
       <div
-        className="wrapper image-wrapper bg-image inverse-text"
+        // className="wrapper image-wrapper bg-image inverse-text"
+        style={{ backgroundColor: "rgb(0, 162, 149)", color: "#ffff" }}
         data-image-src="style/images/art/bg11.jpg"
       >
         <div className="container inner pt-120 pb-120">
@@ -231,37 +262,59 @@ const Homepage = () => {
             <div className="col-md-3 text-center">
               <div className="icon fs-54 icon-color color-dark mb-15">
                 {" "}
-                <i className="si-photo_camera" />{" "}
+                <i
+                  style={{ color: "#ffff" }}
+                  className="si-photo_camera"
+                />{" "}
               </div>
-              <h3 className="value">7518</h3>
-              <p className="text-uppercase color-dark mb-0">Subscribers</p>
+              <h3 style={{ color: "#ffff" }} className="value">
+                7518
+              </h3>
+              <p style={{ color: "#ffff" }} className="text-uppercase mb-0">
+                Subscribers
+              </p>
             </div>
             {/*/column */}
             <div className="col-md-3 text-center">
               <div className="icon fs-54 icon-color color-dark mb-15">
                 {" "}
-                <i className="si-cafe_hot-coffee" />{" "}
+                <i
+                  style={{ color: "#ffff" }}
+                  className="si-cafe_hot-coffee"
+                />{" "}
               </div>
-              <h3 className="value">3472</h3>
-              <p className="text-uppercase color-dark mb-0">Photographers</p>
+              <h3 style={{ color: "#ffff" }} className="value">
+                3472
+              </h3>
+              <p className="text-uppercase mb-0">Photographers</p>
+            </div>
+            {/*/column */}
+            <div className="col-md-3 text-center">
+              <div className="icon fs-54 icon-color color-dark mb-15">
+                <i style={{ color: "#ffff" }} className="si-electronics_tv" />
+              </div>
+              <h3 style={{ color: "#ffff" }} className="value">
+                2184
+              </h3>
+              <p style={{ color: "#ffff" }} className="text-uppercase mb-0">
+                Photoshoots
+              </p>
             </div>
             {/*/column */}
             <div className="col-md-3 text-center">
               <div className="icon fs-54 icon-color color-dark mb-15">
                 {" "}
-                <i className="si-electronics_tv" />{" "}
+                <i
+                  style={{ color: "#ffff" }}
+                  className="si-sports_medal-2"
+                />{" "}
               </div>
-              <h3 className="value">2184</h3>
-              <p className="text-uppercase color-dark mb-0">Photoshoots</p>
-            </div>
-            {/*/column */}
-            <div className="col-md-3 text-center">
-              <div className="icon fs-54 icon-color color-dark mb-15">
-                {" "}
-                <i className="si-sports_medal-2" />{" "}
-              </div>
-              <h3 className="value">4523</h3>
-              <p className="text-uppercase color-dark mb-0">Photos</p>
+              <h3 style={{ color: "#ffff" }} className="value">
+                4523
+              </h3>
+              <p style={{ color: "#ffff" }} className="text-uppercase mb-0">
+                Photos
+              </p>
             </div>
             {/*/column */}
           </div>
@@ -270,7 +323,9 @@ const Homepage = () => {
         {/* /.container */}
       </div>
       <section id="portfolio">
-        <div className="wrapper dark-wrapper inverse-text">
+        <div
+        // className="wrapper dark-wrapper inverse-text"
+        >
           <div className="container inner">
             <h2 className="section-title section-title-upper text-center">
               Selected Works
@@ -363,7 +418,10 @@ const Homepage = () => {
       </section>
       {/* /section */}
       <section id="portfolio2">
-        <div className="wrapper dark-wrapper inverse-text">
+        <div
+          style={{ backgroundColor: "#F0E68C" }}
+          // className="wrapper dark-wrapper inverse-text"
+        >
           <div className="container inner">
             <h2 className="section-title section-title-upper text-center">
               Advertorial Shots
@@ -465,12 +523,15 @@ const Homepage = () => {
       </section>
       {/* /section */}
       <section id="services">
-        <div className="wrapper dark-wrapper inverse-text">
+        <div
+          // className="wrapper dark-wrapper inverse-text"
+          style={{ backgroundColor: "#FFA07A" }}
+        >
           <div className="container inner">
             <div className="row">
               <div className="col-lg-10 offset-lg-1">
                 <h2 className="section-title section-title-upper text-center">
-                  How it Works{" "}
+                  <span style={{ color: "#F0E68C" }}>How it</span> Works{" "}
                 </h2>
                 {/* <p class="text-center">How It Works</p> */}
                 <div className="space40" />
@@ -483,8 +544,8 @@ const Homepage = () => {
                   {/*/column */}
                   <div className="space20 d-block d-sm-none" />
                   <div className="col-md-6">
-                    <h3>STEP 1</h3>
-                    <p className="lead mb-0">
+                    <h3 className="WhiteText">STEP 1</h3>
+                    <p className="lead mb-0 WhiteText">
                       Get The best photographer/ videographer at your disposal,
                       any time, any day. All you need to do is book an
                       appointment with us, and a Photographer/Videographer will
@@ -505,8 +566,8 @@ const Homepage = () => {
                   {/*/column */}
                   <div className="space20 d-block d-sm-none" />
                   <div className="col-md-6">
-                    <h3>STEP 2</h3>
-                    <p className="lead mb-0">
+                    <h3 className="WhiteText">STEP 2</h3>
+                    <p className="lead mb-0 WhiteText">
                       {" "}
                       Trust us to arrive with our gadgets, indoors or Outdoors,
                       Our Creatives are ready to give you the best of
@@ -531,8 +592,8 @@ const Homepage = () => {
                   {/*/column */}
                   <div className="space20 d-block d-sm-none" />
                   <div className="col-md-6">
-                    <h3>STEP 3</h3>
-                    <p className="lead mb-0">
+                    <h3 className="WhiteText">STEP 3</h3>
+                    <p className="lead mb-0 WhiteText">
                       Time is important to us as it is to you, Withine 3 working
                       days, your work is ready in all required and desired
                       formats, soft/hard copy, diligently edited and perfected
@@ -550,7 +611,12 @@ const Homepage = () => {
                       data-endslide={3}
                       data-responsive="on"
                       data-responsive_offset="on"
-                      style={{ zIndex: 9, marginTop: "20px" }}
+                      style={{
+                        zIndex: 9,
+                        marginTop: "20px",
+                        backgroundColor: "rgb(0, 162, 149)",
+                        color: "#ffff",
+                      }}
                       href="sign_up.html"
                     >
                       Get Started
@@ -571,14 +637,24 @@ const Homepage = () => {
       {/* /section */}
       <section id="are-you-photographer">
         {/* /.wrapper */}
-        <div className="wrapper dark-wrapper inverse-text" id="contact">
+        <div
+          //  className="wrapper dark-wrapper inverse-text"
+
+          id="contact"
+        >
           <div className="container inner">
             <div className="row">
               <div className="col-lg-8 offset-lg-2">
-                <h2 className="section-title section-title-upper text-center">
+                <h2
+                  style={{ color: "rgb(0, 162, 149)" }}
+                  className="section-title section-title-upper text-center"
+                >
                   Reach Out To Us
                 </h2>
-                <p className="text-center">
+                <p
+                  style={{ color: "rgb(0, 162, 149)" }}
+                  className="text-center "
+                >
                   Ogaphotos has both Video and Phtography specialist all over
                   the cities for all your events. Trust us to do a good job in
                   matching you with the best in-demand photographers
@@ -592,7 +668,7 @@ const Homepage = () => {
                     <span className="icon icon-color color-white fs-48 mb-10">
                       <i className="si-camping_map" />
                     </span>
-                    <p>
+                    <p style={{ color: "rgb(0, 162, 149)" }}>
                       Moon Street Light Avenue
                       <br />
                       14/05 Jupiter, JP 80630
@@ -604,7 +680,7 @@ const Homepage = () => {
                     <span className="icon icon-color color-white fs-48 mb-10">
                       <i className="si-phone_phone-ringing" />
                     </span>
-                    <p>
+                    <p style={{ color: "rgb(0, 162, 149)" }}>
                       00 (123) 456 78 90
                       <br />
                       00 (987) 654 32 10{" "}
@@ -617,11 +693,19 @@ const Homepage = () => {
                       <i className="si-mail_mail-2" />
                     </span>
                     <p>
-                      <a className="nocolor" href="mailto:#">
+                      <a
+                        style={{ color: "rgb(0, 162, 149)" }}
+                        className="nocolor"
+                        href="mailto:#"
+                      >
                         manager@email.com
                       </a>
                       <br />
-                      <a className="nocolor" href="mailto:#">
+                      <a
+                        style={{ color: "rgb(0, 162, 149)" }}
+                        className="nocolor"
+                        href="mailto:#"
+                      >
                         asistant@email.com
                       </a>
                     </p>

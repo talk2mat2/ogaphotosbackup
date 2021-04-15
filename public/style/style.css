@@ -6316,7 +6316,7 @@ list-blue i {
   box-shadow: 0 0 10px rgb(190, 190, 190);
   padding: 7px;
 }
-.signup:hover{
-    background-color: rgb(141, 5, 5) ;
-    color: #fff;
+.signup:hover {
+  background-color: rgb(141, 5, 5);
+  color: #fff;
 }

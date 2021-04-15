@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Scripts } from "../../script";
 import Loginpage from "./LoginPage";
 import Singuppage from "./SignUppage";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import "./SignupStyle.css";
+// import "./SignupStyle.css";
 import { Route, Switch, Link } from "react-router-dom";
 
 const SignUp = (props) => {
@@ -14,7 +14,7 @@ const SignUp = (props) => {
   const { match } = props;
   const history = useHistory();
   useEffect(() => {
-    CurrentUser&&history.push('/dashboard')
+    CurrentUser && history.push("/dashboard");
     Scripts.forEach((item) => {
       const script = document.createElement("script");
       script.src = item.src;
