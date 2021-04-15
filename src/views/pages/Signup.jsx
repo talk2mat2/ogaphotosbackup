@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 // import "./SignupStyle.css";
 import { Route, Switch, Link } from "react-router-dom";
+import LoginNew from "./LoginNew";
 
 const SignUp = (props) => {
   const CurrentUser = useSelector((state) => state.user.currentUser);
@@ -28,20 +29,7 @@ const SignUp = (props) => {
   const handleLoginPage = () => {
     history.push(match.url);
   };
-  return (
-    <div className="onepage" data-spy="scroll" data-target=".navbar">
-      <section id="home" className="pt-0 mt-0">
-        <Switch>
-          <Route exact path={match.url}>
-            <Loginpage handleSignUpPage={handleSignUpPage} />
-          </Route>
-          <Route path={`${match.url}/signup`}>
-            <Singuppage handleLoginPage={handleLoginPage} />
-          </Route>
-        </Switch>
-      </section>
-    </div>
-  );
+  return <LoginNew />;
 };
 
 export default SignUp;

@@ -20,7 +20,7 @@ const Header = () => {
     dispatch(LOGINOUTUSER());
   };
 
-  // React.useEffect(() => {
+  // React.useEffect(() => {P
   //   const loadScript = async () => {
   //     await Scripts.forEach(async (item) => {
   //       const script = document.createElement("script");
@@ -52,11 +52,13 @@ const Header = () => {
         <div className="navbar-header">
           <div className="navbar-brand">
             <a href="index.html">
-              <img
+              {/* <img
                 src="#"
                 srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x"
                 alt=""
-              />
+              /> */}
+
+              <img id="LogoImg" src="media/OgaLogo.png" alt="img" />
             </a>
           </div>
           <div className="navbar-hamburger ml-auto d-lg-none d-xl-none">
@@ -71,14 +73,9 @@ const Header = () => {
         </div>
 
         <div className="collapse navbar-collapse">
-          <a className="nav-link scroll" href="/">
-            <img
-              src="media/ogaphotos_favicon.png"
-              width="90"
-              height="90"
-              alt="img"
-            />
-          </a>
+          {/* <a className="nav-link scroll" href="/">
+            <img id="LogoImg" src="media/OgaLogo.png" alt="img" />
+          </a> */}
 
           <ul className="nav navbar-nav ml-auto">
             <li className="nav-item">

@@ -27,6 +27,9 @@ import SignUp from "../views/pages/Signup";
 import How_it_works from "../views/pages/how_it_works";
 import Portfolio from "../views/pages/portfolio";
 import PhotoSignUp from "../views/pages/photographSignUP";
+import PhotoGrapherLoginNew from "../views/pages/PhotographerLoginNew";
+import ClientRegister from "../views/pages/ClientRegister";
+import PhotographersRegister from "../views/pages/PhotographersRegister";
 
 function BaseRoute() {
   return (
@@ -38,7 +41,7 @@ function BaseRoute() {
         <ProtectedRoute exact component={Profile} path="/profile" />
         <ProtectedRoute exact component={Promos} path="/promos" />
         <ProtectedRoute component={TransEat} path="/trans_eat" />
-        <ProtectedRoute  component={Trips} path="/trips" />
+        <ProtectedRoute component={Trips} path="/trips" />
         <ProtectedRoute exact component={Wallet} path="/wallet" />
         <ProtectedRoute component={Support} path="/support" />
         <ProtectedRoute component={FoodOrderHistory} path="/eats" />
@@ -52,10 +55,20 @@ function BaseRoute() {
         <GuestRoute component={Register} path="/register" />
         {/* <GuestRoute component={Login} path='/login' /> */}
         <GuestRoute component={SignUp} path="/SignUp" />
+        <GuestRoute
+          component={PhotoGrapherLoginNew}
+          path="/PhotoGrapherLoginNew"
+        />
+        <GuestRoute component={ClientRegister} path="/ClientRegister" />
+
         <GuestRoute component={PhotoSignUp} path="/photographer" />
-    
+
         {/* <GuestRoute component={Login} path="/Login" /> */}
         <GuestRoute component={Portfolio} path="/Portfolio" />
+        <GuestRoute
+          component={PhotographersRegister}
+          path="/PhotographersRegister"
+        />
 
         <GuestRoute component={ForgotPassword} path="/forgot_password" />
         <Route path="*" component={ErrorPage} />
