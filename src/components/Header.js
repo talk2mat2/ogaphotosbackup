@@ -51,7 +51,7 @@ const Header = () => {
       <div className="container">
         <div className="navbar-header">
           <div className="navbar-brand">
-            <a href="index.html">
+            <a href="/">
               {/* <img
                 src="#"
                 srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x"
