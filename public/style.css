@@ -6360,7 +6360,7 @@ list-blue i {
   overflow: hidden;
 }
 
-@media (max-width: 630px) {
+@media (max-width: 991px) {
   .collapse.navbar-collapse.show {
     height: 1px;
     overflow: hidden;

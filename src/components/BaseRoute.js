@@ -108,7 +108,7 @@ function BaseRoute() {
           />
           <GuestRoute component={ClientRegister} path="/ClientRegister" />
 
-          <GuestRoute component={PhotoSignUp} path="/photographer" />
+          {/* <GuestRoute component={PhotoSignUp} path="/photographer" /> */}
 
           {/* <GuestRoute component={Login} path="/Login" /> */}
           <GuestRoute component={Portfolio} path="/Portfolio" />

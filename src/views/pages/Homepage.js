@@ -169,7 +169,7 @@ const Homepage = () => {
 
                 border: " 1px solid rgb(0, 162, 149)",
               }}
-              to="photographer/signup"
+              to="/PhotographersRegister"
             >
               Become a photographer
             </Link>
