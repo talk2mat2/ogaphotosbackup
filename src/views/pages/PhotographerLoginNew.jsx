@@ -96,6 +96,8 @@ const Input = styled.input`
   &:focus {
     border-bottom: 1px solid blue;
     outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
   }
 `;
 const Buttons = styled(Button)`

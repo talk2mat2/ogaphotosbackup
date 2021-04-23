@@ -6,18 +6,28 @@ import { signOut } from "../actions/authactions";
 import PersonIcon from "@material-ui/icons/Person";
 import { LOGINOUTUSER } from "../redux/action";
 import { Scripts } from "../script";
+import { CSSTransition } from "react-transition-group";
+import styled from "styled-components";
 
 // import { useDispatch } from 'react-redux';
 // import { signOut } from '../actions/authactions';
-
+const Div = styled.div``;
 const Header = () => {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const userData = CurrentUser && CurrentUser.userData;
-
+  const [MenuOpen, setMenuOpen] = useState(false);
+  const [extend, setextend] = useState(null);
   const LogOut = () => {
     dispatch(LOGINOUTUSER());
+  };
+  const handleMenuOpen = () => {
+    if (extend === "extend") {
+      setextend(null);
+    } else {
+      setextend("extend");
+    }
   };
 
   // React.useEffect(() => {P
@@ -33,19 +43,19 @@ const Header = () => {
   //     loadScript();
   //   }, 1000);
   // }, []);
-  React.useEffect(() => {
-    window.addEventListener("load", (event) => {
-      Scripts.forEach((item) => {
-        const script = document.createElement("script");
-        script.src = item.src;
-        script.async = "";
-        document.body.appendChild(script);
-      });
-    });
-  });
+  // React.useEffect(() => {
+  //   window.addEventListener("load", (event) => {
+  //     Scripts.forEach((item) => {
+  //       const script = document.createElement("script");
+  //       script.src = item.src;
+  //       script.async = "";
+  //       document.body.appendChild(script);
+  //     });
+  //   });
+  // });
   return (
     <nav
-      className="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-lg text-uppercase"
+      className="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-lg text-uppercase "
       style={{ backgroundColor: "#fff" }}
     >
       <div className="container">
@@ -63,16 +73,17 @@ const Header = () => {
           </div>
           <div className="navbar-hamburger ml-auto d-lg-none d-xl-none">
             <button
-              className="hamburger animate"
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
+              className="hamburger "
+              // data-toggle="collapse"
+              // data-target=".navbar-collapse"
+              onClick={() => handleMenuOpen()}
             >
               <span></span>
             </button>
           </div>
         </div>
 
-        <div className="collapse navbar-collapse">
+        <Div className={`collapse navbar-collapse show ${extend} `}>
           {/* <a className="nav-link scroll" href="/">
             <img id="LogoImg" src="media/OgaLogo.png" alt="img" />
           </a> */}
@@ -171,7 +182,7 @@ const Header = () => {
               </li>
             ) : null}
           </ul>
-        </div>
+        </Div>
       </div>
     </nav>
   );

@@ -6332,3 +6332,43 @@ list-blue i {
   width: 80px;
   object-fit: contain;
 }
+
+.menuVisible-enter {
+  transform: translateY(-40);
+  opacity: 0;
+  height: 30px;
+  overflow: hidden;
+}
+.menuVisible-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  height: 345px;
+  transition: height 1s linear;
+  overflow: hidden;
+}
+.menuVisible-exit {
+  transform: translateY(0);
+  opacity: 1;
+  height: 345px;
+  overflow: hidden;
+}
+.menuVisible-exit-active {
+  transform: translateY(0);
+  transition: height 1s linear;
+  opacity: 1;
+  height: 30px;
+  overflow: hidden;
+}
+
+@media (max-width: 630px) {
+  .collapse.navbar-collapse.show {
+    height: 1px;
+    overflow: hidden;
+    transition: height 2s ease;
+  }
+  .collapse.navbar-collapse.show.extend {
+    height: 350px;
+    overflow: hidden;
+    transition: height 2s ease;
+  }
+}
