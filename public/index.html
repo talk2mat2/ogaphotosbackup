@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -10,53 +11,111 @@
     <meta name="text" content="" />
     <meta name="author" content="" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/media/ogaphotosmain.jpg" />
-    <title>ogaphotos</title>
+    <title>Ogaphot | on demand photography</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
+      rel="stylesheet"
+    />
+
+    <!-- Global font -->
+
+    <!-- Bootstrap CSS (http://getbootstrap.com) -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/style/css/bootstrap.min.css"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
     />
+    <!-- bootstrap CSS (http://getbootstrap.com) -->
+    <!-- Libs and Plugins CSS -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/style/css/plugins.css"
+      href="assets/vendor/animsition/css/animsition.min.css"
     />
+    <!-- Animsition CSS (http://git.blivesta.com/animsition/) -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/style/revolution/css/settings.css"
+      href="assets/vendor/fontawesome/css/fontawesome-all.min.css"
     />
+    <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/style/revolution/css/layers.css"
+      href="assets/vendor/lightgallery/css/lightgallery.min.css"
     />
+    <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/style/revolution/css/navigation.css"
+      href="assets/vendor/owl-carousel/css/owl.carousel.min.css"
     />
+    <!-- Owl Carousel CSS (https://owlcarousel2.github.io/OwlCarousel2/) -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/style/revolution/revolution-addons/filmstrip/css/revolution.addon.filmstrip.css"
+      href="assets/vendor/owl-carousel/css/owl.theme.default.min.css"
     />
+    <!-- Owl Carousel CSS (https://owlcarousel2.github.io/OwlCarousel2/) -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="%PUBLIC_URL%/style/revolution/revolution-addons/typewriter/css/typewriter.css"
+      href="assets/vendor/ytplayer/css/jquery.mb.YTPlayer.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="style/type/icons.css" />
-    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/style.css" />
-    <link rel="stylesheet" type="text/css" href="style/css/color/oasis.css" />
+    <!-- YTPlayer CSS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
+    <link rel="stylesheet" href="assets/vendor/animate.min.css" />
+    <!-- Animate libs CSS (http://daneden.me/animate) -->
+
+    <!-- Template master CSS -->
+    <link rel="stylesheet" href="assets/css/helper.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <!-- FOR DEMO SITE ONLY! -->
+    <link rel="stylesheet" href="assets/demo-panel/css/demo-panel.css" />
+    <!-- <link rel="stylesheet" href="assets/css/dark-style.css" /> -->
+    <link rel="stylesheet" href="assets/css/round-style.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i"
-      rel="stylesheet"
-      type="text/css"
+      rel="alternate stylesheet"
+      media="screen"
+      title="skin-red"
+      href="assets/css/color-skins/skin-red.css"
     />
+    <link
+      rel="alternate stylesheet"
+      media="screen"
+      title="skin-green"
+      href="assets/css/color-skins/skin-green.css"
+    />
+    <link
+      rel="alternate stylesheet"
+      media="screen"
+      title="skin-blue"
+      href="assets/css/color-skins/skin-blue.css"
+    />
+    <link
+      rel="alternate stylesheet"
+      media="screen"
+      title="skin-orange"
+      href="assets/css/color-skins/skin-orange.css"
+    />
+    <link
+      rel="alternate stylesheet"
+      media="screen"
+      title="skin-purple"
+      href="assets/css/color-skins/skin-purple.css"
+    />
+    <link
+      rel="alternate stylesheet"
+      media="screen"
+      title="skin-pink"
+      href="assets/css/color-skins/skin-pink.css"
+    />
+    <link
+      rel="alternate stylesheet"
+      media="screen"
+      title="skin-brown"
+      href="assets/css/color-skins/skin-brown.css"
+    />
+
     <script
       src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
       async=""
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/d40769d61e.js"
+      crossorigin="anonymous"
     ></script>
     <script>
       window.OneSignal = window.OneSignal || [];
@@ -71,39 +130,32 @@
       });
     </script>
   </head>
-  <body class="onepage" data-spy="scroll" data-target=".navbar">
+  <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" class="content-wrapper"></div>
-  </body>
-  <!-- <script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/script.js"></script> -->
+    <div id="root"></div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
 
-  <!-- <script src="style/js/jquery.min.js"></script> 
-<script src="style/js/popper.min.js"></script> 
-<script src="style/js/bootstrap.min.js"></script> 
-<script src="style/revolution/js/jquery.themepunch.tools.min.js"></script> 
-<script src="style/revolution/js/jquery.themepunch.revolution.min.js"></script> 
-<script src="style/revolution/revolution-addons/filmstrip/js/revolution.addon.filmstrip.min.js"></script> 
-<script src="style/revolution/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.actions.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.carousel.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.kenburn.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.migration.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.navigation.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.parallax.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script> 
-<script src="style/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="style/js/plugins.js"></script> 
-<script src="style/js/scripts.js"></script> -->
-  <!-- i pasted script here  -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="assets/vendor/animsition/js/animsition.min.js"></script>
+
+    <script src="assets/vendor/jquery.easing.min.js"></script>
+
+    <script src="assets/vendor/isotope.pkgd.min.js"></script>
+
+    <script src="assets/vendor/imagesloaded.pkgd.min.js"></script>
+
+    <script src="assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <script src="assets/vendor/jquery.mousewheel.min.js"></script>
+
+    <script src="assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
+
+    <script src="assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+
+    <script src="assets/js/theme.js"></script>
+
+    <script src="assets/demo-panel/js/demo-panel.js"></script>
+    <script src="assets/demo-panel/js/styleswitch.js"></script>
+  </body>
 </html>

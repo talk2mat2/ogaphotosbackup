@@ -14,15 +14,7 @@ const SignUp = (props) => {
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const { match } = props;
   const history = useHistory();
-  useEffect(() => {
-    CurrentUser && history.push("/dashboard");
-    Scripts.forEach((item) => {
-      const script = document.createElement("script");
-      script.src = item.src;
-      script.async = true;
-      document.body.appendChild(script);
-    });
-  }, [CurrentUser]);
+
   const handleSignUpPage = () => {
     history.push(`${match.url}/signup`);
   };

@@ -43,7 +43,7 @@ const SelectContentContainer1 = styled.div`
 const BigText = styled.p`
   font-size: 25px;
   font-weight: 600;
-  color: rgb(0, 162, 149);
+  color: rgb(85, 103, 132);
 `;
 const SelectContentContainer2 = styled.div`
   background-color: #ffff;
@@ -93,6 +93,7 @@ const Input = styled.input`
   border: 1px solid grey;
   background-color: #ffff;
   height: 50px;
+  margin-bottom: 4px;
 
   &:focus {
     border-bottom: 1px solid blue;
@@ -105,7 +106,7 @@ const Buttons = styled(Button)`
   && {
       border:none;
     // background-color: rgb(71, 178, 228);
-    background-color: rgb(0, 162, 149);
+    background-color: rgb(20, 27, 37);
     margin-top: 8px;
     outline:none;
     width: 200px;

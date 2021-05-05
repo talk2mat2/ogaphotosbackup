@@ -105,7 +105,7 @@ function AppMenu(props) {
               props.handleDrawerToggle();
             }}
           >
-            <button className="signup">Hire A Photographer</button>
+            <button className="btn1">Hire A Photographer</button>
           </MenuItem>
         ) : null}
         <MenuItem

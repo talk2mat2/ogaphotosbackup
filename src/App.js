@@ -3,6 +3,7 @@ import React from "react";
 import BaseRoute from "./components/BaseRoute";
 import { useSelector } from "react-redux";
 import Homepage from "./views/pages/Homepage";
+import { Helmet } from "react-helmet";
 // import About from "./views/pages/About";
 // import Portfolio from "./views/pages/portfolio";
 // import How_it_works from "./views/pages/how_it_works";

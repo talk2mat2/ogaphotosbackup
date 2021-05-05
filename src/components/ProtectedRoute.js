@@ -3,7 +3,7 @@ import React from "react";
 import { Route, Redirect, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ResponsiveDrawer from "./ResponsiveDrawer";
-
+import { Helmet } from "react-helmet";
 function ProtectedRoute({ component: Component, ...rest }) {
   // const auth = useSelector((state) => state.auth)
 

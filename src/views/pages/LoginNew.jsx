@@ -106,7 +106,8 @@ const Buttons = styled(Button)`
   && {
       border:none;
     // background-color: rgb(71, 178, 228);
-    background-color: rgb(0, 162, 149);
+    // background-color: rgb(0, 162, 149);
+    background-color: rgb(20, 27, 37);
     margin-top: 8px;
     outline:none;
     width: 200px;
@@ -117,7 +118,7 @@ const Buttons = styled(Button)`
     // color: rgb(71, 178, 228);
     // background-color: white;
     // border: 1px solid rgb(71, 178, 228);
-    background-color: rgb(0, 162, 149);
+    background-color: rgb(20, 27, 37);
     color: #ffff;
   }
 `;
@@ -188,7 +189,7 @@ const LoginNew = () => {
             <Margin />
             <Margin />
             <Margin />
-            <BigText>Log in</BigText>
+            <p className="midText11">Log in</p>
             <Listing>
               <li>
                 <small>Email</small>
