@@ -10,6 +10,7 @@ import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Helmet } from "react-helmet";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
 // import { useDispatch } from 'react-redux';
 // import { signOut } from '../actions/authactions';
@@ -59,255 +60,166 @@ const Header = () => {
   //   });
   // });
   return (
-    <header>
-      <nav className="vertical-center-row flex-space-betweeen">
-        <div className="nav-img">
-          <a href="/">
-            <img src="/media/logo222.jpg" alt="" />
+    <header id="header" className="header-show-hide-on-scroll menu-align-right">
+      <div className="header-inner tt-wrap">
+        <div id="logo">
+          <a href="/" className="logo-dark">
+            <img src="media/logo-dark.png" alt="logo" />
+          </a>
+          <a href="index.html" className="logo-light">
+            <img src="assets/img/logo-light.png" alt="logo" />
+          </a>
+          {/* for small screens */}
+          <a href="index.html" className="logo-dark-m">
+            <img src="assets/img/logo-dark-m.png" alt="logo" />
+          </a>
+          <a href="index.html" className="logo-light-m">
+            <img src="assets/img/logo-light-m.png" alt="logo" />
           </a>
         </div>
-        <div className="nav-items vertical-center-row">
-          <a href="/#home">
-            <span>Home</span>
-          </a>
-          <a href="/#about">
-            <span>About</span>
-          </a>
-          <a href="/#how-it-works">
-            <span>How It Works</span>
-          </a>
-          <a href="/#portfolio">
-            <span>PortFolio</span>
-          </a>
-          <span>Contact</span>
-          <span>
-            {userData ? (
-              <Link style={{ color: "grey" }} to="/dashboard">{`${
-                userData.fname || userData.Email
-              }`}</Link>
-            ) : (
-              <Link to="signUp">
-                <p>LogIn</p>
-              </Link>
-            )}
-          </span>
-          {/* <a href="/signup-step1.html"> <p class="Upgrade-Btn">SignUp</p></a> */}
-          {/* <img class="profileAvatar" src="images/profileAvatar.JPG" alt="" /> */}
-        </div>
-        {/* <div class="vertical-center-row">
-<p>login</p>
-<p>hire a photogrpher</p>
-</div> */}
-        <button
-          id="btn-header"
-          className="btn1"
-          style={{ backgroundColor: "#ffffff", color: "rgb(20, 27, 37)" }}
-        >
-          Hire A photogrpher Now
-        </button>
-        <div className="MenuIconDiv" onClick={handleOpenMenu}>
-          {/* <i style={{ color: "floralwhite" }} className="fas fa-bars fa-2x" /> */}
-          <MenuIcon
-            fontSize={"large"}
-            style={{ color: "#ffffff", fontSize: "40px" }}
-          />
-        </div>
-        <div
-          className={`Nav-items-Drop-down ${showmenu} vertical-center-row flex-space-betweeen`}
-        >
-          <ul className="full-width">
-            <a onClick={() => setShowmenu(null)} href="/#home">
+        {/* End logo */}
+        {/* ====================
+				//// Begin main menu ////
+				===================== */}
+        <nav className="tt-main-menu">
+          {/* Begin mobile menu toggle button */}
+          <div id="tt-m-menu-toggle-btn">
+            <span />
+          </div>
+          {/* End mobile menu toggle button */}
+          {/* Begin menu tools 
+					====================== */}
+          <div className="tt-menu-tools">
+            <ul>
+              {/* Begin search */}
               <li>
-                <p>Home</p>
+                <a href="#" className="tt-clobal-search-trigger">
+                  <i className="fas fa-search" />
+                </a>
+                <div className="tt-clobal-search">
+                  <div className="tt-clobal-search-inner">
+                    <span className="tt-clobal-search-title">Search</span>
+                    <form
+                      id="tt-clobal-search-form"
+                      className="form-btn-inside"
+                      method="get"
+                      action=""
+                    >
+                      <input
+                        type="text"
+                        id="tt-clobal-search-input"
+                        name="search"
+                        placeholder="Type your keywords ..."
+                      />
+                      <button type="submit">
+                        <i className="fas fa-search" />
+                      </button>
+                    </form>
+                  </div>
+                  {/* /.tt-clobal-search-inner */}
+                  <div className="tt-clobal-search-close">
+                    <i className="tt-close-btn tt-close-light" />
+                  </div>
+                </div>
+                {/* /.tt-clobal-search */}
               </li>
-            </a>
-            <a onClick={() => setShowmenu(null)} href="/#about">
-              <li>
-                <p>About</p>
-              </li>
-            </a>
-            <a onClick={() => setShowmenu(null)} href="/#how-it-works">
-              <li>
-                <p>How it works</p>
-              </li>
-            </a>
-            <a onClick={() => setShowmenu(null)} href="/#portfolio">
-              <li>
-                <p>Portfolio</p>
-              </li>
-            </a>
-            <>
-              <li onClick={() => setShowmenu(null)}>
-                {userData ? (
-                  <Link style={{ color: "grey" }} to="/dashboard">{`${
-                    userData.fname || userData.Email
-                  }`}</Link>
-                ) : (
-                  <Link to="signUp">
-                    <p>Log In</p>
-                  </Link>
-                )}
-              </li>
-            </>
-            <a href="/">
-              <li>
-                <img
-                  className="playstore-Icon"
-                  src="media/playstore.png"
-                  alt=""
-                />
-              </li>
-            </a>
-          </ul>
-          {/* <ul>
-    <li>
-      <a href="./Wallet.html"><p>My Wallet</p></a>
-    </li>
-    <li>
-      <a><p>My Lawyers</p></a>
-    </li>
-    <li>
-      <a><p>CrowdFunding</p></a>
-    </li>
+              {/* End search */}
+              {/* Begin tt-dropdown (languages) 
+							===================================
+							* Use class "tt-dropdown-dark" to enable dropdown dark style.
+							*/}
+              <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
+                <a href="#0">Log In</a>
 
-    <li>
-      <a><p>Submit Compliant</p></a>
-    </li>
-  </ul> */}
-        </div>
-      </nav>
+                {/* /.tt-dropdown */}
+              </li>
+              {/* End tt-dropdown */}
+              {/* Begin call to action button */}
+              <li>
+                <a href="/#" className="tt-tools-button" target="_blank">
+                  Book<span className="hide-from-sm"> Now</span>!
+                </a>
+              </li>
+              {/* End call to action button */}
+            </ul>
+          </div>
+          {/* End menu tools */}
+          {/* Collect the nav links for toggling 
+					========================================
+					* Use class "tt-submenu-dark" to enable submenu dark style.
+					*/}
+          <div className="tt-menu-collapse tt-submenu-dark">
+            <ul className="tt-menu-nav">
+              {/* Begin submenu (submenu master)
+							==================================== */}
+              <li className=" tt-submenu-master">
+                <a href="/#blog-list-section">
+                  <FiberManualRecordIcon fontSize="small" />
+                  How It Works
+                </a>
+
+                {/* /.tt-submenu */}
+              </li>{" "}
+              <li className=" tt-submenu-master" style={{ lineHeight: "auto" }}>
+                <a href="/#specialist">
+                  <FiberManualRecordIcon fontSize="small" />
+                  Specialties
+                </a>
+              </li>{" "}
+              {"  "}
+              {/* End submenu (sub-master) */}
+              {/* Begin submenu (submenu master)
+							==================================== */}
+              <li className=" tt-submenu-master">
+                <a href="/#prices-section">
+                  <FiberManualRecordIcon fontSize="small" />
+                  Pricing
+                </a>
+
+                {/* /.tt-submenu */}
+              </li>{" "}
+              {"  "}
+              {/* End submenu (sub-master) */}
+              {/* Begin submenu (submenu master)
+							==================================== */}
+              <li className=" tt-submenu-master">
+                <a href="/#gallery-list-section">
+                  <FiberManualRecordIcon fontSize="small" />
+                  Portfolio
+                </a>
+
+                {/* /.tt-submenu */}
+              </li>{" "}
+              {"  "}
+              {/* End submenu (sub-master) */}
+              {/* Begin submenu (submenu master)
+							==================================== */}
+              {"  "}
+              <li className=" tt-submenu-master">
+                <a href="/#contact-section">
+                  <FiberManualRecordIcon fontSize="small" />
+                  Contact
+                </a>
+
+                {/* /.tt-submenu */}
+              </li>{" "}
+              {"  "}
+              <li className="tt-submenu-master">
+                <a href="#0">More</a>
+
+                {/* /.tt-submenu */}
+              </li>{" "}
+              {"  "}
+              {/* End submenu (sub-master) */}
+            </ul>
+            {/* /.tt-menu-nav */}
+          </div>
+          {/* /.tt-menu-collapse */}
+        </nav>
+        {/* End main menu */}
+      </div>
+      {/* End header inner */}
     </header>
-    // <nav
-    //   className="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-lg text-uppercase "
-    //   style={{ backgroundColor: "#fff" }}
-    // >
-    //   <div className="container">
-    //     <div className="navbar-header">
-    //       <div className="navbar-brand">
-    //         <a href="/">
-    //           {/* <img
-    //             src="#"
-    //             srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x"
-    //             alt=""
-    //           /> */}
-
-    //           <img id="LogoImg" src="media/OgaLogo.png" alt="img" />
-    //         </a>
-    //       </div>
-    //       <div className="navbar-hamburger ml-auto d-lg-none d-xl-none">
-    //         <button
-    //           className="hamburger "
-    //           // data-toggle="collapse"
-    //           // data-target=".navbar-collapse"
-    //           onClick={() => handleMenuOpen()}
-    //         >
-    //           <span></span>
-    //         </button>
-    //       </div>
-    //     </div>
-
-    //     <Div className={`collapse navbar-collapse show ${extend} `}>
-    //       {/* <a className="nav-link scroll" href="/">
-    //         <img id="LogoImg" src="media/OgaLogo.png" alt="img" />
-    //       </a> */}
-
-    //       <ul className="nav navbar-nav ml-auto">
-    //         <li className="nav-item">
-    //           <a className="nav-link scroll" href="/" style={{ color: "grey" }}>
-    //             Home
-    //           </a>
-    //         </li>
-    //         <li className="nav-item">
-    //           <a
-    //             className="nav-link scroll"
-    //             href="about"
-    //             style={{ color: "grey" }}
-    //           >
-    //             About
-    //           </a>
-    //         </li>
-    //         <li className="nav-item">
-    //           <a
-    //             className="nav-link scroll"
-    //             href="/How_it_works"
-    //             style={{ color: "grey" }}
-    //           >
-    //             How It Works
-    //           </a>
-    //         </li>
-    //         <li className="nav-item ">
-    //           <a
-    //             className="nav-link  "
-    //             href="/Portfolio"
-    //             style={{ color: "grey" }}
-    //           >
-    //             Portfolio
-    //           </a>
-    //           {/* <ul className="dropdown-menu dropdown-menu-left">
-    //             <li className="nav-item">
-    //               <a className="dropdown-item scroll" href="#portfolio">
-    //                 Portrait Portfolio
-    //               </a>
-    //             </li>
-    //             <li className="nav-item">
-    //               <a className="dropdown-item scroll" href="#portfolio2">
-    //                 Advertorial Portfolio
-    //               </a>
-    //             </li>
-    //           </ul> */}
-    //         </li>
-
-    //         <li className="nav-item">
-    //           <a
-    //             className="nav-link scroll"
-    //             href="/contact"
-    //             style={{ color: "grey" }}
-    //           >
-    //             Contact
-    //           </a>
-    //         </li>
-    //         <li className="nav-item">
-    //           {!CurrentUser ? (
-    //             <Link
-    //               className="nav-link scroll"
-    //               to="/SignUp"
-    //               style={{ color: "grey" }}
-    //             >
-    //               Login/Sign UP
-    //             </Link>
-    //           ) : (
-    //             <Link
-    //               style={{ color: "grey" }}
-    //               className="nav-link scroll"
-    //               to="/dashboard"
-    //             >{`${userData.fname || userData.Email}`}</Link>
-    //           )}
-    //         </li>
-    //         <li className="nav-item">
-    //           <Link
-    //             className="nav-link scroll"
-    //             to="/signUp"
-    //             style={{ color: "grey" }}
-    //           >
-    //             <button className="signup">Hire A Photographer</button>
-    //           </Link>
-    //         </li>
-    //         {CurrentUser ? (
-    //           <li className="nav-item">
-    //             <a
-    //               onClick={LogOut}
-    //               className="nav-link scroll"
-    //               href="/"
-    //               style={{ color: "grey" }}
-    //             >
-    //               logout
-    //             </a>
-    //           </li>
-    //         ) : null}
-    //       </ul>
-    //     </Div>
-    //   </div>
-    // </nav>
   );
 };
 

@@ -6,6 +6,9 @@ import Header from "../../components/Header";
 // import Sliders from "../../components/Sliders";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Helmet } from "react-helmet";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import MeetOurPhoto from "./MeetOurPhoto";
+import Features from "./Features";
 
 const Homepage = () => {
   const [showmenu, setShowmenu] = useState(null);
@@ -33,739 +36,7 @@ const Homepage = () => {
       </Helmet>
       <div>
         {/* BEGIN DEMO PANEL (FOR DEMO SITE ONLY!) */}
-        <div className="demo-panel">
-          <div className="demo-panel-trigger">
-            <span className="dpt-icon" />
-            <span className="dpt-close" />
-          </div>
-          <div className="demo-panel-inner">
-            <div className="demo-panel-header">Demo Panel</div>
-            <div className="demo-panel-content">
-              <div className="demo-panel-block light-sw-block">
-                <h2 className="dp-heading">Light Switcher:</h2>
-                <div className="light-switcher">
-                  <div className="lsw-btn light-lsw-btn" title="Day Mode" />
-                  <div className="lsw-btn dark-lsw-btn" title="Night Mode" />
-                </div>
-              </div>
-              <div className="demo-panel-block rtl-sw-block">
-                <h2 className="dp-heading">Round Style:</h2>
-                <div className="round-switcher">
-                  <div
-                    className="roundsw-btn ltr-roundsw-btn"
-                    title="Round style OFF"
-                  >
-                    OFF
-                  </div>
-                  <div
-                    className="roundsw-btn round-roundsw-btn"
-                    title="Round style ON"
-                  >
-                    ON
-                  </div>
-                </div>
-              </div>
-              <div className="demo-panel-block rtl-sw-block">
-                <h2 className="dp-heading">RTL Mode:</h2>
-                <div className="rtl-switcher">
-                  <div
-                    className="rtlsw-btn ltr-rtlsw-btn"
-                    title="Left to right mode"
-                  >
-                    LTR
-                  </div>
-                  <div
-                    className="rtlsw-btn rtl-rtlsw-btn"
-                    title="Right to left mode"
-                  >
-                    RTL
-                  </div>
-                </div>
-              </div>
-              <div className="demo-panel-block">
-                <h2 className="dp-heading">Color Switcher:</h2>
-                <div className="skin-switcher">
-                  <a
-                    className="sksw-btn sksw-btn-default"
-                    href="javascript:chooseStyle('none', 60)"
-                    title="Default Skin"
-                  />
-                  <a
-                    className="sksw-btn sksw-btn-red"
-                    href="javascript:chooseStyle('skin-red', 60)"
-                    data-class="tt-skin-red"
-                    title="Red Skin"
-                  />
-                  <a
-                    className="sksw-btn sksw-btn-green"
-                    href="javascript:chooseStyle('skin-green', 60)"
-                    data-class="tt-skin-green"
-                    title="Green Skin"
-                  />
-                  <a
-                    className="sksw-btn sksw-btn-blue"
-                    href="javascript:chooseStyle('skin-blue', 60)"
-                    data-class="tt-skin-blue"
-                    title="Blue Skin"
-                  />
-                  <a
-                    className="sksw-btn sksw-btn-orange"
-                    href="javascript:chooseStyle('skin-orange', 60)"
-                    data-class="tt-skin-orange"
-                    title="Orange Skin"
-                  />
-                  <a
-                    className="sksw-btn sksw-btn-purple"
-                    href="javascript:chooseStyle('skin-purple', 60)"
-                    data-class="tt-skin-purple"
-                    title="Purple Skin"
-                  />
-                  <a
-                    className="sksw-btn sksw-btn-pink"
-                    href="javascript:chooseStyle('skin-pink', 60)"
-                    data-class="tt-skin-pink"
-                    title="Pink Skin"
-                  />
-                  <a
-                    className="sksw-btn sksw-btn-brown"
-                    href="javascript:chooseStyle('skin-brown', 60)"
-                    data-class="tt-skin-brown"
-                    title="Brown Skin"
-                  />
-                </div>
-              </div>
-              <a
-                className="demo-panel-btn"
-                href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
-                target="_blank"
-                title="Buy This Theme Now!"
-              >
-                Buy Now!
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <header
-          id="header"
-          className="header-show-hide-on-scroll menu-align-right"
-        >
-          <div className="header-inner tt-wrap">
-            <div id="logo">
-              <a href="index.html" className="logo-dark">
-                <img src="media/logo-dark.png" alt="logo" />
-              </a>
-              <a href="index.html" className="logo-light">
-                <img src="assets/img/logo-light.png" alt="logo" />
-              </a>
-              {/* for small screens */}
-              <a href="index.html" className="logo-dark-m">
-                <img src="assets/img/logo-dark-m.png" alt="logo" />
-              </a>
-              <a href="index.html" className="logo-light-m">
-                <img src="assets/img/logo-light-m.png" alt="logo" />
-              </a>
-            </div>
-            {/* End logo */}
-            {/* ====================
-				//// Begin main menu ////
-				===================== */}
-            <nav className="tt-main-menu">
-              {/* Begin mobile menu toggle button */}
-              <div id="tt-m-menu-toggle-btn">
-                <span />
-              </div>
-              {/* End mobile menu toggle button */}
-              {/* Begin menu tools 
-					====================== */}
-              <div className="tt-menu-tools">
-                <ul>
-                  {/* Begin search */}
-                  <li>
-                    <a href="#" className="tt-clobal-search-trigger">
-                      <i className="fas fa-search" />
-                    </a>
-                    <div className="tt-clobal-search">
-                      <div className="tt-clobal-search-inner">
-                        <span className="tt-clobal-search-title">Search</span>
-                        <form
-                          id="tt-clobal-search-form"
-                          className="form-btn-inside"
-                          method="get"
-                          action="https://demo.themetorium.net/html/sepia/search-results.html"
-                        >
-                          <input
-                            type="text"
-                            id="tt-clobal-search-input"
-                            name="search"
-                            placeholder="Type your keywords ..."
-                          />
-                          <button type="submit">
-                            <i className="fas fa-search" />
-                          </button>
-                        </form>
-                      </div>
-                      {/* /.tt-clobal-search-inner */}
-                      <div className="tt-clobal-search-close">
-                        <i className="tt-close-btn tt-close-light" />
-                      </div>
-                    </div>
-                    {/* /.tt-clobal-search */}
-                  </li>
-                  {/* End search */}
-                  {/* Begin tt-dropdown (languages) 
-							===================================
-							* Use class "tt-dropdown-dark" to enable dropdown dark style.
-							*/}
-                  <li className="tt-dropdown-wrap tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
-                    <a href="#0">
-                      <img src="assets/img/flags/gb.png" alt="English" /> EN
-                    </a>
-                    <ul className="tt-dropdown">
-                      <li>
-                        <a href="#" title="English">
-                          <img src="assets/img/flags/gb.png" alt="English" /> EN
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" title="French">
-                          <img src="assets/img/flags/fr.png" alt="French" /> FR
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" title="Deutsch">
-                          <img src="assets/img/flags/de.png" alt="Deutsch" /> DE
-                        </a>
-                      </li>
-                    </ul>
-                    {/* /.tt-dropdown */}
-                  </li>
-                  {/* End tt-dropdown */}
-                  {/* Begin call to action button */}
-                  <li>
-                    <a
-                      href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
-                      className="tt-tools-button"
-                      target="_blank"
-                    >
-                      Hire<span className="hide-from-sm"> A Photographer</span>!
-                    </a>
-                  </li>
-                  {/* End call to action button */}
-                </ul>
-              </div>
-              {/* End menu tools */}
-              {/* Collect the nav links for toggling 
-					========================================
-					* Use class "tt-submenu-dark" to enable submenu dark style.
-					*/}
-              <div className="tt-menu-collapse tt-submenu-dark">
-                <ul className="tt-menu-nav">
-                  {/* Begin submenu (submenu master)
-							==================================== */}
-                  <li className="tt-submenu-wrap tt-submenu-master">
-                    <a href="#0">Home</a>
-                    <ul className="tt-submenu">
-                      <li>
-                        <a href="home-landing.html">Home Landing</a>
-                      </li>
-                      <li>
-                        <a href="home-intro-slideshow.html">Slideshow</a>
-                      </li>
-                      <li>
-                        <a href="albums-slideshow.html">Slideshow + Thumb.</a>
-                      </li>
-                      <li>
-                        <a href="home-intro-full-screen.html">
-                          Full Screen Slideshow
-                        </a>
-                      </li>
-                      <li>
-                        <a href="categories-carousel.html">
-                          Categories Carousel
-                        </a>
-                      </li>
-                      <li>
-                        <a href="home-intro-image.html">Static Image Intro</a>
-                      </li>
-                      <li>
-                        <a href="home-intro-video.html">Video Intro</a>
-                      </li>
-                      <li>
-                        <a href="home-intro-video-full-screen.html">
-                          Full Screen Video Intro
-                        </a>
-                      </li>
-                    </ul>
-                    {/* /.tt-submenu */}
-                  </li>
-                  {/* End submenu (sub-master) */}
-                  {/* Begin submenu (submenu master)
-							==================================== */}
-                  <li className="tt-submenu-wrap tt-submenu-master">
-                    <a href="/#about-me-section">About</a>
-                    <ul className="tt-submenu">
-                      <li>
-                        <a href="about-me.html">About Me</a>
-                      </li>
-                      <li>
-                        <a href="about-me-fluid.html">About Me Fluid</a>
-                      </li>
-                      <li>
-                        <a href="about-me-2.html">About Me 2</a>
-                      </li>
-                      <li>
-                        <a href="about-me-2-fluid.html">About Me 2 Fluid</a>
-                      </li>
-                    </ul>
-                    {/* /.tt-submenu */}
-                  </li>
-                  {/* End submenu (sub-master) */}
-                  {/* Begin submenu (submenu master)
-							==================================== */}
-                  <li className="tt-submenu-wrap tt-submenu-master">
-                    <a href="/#gallery-list-section">Portfolio</a>
-                    <ul className="tt-submenu">
-                      {/* Begin submenu
-									=================== */}
-                      <li className="tt-submenu-wrap">
-                        <a href="#0">Albums</a>
-                        <ul className="tt-submenu">
-                          {/* Begin submenu
-											=================== */}
-                          <li className="tt-submenu-wrap">
-                            <a href="#0">Grid</a>
-                            <ul className="tt-submenu">
-                              <li>
-                                <a href="albums-grid.html">Grid Default</a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-2.html">Grid 2</a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-fluid.html">Grid Fluid</a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-fluid-2.html">
-                                  Grid Fluid 2
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-fluid-3.html">
-                                  Grid Fluid 3
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-fluid-4.html">
-                                  Grid Fluid 4
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-no-crop.html">
-                                  Grid No Crop
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-simple.html">
-                                  Grid Simple
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-grid-styles.html">
-                                  Grid Item Styles
-                                </a>
-                              </li>
-                            </ul>
-                            {/* /.tt-submenu */}
-                          </li>
-                          {/* End submenu */}
-                          {/* Begin submenu
-											=================== */}
-                          <li className="tt-submenu-wrap">
-                            <a href="#0">Carousel</a>
-                            <ul className="tt-submenu">
-                              <li>
-                                <a href="albums-carousel.html">
-                                  Albums Carousel
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-carousel-no-crop.html">
-                                  Carousel No Crop
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-carousel-split.html">
-                                  Carousel Split
-                                </a>
-                              </li>
-                            </ul>
-                            {/* /.tt-submenu */}
-                          </li>
-                          {/* End submenu */}
-                          {/* Begin submenu
-											=================== */}
-                          <li className="tt-submenu-wrap">
-                            <a href="#0">Archive</a>
-                            <ul className="tt-submenu">
-                              <li>
-                                <a href="albums-archive.html">
-                                  Archive Default
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-archive-fluid.html">
-                                  Archive Fluid
-                                </a>
-                              </li>
-                              <li>
-                                <a href="albums-archive-fluid-2.html">
-                                  Archive Fluid 2
-                                </a>
-                              </li>
-                            </ul>
-                            {/* /.tt-submenu */}
-                          </li>
-                          {/* End submenu */}
-                          <li>
-                            <a href="albums-one-column.html">One Column</a>
-                          </li>
-                          <li>
-                            <a href="albums-one-column-fluid.html">
-                              One Column Fluid
-                            </a>
-                          </li>
-                          <li>
-                            <a href="albums-slideshow.html">
-                              Slideshow + Thumb.
-                            </a>
-                          </li>
-                          <li>
-                            <a href="albums-thumbnails-list.html">
-                              Thumbnails List
-                            </a>
-                          </li>
-                        </ul>
-                        {/* /.tt-submenu */}
-                      </li>
-                      {/* End submenu */}
-                      {/* Begin submenu
-									=================== */}
-                      <li className="tt-submenu-wrap">
-                        <a href="#0">Gallery</a>
-                        <ul className="tt-submenu">
-                          {/* Begin submenu
-											=================== */}
-                          <li className="tt-submenu-wrap">
-                            <a href="#0">Gallery Carousel</a>
-                            <ul className="tt-submenu">
-                              <li>
-                                <a href="gallery-single-carousel.html">
-                                  Carousel Default
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-carousel-2.html">
-                                  Carousel + Info
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-carousel-center.html">
-                                  Carousel Center
-                                </a>
-                              </li>
-                            </ul>
-                            {/* /.tt-submenu */}
-                          </li>
-                          {/* End submenu */}
-                          {/* Begin submenu
-											=================== */}
-                          <li className="tt-submenu-wrap">
-                            <a href="#0">Gallery Grid</a>
-                            <ul className="tt-submenu">
-                              <li>
-                                <a href="gallery-single-grid.html">
-                                  Grid Default
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-2.html">Grid 2</a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-cropped.html">
-                                  Grid Cropped
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-fluid.html">
-                                  Grid Fluid
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-fluid-2.html">
-                                  Grid Fluid 2
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-fluid-2-cropped.html">
-                                  Grid Fluid 2 Cropped
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-fluid-3.html">
-                                  Grid Fluid 3
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-fluid-3-cropped.html">
-                                  Grid Fluid 3 Cropped
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-simple.html">
-                                  Grid Simple
-                                </a>
-                              </li>
-                            </ul>
-                            {/* /.tt-submenu */}
-                          </li>
-                          {/* End submenu */}
-                          {/* Begin submenu
-											=================== */}
-                          <li className="tt-submenu-wrap">
-                            <a href="#0">Gallery + Sidebar</a>
-                            <ul className="tt-submenu">
-                              <li>
-                                <a href="gallery-single-sidebar-left.html">
-                                  Sidebar Left
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-sidebar-left-simple.html">
-                                  Sidebar Left Simple
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-sidebar-right.html">
-                                  Sidebar Right
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-sidebar-right-simple.html">
-                                  Sidebar Right Simple
-                                </a>
-                              </li>
-                            </ul>
-                            {/* /.tt-submenu */}
-                          </li>
-                          {/* End submenu */}
-                          {/* Begin submenu
-											=================== */}
-                          <li className="tt-submenu-wrap">
-                            <a href="#0">Gallery Styles</a>
-                            <ul className="tt-submenu">
-                              <li>
-                                <a href="gallery-single-grid-style-default.html">
-                                  Default
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-style-colored.html">
-                                  Colored
-                                </a>
-                              </li>
-                              <li>
-                                <a href="gallery-single-grid-style-zoom-only.html">
-                                  Zoom Only
-                                </a>
-                              </li>
-                            </ul>
-                            {/* /.tt-submenu */}
-                          </li>
-                          {/* End submenu */}
-                        </ul>
-                        {/* /.tt-submenu */}
-                      </li>
-                      {/* End submenu */}
-                      {/* Begin submenu
-									=================== */}
-                      <li className="tt-submenu-wrap">
-                        <a href="#0">Categories</a>
-                        <ul className="tt-submenu">
-                          <li>
-                            <a href="categories-carousel.html">Carousel</a>
-                          </li>
-                          <li>
-                            <a href="categories-grid.html">Grid</a>
-                          </li>
-                          <li>
-                            <a href="categories-grid-fluid.html">Grid Fluid</a>
-                          </li>
-                          <li>
-                            <a href="categories-grid-fluid-2.html">
-                              Grid Fluid 2
-                            </a>
-                          </li>
-                          <li>
-                            <a href="categories-grid-fluid-3.html">
-                              Grid Fluid 3
-                            </a>
-                          </li>
-                        </ul>
-                        {/* /.tt-submenu */}
-                      </li>
-                      {/* End submenu */}
-                    </ul>
-                    {/* /.tt-submenu */}
-                  </li>
-                  {/* End submenu (sub-master) */}
-                  {/* Begin submenu (submenu master)
-							==================================== */}
-                  <li className="tt-submenu-wrap tt-submenu-master">
-                    <a href="#0">Blog</a>
-                    <ul className="tt-submenu">
-                      {/* Begin submenu
-									=================== */}
-                      <li className="tt-submenu-wrap">
-                        <a href="#0">Blog List</a>
-                        <ul className="tt-submenu">
-                          <li>
-                            <a href="blog-list-classic.html">Classic</a>
-                          </li>
-                          <li>
-                            <a href="blog-list-simple.html">Classic Simple</a>
-                          </li>
-                          <li>
-                            <a href="blog-list-grid.html">Grid</a>
-                          </li>
-                          <li>
-                            <a href="blog-list-grid-fluid.html">Grid Fluid</a>
-                          </li>
-                          <li>
-                            <a href="blog-list-grid-no-sidebar.html">
-                              Grid No Sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li className="tt-submenu-wrap">
-                        <a href="#0">Blog Single Post</a>
-                        <ul className="tt-submenu">
-                          <li>
-                            <a href="blog-single.html">Default</a>
-                          </li>
-                          <li>
-                            <a href="blog-single-alter.html">Alternate</a>
-                          </li>
-                          <li>
-                            <a href="blog-single-simple.html">Simple</a>
-                          </li>
-                        </ul>
-                        {/* /.tt-submenu */}
-                      </li>
-                      {/* End submenu */}
-                      {/* Begin submenu
-									=================== */}
-                      <li className="tt-submenu-wrap">
-                        <a href="#0">Blog Archive</a>
-                        <ul className="tt-submenu">
-                          <li>
-                            <a href="blog-archive.html">Archive Default</a>
-                          </li>
-                          <li>
-                            <a href="blog-archive-2.html">Archive Classic</a>
-                          </li>
-                          <li>
-                            <a href="blog-archive-3.html">Archive Grid</a>
-                          </li>
-                        </ul>
-                        {/* /.tt-submenu */}
-                      </li>
-                      {/* End submenu */}
-                    </ul>
-                    {/* /.tt-submenu */}
-                  </li>
-
-                  <li className="tt-submenu-wrap tt-submenu-master">
-                    <a href="#0">Contact</a>
-                    <ul className="tt-submenu">
-                      <li>
-                        <a href="contact.html">Contact Default</a>
-                      </li>
-                      <li>
-                        <a href="contact-fluid.html">Contact Fluid</a>
-                      </li>
-                      <li>
-                        <a href="contact-simple.html">Contact Simple</a>
-                      </li>
-                    </ul>
-                    {/* /.tt-submenu */}
-                  </li>
-
-                  <li className="tt-submenu-wrap tt-submenu-master">
-                    <a href="#0">More</a>
-                    <ul className="tt-submenu">
-                      {/* Begin submenu
-									=================== */}
-                      <li className="tt-submenu-wrap">
-                        <a href="#0">Dummy Pages</a>
-                        <ul className="tt-submenu">
-                          <li>
-                            <a href="page-dummy-classic.html">No Sidebar</a>
-                          </li>
-                          <li>
-                            <a href="page-dummy-classic-sidebar-left.html">
-                              Sidebar Left
-                            </a>
-                          </li>
-                          <li>
-                            <a href="page-dummy-classic-sidebar-right.html">
-                              Sidebar Right
-                            </a>
-                          </li>
-                          <li>
-                            <a href="page-dummy-modern.html">Modern</a>
-                          </li>
-                        </ul>
-                        {/* /.tt-submenu */}
-                      </li>
-                      {/* End submenu */}
-                      <li>
-                        <a href="page-404.html">404 Error</a>
-                      </li>
-                      <li>
-                        <a href="page-404-2.html">404 Error 2</a>
-                      </li>
-                      <li>
-                        <a href="page-faq.html">FAQ</a>
-                      </li>
-                      <li>
-                        <a href="page-pricing.html">Pricing</a>
-                      </li>
-                      <li>
-                        <a href="search-results.html">Search Results</a>
-                      </li>
-                      <li>
-                        <a href="page-password.html">Password Protected</a>
-                      </li>
-                      <li>
-                        <a href="footer-styles.html">Footer Styles</a>
-                      </li>
-                    </ul>
-                    {/* /.tt-submenu */}
-                  </li>
-                  {/* End submenu (sub-master) */}
-                </ul>
-                {/* /.tt-menu-nav */}
-              </div>
-              {/* /.tt-menu-collapse */}
-            </nav>
-            {/* End main menu */}
-          </div>
-          {/* End header inner */}
-        </header>
-
+        <Header />
         <div id="body-content">
           <section id="tt-intro" className="slideshow-intro">
             <div className="tt-intro-inner">
@@ -798,25 +69,22 @@ const Homepage = () => {
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
                       <h1 className="intro-title">Ogaphoto</h1>
-                      <h2 className="intro-subtitle">
-                        Photography Portfolio Theme
-                      </h2>
+                      <h2 className="intro-subtitle">Photography</h2>
                       <p className="intro-description max-width-650">
-                        Made for photographers, photo studios, design agencies.
+                        Ogaphoto recommends the best-matched photographers
                         <br />
-                        Create your own unique and beautiful photography
-                        website!
+                        in real time based on your need
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
+                          href="/#"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
                           Book Now!
                         </a>
                         <a
-                          href="albums-grid-fluid-2.html"
+                          href="/#latest-news-section"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -841,26 +109,23 @@ const Homepage = () => {
                     />
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
-                      <h1 className="intro-title">Creative</h1>
-                      <h2 className="intro-subtitle">
-                        Photography Portfolio Theme
-                      </h2>
+                      <h1 className="intro-title">Timely</h1>
+                      <h2 className="intro-subtitle">Photography</h2>
                       <p className="intro-description max-width-650">
-                        Made for photographers, photo studios, design agencies.
+                        Ogaphoto recommends the best-matched photographers
                         <br />
-                        Create your own unique and beautiful photography
-                        website!
+                        in real time based on your need
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
+                          href="/#"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
-                          Buy It Now!
+                          Book now!
                         </a>
                         <a
-                          href="albums-grid-fluid-2.html"
+                          href="/#latest-news-section"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -886,25 +151,24 @@ const Homepage = () => {
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
                       <h1 className="intro-title">Powerful</h1>
-                      <h2 className="intro-subtitle">
-                        Photography Portfolio Theme
-                      </h2>
+                      <h2 className="intro-subtitle">Ready in 48 Hours</h2>
                       <p className="intro-description max-width-650">
-                        Made for photographers, photo studios, design agencies.
+                        Retouched Photos are ready by Ogaphoto team in Record
+                        Time!
                         <br />
-                        Create your own unique and beautiful photography
-                        website!
+                        Within 48 hours of your shoot, your edited photos and
+                        videos will be delivered
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
+                          href="/#"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
                           Buy It Now!
                         </a>
                         <a
-                          href="albums-grid-fluid-2.html"
+                          href="/#latest-news-section"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -929,26 +193,23 @@ const Homepage = () => {
                     />
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
-                      <h1 className="intro-title">Perfect</h1>
-                      <h2 className="intro-subtitle">
-                        Photography Portfolio Theme
-                      </h2>
+                      <h1 className="intro-title">Fixed Price</h1>
+                      <h2 className="intro-subtitle">Photography</h2>
                       <p className="intro-description max-width-650">
-                        Made for photographers, photo studios, design agencies.
+                        Ogaphoto gives you stunning visuals for every budget,
                         <br />
-                        Create your own unique and beautiful photography
-                        website!
+                        with no hidden costs or fees, you get what you pay for
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
+                          href=""
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
                           Buy It Now!
                         </a>
                         <a
-                          href="albums-grid-fluid-2.html"
+                          href="/#latest-news-section"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -1005,7 +266,7 @@ const Homepage = () => {
                             <div className="tt-heading-inner">
                               <h1 className="tt-heading-title">About</h1>
                               <div className="tt-heading-subtitle">
-                                Who I am and what I do
+                                About Ogaphoto and what we do
                               </div>
                               <hr className="hr-short" />
                             </div>
@@ -1014,14 +275,15 @@ const Homepage = () => {
                           {/* End tt-heading */}
                           <div className="margin-top-30">
                             <p>
-                              Hi, my name is <strong>Martin Vegas</strong>. I am
-                              an artist and photographer. Nemo enim ipsam
-                              voluptatem quia voluptas aspernatur aut odit aut
-                              fugit. Vivamus at nibh tincidunt, bibendum ligula
-                              id. Nemo enim ipsam voluptatem quiatotam rem
-                              aperiam, eaque ipsa quae ab illo inventore
-                              veritatis et quasi architecto beatae vitae dicta
-                              sunt explicabo. Nemo enim ipsam voluptatem.
+                              <strong>Ogaphoto</strong>specializes in different
+                              types of photography including Portraits, Personal
+                              Branding, Social Content Headshots, Lifestyle,
+                              Family Shoots, Fashion, Fitness, Makeup Shoots,
+                              School Portraits. Kickstarter Campaigns, Youtube
+                              Videos, Instructional Videos, Webisodes, Company
+                              Profiles, Video Job Interviews, Family Moments,
+                              Weddings, Blogs, Sports , , Real Estate Home
+                              Tours. and other events
                             </p>
                           </div>
                           <a
@@ -1034,7 +296,7 @@ const Homepage = () => {
                             href="contact.html"
                             className="btn btn-dark margin-top-20"
                           >
-                            Hire Me!
+                            Get In Touch!
                           </a>
                         </div>
                       </div>
@@ -1096,7 +358,7 @@ const Homepage = () => {
                                   <span className="icon-heart-filled" />
                                 </div>
                               </div>
-                              <div className="fav-count">49</div>
+                              <div className="fav-count">190</div>
                             </div>
                             {/* End favorite button */}
                           </li>
@@ -1889,11 +1151,11 @@ const Homepage = () => {
                   {/* /.col */}
                   <div className="col-md-8">
                     <p>
-                      Nunc euismod ipsum vel metus rhoncus, a accumsan sapien
-                      mollis. Donec malesuada lacus rhoncus ipsum dignissim, sed
-                      fringilla orci faucibus. Proin non odio dui. Donec ut
-                      tristique dolor, at interdum sem. Quisque finibus viverra
-                      lectus vitae pulvinar.
+                      Ogaphoto gives you stunning visuals for every budget, with
+                      no hidden costs or fees, you get what you pay for. We also
+                      provide after shoot support and access to storage till you
+                      are ready to receive them. We recommend the best-matched
+                      photographers in realtime based on your need.
                     </p>
                   </div>
                   {/* /.col */}
@@ -2134,6 +1396,601 @@ const Homepage = () => {
           {/* =================================
 			///// Begin testimonials section /////
 			================================== */}
+
+          {/* pasted here start */}
+
+          <section id="blog-list-section" className="blog-list-classic">
+            {/* <h1 className="tt-heading-title" style={{ textAlign: "center" }}>
+              How it Works
+            </h1> */}
+            <div className="tt-heading tt-heading-lg padding-on text-center">
+              <div className="tt-heading-inner tt-wrap">
+                {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
+                <h1 className="tt-heading-title">How it Works</h1>
+
+                <hr className="hr-short" />
+              </div>
+              {/* /.tt-heading-inner */}
+            </div>
+            {/* <hr className="hr-short" /> */}
+            <div style={{ height: "30px" }} />
+            <div className="blog-list-inner tt-wrap">
+              {" "}
+              {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
+              <div className="row no-margin">
+                {/* Content column */}
+                <div className="col-md-12 no-padding-left no-padding-right">
+                  <div className="isotope-wrap">
+                    {/* Begin isotope
+								===================
+								* Use class "gutter-1", "gutter-2" or "gutter-3" to add more space between items.
+								* Use class "col-1", "col-2", "col-3", "col-4", "col-5" or "col-6" for columns.
+								*/}
+                    <div className="isotope col-3 gutter-3">
+                      {/* Begin isotope items wrap 
+									============================== */}
+                      <div className="isotope-items-wrap no-margin">
+                        {/* Grid sizer (do not remove!!!) */}
+                        <div className="grid-sizer" />
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        <div className="isotope-item">
+                          {/* Begin blog list item */}
+                          <article className="blog-list-item">
+                            {/* Blog list item image */}
+                            <a
+                              href="blog-single.html"
+                              className="bl-item-image"
+                            >
+                              <img
+                                src="assets/img/blog/list/blog-6.jpg"
+                                alt=""
+                              />
+                            </a>
+                            {/* Begin blog list item info */}
+                            <div className="bl-item-info">
+                              <div className="bl-item-category"></div>
+                              <a
+                                href="blog-single.html"
+                                className="bl-item-title"
+                              >
+                                <h2>Step One</h2>
+                              </a>
+                              <div className="bl-item-meta"></div>
+                              {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
+                              <div
+                                className="bl-item-desc"
+                                data-max-words={100}
+                              >
+                                Get The best photographer/ videographer at your
+                                disposal, any time, any day. All you need to do
+                                is book an appointment with us, and a
+                                Photographer/Videographer will be assigned to
+                                you
+                              </div>
+
+                              {/* Begin blog list item attributes */}
+
+                              {/* End blog list item attributes */}
+                            </div>
+                            {/* End blog list item info */}
+                          </article>
+                          {/* End blog list item */}
+                        </div>
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        <div className="isotope-item">
+                          {/* Begin blog list item */}
+                          <article className="blog-list-item">
+                            {/* Blog list item image */}
+                            <a
+                              href="blog-single.html"
+                              className="bl-item-image"
+                            >
+                              <img
+                                src="assets/img/blog/list/blog-7.jpg"
+                                alt="image"
+                              />
+                            </a>
+                            {/* Begin blog list item info */}
+                            <div className="bl-item-info">
+                              <div className="bl-item-category"></div>
+                              <a
+                                href="blog-single.html"
+                                className="bl-item-title"
+                              >
+                                <h2>Step Two</h2>
+                              </a>
+                              <div className="bl-item-meta"></div>
+                              {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
+                              <div className="bl-item-desc">
+                                Trust us to arrive with our gadgets, indoors or
+                                Outdoors, Our Creatives are ready to give you
+                                the best of experience.
+                              </div>
+
+                              {/* Begin blog list item attributes */}
+
+                              {/* End blog list item attributes */}
+                            </div>
+                            {/* End blog list item info */}
+                          </article>
+                          {/* End blog list item */}
+                        </div>
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        <div className="isotope-item">
+                          {/* Begin blog list item */}
+                          <article className="blog-list-item">
+                            {/* Blog list item image */}
+                            <a
+                              href="blog-single.html"
+                              className="bl-item-image"
+                            >
+                              <img
+                                src="assets/img/blog/list/blog-7.jpg"
+                                alt="image"
+                              />
+                            </a>
+                            {/* Begin blog list item info */}
+                            <div className="bl-item-info">
+                              <a
+                                href="blog-single.html"
+                                className="bl-item-title"
+                              >
+                                <h2>Step Three</h2>
+                              </a>
+                              <div className="bl-item-meta"></div>
+                              {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
+                              <div
+                                className="bl-item-desc"
+                                data-max-words={200}
+                              >
+                                Time is important to us as it is to you, Withine
+                                3 working days, your work is ready in all
+                                required and desired formats, soft/hard copy,
+                                diligently edited and perfected fory our
+                                memories
+                              </div>
+
+                              {/* Begin blog list item attributes */}
+
+                              {/* End blog list item attributes */}
+                            </div>
+                            {/* End blog list item info */}
+                          </article>
+                          {/* End blog list item */}
+                        </div>
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        {/* End isotope item */}
+                        {/* ===================== 
+										/// Begin isotope item ///
+										====================== */}
+                        {/* End isotope item */}
+                      </div>
+                      {/* End isotope items wrap */}
+                    </div>
+                    {/* End isotope */}
+                  </div>{" "}
+                  {/* /.isotope-wrap */}
+                  {/* End pagination */}
+                </div>{" "}
+                {/* /.col (Content column) */}
+              </div>{" "}
+              {/* /.row */}
+            </div>{" "}
+            {/* /.blog-list-inner */}
+          </section>
+          {/* End blog list section */}
+
+          {/* pasted here end */}
+
+          {/* pasted here specialist start */}
+
+          <section id="specialist" style={{ margin: "10px", marginBottom: 0 }}>
+            <div className="tt-heading tt-heading-lg padding-on text-left">
+              <div className="tt-heading-inner tt-wrap">
+                {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
+                <h1 className="tt-heading-title">Specialists</h1>
+                <div className="tt-heading-subtitle">
+                  Ogaphoto has local specialists for every kind of shoot or
+                  video, and work with you to take your brand to the next level.
+                </div>
+                <hr className="hr-short" />
+              </div>
+              {/* /.tt-heading-inner */}
+            </div>
+            {/* End tt-heading */}
+            <div className="isotope-wrap">
+              <div className="isotope col-3 gutter-3">
+                <div className="isotope-items-wrap gli-alter-2 gli-frame">
+                  {/* Grid sizer (do not remove!!!) */}
+                  <div className="grid-sizer" />
+                  {/* ===================== 
+							/// Begin isotope item ///
+							========================== 
+							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
+							*/}
+                  <div className="isotope-item iso-height-1">
+                    {/* Begin gallery list item */}
+                    <div className="gallery-list-item">
+                      {/* Begin gallery list item image */}
+                      <div className="gl-item-image-wrap">
+                        {/* Begin gallery list item image inner */}
+                        <a
+                          href="gallery-single-grid.html"
+                          className="gl-item-image-inner"
+                        >
+                          <div
+                            className="gl-item-image bg-image"
+                            style={{
+                              backgroundImage:
+                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundPosition: "50% 50%",
+                            }}
+                          />
+                          <span className="gl-item-image-zoom" />
+                        </a>
+                        {/* End gallery list item image inner */}
+                        {/* Begin gallery list item meta */}
+                        <ul className="gli-meta">
+                          <li>
+                            {/* Begin favorite button */}
+                            <div className="favorite-btn">
+                              <div className="fav-inner">
+                                <div className="icon-heart">
+                                  <span className="icon-heart-empty" />
+                                  <span className="icon-heart-filled" />
+                                </div>
+                              </div>
+                              <div className="fav-count">203</div>
+                            </div>
+                            {/* End favorite button */}
+                          </li>
+                        </ul>
+                        {/* End gallery list item meta */}
+                      </div>
+                      {/* End gallery list item image */}
+                      {/* Begin gallery list item info */}
+                      <div className="gl-item-info">
+                        <div className="gl-item-caption">
+                          <h2 className="gl-item-title">
+                            <a href="gallery-single-grid.html">Family</a>
+                          </h2>
+                        </div>
+                      </div>
+                      {/* End gallery list item info */}
+                    </div>
+                    {/* End gallery list item */}
+                  </div>
+                  {/* End isotope item */}
+                  <div className="isotope-item iso-height-1">
+                    {/* Begin gallery list item */}
+                    <div className="gallery-list-item">
+                      {/* Begin gallery list item image */}
+                      <div className="gl-item-image-wrap">
+                        {/* Begin gallery list item image inner */}
+                        <a
+                          href="gallery-single-grid.html"
+                          className="gl-item-image-inner"
+                        >
+                          <div
+                            className="gl-item-image bg-image"
+                            style={{
+                              backgroundImage:
+                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundPosition: "50% 50%",
+                            }}
+                          />
+                          <span className="gl-item-image-zoom" />
+                        </a>
+                        {/* End gallery list item image inner */}
+                        {/* Begin gallery list item meta */}
+                        <ul className="gli-meta">
+                          <li>
+                            {/* Begin favorite button */}
+                            <div className="favorite-btn">
+                              <div className="fav-inner">
+                                <div className="icon-heart">
+                                  <span className="icon-heart-empty" />
+                                  <span className="icon-heart-filled" />
+                                </div>
+                              </div>
+                              <div className="fav-count">39</div>
+                            </div>
+                            {/* End favorite button */}
+                          </li>
+                        </ul>
+                        {/* End gallery list item meta */}
+                      </div>
+                      {/* End gallery list item image */}
+                      {/* Begin gallery list item info */}
+                      <div className="gl-item-info">
+                        <div className="gl-item-caption">
+                          <h2 className="gl-item-title">
+                            <a href="gallery-single-grid.html">Products</a>
+                          </h2>
+                        </div>
+                      </div>
+                      {/* End gallery list item info */}
+                    </div>
+                    {/* End gallery list item */}
+                  </div>
+                  {/* End isotope item */}
+                  <div className="isotope-item iso-height-1">
+                    {/* Begin gallery list item */}
+                    <div className="gallery-list-item">
+                      {/* Begin gallery list item image */}
+                      <div className="gl-item-image-wrap">
+                        {/* Begin gallery list item image inner */}
+                        <a
+                          href="gallery-single-grid.html"
+                          className="gl-item-image-inner"
+                        >
+                          <div
+                            className="gl-item-image bg-image"
+                            style={{
+                              backgroundImage:
+                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundPosition: "50% 50%",
+                            }}
+                          />
+                          <span className="gl-item-image-zoom" />
+                        </a>
+                        {/* End gallery list item image inner */}
+                        {/* Begin gallery list item meta */}
+                        <ul className="gli-meta">
+                          <li>
+                            {/* Begin favorite button */}
+                            <div className="favorite-btn">
+                              <div className="fav-inner">
+                                <div className="icon-heart">
+                                  <span className="icon-heart-empty" />
+                                  <span className="icon-heart-filled" />
+                                </div>
+                              </div>
+                              <div className="fav-count">49</div>
+                            </div>
+                            {/* End favorite button */}
+                          </li>
+                        </ul>
+                        {/* End gallery list item meta */}
+                      </div>
+                      {/* End gallery list item image */}
+                      {/* Begin gallery list item info */}
+                      <div className="gl-item-info">
+                        <div className="gl-item-caption">
+                          <h2 className="gl-item-title">
+                            <a href="gallery-single-grid.html">Events</a>
+                          </h2>
+                        </div>
+                      </div>
+                      {/* End gallery list item info */}
+                    </div>
+                    {/* End gallery list item */}
+                  </div>
+                  {/* End isotope item */}
+                  <div className="isotope-item iso-height-1">
+                    {/* Begin gallery list item */}
+                    <div className="gallery-list-item">
+                      {/* Begin gallery list item image */}
+                      <div className="gl-item-image-wrap">
+                        {/* Begin gallery list item image inner */}
+                        <a
+                          href="gallery-single-grid.html"
+                          className="gl-item-image-inner"
+                        >
+                          <div
+                            className="gl-item-image bg-image"
+                            style={{
+                              backgroundImage:
+                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundPosition: "50% 50%",
+                            }}
+                          />
+                          <span className="gl-item-image-zoom" />
+                        </a>
+                        {/* End gallery list item image inner */}
+                        {/* Begin gallery list item meta */}
+                        <ul className="gli-meta">
+                          <li>
+                            {/* Begin favorite button */}
+                            <div className="favorite-btn">
+                              <div className="fav-inner">
+                                <div className="icon-heart">
+                                  <span className="icon-heart-empty" />
+                                  <span className="icon-heart-filled" />
+                                </div>
+                              </div>
+                              <div className="fav-count">49</div>
+                            </div>
+                            {/* End favorite button */}
+                          </li>
+                        </ul>
+                        {/* End gallery list item meta */}
+                      </div>
+                      {/* End gallery list item image */}
+                      {/* Begin gallery list item info */}
+                      <div className="gl-item-info">
+                        <div className="gl-item-caption">
+                          <h2 className="gl-item-title">
+                            <a href="gallery-single-grid.html">Portrait</a>
+                          </h2>
+                        </div>
+                      </div>
+                      {/* End gallery list item info */}
+                    </div>
+                    {/* End gallery list item */}
+                  </div>
+                  {/* End isotope item */}
+                  {/* ===================== 
+							/// Begin isotope item ///
+							========================== 
+							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
+							*/}
+                  <div className="isotope-item iso-height-1">
+                    {/* Begin gallery list item */}
+                    <div className="gallery-list-item">
+                      {/* Begin gallery list item image */}
+                      <div className="gl-item-image-wrap">
+                        {/* Begin gallery list item image inner */}
+                        <a
+                          href="gallery-single-grid.html"
+                          className="gl-item-image-inner"
+                        >
+                          <div
+                            className="gl-item-image bg-image"
+                            style={{
+                              backgroundImage:
+                                "url(assets/img/gallery/gallery-list/gallery-list-2.jpg)",
+                              backgroundPosition: "50% 50%",
+                            }}
+                          />
+                          <span className="gl-item-image-zoom" />
+                        </a>
+                        {/* End gallery list item image inner */}
+                        {/* Begin gallery list item meta */}
+                        <ul className="gli-meta">
+                          <li>
+                            {/* Begin favorite button */}
+                            <div className="favorite-btn">
+                              <div className="fav-inner">
+                                <div className="icon-heart">
+                                  <span className="icon-heart-empty" />
+                                  <span className="icon-heart-filled" />
+                                </div>
+                              </div>
+                              <div className="fav-count">85</div>
+                            </div>
+                            {/* End favorite button */}
+                          </li>
+                        </ul>
+                        {/* End gallery list item meta */}
+                      </div>
+                      {/* End gallery list item image */}
+                      {/* Begin gallery list item info */}
+                      <div className="gl-item-info">
+                        <div className="gl-item-caption">
+                          <h2 className="gl-item-title">
+                            <a href="gallery-single-grid.html">Graduation</a>
+                          </h2>
+                        </div>
+                      </div>
+                      {/* End gallery list item info */}
+                    </div>
+                    {/* End gallery list item */}
+                  </div>
+                  {/* End isotope item */}
+                  {/* ===================== 
+							/// Begin isotope item ///
+							========================== 
+							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
+							*/}
+                  <div className="isotope-item iso-height-1">
+                    {/* Begin gallery list item */}
+                    <div className="gallery-list-item">
+                      {/* Begin gallery list item image */}
+                      <div className="gl-item-image-wrap">
+                        {/* Begin gallery list item image inner */}
+                        <a
+                          href="gallery-single-grid.html"
+                          className="gl-item-image-inner"
+                        >
+                          <div
+                            className="gl-item-image bg-image"
+                            style={{
+                              backgroundImage:
+                                "url(assets/img/gallery/gallery-list/gallery-list-3.jpg)",
+                              backgroundPosition: "50% 50%",
+                            }}
+                          />
+                          <span className="gl-item-image-zoom" />
+                        </a>
+                        {/* End gallery list item image inner */}
+                        {/* Begin gallery list item meta */}
+                        <ul className="gli-meta">
+                          <li>
+                            {/* Begin favorite button */}
+                            <div className="favorite-btn">
+                              <div className="fav-inner">
+                                <div className="icon-heart">
+                                  <span className="icon-heart-empty" />
+                                  <span className="icon-heart-filled" />
+                                </div>
+                              </div>
+                              <div className="fav-count">7</div>
+                            </div>
+                            {/* End favorite button */}
+                          </li>
+                        </ul>
+                        {/* End gallery list item meta */}
+                      </div>
+                      {/* End gallery list item image */}
+                      {/* Begin gallery list item info */}
+                      <div className="gl-item-info">
+                        <div className="gl-item-caption">
+                          <h2 className="gl-item-title">
+                            <a href="gallery-single-grid.html">Real Estate</a>
+                          </h2>
+                        </div>
+                      </div>
+                      {/* End gallery list item info */}
+                    </div>
+                    {/* End gallery list item */}
+                  </div>
+                  {/* End isotope item */}
+                </div>
+
+                {/* Begin isotope pagination 
+						============================== */}
+                {/* <div class="isotope-pagination">
+							<div class="iso-load-more">
+								<a class="btn btn-dark-bordered btn-lg" href="">View More <i class="fas fa-refresh"></i></a>
+							</div>
+						</div> */}
+                {/* End isotope pagination */}
+              </div>
+              {/* End isotope */}
+            </div>
+            {/* /.isotope-wrap */}
+          </section>
+          <MeetOurPhoto />
+          {/* pasted here specialist end */}
+          <div style={{ height: "80px" }} />
+
+          <div className="tt-heading tt-heading-lg padding-on text-center">
+            <div className="tt-heading-inner tt-wrap">
+              {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
+              <h1 className="tt-heading-title">What People Are Saying</h1>
+
+              <hr className="hr-short" />
+            </div>
+            {/* /.tt-heading-inner */}
+          </div>
           <section
             id="testimonials-section"
             className="bg-dark bg-image-fixed"
@@ -2235,10 +2092,10 @@ const Homepage = () => {
                       />
                       <blockquote>
                         <p>
-                          "Duis vel ligula non neque varius eleifend quis id
-                          elit. Interdum et malesuada fames ac ante ipsum primis
-                          in faucibus. Suspendisse lacus dui, pellentesque ut
-                          porta et, consequat sit amet."
+                          What a wonderful experience ,Ogaphoto provided us with
+                          everything we need. the photographer was so kind and
+                          very helpful. I really enjoyed the family shoot that
+                          we had with Ogaphoto, Thank you!
                         </p>
                         <small>Anna Clarkson</small>
                       </blockquote>
@@ -2309,562 +2166,12 @@ const Homepage = () => {
           {/* ================================
 			///// Begin latest news section /////
 			================================= */}
-          <section id="latest-news-section">
-            {/* Begin tt-heading 
-				====================== 
-				* Use class "padding-on" to enable heading paddings (useful if you use tt-heading as stand alone element).
-				* Use class "text-center" or "text-right" to align tt-heading.
-				* Use classes "tt-heading-xs", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set tt-heading size.
-				*/}
-            <div className="tt-heading tt-heading-lg padding-on text-center">
-              <div className="tt-heading-inner tt-wrap">
-                <h1 className="tt-heading-title">Latest From Blog</h1>
-                <div className="tt-heading-subtitle">
-                  News, Reviews, Tips &amp; Tricks
-                </div>
-                <hr className="hr-short" />
-              </div>
-            </div>
-            {/* End tt-heading */}
-            <div className="latest-news-section-inner tt-wrap">
-              {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
-              {/* Begin latest news carousel
-					================================ */}
-              <div className="latest-news-carousel">
-                {/* Begin content carousel (https://owlcarousel2.github.io/OwlCarousel2/)
-						====================================================================
-						* Use class "nav-outside" for outside nav (requires boxed layout).
-						* Use class "nav-outside-top" for outside top nav (requires enough space at the top of the carousel).
-						* Use class "nav-bottom-right" for bottom right nav.
-						* Use class "nav-rounded" for rounded nav.
-						* Use class "nav-light" to enable nav light style.
-						* Use class "dots-outside" for outside dots (requires enough space at the bottom of the carousel).
-						* Use class "dots-left", "dots-right" or "dots-center-right" to align dots.
-						* Use class "dots-rounded" for rounded dots.
-						* Use class "owl-mousewheel" to enable mousewheel support.
-						* Use class "cursor-grab" to enable cursor grab icon (no effect on links!).
-						* Use class "cc-hover-light", "cc-hover-dark" or "cc-hover-zoom" to enable carousel items hover effect.
-						* Use class "cc-height-1", "cc-height-2", "cc-height-3", "cc-height-4", "cc-height-5", "cc-height-6" or "cc-height-full" to set carousel height (do not use with data-autoheight="true"!!!).
-						* Use class "cc-height-m" to set full height for small screens (do not use with data-autoheight="true"!!!).
-						================================================================
-						* Available carousel data attributes:
-								data-items="5".......................(items visible on desktop)
-								data-tablet-landscape="4"............(items visible on mobiles)
-								data-tablet-portrait="3".............(items visible on mobiles)
-								data-mobile-landscape="2"............(items visible on tablets)
-								data-mobile-portrait="1".............(items visible on tablets)
-								data-loop="true".....................(true/false)
-								data-margin="10".....................(space between items)
-								data-center="true"...................(true/false)
-								data-start-position="0"..............(item start position)
-								data-animate-in="fadeIn".............(more animations: http://daneden.github.io/animate.css/)
-								data-animate-out="fadeOut"...........(more animations: http://daneden.github.io/animate.css/)
-								data-mouse-drag="false"..............(true/false)
-								data-touch-drag="false"..............(true/false)
-								data-autoheight="true"...............(true/false)
-								data-autoplay="true".................(true/false)
-								data-autoplay-timeout="5000".........(milliseconds)
-								data-autoplay-hover-pause="true".....(true/false)
-								data-autoplay-speed="800"............(milliseconds)
-								data-drag-end-speed="800"............(milliseconds)
-								data-nav="true"......................(true/false)
-								data-nav-speed="800".................(milliseconds)
-								data-dots="false"....................(true/false)
-								data-dots-speed="800"................(milliseconds)
-						*/}
-                <div
-                  className="owl-carousel cursor-grab nav-outside-top"
-                  data-items={3}
-                  data-margin={30}
-                  data-loop="true"
-                  data-dots="false"
-                  data-nav="true"
-                  data-nav-speed={500}
-                  data-autoplay="true"
-                  data-autoplay-timeout={5000}
-                  data-autoplay-speed={500}
-                  data-autoplay-hover-pause="true"
-                  data-tablet-landscape={3}
-                  data-tablet-portrait={2}
-                  data-mobile-landscape={1}
-                  data-mobile-portrait={1}
-                >
-                  {/* Begin carousel item 
-							========================= */}
-                  <div className="cc-item">
-                    {/* Begin blog list item */}
-                    <article className="blog-list-item">
-                      {/* Blog list item image */}
-                      <a href="blog-single.html" className="bl-item-image">
-                        <img
-                          src="assets/img/blog/list/blog-1.jpg"
-                          alt="image"
-                        />
-                      </a>
-                      {/* Begin blog list item info */}
-                      <div className="bl-item-info">
-                        <div className="bl-item-category">
-                          <a href="blog-archive.html">Photography</a>
-                        </div>
-                        <a href="blog-single.html" className="bl-item-title">
-                          <h2>
-                            5 Reasons You Should Fall In Love With Photography
-                          </h2>
-                        </a>
-                        <div className="bl-item-meta">
-                          <span className="published">May 26, 2017</span>
-                          <span className="posted-by">
-                            - by
-                            <a href="#" title="View all posts by Martin Vegas">
-                              Martin Vegas
-                            </a>
-                          </span>
-                        </div>
-                        {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
-                        <div className="bl-item-desc" data-max-words={14}>
-                          Suspendisse imperdiet ante at tortor consequat
-                          consectetur. Quisque rhoncus blandit justo praesen
-                          congue convallis artula ellis.
-                        </div>
-                        <a
-                          href="blog-single.html"
-                          className="bl-item-read-more"
-                          title="Read More"
-                        >
-                          <span />
-                        </a>
-                        {/* Begin blog list item attributes */}
-                        <ul className="bl-item-attr">
-                          <li>
-                            {/* Begin comments count */}
-                            <a
-                              href="blog-single.html#blog-post-comments"
-                              className="bl-item-comments-count"
-                              title="Read the comments"
-                            >
-                              <i className="far fa-comment" /> 10
-                            </a>
-                            {/* End comments count */}
-                          </li>
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn active">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">48</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End blog list item attributes */}
-                      </div>
-                      {/* End blog list item info */}
-                    </article>
-                    {/* End blog list item */}
-                  </div>
-                  {/* End carousel item */}
-                  {/* Begin carousel item 
-							========================= */}
-                  <div className="cc-item">
-                    {/* Begin blog list item */}
-                    <article className="blog-list-item">
-                      {/* Blog list item image */}
-                      <a href="blog-single.html" className="bl-item-image">
-                        <img
-                          src="assets/img/blog/list/blog-2.jpg"
-                          alt="image"
-                        />
-                      </a>
-                      {/* Begin blog list item info */}
-                      <div className="bl-item-info">
-                        <div className="bl-item-category">
-                          <a href="blog-archive.html">Equipment</a>
-                        </div>
-                        <a href="blog-single.html" className="bl-item-title">
-                          <h2>10 Top Choices for Aerial Photography</h2>
-                        </a>
-                        <div className="bl-item-meta">
-                          <span className="published">May 26, 2017</span>
-                          <span className="posted-by">
-                            - by
-                            <a href="#" title="View all posts by Martin Vegas">
-                              John Young
-                            </a>
-                          </span>
-                        </div>
-                        {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
-                        <div className="bl-item-desc" data-max-words={14}>
-                          Suspendisse imperdiet ante at tortor consequat
-                          consectetur. Quisque rhoncus blandit justo praesen
-                          congue convallis artula ellis.
-                        </div>
-                        <a
-                          href="blog-single.html"
-                          className="bl-item-read-more"
-                          title="Read More"
-                        >
-                          <span />
-                        </a>
-                        {/* Begin blog list item attributes */}
-                        <ul className="bl-item-attr">
-                          <li>
-                            {/* Begin comments count */}
-                            <a
-                              href="blog-single.html#blog-post-comments"
-                              className="bl-item-comments-count"
-                              title="Read the comments"
-                            >
-                              <i className="far fa-comment" /> 66
-                            </a>
-                            {/* End comments count */}
-                          </li>
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">98</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End blog list item attributes */}
-                      </div>
-                      {/* End blog list item info */}
-                    </article>
-                    {/* End blog list item */}
-                  </div>
-                  {/* End carousel item */}
-                  {/* Begin carousel item 
-							========================= */}
-                  <div className="cc-item">
-                    {/* Begin blog list item */}
-                    <article className="blog-list-item">
-                      {/* Blog list item image */}
-                      <a href="blog-single.html" className="bl-item-image">
-                        <img
-                          src="assets/img/blog/list/blog-3.jpg"
-                          alt="image"
-                        />
-                      </a>
-                      {/* Begin blog list item info */}
-                      <div className="bl-item-info">
-                        <div className="bl-item-category">
-                          <a href="blog-archive.html">Travel</a>
-                        </div>
-                        <a href="blog-single.html" className="bl-item-title">
-                          <h2>How to Take Professional Travel Photos</h2>
-                        </a>
-                        <div className="bl-item-meta">
-                          <span className="published">May 26, 2017</span>
-                          <span className="posted-by">
-                            - by
-                            <a href="#" title="View all posts by Martin Vegas">
-                              Anna Vernik
-                            </a>
-                          </span>
-                        </div>
-                        {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
-                        <div className="bl-item-desc" data-max-words={14}>
-                          Suspendisse imperdiet ante at tortor consequat
-                          consectetur. Quisque rhoncus blandit justo praesen
-                          congue convallis artula ellis.
-                        </div>
-                        <a
-                          href="blog-single.html"
-                          className="bl-item-read-more"
-                          title="Read More"
-                        >
-                          <span />
-                        </a>
-                        {/* Begin blog list item attributes */}
-                        <ul className="bl-item-attr">
-                          <li>
-                            {/* Begin comments count */}
-                            <a
-                              href="blog-single.html#blog-post-comments"
-                              className="bl-item-comments-count"
-                              title="Read the comments"
-                            >
-                              <i className="far fa-comment" /> 3
-                            </a>
-                            {/* End comments count */}
-                          </li>
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn active">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">54</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End blog list item attributes */}
-                      </div>
-                      {/* End blog list item info */}
-                    </article>
-                    {/* End blog list item */}
-                  </div>
-                  {/* End carousel item */}
-                  {/* Begin carousel item 
-							========================= */}
-                  <div className="cc-item">
-                    {/* Begin blog list item */}
-                    <article className="blog-list-item">
-                      {/* Blog list item image */}
-                      <a href="blog-single.html" className="bl-item-image">
-                        <img
-                          src="assets/img/blog/list/blog-4.jpg"
-                          alt="image"
-                        />
-                      </a>
-                      {/* Begin blog list item info */}
-                      <div className="bl-item-info">
-                        <div className="bl-item-category">
-                          <a href="blog-archive.html">Photography</a>
-                        </div>
-                        <a href="blog-single.html" className="bl-item-title">
-                          <h2>
-                            5 Tips Your Camera Manual Never Told You About
-                            Portrait Photography
-                          </h2>
-                        </a>
-                        <div className="bl-item-meta">
-                          <span className="published">May 26, 2017</span>
-                          <span className="posted-by">
-                            - by
-                            <a href="#" title="View all posts by Martin Vegas">
-                              Julia Beck
-                            </a>
-                          </span>
-                        </div>
-                        {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
-                        <div className="bl-item-desc" data-max-words={14}>
-                          Suspendisse imperdiet ante at tortor consequat
-                          consectetur. Quisque rhoncus blandit justo praesen
-                          congue convallis artula ellis.
-                        </div>
-                        <a
-                          href="blog-single.html"
-                          className="bl-item-read-more"
-                          title="Read More"
-                        >
-                          <span />
-                        </a>
-                        {/* Begin blog list item attributes */}
-                        <ul className="bl-item-attr">
-                          <li>
-                            {/* Begin comments count */}
-                            <a
-                              href="blog-single.html#blog-post-comments"
-                              className="bl-item-comments-count"
-                              title="Read the comments"
-                            >
-                              <i className="far fa-comment" /> 0
-                            </a>
-                            {/* End comments count */}
-                          </li>
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">3</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End blog list item attributes */}
-                      </div>
-                      {/* End blog list item info */}
-                    </article>
-                    {/* End blog list item */}
-                  </div>
-                  {/* End carousel item */}
-                  {/* Begin carousel item 
-							========================= */}
-                  <div className="cc-item">
-                    {/* Begin blog list item */}
-                    <article className="blog-list-item">
-                      {/* Blog list item image */}
-                      <a href="blog-single.html" className="bl-item-image">
-                        <img
-                          src="assets/img/blog/list/blog-5.jpg"
-                          alt="image"
-                        />
-                      </a>
-                      {/* Begin blog list item info */}
-                      <div className="bl-item-info">
-                        <div className="bl-item-category">
-                          <a href="blog-archive.html">Photography</a>
-                        </div>
-                        <a href="blog-single.html" className="bl-item-title">
-                          <h2>
-                            Most Common Wedding Photography Mistakes Every
-                            Beginner Will Make
-                          </h2>
-                        </a>
-                        <div className="bl-item-meta">
-                          <span className="published">May 26, 2017</span>
-                          <span className="posted-by">
-                            - by
-                            <a href="#" title="View all posts by Martin Vegas">
-                              Martin Vegas
-                            </a>
-                          </span>
-                        </div>
-                        {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
-                        <div className="bl-item-desc" data-max-words={14}>
-                          Suspendisse imperdiet ante at tortor consequat
-                          consectetur. Quisque rhoncus blandit justo praesen
-                          congue convallis artula ellis.
-                        </div>
-                        <a
-                          href="blog-single.html"
-                          className="bl-item-read-more"
-                          title="Read More"
-                        >
-                          <span />
-                        </a>
-                        {/* Begin blog list item attributes */}
-                        <ul className="bl-item-attr">
-                          <li>
-                            {/* Begin comments count */}
-                            <a
-                              href="blog-single.html#blog-post-comments"
-                              className="bl-item-comments-count"
-                              title="Read the comments"
-                            >
-                              <i className="far fa-comment" /> 8
-                            </a>
-                            {/* End comments count */}
-                          </li>
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">71</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End blog list item attributes */}
-                      </div>
-                      {/* End blog list item info */}
-                    </article>
-                    {/* End blog list item */}
-                  </div>
-                  {/* End carousel item */}
-                  {/* Begin carousel item 
-							========================= */}
-                  <div className="cc-item">
-                    {/* Begin blog list item */}
-                    <article className="blog-list-item">
-                      {/* Blog list item image */}
-                      <a href="blog-single.html" className="bl-item-image">
-                        <img
-                          src="assets/img/blog/list/blog-6.jpg"
-                          alt="image"
-                        />
-                      </a>
-                      {/* Begin blog list item info */}
-                      <div className="bl-item-info">
-                        <div className="bl-item-category">
-                          <a href="blog-archive.html">Food</a>
-                          <a href="#">Photography</a>
-                        </div>
-                        <a href="blog-single.html" className="bl-item-title">
-                          <h2>The Serious Eats Guide to Food Photography</h2>
-                        </a>
-                        <div className="bl-item-meta">
-                          <span className="published">May 26, 2017</span>
-                          <span className="posted-by">
-                            - by
-                            <a href="#" title="View all posts by Martin Vegas">
-                              Martin Vegas
-                            </a>
-                          </span>
-                        </div>
-                        {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
-                        <div className="bl-item-desc" data-max-words={14}>
-                          Suspendisse imperdiet ante at tortor consequat
-                          consectetur. Quisque rhoncus blandit justo praesen
-                          congue convallis artula ellis.
-                        </div>
-                        <a
-                          href="blog-single.html"
-                          className="bl-item-read-more"
-                          title="Read More"
-                        >
-                          <span />
-                        </a>
-                        {/* Begin blog list item attributes */}
-                        <ul className="bl-item-attr">
-                          <li>
-                            {/* Begin comments count */}
-                            <a
-                              href="blog-single.html#blog-post-comments"
-                              className="bl-item-comments-count"
-                              title="Read the comments"
-                            >
-                              <i className="far fa-comment" /> 28
-                            </a>
-                            {/* End comments count */}
-                          </li>
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">65</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End blog list item attributes */}
-                      </div>
-                      {/* End blog list item info */}
-                    </article>
-                    {/* End blog list item */}
-                  </div>
-                  {/* End carousel item */}
-                </div>
-                {/* End content carousel */}
-              </div>
-              {/* End latest news carousel */}
-            </div>
-            {/* /.latest-news-section-inner */}
-          </section>
+          <Features />
           {/* End latest news section */}
           {/* ===================================
 			///// Begin call to action section /////
 			==================================== */}
+
           <section className="call-to-action-section bg-gray-3 margin-top-60">
             <div
               className="full-cover for-light-style bg-image"
@@ -2896,7 +2203,7 @@ const Homepage = () => {
                     <div className="tt-heading-inner tt-wrap">
                       <h1 className="tt-heading-title">What Next?</h1>
                       <div className="tt-heading-subtitle">
-                        Interested in working with me?
+                        Interested in a Photo shoot?
                       </div>
                       <hr className="hr-short" />
                     </div>
@@ -2920,7 +2227,7 @@ const Homepage = () => {
                         href="contact.html"
                         className="btn btn-primary margin-top-5"
                       >
-                        Let's Work Together!
+                        Book A photography shoot!
                       </a>
                     </div>
                   </div>
@@ -2955,16 +2262,18 @@ const Homepage = () => {
 				* Use class "hide-ph-image" to hide page header image without removing the code.
 				*/}
               <div
-                className="page-header-image parallax-bg-3 bg-image"
+                // className="page-header-image parallax-bg-3 bg-image"
                 style={{
                   backgroundImage: "url(assets/img/misc/page-header-bg-5.jpg)",
+
+                  objectFit: "cover",
                 }}
               >
                 {/* Element cover 
 					===================
 					* You can use prepared background transparent classes depends on brightness of your page header image. More info: file "helper.css".
 					*/}
-                <div className="cover bg-transparent-5-dark" />
+                {/* <div className="cover bg-transparent-5-dark" /> */}
               </div>
               {/* End page header image */}
               {/* Begin page header inner */}
@@ -2975,8 +2284,10 @@ const Homepage = () => {
 					* Use class "parallax-1" up to "parallax-6" to enable parallax effect.
 					* Use class "fade-out-scroll-1" up to "fade-out-scroll-6" to enable fade out effect if page scroll.
 					*/}
-                <div className="page-header-caption ph-caption-lg parallax-4 fade-out-scroll-3">
-                  <h1 className="page-header-title">Contact</h1>
+                <div
+                // className="page-header-caption ph-caption-lg parallax-4 fade-out-scroll-3"
+                >
+                  <h1 className="tt-heading-title">Contact Us</h1>
                   <hr className="hr-short" />
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="page-header-description" data-max-words={40}>
@@ -3260,10 +2571,7 @@ const Homepage = () => {
                       {/* /.row-height */}
                     </div>
                     {/* /.row */}
-                    <div className="row">
-                      
-                      {/* /.col */}
-                    </div>
+                    <div className="row">{/* /.col */}</div>
                     {/* /.row */}
                   </div>
                   {/* /.container */}
@@ -3279,7 +2587,6 @@ const Homepage = () => {
 			* Use class "footer-dark" to enable dark footer.
 			* Use class "no-margin-top" if needed. 
 			*/}
-            
           </div>
 
           {/* pasted here ends */}
@@ -3443,16 +2750,7 @@ const Homepage = () => {
                     <div className="col-md-6 col-md-pull-6">
                       {/* Begin footer copyright */}
                       <div className="footer-copyright">
-                        <p>© Sepia 2017 / All rights reserved</p>
-                        <p>
-                          Design by:
-                          <a
-                            href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
-                            target="_blank"
-                          >
-                            Themetorium
-                          </a>
-                        </p>
+                        <p>© Ogaphot 2021 / All rights reserved</p>
                       </div>
                       {/* End footer copyright */}
                     </div>
@@ -3467,7 +2765,7 @@ const Homepage = () => {
             {/* /.footer-inner */}
             {/* Scroll to top button */}
             <a
-              href="#body"
+              href="/#body-content"
               className="scrolltotop sm-scroll"
               title="Scroll to top"
             >
