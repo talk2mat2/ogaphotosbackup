@@ -75,7 +75,6 @@ function BaseRoute() {
               flexDirection: "column",
             }}
           >
-            {" "}
             <p>LOADING..</p>
             <CircularProgress />
           </div>

@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet";
 // import Contact from "./views/pages/ContactPage";
 // import { Scripts } from "./script";
 // import './style.css'
+import ScrollToTop from "./ScrollToTop";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
@@ -46,14 +47,16 @@ function App() {
 
   return (
     <Router>
-      <BaseRoute />
-      {/* <AuthLoading> */}
-      {/* <BaseRoute /> */}
-      {/* <SignUp />
+      <ScrollToTop>
+        <BaseRoute />
+        {/* <AuthLoading> */}
+        {/* <BaseRoute /> */}
+        {/* <SignUp />
         <About />
         
         <Contact /> */}
-      {/* </AuthLoading> */}
+        {/* </AuthLoading> */}
+      </ScrollToTop>
     </Router>
   );
 }

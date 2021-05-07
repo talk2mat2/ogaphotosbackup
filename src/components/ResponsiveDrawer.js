@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
+    justifyContent: "flex-start",
     padding: theme.spacing(1),
   },
 }));

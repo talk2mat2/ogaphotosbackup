@@ -66,6 +66,9 @@ function AppMenu(props) {
 
   return (
     <div>
+      <br />
+      <br />
+
       <div
         style={{
           display: "flex",
@@ -75,12 +78,7 @@ function AppMenu(props) {
       >
         <Link to="/">
           {" "}
-          <img
-            src="/media/ogaphotos_favicon.png"
-            width={100}
-            height={100}
-            alt="img"
-          />
+          <img src="media/logo-dark.png" width={100} height={100} alt="img" />
         </Link>
         {/* <img
 					style={{
@@ -105,7 +103,10 @@ function AppMenu(props) {
               props.handleDrawerToggle();
             }}
           >
-            <button className="btn1">Hire A Photographer</button>
+            <button className="btn btn-primary margin-top-5">
+              Hire A Photographer
+            </button>
+            {/* <button className="btn1">Hire A Photographer</button> */}
           </MenuItem>
         ) : null}
         <MenuItem

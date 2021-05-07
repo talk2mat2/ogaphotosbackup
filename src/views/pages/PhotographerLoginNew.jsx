@@ -177,17 +177,19 @@ const PhotoGrapherLoginNew = () => {
       <Container>
         <SelectContainer>
           <SelectContentContainer2>
-            <Margin />
-            <Margin />
             <img
-              style={{ borderRadius: "10px" }}
+              style={{
+                borderRadius: "10px",
+                width: 100 + "%",
+                height: 100 + "%",
+                objectFit: "cover",
+              }}
               loginImage
-              src="media/about4.jpg"
+              src="/assets/img/intro/intro-8.jpg"
               alt="img"
             />
           </SelectContentContainer2>
           <SelectContentContainer1>
-            <Margin />
             <Margin />
             <Margin />
             <Margin />
@@ -230,7 +232,7 @@ const PhotoGrapherLoginNew = () => {
                       }}
                     />
                   ) : (
-                    <small> Login</small>
+                    " Login"
                   )}
                 </Buttons>
               </li>
@@ -251,6 +253,102 @@ const PhotoGrapherLoginNew = () => {
           </SelectContentContainer1>
         </SelectContainer>
       </Container>
+      <section
+        id="footer"
+        className="footer-minimal no-margin-top bg-transparent"
+      >
+        <div className="footer-inner">
+          <div className="footer-container tt-wrap">
+            <div className="row">
+              <div className="col-md-6 col-md-push-6">
+                {/* Begin social buttons */}
+                <div className="social-buttons">
+                  <ul>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Facebook"
+                        target="_blank"
+                      >
+                        <i className="fab fa-facebook-f" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Twitter"
+                        target="_blank"
+                      >
+                        <i className="fab fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Google+"
+                        target="_blank"
+                      >
+                        <i className="fab fa-google-plus-g" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Pinterest"
+                        target="_blank"
+                      >
+                        <i className="fab fa-pinterest-p" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title=""
+                        target="_blank"
+                      >
+                        <i className="fab fa-dribbble" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Drop me a line"
+                        target="_blank"
+                      >
+                        <i className="fas fa-envelope" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                {/* End social buttons */}
+              </div>{" "}
+              {/* /.col */}
+              <div className="col-md-6 col-md-pull-6">
+                {/* Begin footer copyright */}
+                <div className="footer-copyright">
+                  <p>© Ogaphoto 2021 </p>
+                  <p>All rights reserved</p>
+                </div>
+                {/* End footer copyright */}
+              </div>{" "}
+              {/* /.col */}
+            </div>{" "}
+            {/* /.row */}
+          </div>{" "}
+          {/* /.footer-container */}
+        </div>{" "}
+        {/* /.footer-inner */}
+        {/* Scroll to top button */}
+        <a href="#body" className="scrolltotop sm-scroll" title="Scroll to top">
+          <i className="fas fa-chevron-up" />
+        </a>
+      </section>
     </React.Fragment>
   );
 };

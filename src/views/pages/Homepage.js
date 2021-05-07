@@ -23,6 +23,10 @@ const Homepage = () => {
     <div>
       {/* <Header /> */}
       <Helmet>
+        <link
+          rel="stylesheet"
+          href="assets/vendor/bootstrap/css/bootstrap.min.css"
+        />
         <script src="/assets/vendor/jquery.mousewheel.min.js"></script>
 
         <script src="/assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
@@ -1648,8 +1652,8 @@ const Homepage = () => {
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundImage: "url(media/family1.jpg)",
+
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1679,7 +1683,7 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">Family</a>
+                            <a href="/#">Family</a>
                           </h2>
                         </div>
                       </div>
@@ -1701,8 +1705,7 @@ const Homepage = () => {
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundImage: "url(media/model6.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1785,7 +1788,7 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">Events</a>
+                            <a href="/#">Events</a>
                           </h2>
                         </div>
                       </div>
@@ -1807,8 +1810,8 @@ const Homepage = () => {
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundImage: "url(media/img_rr_02.jpg)",
+
                               backgroundPosition: "50% 50%",
                             }}
                           />

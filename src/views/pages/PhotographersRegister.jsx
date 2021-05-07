@@ -90,6 +90,7 @@ const Listing = styled.ul`
 
 const Input = styled.input`
   width: 100%;
+  margin-bottom: 8px;
   border: 1px solid grey;
   background-color: #ffff;
   height: 50px;
@@ -190,18 +191,21 @@ const PhotographersRegister = () => {
       <Container>
         <SelectContainer>
           <SelectContentContainer2>
-            <Margin />
-            <Margin />
+            {/* <Margin /> */}
 
-            <Margin />
-            <Margin />
-            <Margin />
-            <img loginImage src="media/about4.jpg" alt="img" />
+            <img
+              style={{
+                borderRadius: "10px",
+                width: 100 + "%",
+                height: 100 + "%",
+                objectFit: "cover",
+              }}
+              loginImage
+              src="/assets/img/intro/intro-8.jpg"
+              alt="img"
+            />
           </SelectContentContainer2>
           <SelectContentContainer1>
-            <Margin />
-            <Margin />
-
             <Margin />
             <Margin />
 
@@ -282,7 +286,7 @@ const PhotographersRegister = () => {
                       }}
                     />
                   ) : (
-                    <small> Login</small>
+                    "Register"
                   )}
                 </Buttons>
               </li>

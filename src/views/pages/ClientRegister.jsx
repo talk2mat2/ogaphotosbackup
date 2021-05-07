@@ -89,11 +89,14 @@ const Listing = styled.ul`
 `;
 
 const Input = styled.input`
+  color: grey;
   width: 100%;
   border: 1px solid grey;
   background-color: #ffff;
-  height: 50px;
-  margin-bottom: 4px;
+  height: 45px;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
 
   &:focus {
     border-bottom: 1px solid blue;
@@ -190,122 +193,237 @@ const ClientRegister = () => {
   return (
     <React.Fragment>
       <Header />
-      <Container>
-        <SelectContainer>
-          <SelectContentContainer2>
-            <Margin />
-            <Margin />
+      <section id="password-protected-section">
+        <div
+          className="password-protected-inner bg-image"
+          style={{
+            backgroundImage: "url(assets/img/misc/misc-5.jpg)",
+            backgroundPosition: "50% 50%",
+          }}
+        >
+          {" "}
+          {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
+          {/* Element cover */}
+          <span className="cover bg-transparent-2-dark" />
+          {/* Begin post password 
+					========================= */}
+          <div className="tt-post-password full-height-vh">
+            <div className="tt-post-password-inner">
+              <div className="tt-post-password-icon"></div>
+              <div className="tt-post-password-text">
+                Create Account with Ogaphoto
+              </div>
+              <form
+                id="tt-post-password-form"
+                // className="form-btn-inside"
+              >
+                <div className="form-grou">
+                  <small style={{ textAlign: "left" }}>First Name</small>
 
-            <Margin />
-            <Margin />
-            <Margin />
-            <img loginImage src="media/about4.jpg" alt="img" />
-          </SelectContentContainer2>
-          <SelectContentContainer1>
-            <Margin />
-            <Margin />
+                  <Input
+                    autoComplete="off"
+                    value={fname}
+                    onChange={(e) => setFname(e.target.value)}
+                    type="email"
+                    required
+                    placeholder="First name"
+                  />
 
-            <Margin />
-            <Margin />
+                  <small style={{ textAlign: "left" }}>Last Name</small>
 
-            <BigText>Sign Up</BigText>
-            <Listing>
-              <li>
-                <Input
-                  autoComplete="off"
-                  value={fname}
-                  onChange={(e) => setFname(e.target.value)}
-                  type="email"
-                  required
-                  placeholder="First name"
-                />
-              </li>
-              <li>
-                <Input
-                  autoComplete="off"
-                  value={lname}
-                  onChange={(e) => setLname(e.target.value)}
-                  type="password"
-                  required
-                  placeholder="Last Name"
-                />
-              </li>
-              <li>
-                <Input
-                  autoComplete="off"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                  required
-                  placeholder="Email Address"
-                />
-              </li>
-              <li>
-                <Input
-                  autoComplete="off"
-                  value={mobile}
-                  onChange={(e) => setMobile(e.target.value)}
-                  type="Text"
-                  required
-                  placeholder="Phone Number"
-                />
-              </li>
-              <li>
-                <Input
-                  autoComplete="off"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  type="password"
-                  required
-                  placeholder="Password"
-                />
-              </li>
-              <li>
-                <Input
-                  autoComplete="off"
-                  value={confpass}
-                  onChange={(e) => setConfPassword(e.target.value)}
-                  type="password"
-                  required
-                  placeholder="Confirm password"
-                />
-              </li>
-              <li style={{ textAlign: "center" }}>
-                <Buttons
-                  variant="outlined"
-                  color="secondary"
-                  onClick={handleSubmit}
-                >
-                  {loading ? (
-                    <CircularProgress
-                      size={24}
-                      style={{
-                        fontSize: 20,
-                        color: "white",
-                      }}
-                    />
-                  ) : (
-                    <small> Login</small>
-                  )}
-                </Buttons>
-              </li>
-              <li style={{ textAlign: "center" }}>
-                <small style={{ color: "rgb(71, 178, 228)" }}>
-                  <Link to="/signUp"> Already Registered ?</Link>
-                </small>
-              </li>
-              {/* <li style={{ textAlign: "left" }}>
-                <p style={{ color: "grey" }}>
-                  <Link to="/PhotoGrapherLoginNew"> Photographer's Login</Link>
-                </p>
-              </li> */}
-            </Listing>
-            <AlertDialog open={ErrorMessage} onClose={handleClose}>
-              {ErrorMessage}
-            </AlertDialog>
-          </SelectContentContainer1>
-        </SelectContainer>
-      </Container>
+                  <Input
+                    autoComplete="off"
+                    value={lname}
+                    onChange={(e) => setLname(e.target.value)}
+                    type="password"
+                    required
+                    placeholder="Last Name"
+                  />
+
+                  <small style={{ textAlign: "left" }}>Password</small>
+
+                  <Input
+                    autoComplete="off"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    required
+                    placeholder="Email Address"
+                  />
+
+                  <small style={{ textAlign: "left" }}>Phone Number</small>
+
+                  <Input
+                    autoComplete="off"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    type="Text"
+                    required
+                    placeholder="Phone Number"
+                  />
+
+                  <small style={{ textAlign: "left" }}>Password</small>
+
+                  <Input
+                    autoComplete="off"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                    required
+                    placeholder="Password"
+                  />
+
+                  <small style={{ textAlign: "left" }}>Confirm Password</small>
+
+                  <Input
+                    autoComplete="off"
+                    value={confpass}
+                    onChange={(e) => setConfPassword(e.target.value)}
+                    type="password"
+                    required
+                    placeholder="Confirm password"
+                  />
+                  <Buttons
+                    variant="outlined"
+                    color="secondary"
+                    onClick={handleSubmit}
+                  >
+                    {loading ? (
+                      <CircularProgress
+                        size={24}
+                        style={{
+                          fontSize: 20,
+                          color: "white",
+                        }}
+                      />
+                    ) : (
+                      <small> Register</small>
+                    )}
+                  </Buttons>
+                  <Margin />
+                  <div style={{ textAlign: "center" }}>
+                    <small style={{ color: "rgb(71, 178, 228)" }}>
+                      <Link to="/signUp"> Already Registered ?</Link>
+                    </small>
+                  </div>
+                  <Margin />
+                  <div style={{ textAlign: "left" }}>
+                    <p style={{ color: "grey" }}>
+                      <Link to="/PhotoGrapherLoginNew">
+                        {" "}
+                        Photographer's Login
+                      </Link>
+                    </p>
+                  </div>
+
+                  <AlertDialog open={ErrorMessage} onClose={handleClose}>
+                    {ErrorMessage}
+                  </AlertDialog>
+                </div>
+              </form>
+            </div>{" "}
+            {/* /.post-password */}
+          </div>
+          {/* End post password */}
+        </div>{" "}
+        {/* /.about-me-inner */}
+      </section>
+      <section
+        id="footer"
+        className="footer-minimal no-margin-top bg-transparent"
+      >
+        <div className="footer-inner">
+          <div className="footer-container tt-wrap">
+            <div className="row">
+              <div className="col-md-6 col-md-push-6">
+                {/* Begin social buttons */}
+                <div className="social-buttons">
+                  <ul>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Facebook"
+                        target="_blank"
+                      >
+                        <i className="fab fa-facebook-f" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Twitter"
+                        target="_blank"
+                      >
+                        <i className="fab fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Google+"
+                        target="_blank"
+                      >
+                        <i className="fab fa-google-plus-g" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Follow me on Pinterest"
+                        target="_blank"
+                      >
+                        <i className="fab fa-pinterest-p" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title=""
+                        target="_blank"
+                      >
+                        <i className="fab fa-dribbble" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#"
+                        className="btn btn-social-min btn-default btn-link"
+                        title="Drop me a line"
+                        target="_blank"
+                      >
+                        <i className="fas fa-envelope" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                {/* End social buttons */}
+              </div>{" "}
+              {/* /.col */}
+              <div className="col-md-6 col-md-pull-6">
+                {/* Begin footer copyright */}
+                <div className="footer-copyright">
+                  <p>© Ogaphoto 2021 </p>
+                  <p>All rights reserved</p>
+                </div>
+                {/* End footer copyright */}
+              </div>{" "}
+              {/* /.col */}
+            </div>{" "}
+            {/* /.row */}
+          </div>{" "}
+          {/* /.footer-container */}
+        </div>{" "}
+        {/* /.footer-inner */}
+        {/* Scroll to top button */}
+        <a href="#body" className="scrolltotop sm-scroll" title="Scroll to top">
+          <i className="fas fa-chevron-up" />
+        </a>
+      </section>
     </React.Fragment>
   );
 };

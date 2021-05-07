@@ -61,6 +61,22 @@ const Header = () => {
   // });
   return (
     <header id="header" className="header-show-hide-on-scroll menu-align-right">
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="assets/vendor/bootstrap/css/bootstrap.min.css"
+        />
+        <script src="/assets/vendor/jquery.mousewheel.min.js"></script>
+
+        <script src="/assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
+
+        <script src="/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+
+        <script src="/assets/js/theme.js"></script>
+
+        <script src="/assets/demo-panel/js/demo-panel.js"></script>
+        <script src="/assets/demo-panel/js/styleswitch.js"></script>
+      </Helmet>
       <div className="header-inner tt-wrap">
         <div id="logo">
           <a href="/" className="logo-dark">
@@ -129,16 +145,20 @@ const Header = () => {
 							* Use class "tt-dropdown-dark" to enable dropdown dark style.
 							*/}
               <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
-                <a href="#0">Log In</a>
+                <Link to="/signUp">Log In</Link>
 
                 {/* /.tt-dropdown */}
               </li>
               {/* End tt-dropdown */}
               {/* Begin call to action button */}
               <li>
-                <a href="/#" className="tt-tools-button" target="_blank">
+                <Link
+                  to="/dashboard"
+                  className="tt-tools-button"
+                  target="_blank"
+                >
                   Book<span className="hide-from-sm"> Now</span>!
-                </a>
+                </Link>
               </li>
               {/* End call to action button */}
             </ul>
@@ -203,13 +223,6 @@ const Header = () => {
 
                 {/* /.tt-submenu */}
               </li>{" "}
-              {"  "}
-              <li className="tt-submenu-master">
-                <a href="#0">More</a>
-
-                {/* /.tt-submenu */}
-              </li>{" "}
-              {"  "}
               {/* End submenu (sub-master) */}
             </ul>
             {/* /.tt-menu-nav */}
