@@ -66,9 +66,6 @@ function AppMenu(props) {
 
   return (
     <div>
-      <br />
-      <br />
-
       <div
         style={{
           display: "flex",
@@ -103,10 +100,7 @@ function AppMenu(props) {
               props.handleDrawerToggle();
             }}
           >
-            <button className="btn btn-primary margin-top-5">
-              Hire A Photographer
-            </button>
-            {/* <button className="btn1">Hire A Photographer</button> */}
+            <button className="btn1">Hire A Photographer</button>
           </MenuItem>
         ) : null}
         <MenuItem
