@@ -210,6 +210,12 @@ const PhotographersRegister = () => {
             <Margin />
 
             <BigText> Photographers register</BigText>
+            <small>
+              <em>
+                interested in becoming a member of Ogaphoto Photographers ?
+                <br /> fill the form..
+              </em>
+            </small>
             <Listing>
               <li>
                 <Input

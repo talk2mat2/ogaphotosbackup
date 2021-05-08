@@ -279,7 +279,7 @@ const Homepage = () => {
                           {/* End tt-heading */}
                           <div className="margin-top-30">
                             <p>
-                              <strong>Ogaphoto</strong>specializes in different
+                              <strong>Ogaphoto</strong> specializes in different
                               types of photography including Portraits, Personal
                               Branding, Social Content Headshots, Lifestyle,
                               Family Shoots, Fashion, Fitness, Makeup Shoots,
@@ -291,15 +291,12 @@ const Homepage = () => {
                             </p>
                           </div>
                           <a
-                            href="about-me-fluid.html"
+                            href="/#"
                             className="btn btn-primary margin-top-20"
                           >
                             Read More
                           </a>
-                          <a
-                            href="contact.html"
-                            className="btn btn-dark margin-top-20"
-                          >
+                          <a href="/#" className="btn btn-dark margin-top-20">
                             Get In Touch!
                           </a>
                         </div>
@@ -317,8 +314,7 @@ const Homepage = () => {
                 {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
                 <h1 className="tt-heading-title">Latest Works</h1>
                 <div className="tt-heading-subtitle">
-                  My latest photo projects /
-                  <a href="categories-grid.html">View All</a>
+                  Our latest photo projects
                 </div>
                 <hr className="hr-short" />
               </div>
@@ -336,10 +332,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -374,12 +367,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              The Old Man Dreams
-                            </a>
+                            <a href="/#">The Old Man Dreams</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Outdoor</a>
+                            <a href="/#">Outdoor</a>
                           </span>
                         </div>
                       </div>
@@ -399,10 +390,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -440,12 +428,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              These Wonderful Freckles
-                            </a>
+                            <a href="/#">These Wonderful Freckles</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Black &amp; White</a>
+                            <a href="/#">Black &amp; White</a>
                           </span>
                         </div>
                       </div>
@@ -465,10 +451,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -506,12 +489,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Paris Fashion Week
-                            </a>
+                            <a href="/#">Paris Fashion Week</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Fashion</a>
+                            <a href="/#">Fashion</a>
                           </span>
                         </div>
                       </div>
@@ -531,10 +512,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -572,12 +550,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Afternoon Photoshoot
-                            </a>
+                            <a href="/#">Afternoon Photoshoot</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Outdoor</a>
+                            <a href="/#">Outdoor</a>
                           </span>
                         </div>
                       </div>
@@ -597,10 +573,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -638,12 +611,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Sit Back and Relax
-                            </a>
+                            <a href="/#">Sit Back and Relax</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Portraits</a>
+                            <a href="/#">Portraits</a>
                           </span>
                         </div>
                       </div>
@@ -663,10 +634,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -704,13 +672,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Something In The Water vol.2
-                            </a>
+                            <a href="/#">Something In The Water vol.2</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Fashion</a>,
-                            <a href="albums-archive.html">Outdoor</a>
+                            <a href="/#">Fashion</a>,<a href="/#">Outdoor</a>
                           </span>
                         </div>
                       </div>
@@ -730,10 +695,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -771,10 +733,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">Autumn Nights</a>
+                            <a href="/#">Autumn Nights</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Outdoor</a>
+                            <a href="/#">Outdoor</a>
                           </span>
                         </div>
                       </div>
@@ -794,10 +756,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -835,12 +794,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Beauty &amp; Fashion
-                            </a>
+                            <a href="/#">Beauty &amp; Fashion</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Fashion</a>
+                            <a href="/#">Fashion</a>
                           </span>
                         </div>
                       </div>
@@ -860,10 +817,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -901,12 +855,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              No Colors This Time
-                            </a>
+                            <a href="/#">No Colors This Time</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Black &amp; White</a>
+                            <a href="/#">Black &amp; White</a>
                           </span>
                         </div>
                       </div>
@@ -926,10 +878,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -967,12 +916,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Monday's Monochromes
-                            </a>
+                            <a href="/#">Monday's Monochromes</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Outdoor</a>
+                            <a href="/#">Outdoor</a>
                           </span>
                         </div>
                       </div>
@@ -992,10 +939,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -1033,13 +977,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Something In The Water
-                            </a>
+                            <a href="/#">Something In The Water</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Fashion</a>,
-                            <a href="albums-archive.html">Portraits</a>
+                            <a href="/#">Fashion</a>,<a href="/#">Portraits</a>
                           </span>
                         </div>
                       </div>
@@ -1059,10 +1000,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -1100,13 +1038,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">
-                              Beautiful Bride
-                            </a>
+                            <a href="/#">Beautiful Bride</a>
                           </h2>
                           <span className="gl-item-category">
-                            <a href="albums-archive.html">Outdoor</a>,
-                            <a href="albums-archive.html">Fashion</a>
+                            <a href="/#">Outdoor</a>,<a href="/#">Fashion</a>
                           </span>
                         </div>
                       </div>
@@ -1208,17 +1143,15 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="contact.html"
+                          href="/#"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Purchase Now
+                          Book Now
                         </a>
                         <a
-                          href="page-dummy-classic-sidebar-right.html"
+                          href="/#"
                           className="btn btn-link btn-lg btn-block"
-                        >
-                          or Read More...
-                        </a>
+                        ></a>
                       </div>
                     </div>
                     {/* End price box */}
@@ -1257,17 +1190,15 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="contact.html"
+                          href="/#"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Purchase Now
+                          Book Now
                         </a>
                         <a
-                          href="page-dummy-classic-sidebar-right.html"
+                          href="/#"
                           className="btn btn-link btn-lg btn-block"
-                        >
-                          or Read More...
-                        </a>
+                        ></a>
                       </div>
                     </div>
                     {/* End price box */}
@@ -1308,17 +1239,15 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="contact.html"
+                          href="/#"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Purchase Now
+                          Book Now
                         </a>
                         <a
-                          href="page-dummy-classic-sidebar-right.html"
+                          href="/#"
                           className="btn btn-link btn-lg btn-block"
-                        >
-                          or Read More...
-                        </a>
+                        ></a>
                       </div>
                     </div>
                     {/* End price box */}
@@ -1361,17 +1290,15 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="contact.html"
+                          href="/#"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Purchase Now
+                          Book Now
                         </a>
                         <a
-                          href="page-dummy-classic-sidebar-right.html"
+                          href="/#"
                           className="btn btn-link btn-lg btn-block"
-                        >
-                          or Read More...
-                        </a>
+                        ></a>
                       </div>
                     </div>
                     {/* End price box */}
@@ -1382,10 +1309,8 @@ const Homepage = () => {
                 <div className="row margin-top-70 margin-auto max-width-800">
                   <div className="col-md-12 text-center">
                     <p>
-                      Duis mattis quam quis quam cursus, a rutrum ante luctus.
-                      Phasellus porta ornare enim ac euismod. Nulla fringilla
-                      lectus ac tincidunt viverra a accumsan{" "}
-                      <a href="#">sapien mollis</a>.
+                      We also provide after shoot support and access to storage
+                      till you are ready to receive them.
                     </p>
                   </div>
                   {/* /.col */}
@@ -1459,22 +1384,13 @@ const Homepage = () => {
                           {/* Begin blog list item */}
                           <article className="blog-list-item">
                             {/* Blog list item image */}
-                            <a
-                              href="blog-single.html"
-                              className="bl-item-image"
-                            >
-                              <img
-                                src="assets/img/blog/list/blog-6.jpg"
-                                alt=""
-                              />
+                            <a href="/#" className="bl-item-image">
+                              <img src="media/camera.jpg" alt="" />
                             </a>
                             {/* Begin blog list item info */}
                             <div className="bl-item-info">
                               <div className="bl-item-category"></div>
-                              <a
-                                href="blog-single.html"
-                                className="bl-item-title"
-                              >
+                              <a href="/#" className="bl-item-title">
                                 <h2>Step One</h2>
                               </a>
                               <div className="bl-item-meta"></div>
@@ -1506,22 +1422,13 @@ const Homepage = () => {
                           {/* Begin blog list item */}
                           <article className="blog-list-item">
                             {/* Blog list item image */}
-                            <a
-                              href="blog-single.html"
-                              className="bl-item-image"
-                            >
-                              <img
-                                src="assets/img/blog/list/blog-7.jpg"
-                                alt="image"
-                              />
+                            <a href="/#" className="bl-item-image">
+                              <img src="media/model4.jpg" alt="" />
                             </a>
                             {/* Begin blog list item info */}
                             <div className="bl-item-info">
                               <div className="bl-item-category"></div>
-                              <a
-                                href="blog-single.html"
-                                className="bl-item-title"
-                              >
+                              <a href="/#" className="bl-item-title">
                                 <h2>Step Two</h2>
                               </a>
                               <div className="bl-item-meta"></div>
@@ -1548,21 +1455,12 @@ const Homepage = () => {
                           {/* Begin blog list item */}
                           <article className="blog-list-item">
                             {/* Blog list item image */}
-                            <a
-                              href="blog-single.html"
-                              className="bl-item-image"
-                            >
-                              <img
-                                src="assets/img/blog/list/blog-7.jpg"
-                                alt="image"
-                              />
+                            <a href="/#" className="bl-item-image">
+                              <img src="media/frame.jpg" alt="i" />
                             </a>
                             {/* Begin blog list item info */}
                             <div className="bl-item-info">
-                              <a
-                                href="blog-single.html"
-                                className="bl-item-title"
-                              >
+                              <a href="/#" className="bl-item-title">
                                 <h2>Step Three</h2>
                               </a>
                               <div className="bl-item-meta"></div>
@@ -1645,10 +1543,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -1698,14 +1593,11 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage: "url(media/model6.jpg)",
+                              backgroundImage: "url(media/product.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1735,7 +1627,7 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">Products</a>
+                            <a href="/#">Products</a>
                           </h2>
                         </div>
                       </div>
@@ -1750,15 +1642,11 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+                              backgroundImage: "url(media/events.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1803,10 +1691,7 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
@@ -1841,7 +1726,7 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">Portrait</a>
+                            <a href="/#">Portrait</a>
                           </h2>
                         </div>
                       </div>
@@ -1861,15 +1746,11 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-2.jpg)",
+                              backgroundImage: "url(media/graduation.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1899,7 +1780,7 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">Graduation</a>
+                            <a href="/#">Graduation</a>
                           </h2>
                         </div>
                       </div>
@@ -1919,15 +1800,11 @@ const Homepage = () => {
                       {/* Begin gallery list item image */}
                       <div className="gl-item-image-wrap">
                         {/* Begin gallery list item image inner */}
-                        <a
-                          href="gallery-single-grid.html"
-                          className="gl-item-image-inner"
-                        >
+                        <a href="/#" className="gl-item-image-inner">
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-3.jpg)",
+                              backgroundImage: "url(media/estate.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1957,7 +1834,7 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="gallery-single-grid.html">Real Estate</a>
+                            <a href="/#">Real Estate</a>
                           </h2>
                         </div>
                       </div>
@@ -2121,10 +1998,8 @@ const Homepage = () => {
                       />
                       <blockquote>
                         <p>
-                          "Maecenas sit amet diam iaculis, lobortis tortor sed,
-                          bibendum quam. Nam mauris odio, sodales interdum
-                          facilisis in, dignissim et massa. In suscipit quam
-                          nisi."
+                          A complete game changer for my business,thanks for
+                          saving the day
                         </p>
                         <small>John Smith</small>
                       </blockquote>
@@ -2147,10 +2022,9 @@ const Homepage = () => {
                       />
                       <blockquote>
                         <p>
-                          "Proin at tincidunt leo. Morbi ut metus sit amet purus
-                          molestie sollicitudin. Maecenas convallis est vitae
-                          neque feugiat, in accumsan odio vestibulum.
-                          Pellentesque sodales fermentum porttitor."
+                          if you aren’t using Ogaphoto for your bookings you
+                          need to. It has been a great experience and I love
+                          anything about them,
                         </p>
                         <small>Jack Paterson</small>
                       </blockquote>
@@ -2214,22 +2088,18 @@ const Homepage = () => {
                   {/* End tt-heading */}
                   <div className="margin-top-30 max-width-1000 margin-auto">
                     <p>
-                      Fusce et velit sed augue rhoncus tempor. Sed ac lacinia
-                      augue, nec lacinia felis. Sed sit amet diam leo. Praesent
-                      vel malesuada arcu. Donec mattis, arcu vel vehicula
-                      feugiat, sem turpis dignissim ex, eu sollicitudin neque.
+                      Ready to book an amazing vacation photographer for your
+                      next trip, Events or any type of photo shoot ? you have a
+                      reason to get in touch with Ogaphoto now
                     </p>
                     <div className="margin-top-30">
                       <a
-                        href="page-dummy-modern.html"
+                        href="/#"
                         className="btn btn-dark margin-top-5 margin-right-5"
                       >
                         Read More
                       </a>
-                      <a
-                        href="contact.html"
-                        className="btn btn-primary margin-top-5"
-                      >
+                      <a href="/#" className="btn btn-primary margin-top-5">
                         Book A photography shoot!
                       </a>
                     </div>
@@ -2295,11 +2165,8 @@ const Homepage = () => {
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="page-header-description" data-max-words={40}>
                     <p>
-                      Fusce imperdiet, arcu non tempor aliquam, justo tortor
-                      cursus est, sed facilisis eros purus et felis. Sed eros
-                      sapien, iaculis eget gravida euismod, dapibus vitae
-                      turpis. Pellentesque men egestas odio mi, vitae egestas
-                      massa elementum.
+                      Please get in touch and our expert team will answer all
+                      your question
                     </p>
                   </div>
                 </div>
@@ -2446,9 +2313,9 @@ const Homepage = () => {
                                   {/* End tt-heading */}
                                   <div className="margin-top-30">
                                     <p>
-                                      Nemo enim ipsam voluptatem quiatotam rem
-                                      aperiam, eaque ipsa quae ab illo inventore
-                                      veritatis et quasi architecto beatae.
+                                      Our brilliant and knowledgeable customer
+                                      service team is always ready to answer
+                                      your questions
                                     </p>
                                   </div>
                                 </div>
@@ -2601,17 +2468,17 @@ const Homepage = () => {
                   <div className="col-md-3">
                     {/* Begin footer logo */}
                     <div id="footer-logo">
-                      <a href="index.html" className="logo-dark">
+                      <a href="/#" className="logo-dark">
                         <img src="assets/img/logo-dark.png" alt="logo" />
                       </a>
-                      <a href="index.html" className="logo-light">
+                      <a href="/#" className="logo-light">
                         <img src="assets/img/logo-light.png" alt="logo" />
                       </a>
                       {/* for small screens */}
-                      <a href="index.html" className="logo-dark-m">
+                      <a href="/#" className="logo-dark-m">
                         <img src="assets/img/logo-dark-m.png" alt="logo" />
                       </a>
-                      <a href="index.html" className="logo-light-m">
+                      <a href="/#" className="logo-light-m">
                         <img src="assets/img/logo-light-m.png" alt="logo" />
                       </a>
                     </div>
@@ -2685,7 +2552,7 @@ const Homepage = () => {
                         </li>
                         <li>
                           <a
-                            href="contact.html"
+                            href="/#"
                             className="btn btn-social-min btn-default btn-rounded-full"
                             title="Drop me a line"
                             target="_blank"
@@ -2729,22 +2596,22 @@ const Homepage = () => {
                       {/* Begin footer menu */}
                       <ul className="footer-menu">
                         <li>
-                          <a href="index.html">Home</a>
+                          <a href="/#">Home</a>
                         </li>
                         <li>
-                          <a href="about-me.html">About</a>
+                          <a href="/#">About</a>
                         </li>
                         <li>
-                          <a href="albums-grid-fluid-2.html">Portfolio</a>
+                          <a href="/#">Portfolio</a>
                         </li>
                         <li>
-                          <a href="blog-list-grid.html">Blog</a>
+                          <a href="/#">Blog</a>
                         </li>
                         <li>
-                          <a href="page-faq.html">FAQ</a>
+                          <a href="/#">FAQ</a>
                         </li>
                         <li>
-                          <a href="contact.html">Contact</a>
+                          <a href="/#">Contact</a>
                         </li>
                       </ul>
                       {/* End footer menu */}

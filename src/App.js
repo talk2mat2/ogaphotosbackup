@@ -47,16 +47,14 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop>
-        <BaseRoute />
-        {/* <AuthLoading> */}
-        {/* <BaseRoute /> */}
-        {/* <SignUp />
+      <BaseRoute />
+      {/* <AuthLoading> */}
+      {/* <BaseRoute /> */}
+      {/* <SignUp />
         <About />
         
         <Contact /> */}
-        {/* </AuthLoading> */}
-      </ScrollToTop>
+      {/* </AuthLoading> */}
     </Router>
   );
 }

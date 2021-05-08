@@ -173,8 +173,8 @@ const LoginNew = () => {
     console.log(email, password);
   };
   const handleClose = () => {
-    setEmail("");
-    setPassword("");
+    // setEmail("");
+    // setPassword("");
     setErrorMessage("");
     // dispatch(clearLoginError())
   };
