@@ -24,8 +24,8 @@ import GuestRoute from "./GuestRoute";
 import ScrollToTop from "../ScrollToTop";
 
 // import Delivery from "../views/users/Delivery";
-import Looking from "../views/users/Looking";
-// const Looking = lazy(() => import("../views/users/Looking"));
+// import Looking from "../views/users/Looking";
+const Looking = lazy(() => import("../views/users/Looking"));
 // import Profile from "../views/users/Profile";
 const Profile = lazy(() => import("../views/users/Profile"));
 // import Promos from "../views/users/Promos";
