@@ -1145,7 +1145,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
@@ -1193,7 +1193,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
@@ -1241,7 +1241,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
@@ -1289,7 +1289,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
