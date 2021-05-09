@@ -61,14 +61,15 @@ const Header = () => {
   // });
 
   return (
-    // <header
-    //   id="header"
-    //   className="header-show-hide-on-scroll menu-align-right "
-    // >
     <header
       id="header"
-      class="header-transparent header-show-hide-on-scroll menu-align-right"
+      className="header-show-hide-on-scroll menu-align-right "
     >
+      {/* <header
+      id="header"
+      class="header-transparent header-show-hide-on-scroll menu-align-right"
+    ></header> */}
+
       <Helmet>
         <link
           rel="stylesheet"

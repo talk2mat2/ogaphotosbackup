@@ -100,7 +100,18 @@ function AppMenu(props) {
               props.handleDrawerToggle();
             }}
           >
-            <button className="btn1">Hire A Photographer</button>
+            <button
+              className="btn1 "
+              style={{
+                backgroundColor: "rgb(0, 162, 149)",
+                padding: "9px",
+                color: "#ffffff",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              Hire A Photographer
+            </button>
           </MenuItem>
         ) : null}
         <MenuItem

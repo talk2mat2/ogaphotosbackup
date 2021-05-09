@@ -99,23 +99,18 @@ const MeetOurPhoto = () => {
               <div className="cc-caption bottom-left max-width-1000">
                 {" "}
                 {/* max width class is optional */}
+                <h2 className="cc-title">
+                  <a href="blog-single.html">patrick hughes</a>
+                </h2>
+                <div className="cc-meta">
+                  {/* <span className="published">May 26, 2017</span> */}
+                  <span className="posted-by">
+                    <a href="#" title="View all posts by Martin Vegas"></a>
+                  </span>
+                </div>{" "}
                 <div className="cc-category">
                   <a href="blog-archive.html">Featured</a>{" "}
                   <a href="blog-archive.html">Photography</a>
-                </div>
-                <h2 className="cc-title">
-                  <a href="blog-single.html">
-                    The Best New Photo Products &amp; Gadgets In This Year
-                  </a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">May 26, 2017</span>
-                  <span className="posted-by">
-                    - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a>
-                  </span>
                 </div>
               </div>
               {/* End caption */}
@@ -171,23 +166,21 @@ const MeetOurPhoto = () => {
               <div className="cc-caption bottom-left max-width-1000">
                 {" "}
                 {/* max width class is optional */}
+                <h2 className="cc-title">
+                  <a href="blog-single.html">Cory Zamora</a>
+                </h2>
+                <div className="cc-meta">
+                  <span className="published">Photographer</span>
+                  <span className="posted-by">
+                    {/* - by{" "}
+                    <a href="#" title="View all posts by Martin Vegas">
+                      Martin Vegas
+                    </a> */}
+                  </span>
+                </div>
                 <div className="cc-category">
                   <a href="blog-archive.html">Featured</a>{" "}
                   <a href="blog-archive.html">Photography</a>
-                </div>
-                <h2 className="cc-title">
-                  <a href="blog-single.html">
-                    How To Use A Styled Photo Shoot To Build Your Portfolio
-                  </a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">May 26, 2017</span>
-                  <span className="posted-by">
-                    - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a>
-                  </span>
                 </div>
               </div>
               {/* End caption */}
@@ -243,21 +236,21 @@ const MeetOurPhoto = () => {
               <div className="cc-caption bottom-left max-width-1000">
                 {" "}
                 {/* max width class is optional */}
+                <h2 className="cc-title">
+                  <a href="blog-single.html">Coriss Ambady</a>
+                </h2>
+                <div className="cc-meta">
+                  <span className="published">Photographer</span>
+                  <span className="posted-by">
+                    {/* - by{" "}
+                    <a href="#" title="View all posts by Martin Vegas">
+                      Martin Vegas
+                    </a> */}
+                  </span>
+                </div>
                 <div className="cc-category">
                   <a href="blog-archive.html">Featured</a>{" "}
                   <a href="blog-archive.html">Photography</a>
-                </div>
-                <h2 className="cc-title">
-                  <a href="blog-single.html">Test Your Photography Knowledge</a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">May 26, 2017</span>
-                  <span className="posted-by">
-                    - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a>
-                  </span>
                 </div>
               </div>
               {/* End caption */}
@@ -313,23 +306,23 @@ const MeetOurPhoto = () => {
               <div className="cc-caption bottom-left max-width-1000">
                 {" "}
                 {/* max width class is optional */}
+                <h2 className="cc-title">
+                  <a href="blog-single.html">barclay Windersky</a>
+                </h2>
+                <div className="cc-meta">
+                  <span className="published">
+                    barclay background in mathematics gives him a sophisticated
+                  </span>
+                  <span className="posted-by">
+                    {/* - by{" "}
+                    <a href="#" title="View all posts by Martin Vegas">
+                      Martin Vegas
+                    </a> */}
+                  </span>
+                </div>
                 <div className="cc-category">
                   <a href="blog-archive.html">Featured</a>{" "}
                   <a href="blog-archive.html">Photography</a>
-                </div>
-                <h2 className="cc-title">
-                  <a href="blog-single.html">
-                    More Couples Hiring Pro Photographers
-                  </a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">May 26, 2017</span>
-                  <span className="posted-by">
-                    - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a>
-                  </span>
                 </div>
               </div>
               {/* End caption */}
@@ -385,24 +378,25 @@ const MeetOurPhoto = () => {
               <div className="cc-caption bottom-left max-width-1000">
                 {" "}
                 {/* max width class is optional */}
-                <div className="cc-category">
-                  <a href="blog-archive.html">Featured</a>{" "}
-                  <a href="blog-archive.html">Photography</a>
-                </div>
                 <h2 className="cc-title">
-                  <a href="blog-single.html">
-                    Landscape Photo of the Year Contest: Finalists
-                  </a>
+                  <a href="blog-single.html">Nicola brooten</a>
                 </h2>
                 <div className="cc-meta">
-                  <span className="published">May 26, 2017</span>
+                  <span className="published">
+                    Nicolea's background in mathematics gives him a
+                    sophisticated grasp on the aspects of Photography
+                  </span>
                   <span className="posted-by">
-                    - by{" "}
+                    {/* - by{" "}
                     <a href="#" title="View all posts by Martin Vegas">
                       Martin Vegas
-                    </a>
+                    </a> */}
                   </span>
                 </div>
+              </div>
+              <div className="cc-category">
+                <a href="blog-archive.html">Featured</a>{" "}
+                <a href="blog-archive.html">Photography</a>
               </div>
               {/* End caption */}
               {/* Begin carousel item attributes */}

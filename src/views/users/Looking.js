@@ -397,7 +397,7 @@ const Looking = () => {
     GetPricePriceTag();
     setTimeout(() => {
       setMapVisiblle(true);
-    }, 2000);
+    }, 4000);
   }, []);
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>

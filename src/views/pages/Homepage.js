@@ -27,6 +27,7 @@ const Homepage = () => {
           rel="stylesheet"
           href="assets/vendor/bootstrap/css/bootstrap.min.css"
         />
+
         <script src="/assets/vendor/jquery.mousewheel.min.js"></script>
 
         <script src="/assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
@@ -81,7 +82,7 @@ const Homepage = () => {
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
@@ -113,16 +114,16 @@ const Homepage = () => {
                     />
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
-                      <h1 className="intro-title">Timely</h1>
+                      <h1 className="intro-title">Perfect</h1>
                       <h2 className="intro-subtitle">Photography</h2>
                       <p className="intro-description max-width-650">
-                        Ogaphoto recommends the best-matched photographers
+                        Capture the magic of travel with a vacation photo shoot,
                         <br />
-                        in real time based on your need
+                        capture your upcoming trip memories
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
@@ -154,7 +155,7 @@ const Homepage = () => {
                     />
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
-                      <h1 className="intro-title">Powerful</h1>
+                      <h1 className="intro-title">Timely</h1>
                       <h2 className="intro-subtitle">Ready in 48 Hours</h2>
                       <p className="intro-description max-width-650">
                         Retouched Photos are ready by Ogaphoto team in Record
@@ -165,11 +166,11 @@ const Homepage = () => {
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
-                          Buy It Now!
+                          Book Now!
                         </a>
                         <a
                           href="/#latest-news-section"
@@ -206,11 +207,11 @@ const Homepage = () => {
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href=""
+                          href="/dashboard"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
-                          Buy It Now!
+                          Book Now!
                         </a>
                         <a
                           href="/#latest-news-section"
@@ -1130,15 +1131,16 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box price-box-price">
                         <div className="price">
-                          <span className="price-currency">$</span>59
+                          <span className="price-currency">N</span>20
+                          <span style={{ fontSize: "12px" }}>K</span>
                         </div>
                         {/* <div class="price-tenure">Per 1 Month</div> */}
                       </div>
                       <div className="pr-box price-features">
                         <ul className="list-unstyled">
-                          <li>Ascimo Ellan Tareck</li>
-                          <li>Fitrim Namzeck</li>
-                          <li>Fartimo antera Maunos</li>
+                          <li>Studio space.</li>
+                          <li>Photography backdrops.</li>
+                          <li>Adjustable lighting equipment kits.</li>
                         </ul>
                       </div>
                       <div className="pr-box">
@@ -1177,15 +1179,16 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box price-box-price">
                         <div className="price">
-                          <span className="price-currency">$</span>89
+                          <span className="price-currency">N</span>43
+                          <span style={{ fontSize: "12px" }}>K</span>
                         </div>
                         {/* <div class="price-tenure">Per 6 Month</div> */}
                       </div>
                       <div className="pr-box price-features">
                         <ul className="list-unstyled">
-                          <li>Cunning Fuziness</li>
-                          <li>Lartem Sainter Omna</li>
-                          <li>Bullerti Naiten</li>
+                          <li>Multiple Locations</li>
+                          <li>Digital & Hard Copy Files Included</li>
+                          <li>Time Based</li>
                         </ul>
                       </div>
                       <div className="pr-box">
@@ -1224,17 +1227,16 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box price-box-price">
                         <div className="price">
-                          <span className="price-currency">$</span>129
+                          <span className="price-currency">N</span>54
+                          <span style={{ fontSize: "12px" }}>K</span>
                         </div>
                         {/* <div class="price-tenure">Per 1 Year</div> */}
                       </div>
                       <div className="pr-box price-features">
                         <ul className="list-unstyled">
-                          <li>Artemize Naice Femme</li>
-                          <li>
-                            <strong>Putras Torrim</strong>
-                          </li>
-                          <li>10 Voites Trante</li>
+                          <li>1-2 Locations</li>
+                          <li>Digital & Hard Copy Files Included</li>
+                          <li>Time Based</li>
                         </ul>
                       </div>
                       <div className="pr-box">
@@ -1273,19 +1275,16 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box price-box-price">
                         <div className="price">
-                          <span className="price-currency">$</span>299
+                          <span className="price-currency">N</span>150
+                          <span style={{ fontSize: "12px" }}>K</span>
                         </div>
                         {/* <div class="price-tenure">Per 1 Year</div> */}
                       </div>
                       <div className="pr-box price-features">
                         <ul className="list-unstyled">
-                          <li>Mollimo Namis Ferra</li>
-                          <li>
-                            <strong>Oppera Tulpas</strong>
-                          </li>
-                          <li>
-                            <strong>Verrum Daster Hunza</strong>
-                          </li>
+                          <li>1-4 Locations</li>
+                          <li>Digital & Hard Copy Files Included</li>
+                          <li>Time Based</li>
                         </ul>
                       </div>
                       <div className="pr-box">
@@ -1296,7 +1295,7 @@ const Homepage = () => {
                           Book Now
                         </a>
                         <a
-                          href="/#"
+                          href="/dashboard"
                           className="btn btn-link btn-lg btn-block"
                         ></a>
                       </div>
@@ -1338,6 +1337,7 @@ const Homepage = () => {
                 <h1 className="tt-heading-title">How it Works</h1>
 
                 <hr className="hr-short" />
+                <p>Capture that memorable moments in three easy steps</p>
               </div>
               {/* /.tt-heading-inner */}
             </div>
@@ -2489,9 +2489,11 @@ const Homepage = () => {
                     {/* Begin footer text */}
                     <div className="footer-text">
                       <h4>- Creative Photo Studio</h4>
-                      Sed non auctor magna. Nunc eu ultrices orci. Donec commodo
-                      ligula in massa ultricies volutpat. Fusce vel cursus
-                      lectus. Cras commodo odio mi, eu cursus nibh iaculis ut.
+                      Over ther years, Ogaphotos has networked with several
+                      photographers to bring you the best hand in the industry
+                      ,We hire the best hands for the job, Our services are cost
+                      effective Your job is ready within 2 to 3 working days You
+                      are happy, We are happy, everybody is happy
                     </div>
                     {/* End footer text */}
                   </div>

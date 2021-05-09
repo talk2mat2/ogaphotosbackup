@@ -11,7 +11,7 @@ import AlertDialog from "../../components/AlertDialog";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
 import { LOGINSUCCESS } from "../../redux/action";
-import Header from "../../components/Header";
+import Header from "../../components/Header2";
 const Container = styled.div`
   min-height: 100vh;
   background-color: #ffff;
@@ -173,7 +173,7 @@ const PhotoGrapherLoginNew = () => {
   };
   return (
     <React.Fragment>
-      <Header />
+      {/* <Header /> */}
       <Container>
         <SelectContainer>
           <SelectContentContainer2>
@@ -191,7 +191,18 @@ const PhotoGrapherLoginNew = () => {
           </SelectContentContainer2>
           <SelectContentContainer1>
             <Margin />
-            <Margin />
+            <a href="/">
+              <img
+                style={{
+                  height: "40px",
+
+                  objectFit: "cover",
+                }}
+                loginImage
+                src="/assets/img/logo-dark.png"
+                alt="img"
+              />
+            </a>
             <Margin />
             <BigText> Photographer Log in</BigText>
             <Listing>

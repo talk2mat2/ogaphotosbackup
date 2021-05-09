@@ -12,6 +12,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
 import { LOGINSUCCESS } from "../../redux/action";
 import Header from "../../components/Header";
+import ScrollToTop from "../../ScrollToTop";
 const Container = styled.div`
   min-height: 100vh;
   background-color: #ffff;

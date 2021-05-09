@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet";
 // import Contact from "./views/pages/ContactPage";
 // import { Scripts } from "./script";
 // import './style.css'
+import "./App.css";
 import ScrollToTop from "./ScrollToTop";
 import { BrowserRouter as Router } from "react-router-dom";
 

@@ -187,7 +187,7 @@ const PhotographersRegister = () => {
   };
   return (
     <React.Fragment>
-      <Header />
+      {/* <Header /> */}
       <Container>
         <SelectContainer>
           <SelectContentContainer2>
@@ -207,13 +207,24 @@ const PhotographersRegister = () => {
           </SelectContentContainer2>
           <SelectContentContainer1>
             <Margin />
-            <Margin />
+            <a href="/">
+              <img
+                style={{
+                  height: "40px",
+
+                  objectFit: "cover",
+                }}
+                loginImage
+                src="/assets/img/logo-dark.png"
+                alt="img"
+              />
+            </a>
 
             <BigText> Photographers register</BigText>
             <small>
               <em>
-                interested in becoming a member of Ogaphoto Photographers ?
-                <br /> fill the form..
+                interested in becoming a member of <br />
+                Ogaphoto Photographers ?
               </em>
             </small>
             <Listing>

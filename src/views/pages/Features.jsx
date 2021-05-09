@@ -127,20 +127,11 @@ const Features = () => {
                       Matches Your Style
                     </h2>
                   </a>
-                  <div className="bl-item-meta">
-                    <span className="published">May 26, 2017</span>
-                    <span className="posted-by">
-                      - by
-                      <a href="#" title="View all posts by Martin Vegas">
-                        John Young
-                      </a>
-                    </span>
-                  </div>
+                  <div className="bl-item-meta"></div>
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="bl-item-desc" data-max-words={14}>
-                    Suspendisse imperdiet ante at tortor consequat consectetur.
-                    Quisque rhoncus blandit justo praesen congue convallis
-                    artula ellis.
+                    Once a photographer is confirmed as available, you can
+                    officially book and reserve your shoot.
                   </div>
                   <a
                     href="blog-single.html"
@@ -201,19 +192,17 @@ const Features = () => {
                     <h2>On Your Time</h2>
                   </a>
                   <div className="bl-item-meta">
-                    <span className="published">May 26, 2017</span>
+                    {/* <span className="published">May 26, 2017</span>
                     <span className="posted-by">
                       - by
                       <a href="#" title="View all posts by Martin Vegas">
                         Anna Vernik
                       </a>
-                    </span>
+                    </span> */}
                   </div>
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="bl-item-desc" data-max-words={14}>
-                    Suspendisse imperdiet ante at tortor consequat consectetur.
-                    Quisque rhoncus blandit justo praesen congue convallis
-                    artula ellis.
+                    a vetted specialist takes your ideas and vision and crafts
                   </div>
                   <a
                     href="blog-single.html"
@@ -273,20 +262,11 @@ const Features = () => {
                   <a href="blog-single.html" className="bl-item-title">
                     <h2>Creativity and Imagination</h2>
                   </a>
-                  <div className="bl-item-meta">
-                    <span className="published">May 26, 2017</span>
-                    <span className="posted-by">
-                      - by
-                      <a href="#" title="View all posts by Martin Vegas">
-                        Julia Beck
-                      </a>
-                    </span>
-                  </div>
+                  <div className="bl-item-meta"></div>
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="bl-item-desc" data-max-words={14}>
-                    Suspendisse imperdiet ante at tortor consequat consectetur.
-                    Quisque rhoncus blandit justo praesen congue convallis
-                    artula ellis.
+                    Taking things outside of their purpose and putting them to
+                    other uses.
                   </div>
                   <a
                     href="blog-single.html"
@@ -347,19 +327,18 @@ const Features = () => {
                     <h2>An Eye for Detail</h2>
                   </a>
                   <div className="bl-item-meta">
-                    <span className="published">May 26, 2017</span>
+                    {/* <span className="published">May 26, 2017</span>
                     <span className="posted-by">
                       - by
                       <a href="#" title="View all posts by Martin Vegas">
                         Martin Vegas
                       </a>
-                    </span>
+                    </span> */}
                   </div>
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="bl-item-desc" data-max-words={14}>
-                    Suspendisse imperdiet ante at tortor consequat consectetur.
-                    Quisque rhoncus blandit justo praesen congue convallis
-                    artula ellis.
+                    Generation of ideas or products that are both original and
+                    valuable.
                   </div>
                   <a
                     href="blog-single.html"
@@ -414,26 +393,24 @@ const Features = () => {
                 {/* Begin blog list item info */}
                 <div className="bl-item-info">
                   <div className="bl-item-category">
-                    <a href="blog-archive.html">Food</a>
                     <a href="#">Photography</a>
                   </div>
                   <a href="blog-single.html" className="bl-item-title">
                     <h2>Best Shoots</h2>
                   </a>
                   <div className="bl-item-meta">
-                    <span className="published">May 26, 2017</span>
+                    {/* <span className="published">May 26, 2017</span>
                     <span className="posted-by">
                       - by
                       <a href="#" title="View all posts by Martin Vegas">
                         Martin Vegas
                       </a>
-                    </span>
+                    </span> */}
                   </div>
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="bl-item-desc" data-max-words={14}>
-                    Suspendisse imperdiet ante at tortor consequat consectetur.
-                    Quisque rhoncus blandit justo praesen congue convallis
-                    artula ellis.
+                    There are always two people in every picture: the
+                    photographer and the viewer
                   </div>
                   <a
                     href="blog-single.html"
