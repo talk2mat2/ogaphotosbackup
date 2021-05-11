@@ -10,10 +10,12 @@ export const UserReducers = (state = init_state, action) => {
       return { ...state, currentUser: null };
     }
     if (action.type === Action_types.SYNCUSERDATA) {
-
       return {
         ...state,
-        currentUser: { ...state.currentUser, userData: {...state.currentUser.userData,...action.payload} },
+        currentUser: {
+          ...state.currentUser,
+          userData: { ...state.currentUser.userData, ...action.payload },
+        },
       };
     } else {
       return state;
@@ -31,7 +33,10 @@ export const NotesReducer = (state = notes_initstate, action) => {
 };
 
 const PHOTOGRAPHERS_initstate = [];
-export const photgraphersReducer = (state = PHOTOGRAPHERS_initstate, action) => {
+export const photgraphersReducer = (
+  state = PHOTOGRAPHERS_initstate,
+  action
+) => {
   if (action.type === Action_types.GETPHOTOGRAPHERSSUCCESS) {
     return [...action.payload];
   } else {
@@ -41,17 +46,40 @@ export const photgraphersReducer = (state = PHOTOGRAPHERS_initstate, action) => 
 const Mylocation_initstate = {};
 export const MyLocationReducer = (state = Mylocation_initstate, action) => {
   if (action.type === Action_types.SETMYLOCATION) {
-    return {...action.payload};
+    return { ...action.payload };
   } else {
     return state;
   }
 };
-const Bookings_initstate =[];
-export const BookingsReducer = (state =Bookings_initstate, action) => {
+const Bookings_initstate = [];
+export const BookingsReducer = (state = Bookings_initstate, action) => {
   if (action.type === Action_types.GETMYBOOKINGSUCCESS) {
     return [...action.payload];
   } else {
     return state;
   }
 };
-
+const BookingProcess_initstate = {
+  purpose: "",
+  category: "",
+  locations: "",
+  lat: "",
+  lng: "",
+  time: "",
+  duration: "",
+  date: "",
+  AdditionalAddress: "",
+};
+export const BookingProcessReducer = (
+  state = BookingProcess_initstate,
+  action
+) => {
+  if (action.type === Action_types.SETBOOKINGPROCESSINFO) {
+    return {
+      ...state,
+      ...action.payload,
+    };
+  } else {
+    return state;
+  }
+};

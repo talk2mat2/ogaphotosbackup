@@ -6,7 +6,7 @@ const AutoCompletePlaces = (props) => {
       placeholder="enter location"
       apiKey={`${process.env.REACT_APP_API_KEY}`}
       style={{
-        width: "300px",
+        width: "100%",
         color: "grey",
         borderWidth: "1px",
         borderColor: "silver",

@@ -160,11 +160,7 @@ const Header = () => {
               {/* End tt-dropdown */}
               {/* Begin call to action button */}
               <li>
-                <Link
-                  to="/dashboard"
-                  className="tt-tools-button"
-                  target="_blank"
-                >
+                <Link to="/Purpose" className="tt-tools-button" target="_blank">
                   Book<span className="hide-from-sm"> Now</span>!
                 </Link>
               </li>

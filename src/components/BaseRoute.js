@@ -56,6 +56,7 @@ const PhotoGrapherLoginNew = lazy(() =>
 );
 // import ClientRegister from "../views/pages/ClientRegister";
 const ClientRegister = lazy(() => import("../views/pages/ClientRegister"));
+const Purpose = lazy(() => import("../views/pages/Purpose"));
 // import PhotographersRegister from "../views/pages/PhotographersRegister";
 const PhotographersRegister = lazy(() =>
   import("../views/pages/PhotographersRegister")
@@ -113,6 +114,7 @@ function BaseRoute() {
 
           {/* <GuestRoute component={Login} path="/Login" /> */}
           <GuestRoute component={Portfolio} path="/Portfolio" />
+          <GuestRoute component={Purpose} path="/Purpose" />
           <GuestRoute
             component={PhotographersRegister}
             path="/PhotographersRegister"

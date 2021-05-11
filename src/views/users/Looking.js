@@ -400,7 +400,9 @@ const Looking = () => {
     }, 4000);
   }, []);
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "500px" }}
+    >
       {CardVisible ? (
         <Card className={classes.floatingCard}>
           <CardContent className={classes.selectDest}>

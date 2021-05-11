@@ -82,7 +82,7 @@ const Homepage = () => {
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
@@ -123,7 +123,7 @@ const Homepage = () => {
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
@@ -166,7 +166,7 @@ const Homepage = () => {
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
@@ -207,7 +207,7 @@ const Homepage = () => {
                       </p>
                       <div className="margin-top-30">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
@@ -1145,7 +1145,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
@@ -1193,7 +1193,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
@@ -1241,7 +1241,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
@@ -1289,7 +1289,7 @@ const Homepage = () => {
                       </div>
                       <div className="pr-box">
                         <a
-                          href="/dashboard"
+                          href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
                           Book Now
@@ -2099,7 +2099,10 @@ const Homepage = () => {
                       >
                         Read More
                       </a>
-                      <a href="/#" className="btn btn-primary margin-top-5">
+                      <a
+                        href="/Purpose"
+                        className="btn btn-primary margin-top-5"
+                      >
                         Book A photography shoot!
                       </a>
                     </div>
