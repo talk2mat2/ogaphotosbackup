@@ -233,7 +233,7 @@ const PhotographersRegister = () => {
                   autoComplete="off"
                   value={fname}
                   onChange={(e) => setFname(e.target.value)}
-                  type="email"
+                  type="text"
                   required
                   placeholder="First name"
                 />
@@ -243,7 +243,7 @@ const PhotographersRegister = () => {
                   autoComplete="off"
                   value={lname}
                   onChange={(e) => setLname(e.target.value)}
-                  type="password"
+                  type="text"
                   required
                   placeholder="Last Name"
                 />
