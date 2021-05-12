@@ -69,6 +69,7 @@ const BookingProcess_initstate = {
   time: "",
   duration: "",
   date: "",
+  choosenPhotoGrapher: {},
   AdditionalAddress: "",
 };
 export const BookingProcessReducer = (

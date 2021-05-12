@@ -100,6 +100,12 @@ const PhotographersCard = (props) => {
     console.log(choosenPhotoGrapher);
   }, [choosenPhotoGrapher]);
 
+  const HandleIsChecked = () => {
+    if (choosenPhotoGrapher && choosenPhotoGrapher._id) {
+      return props.item._id === choosenPhotoGrapher._id;
+    }
+    return PhotoInfo && PhotoInfo._id === props.item._id;
+  };
   return (
     <PhotographersContainer
       style={{
@@ -136,10 +142,13 @@ const PhotographersCard = (props) => {
         </span>
         <input
           type="radio"
-          name="chossenPhotographer"
-          onchange={(e) => props.setchoosenPhotoGrapher(e.target.value)}
+          name="choosenPhotographer"
+          onChange={(e) => {
+            setchoosenPhotoGrapher(props.item);
+            // console.log(props.item);
+          }}
           value={props.item}
-          checked={PhotoInfo && PhotoInfo._id === props.item._id}
+          checked={HandleIsChecked()}
         />
       </VericalCenterRow>
 
@@ -261,12 +270,11 @@ const Question8 = (props) => {
     // console.log(sessionVenue, AdditionalAddress);
     // sessionVenue.name &&
     //   AdditionalAddress &&
-    //   dispatch(
-    //     SETBOOKINGPROCESSINFO({
-    //       locations: sessionVenue.name,
-    //       AdditionalAddress: AdditionalAddress,
-    //     })
-    //   );
+    dispatch(
+      SETBOOKINGPROCESSINFO({
+        choosenPhotoGrapher: choosenPhotoGrapher,
+      })
+    );
   };
 
   const mapPhotographers = (PhotoInfo) => {
@@ -295,6 +303,7 @@ const Question8 = (props) => {
         return prev.distance < curr.distance ? prev : curr;
       });
       setPhotoInfo(CloserPhotoGrapher);
+      setchoosenPhotoGrapher(CloserPhotoGrapher);
       console.log(CloserPhotoGrapher);
     }
   };

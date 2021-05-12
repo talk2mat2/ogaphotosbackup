@@ -5,13 +5,17 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import { useSelector } from "react-redux";
+import { PaystackButton } from "react-paystack";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import { useDispatch } from "react-redux";
 import { SETBOOKINGPROCESSINFO } from "../../redux/action";
 import { EmailOutlined } from "@material-ui/icons";
 import Ratings from "../users/ratings";
+import { PaystackConsumer } from "react-paystack";
 import axios from "axios";
+import { usePaystackPayment } from "react-paystack";
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
 const Container = styled.div`
   width: 100%;
@@ -68,13 +72,6 @@ const VericalCenterRow = styled.div`
   width: 100%;
 `;
 
-const StepperQuestion = (props) => {
-  return (
-    <StepperContainer>
-      <MainStepper width={props.value} />
-    </StepperContainer>
-  );
-};
 const Question9 = (props) => {
   const [sessionVenue, setsessionVenue] = useState({});
   const [AdditionalAddress, setAdditionalAddress] = useState("");
@@ -139,7 +136,11 @@ const Question9 = (props) => {
     await axios
       .post(
         `${process.env.REACT_APP_API_URL}/users/bookSession`,
-        { phographerId: _id, address: sessionVenue.name, bookingprocess },
+        {
+          phographerId: _id,
+          address: bookingprocess.locations,
+          bookingprocess,
+        },
         { headers: { authorization: token } }
       )
       .then((res) => {
@@ -154,6 +155,48 @@ const Question9 = (props) => {
       });
     //api post request to book appointment with drivers id
   };
+
+  // const config = {
+  //   reference: new Date().getTime(),
+  //   email: userData.Email,
+  //   amount: parseFloat(bookingprocess.price) * 100,
+  //   publicKey: "pk_test_9df268d64ddb8974fb23c5d9e843eb5b57261938",
+  // };
+
+  const config = {
+    public_key: "FLWPUBK-bc4a5bdfcedb29dfda773c3cfddb46de-X",
+    tx_ref: new Date().getTime() + "-" + userData._id,
+    amount: parseFloat(bookingprocess.price),
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    customer: {
+      email: userData.Email,
+      phonenumber: userData.mobile,
+      name: userData.fname,
+    },
+    customizations: {
+      title: "Ogaphoto Booking Payment",
+      description: "payment for photo shoot",
+      logo:
+        "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
+    },
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
+
+  const PayByflutterWave = () => {
+    handleFlutterPayment({
+      callback: (response) => {
+        console.log(response);
+        if (response.status === "success") {
+          handleBooking(bookingprocess.choosenPhotoGrapher._id);
+        }
+        closePaymentModal(); // this will close the modal programmatically
+      },
+      onClose: () => {},
+    });
+  };
+
   const now = new Date();
   return (
     <Container>
@@ -163,8 +206,10 @@ const Question9 = (props) => {
         period
       </p>
       <button
-        disabled={!email}
-        onClick={handleSelection}
+        // disabled={!email}
+        // onClick={handleSelection}
+        // onClick={() => handleBooking(bookingprocess.choosenPhotoGrapher._id)}
+        onClick={PayByflutterWave}
         style={{
           width: "100%",
           height: "40px",
@@ -178,6 +223,7 @@ const Question9 = (props) => {
       >
         Pay with Credit Card
       </button>
+
       <Listing>
         <li style={{ justifyContent: "space-between" }}>
           <h5>
@@ -249,7 +295,10 @@ const Question9 = (props) => {
                   style={{ marginRight: "10px", fontSize: "40px" }}
                 />
                 <span>
-                  <p>wale james</p>
+                  <p>
+                    {bookingprocess.choosenPhotoGrapher.fname}{" "}
+                    {bookingprocess.choosenPhotoGrapher.lname}
+                  </p>
                   <Ratings rating={5} />
                 </span>
               </span>
