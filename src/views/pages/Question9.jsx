@@ -164,7 +164,7 @@ const Question9 = (props) => {
   // };
 
   const config = {
-    public_key: "FLWPUBK-bc4a5bdfcedb29dfda773c3cfddb46de-X",
+    public_key: "FLWPUBK_TEST-e96ca53411ac8244d05c06677fca3509-X",
     tx_ref: new Date().getTime() + "-" + userData._id,
     amount: parseFloat(bookingprocess.price),
     currency: "NGN",

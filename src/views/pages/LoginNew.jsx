@@ -249,7 +249,7 @@ const LoginNew = () => {
                   <Margin />
                   <div style={{ textAlign: "center" }}>
                     <small style={{ color: "rgb(71, 178, 228)" }}>
-                      <Link to="/ClientRegister"> Not Yet Registered ?</Link>
+                      <a href="/Purpose"> Not Yet Registered ?</a>
                     </small>
                   </div>
                   <Margin />
