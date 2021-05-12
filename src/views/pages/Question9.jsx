@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { SETBOOKINGPROCESSINFO } from "../../redux/action";
 import { EmailOutlined } from "@material-ui/icons";
 import Ratings from "../users/ratings";
+import axios from "axios";
 
 const Container = styled.div`
   width: 100%;
@@ -84,6 +85,9 @@ const Question9 = (props) => {
   const [mylocation, setMylocation] = useState(null);
   const [locations, setLocations] = useState([]);
   const dispatch = useDispatch();
+  const CurrentUser = useSelector((state) => state.user.currentUser);
+  const userData = CurrentUser && CurrentUser.userData;
+  const token = CurrentUser && CurrentUser.token;
 
   const handleToClick = async (long1, lat1, address) => {
     // console.log(typeof long)
@@ -122,6 +126,33 @@ const Question9 = (props) => {
     //       AdditionalAddress: AdditionalAddress,
     //     })
     //   );
+  };
+
+  const handleBooking = async (_id) => {
+    //_id is photographers id
+    // setConfirmAgreeVisible(false);
+    // setPhotoDetails(false);
+    if (!_id) {
+      return null;
+    }
+    // /bookSession
+    await axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/users/bookSession`,
+        { phographerId: _id, address: sessionVenue.name, bookingprocess },
+        { headers: { authorization: token } }
+      )
+      .then((res) => {
+        console.log(res.data);
+        alert("request sent");
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err.response.data.message);
+        }
+        console.log(err);
+      });
+    //api post request to book appointment with drivers id
   };
   const now = new Date();
   return (
@@ -163,7 +194,7 @@ const Question9 = (props) => {
                 fontSize="small"
                 style={{ color: "grey", marginRight: "10px" }}
               />
-              <p>talk@yahoo.com</p>
+              <p>{userData.Email}</p>
             </VericalCenterRow>
             <VericalCenterRow>
               <EventNoteIcon
@@ -179,7 +210,7 @@ const Question9 = (props) => {
                 fontSize="small"
                 style={{ color: "grey", marginRight: "10px" }}
               />
-              <p>0893874784848</p>
+              <p>{userData.mobile}</p>
             </VericalCenterRow>
             <VericalCenterRow>
               <LocationOnIcon

@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { LOGINOUTUSER } from "../redux/action";
@@ -50,12 +50,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 function AppMenu(props) {
   const dispatch = useDispatch();
+  const history = useHistory();
   const classes = useStyles();
   const [active, setActive] = useState("");
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const userData = CurrentUser && CurrentUser.userData;
   const LogOut = () => {
     dispatch(LOGINOUTUSER());
+    history.push("/");
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   };
 
   const handleActive = (page) => {
@@ -73,10 +78,10 @@ function AppMenu(props) {
           backgroundColor: "#ffff",
         }}
       >
-        <Link to="/">
+        <a href="/">
           {" "}
           <img src="media/logo-dark.png" width={100} height={100} alt="img" />
-        </Link>
+        </a>
         {/* <img
 					style={{
 						marginTop: '20px',
@@ -94,10 +99,10 @@ function AppMenu(props) {
         {!userData.isPhotographer && !userData.isAdmin ? (
           <MenuItem
             component={Link}
-            to="/looking"
+            to="/Purpose"
             onClick={() => {
-              handleActive("looking");
-              props.handleDrawerToggle();
+              // handleActive("looking");
+              // props.handleDrawerToggle();
             }}
           >
             <button
@@ -298,6 +303,7 @@ function AppMenu(props) {
           <ListItemIcon>
             <ExitIcon />
           </ListItemIcon>
+
           <Typography variant="inherit">{languageJson.logout}</Typography>
         </MenuItem>
       </MenuList>

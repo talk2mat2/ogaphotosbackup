@@ -10,11 +10,11 @@ function GuestRoute({ component: Component, ...rest }) {
   const userData = CurrentUser && CurrentUser.userData;
   const location = useLocation();
   const history = useHistory();
-  React.useEffect(() => {
-    if (userData) {
-      history.push("/dashboard");
-    }
-  }, [userData]);
+  // React.useEffect(() => {
+  //   if (userData) {
+  //     history.push("/dashboard");
+  //   }
+  // }, [userData]);
 
   React.useEffect(() => {
     console.log(location.pathname);

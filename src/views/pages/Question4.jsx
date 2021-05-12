@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import AutoCompletePlaces from "../users/AutoComplleteMap";
 import MapWithAMarker from "../../components/MapWithAMarker";
@@ -8,10 +8,11 @@ import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import BusinessIcon from "@material-ui/icons/Business";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import AlertDialog from "../../components/AlertDialog";
 import LandscapeIcon from "@material-ui/icons/Landscape";
 import TheatersIcon from "@material-ui/icons/Theaters";
 import { useDispatch } from "react-redux";
-import { SETBOOKINGPROCESSINFO } from "../../redux/action";
+import { SETBOOKINGPROCESSINFO, LOGINSUCCESS } from "../../redux/action";
 import axios from "axios";
 
 const Container = styled.div`
@@ -97,11 +98,67 @@ const Question3 = (props) => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [mobile, setMobile] = useState("");
+  const CurrentUser = useSelector((state) => state.user.currentUser);
+  const userData = CurrentUser && CurrentUser.userData;
 
   function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
+
+  const handleSignup = (values) => {
+    setIsLoading(true);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/users/Register`, values)
+      .then((res) => {
+        setIsLoading(false);
+        console.log(res.data);
+        // history.push("/dashboard");
+        dispatch(LOGINSUCCESS(res.data));
+        props.handleNext("duration");
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        if (err.response) {
+          console.log(err.response.data.message);
+          err.response.data.message &&
+            setErrorMessage(err.response.data.message);
+        }
+        console.log(err);
+        setErrorMessage(
+          "An error occured ,make sure you have a working network"
+        );
+      });
+  };
+
+  const handleLogin = (values) => {
+    setIsLoading(true);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/users/Login`, values)
+      .then((res) => {
+        setIsLoading(false);
+        console.log(res.data);
+        // setIsregistered(true)
+        // history.push('/dashboard')
+        dispatch(LOGINSUCCESS(res.data));
+        props.handleNext("duration");
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        if (err.response) {
+          setErrorMessage(err.response.data.message);
+          console.log(err.response.data.message);
+          // err.response.data.message &&
+
+          // err.response.data.error && setIsregistered(false)
+        } else {
+          setErrorMessage(
+            "An error occured ,make sure you have a working network"
+          );
+        }
+        console.log(err);
+      });
+  };
 
   const handleCheckIsRegistered = async (values) => {
     setIsLoading(true);
@@ -123,22 +180,35 @@ const Question3 = (props) => {
         if (err.response) {
           console.log(err.response.data.message);
           setStarlogin(false);
-          err.response.data.message &&
-            setErrorMessage(err.response.data.message);
+          err.response.data.message && console.log(err.response.data.message);
           err.response.data.error && setIsregistered(false);
           err.response.data.error && setStartRegistration(true);
         }
         console.log(err);
       });
   };
-  const handleSelection = (value) => {
+  const handleSelection = async (value) => {
     if (!validateEmail(email)) {
-      return alert("provide a valide email");
+      return setErrorMessage("provide a valide email");
+    }
+    if (startRegistration) {
+      if (!email || !password || !fname || !lname || !mobile) {
+        return setErrorMessage("all fields are required");
+      } else {
+        return await handleSignup({ email, password, fname, lname, mobile });
+      }
+    }
+    if (startlogin) {
+      if (!email || !password) {
+        return alert("all fields are required");
+      } else {
+        return await handleLogin({ email, password });
+      }
     }
     if (!isRegistered) {
       return handleCheckIsRegistered(email);
     }
-    props.handleNext("duration");
+
     console.log(bookingprocess);
     // console.log(sessionVenue, AdditionalAddress);
     // sessionVenue.name &&
@@ -150,9 +220,27 @@ const Question3 = (props) => {
     //     })
     //   );
   };
+  const handleClose = () => {
+    setErrorMessage("");
+  };
+
+  useEffect(() => {
+    if (userData) {
+      props.handleNext("duration");
+    }
+  }, []);
   return (
     <Container>
       <Hbig className="tt-heading-title">Where do we send the Quotation ?</Hbig>
+      <p style={{ textAlign: "center" }}>
+        Supply your details to get pricing and details of photographers
+        available
+      </p>
+      {startlogin ? (
+        <p style={{ textAlign: "center", color: "limegreen" }}>
+          Existing account ,Login to continue
+        </p>
+      ) : null}
       <input
         type="email"
         value={email}
@@ -270,6 +358,9 @@ const Question3 = (props) => {
       >
         Continue
       </button>
+      <AlertDialog open={errorMessage} onClose={handleClose}>
+        {errorMessage}
+      </AlertDialog>
     </Container>
   );
 };

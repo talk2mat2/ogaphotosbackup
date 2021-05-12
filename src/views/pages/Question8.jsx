@@ -95,7 +95,11 @@ const WorksAvater = styled.div`
   margin: 5px;
 `;
 const PhotographersCard = (props) => {
-  const { PhotoInfo } = props;
+  const { PhotoInfo, setchoosenPhotoGrapher, choosenPhotoGrapher } = props;
+  useEffect(() => {
+    console.log(choosenPhotoGrapher);
+  }, [choosenPhotoGrapher]);
+
   return (
     <PhotographersContainer
       style={{
@@ -133,6 +137,8 @@ const PhotographersCard = (props) => {
         <input
           type="radio"
           name="chossenPhotographer"
+          onchange={(e) => props.setchoosenPhotoGrapher(e.target.value)}
+          value={props.item}
           checked={PhotoInfo && PhotoInfo._id === props.item._id}
         />
       </VericalCenterRow>
@@ -175,6 +181,7 @@ const Question8 = (props) => {
   const dispatch = useDispatch();
   const [PhotoInfo, setPhotoInfo] = useState(null);
   const [Searching, setSearching] = useState(false);
+  const [choosenPhotoGrapher, setchoosenPhotoGrapher] = useState({});
 
   const handleSearchPhotoGrphers = async (values) => {
     setSearching(true);
@@ -265,7 +272,13 @@ const Question8 = (props) => {
   const mapPhotographers = (PhotoInfo) => {
     if (photographers && photographers.length > 0) {
       return photographers.map((item) => (
-        <PhotographersCard item={item} key={item._id} PhotoInfo={PhotoInfo} />
+        <PhotographersCard
+          item={item}
+          key={item._id}
+          PhotoInfo={PhotoInfo}
+          choosenPhotoGrapher={choosenPhotoGrapher}
+          setchoosenPhotoGrapher={setchoosenPhotoGrapher}
+        />
       ));
     } else {
       return null;

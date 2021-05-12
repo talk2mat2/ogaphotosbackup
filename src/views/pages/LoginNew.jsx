@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Button, Grid, InputLabel, TextField } from "@material-ui/core";
 // import { Scripts } from "../../scriptNew";
 
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import AlertDialog from "../../components/AlertDialog";
@@ -130,6 +130,7 @@ const LoginNew = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [ErrorMessage, setErrorMessage] = useState("");
+  const location = useLocation();
   const handleEmailChange = (text) => {
     setEmail(text);
     console.log(email);
@@ -142,8 +143,10 @@ const LoginNew = () => {
         setLoading(false);
         console.log(res.data);
         // setIsregistered(true)
-        // history.push('/dashboard')
+        history.push("/");
+
         dispatch(LOGINSUCCESS(res.data));
+        window.location.reload();
       })
       .catch((err) => {
         setLoading(false);

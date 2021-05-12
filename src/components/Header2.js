@@ -153,11 +153,19 @@ const Header = () => {
 							===================================
 							* Use class "tt-dropdown-dark" to enable dropdown dark style.
 							*/}
-              <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
-                <Link to="/signUp">Log In</Link>
+              {userData ? (
+                <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
+                  <Link to="/dashboard">
+                    <PersonIcon fontSize="medium" />
+                  </Link>
+                </li>
+              ) : (
+                <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
+                  <Link to="/signUp">Log In</Link>
 
-                {/* /.tt-dropdown */}
-              </li>
+                  {/* /.tt-dropdown */}
+                </li>
+              )}
               {/* End tt-dropdown */}
               {/* Begin call to action button */}
               <li>

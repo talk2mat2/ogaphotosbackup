@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { signOut } from "../actions/authactions";
 import PersonIcon from "@material-ui/icons/Person";
 import { LOGINOUTUSER } from "../redux/action";
+import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import { Scripts } from "../script";
 import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
@@ -16,7 +17,7 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 // import { signOut } from '../actions/authactions';
 const Div = styled.div``;
 const Header = () => {
-  const auth = useSelector((state) => state.auth);
+  // const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const userData = CurrentUser && CurrentUser.userData;
@@ -152,11 +153,22 @@ const Header = () => {
 							===================================
 							* Use class "tt-dropdown-dark" to enable dropdown dark style.
 							*/}
-              <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
-                <Link to="/signUp">Log In</Link>
+              {userData ? (
+                <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
+                  <Link to="/dashboard">
+                    <PersonIcon
+                      fontSize="medium"
+                      style={{ color: "#ffffff" }}
+                    />
+                  </Link>
+                </li>
+              ) : (
+                <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
+                  <Link to="/signUp">Log In</Link>
 
-                {/* /.tt-dropdown */}
-              </li>
+                  {/* /.tt-dropdown */}
+                </li>
+              )}
               {/* End tt-dropdown */}
               {/* Begin call to action button */}
               <li>
