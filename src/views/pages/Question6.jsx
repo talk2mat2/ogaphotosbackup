@@ -115,17 +115,19 @@ const Question6 = (props) => {
     return await handleToClick(lng, lat, address);
   };
   const handleSelection = (value) => {
+    if (!date) {
+      return null;
+    }
     props.handleNext("time");
     console.log(bookingprocess);
     // console.log(sessionVenue, AdditionalAddress);
     // sessionVenue.name &&
     //   AdditionalAddress &&
-    //   dispatch(
-    //     SETBOOKINGPROCESSINFO({
-    //       locations: sessionVenue.name,
-    //       AdditionalAddress: AdditionalAddress,
-    //     })
-    //   );
+    dispatch(
+      SETBOOKINGPROCESSINFO({
+        date: date,
+      })
+    );
   };
   var now = new Date();
   function formatDate(date) {

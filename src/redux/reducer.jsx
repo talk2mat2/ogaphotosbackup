@@ -64,6 +64,7 @@ const BookingProcess_initstate = {
   category: "",
   locations: "",
   lat: "",
+  price: "",
   lng: "",
   time: "",
   duration: "",

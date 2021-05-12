@@ -12,10 +12,11 @@ import LandscapeIcon from "@material-ui/icons/Landscape";
 import TheatersIcon from "@material-ui/icons/Theaters";
 import { useDispatch } from "react-redux";
 import { SETBOOKINGPROCESSINFO } from "../../redux/action";
+import axios from "axios";
 
 const Container = styled.div`
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   transition: height 1.5s ease;
@@ -64,7 +65,7 @@ const MainStepper = styled.div`
   transition: width 1s ease;
 `;
 const VericalCenterRow = styled.div`
-  margin-top: auto;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -80,41 +81,63 @@ const StepperQuestion = (props) => {
 };
 const Question3 = (props) => {
   const [sessionVenue, setsessionVenue] = useState({});
-  const [AdditionalAddress, setAdditionalAddress] = useState("");
+
   const [email, setEmail] = useState("");
   const photographers = useSelector((state) => state.photographers);
   const bookingprocess = useSelector((state) => state.BookingProcessReducer);
   const [CardVisible, setCardVisible] = useState(false);
-  const [mylocation, setMylocation] = useState(null);
-  const [locations, setLocations] = useState([]);
+
   const dispatch = useDispatch();
+  const [isRegistered, setIsregistered] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [startRegistration, setStartRegistration] = useState(false);
+  const [startlogin, setStarlogin] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [password, setPassword] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [mobile, setMobile] = useState("");
 
-  const handleToClick = async (long1, lat1, address) => {
-    // console.log(typeof long)
-    let lng = parseFloat(long1);
-    let lat = parseFloat(lat1);
-    console.log(lng, lat, typeof lng, typeof lat);
-    setCardVisible(true);
-    setsessionVenue({
-      name: address,
+  function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
 
-      lat: lat,
-      lng: lng,
-    });
-    // await handleSearchPhotoGrphers({
-    //   sesionlocation: { lat: lat, lng: lng, address },
-    // });
-  };
-  const handleplaces = async (place) => {
-    // console.log(place.formatted_address)
-    // console.log(place.geometry.location.lat())
-    // console.log(place.geometry.location.lng())
-    const lng = await place.geometry.location.lng();
-    const lat = await place.geometry.location.lat();
-    const address = place.formatted_address;
-    return await handleToClick(lng, lat, address);
+  const handleCheckIsRegistered = async (values) => {
+    setIsLoading(true);
+
+    await axios
+      .post(`${process.env.REACT_APP_API_URL}/users/CheckIsRegistered`, {
+        email: values,
+      })
+      .then((res) => {
+        setIsLoading(false);
+        console.log(res.data);
+        setErrorMessage("");
+        setIsregistered(true);
+        setStartRegistration(false);
+        setStarlogin(true);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        if (err.response) {
+          console.log(err.response.data.message);
+          setStarlogin(false);
+          err.response.data.message &&
+            setErrorMessage(err.response.data.message);
+          err.response.data.error && setIsregistered(false);
+          err.response.data.error && setStartRegistration(true);
+        }
+        console.log(err);
+      });
   };
   const handleSelection = (value) => {
+    if (!validateEmail(email)) {
+      return alert("provide a valide email");
+    }
+    if (!isRegistered) {
+      return handleCheckIsRegistered(email);
+    }
     props.handleNext("duration");
     console.log(bookingprocess);
     // console.log(sessionVenue, AdditionalAddress);
@@ -131,6 +154,7 @@ const Question3 = (props) => {
     <Container>
       <Hbig className="tt-heading-title">Where do we send the Quotation ?</Hbig>
       <input
+        type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter email address"
@@ -144,6 +168,91 @@ const Question3 = (props) => {
           marginTop: "20px",
         }}
       />
+      {startlogin ? (
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          style={{
+            width: "100%",
+            color: "grey",
+            borderWidth: "1px",
+            borderColor: "silver",
+            height: "35px",
+            marginBottom: "4px",
+            marginTop: "4px",
+          }}
+        />
+      ) : null}
+      {startRegistration ? (
+        <>
+          <VericalCenterRow>
+            <input
+              type="text"
+              value={fname}
+              onChange={(e) => setFname(e.target.value)}
+              placeholder="First Name"
+              style={{
+                width: "47%",
+                color: "grey",
+                borderWidth: "1px",
+                borderColor: "silver",
+                height: "35px",
+                marginBottom: "4px",
+                marginTop: "4px",
+              }}
+            />
+            <input
+              type="text"
+              value={lname}
+              onChange={(e) => setLname(e.target.value)}
+              placeholder="Surname"
+              style={{
+                width: "47%",
+                color: "grey",
+                borderWidth: "1px",
+                borderColor: "silver",
+                height: "35px",
+                marginBottom: "4px",
+                marginTop: "4px",
+              }}
+            />
+          </VericalCenterRow>
+          <VericalCenterRow>
+            <input
+              type="text"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+              placeholder="Enter Phone Number"
+              style={{
+                width: "47%",
+                color: "grey",
+                borderWidth: "1px",
+                borderColor: "silver",
+                height: "35px",
+                marginBottom: "4px",
+                marginTop: "4px",
+              }}
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Set Password"
+              style={{
+                width: "47%",
+                color: "grey",
+                borderWidth: "1px",
+                borderColor: "silver",
+                height: "35px",
+                marginBottom: "4px",
+                marginTop: "4px",
+              }}
+            />
+          </VericalCenterRow>
+        </>
+      ) : null}
 
       <button
         disabled={!email}
@@ -156,7 +265,7 @@ const Question3 = (props) => {
           padding: "9px",
           color: "#ffffff",
           cursor: "pointer",
-          marginTop: "20px",
+          marginTop: "auto",
         }}
       >
         Continue

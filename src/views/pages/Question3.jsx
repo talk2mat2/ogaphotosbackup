@@ -15,7 +15,7 @@ import { SETBOOKINGPROCESSINFO } from "../../redux/action";
 
 const Container = styled.div`
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   transition: height 1.5s ease;
@@ -163,7 +163,7 @@ const Question4 = (props) => {
           mapcenter={sessionVenue}
           sessionVenue={sessionVenue}
           selectedMarker={mylocation}
-          photographers={photographers}
+          photographers={[]}
           markers={locations}
           onClick={() => {}}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
@@ -183,6 +183,7 @@ const Question4 = (props) => {
           padding: "9px",
           color: "#ffffff",
           cursor: "pointer",
+          marginTop: "auto",
         }}
       >
         Continue

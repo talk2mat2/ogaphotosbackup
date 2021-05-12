@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AutoCompletePlaces from "../users/AutoComplleteMap";
 import MapWithAMarker from "../../components/MapWithAMarker";
@@ -10,6 +10,7 @@ import BusinessIcon from "@material-ui/icons/Business";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LandscapeIcon from "@material-ui/icons/Landscape";
 import TheatersIcon from "@material-ui/icons/Theaters";
+import Ratings from "../users/ratings";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -75,7 +76,92 @@ const VericalCenterRow = styled.div`
   width: 100%;
   justify-content: space-between;
 `;
+const PhotographersContainer = styled.div`
+  background-color: rgb(246, 249, 255);
+  min-height: 300px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizinf: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+const WorksAvater = styled.div`
+  height: 100px;
+  width: 100px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 5px;
+`;
+const PhotographersCard = (props) => {
+  const { PhotoInfo } = props;
+  return (
+    <PhotographersContainer
+      style={{
+        position: "relative",
+      }}
+    >
+      <VericalCenterRow>
+        {PhotoInfo && PhotoInfo._id === props.item._id ? (
+          <div
+            style={{
+              position: "absolute",
+              top: "-3px",
+              right: "2px",
+              color: "#ffffff",
+              backgroundColor: "dodgerblue",
+              padding: "1px",
+              boxSizing: "border-box",
+            }}
+          >
+            <small> Recommended</small>
+          </div>
+        ) : null}
+        <span className="verticalRow">
+          <PermIdentityIcon
+            fontSize="large"
+            style={{ marginRight: "10px", fontSize: "40px" }}
+          />
+          <span>
+            <p>
+              {props.item.fname} {props.item.lname}
+            </p>
+            <Ratings rating={5} />
+          </span>
+        </span>
+        <input
+          type="radio"
+          name="chossenPhotographer"
+          checked={PhotoInfo && PhotoInfo._id === props.item._id}
+        />
+      </VericalCenterRow>
 
+      <VericalCenterRow>
+        <span>
+          <h4>Specialized in</h4>
+          <h5>Event Photography</h5>
+          <p>
+            liked by <b>{Math.floor(Math.random() * 100)}</b> other Ogaphoto
+            customers
+          </p>
+        </span>
+        <span>
+          <h5>Portfolio Example</h5>
+          <small>Event Photography</small>
+        </span>
+      </VericalCenterRow>
+      <VericalCenterRow
+        style={{ justifyContent: "space-around", marginTop: "auto" }}
+      >
+        <WorksAvater />
+        <WorksAvater />
+        <WorksAvater />
+        <WorksAvater />
+      </VericalCenterRow>
+    </PhotographersContainer>
+  );
+};
 const Question8 = (props) => {
   const history = useHistory();
   const [sessionVenue, setsessionVenue] = useState({});
@@ -87,6 +173,7 @@ const Question8 = (props) => {
   const [mylocation, setMylocation] = useState(null);
   const [locations, setLocations] = useState([]);
   const dispatch = useDispatch();
+  const [PhotoInfo, setPhotoInfo] = useState(null);
   const [Searching, setSearching] = useState(false);
 
   const handleSearchPhotoGrphers = async (values) => {
@@ -107,7 +194,6 @@ const Question8 = (props) => {
       })
       .catch((err) => {
         setSearching(false);
-
         if (err.response) {
           // setErrorMessage(err.response.data.message)
           console.log(err.response.data.message);
@@ -125,6 +211,7 @@ const Question8 = (props) => {
       !bookingprocess.lat ||
       !bookingprocess.locations
     ) {
+      console.log("no user lat/ln/address");
       return history.push("/Purpose");
     }
     let lng = parseFloat(bookingprocess.lng);
@@ -162,7 +249,7 @@ const Question8 = (props) => {
   // };
 
   const handleSelection = (value) => {
-    props.handleNext("duration");
+    props.handleNext("checkout");
     console.log(bookingprocess);
     // console.log(sessionVenue, AdditionalAddress);
     // sessionVenue.name &&
@@ -174,11 +261,38 @@ const Question8 = (props) => {
     //     })
     //   );
   };
+
+  const mapPhotographers = (PhotoInfo) => {
+    if (photographers && photographers.length > 0) {
+      return photographers.map((item) => (
+        <PhotographersCard item={item} key={item._id} PhotoInfo={PhotoInfo} />
+      ));
+    } else {
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    SearchPhotoGraphersFunction();
+  }, []);
+
+  const MatchPhotographer = () => {
+    if (photographers && photographers.length > 0) {
+      const CloserPhotoGrapher = photographers.reduce(function (prev, curr) {
+        return prev.distance < curr.distance ? prev : curr;
+      });
+      setPhotoInfo(CloserPhotoGrapher);
+      console.log(CloserPhotoGrapher);
+    }
+  };
+  useEffect(() => {
+    MatchPhotographer();
+  }, [photographers]);
   return (
     <Container>
       <Hbig className="tt-heading-title">Select a photographer</Hbig>
       <button
-        disabled={!email}
+        // disabled={!email}
         onClick={handleSelection}
         style={{
           width: "100%",
@@ -189,10 +303,12 @@ const Question8 = (props) => {
           color: "#ffffff",
           cursor: "pointer",
           marginTop: "20px",
+          marginBottom: "10px",
         }}
       >
         Continue
       </button>
+      {mapPhotographers(PhotoInfo)}
     </Container>
   );
 };

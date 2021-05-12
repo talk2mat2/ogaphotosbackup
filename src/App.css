@@ -19,3 +19,14 @@ h6 {
 body {
   padding-top: 0px;
 }
+
+.verticalRow {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+input {
+  padding: 10px;
+  box-sizing: border-box;
+}

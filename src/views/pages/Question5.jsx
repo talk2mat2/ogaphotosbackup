@@ -127,12 +127,12 @@ const Question5 = (props) => {
     // console.log(sessionVenue, AdditionalAddress);
     // sessionVenue.name &&
     //   AdditionalAddress &&
-    //   dispatch(
-    //     SETBOOKINGPROCESSINFO({
-    //       locations: sessionVenue.name,
-    //       AdditionalAddress: AdditionalAddress,
-    //     })
-    //   );
+    dispatch(
+      SETBOOKINGPROCESSINFO({
+        duration: durations,
+        price: CalculatetotalPrice(),
+      })
+    );
   };
   const GetPricePriceTag = async () => {
     await axios
@@ -251,9 +251,13 @@ const Question5 = (props) => {
 
             <Horizontalcolumn>
               <p>{durations} Of uninterupted event shoot</p>
-              <p>
-                <b>NGN {CalculatetotalPrice()}</b>
-              </p>
+              {CalculatetotalPrice ? (
+                <p>
+                  <b>
+                    NGN {parseFloat(CalculatetotalPrice()).toLocaleString()}
+                  </b>
+                </p>
+              ) : null}
               <em style={{ color: "dodgerblue" }}>Multiple Locations</em>
               <em style={{ color: "dodgerblue" }}>
                 Digital & Hard Copy Files Included

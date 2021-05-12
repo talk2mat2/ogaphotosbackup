@@ -21,6 +21,7 @@ import Question5 from "./Question5";
 import Question6 from "./Question6";
 import Question7 from "./Question7";
 import Question8 from "./Question8";
+import Question9 from "./Question9";
 const Container = styled.div`
   min-height: 70vh;
   background-color: rgb(246, 249, 255);
@@ -148,6 +149,7 @@ const MainStepper = styled.div`
 
 const QuestionContainer = styled.div`
   min-height: 70vh;
+  margin-top: 20px;
   background-color: #ffffff;
   width: 500px;
   min-height: 400px;
@@ -244,6 +246,7 @@ const Purpose = (props) => {
     location.pathname === "/Purpose/date" && setStepperLevel(70);
     location.pathname === "/Purpose/time" && setStepperLevel(80);
     location.pathname === "/Purpose/photographerselect" && setStepperLevel(90);
+    location.pathname === "/Purpose/checkout" && setStepperLevel(95);
   }, [location]);
 
   return (
@@ -285,6 +288,9 @@ const Purpose = (props) => {
             </Route>
             <Route path={`${match.url}/photographerselect`}>
               <Question8 handleNext={handleNext} />
+            </Route>
+            <Route path={`${match.url}/checkout`}>
+              <Question9 handleNext={handleNext} />
             </Route>
           </Switch>
         </QuestionContainer>

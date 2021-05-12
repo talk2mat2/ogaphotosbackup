@@ -71,9 +71,9 @@ const VericalCenterRow = styled.div`
 const Question7 = (props) => {
   const [value, onChange] = useState("");
   const dispatch = useDispatch();
-  const handleSelection = (value) => {
+  const handleSelection = () => {
     props.handleNext("photographerselect");
-    // dispatch(SETBOOKINGPROCESSINFO({ category: value }));
+    dispatch(SETBOOKINGPROCESSINFO({ time: value }));
   };
   return (
     <Container>
