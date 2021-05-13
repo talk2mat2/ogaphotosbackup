@@ -75,7 +75,7 @@ const VericalCenterRow = styled.div`
 `;
 const SuccessBookedContainer = styled.div`
   width: 250px;
-  height: 200px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -347,7 +347,8 @@ const Question9 = (props) => {
           <p style={{ marginTop: "30px" }}>Successfully booked a photo shoot</p>
           <br />
           <p style={{ marginTop: "2px" }}>
-            you will be contacted by Photographer soon
+            you will be contacted by Photographer soon, <br />
+            You can also check progress on your session history
           </p>
           <button
             onClick={handleClose}
