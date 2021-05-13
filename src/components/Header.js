@@ -158,7 +158,7 @@ const Header = () => {
                   <Link to="/dashboard">
                     <PersonIcon
                       fontSize="medium"
-                      style={{ color: "#ffffff" }}
+                      // style={{ color: "#ffffff" }}
                     />
                   </Link>
                 </li>
