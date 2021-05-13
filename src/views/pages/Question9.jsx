@@ -16,6 +16,8 @@ import { PaystackConsumer } from "react-paystack";
 import axios from "axios";
 import { usePaystackPayment } from "react-paystack";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
+import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import { useHistory } from "react-router";
 
 const Container = styled.div`
   width: 100%;
@@ -71,6 +73,23 @@ const VericalCenterRow = styled.div`
   flex-direction: row;
   width: 100%;
 `;
+const SuccessBookedContainer = styled.div`
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  box-sizing: border-boz;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+  z-index: 7;
+`;
 
 const Question9 = (props) => {
   const [sessionVenue, setsessionVenue] = useState({});
@@ -81,11 +100,12 @@ const Question9 = (props) => {
   const [CardVisible, setCardVisible] = useState(false);
   const [mylocation, setMylocation] = useState(null);
   const [locations, setLocations] = useState([]);
+  const [showSuccess, setshowSuccess] = useState(false);
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const userData = CurrentUser && CurrentUser.userData;
   const token = CurrentUser && CurrentUser.token;
-
+  const history = useHistory();
   const handleToClick = async (long1, lat1, address) => {
     // console.log(typeof long)
     let lng = parseFloat(long1);
@@ -125,7 +145,8 @@ const Question9 = (props) => {
     //   );
   };
 
-  const handleBooking = async (_id) => {
+  const handleBooking = async (_id, transaction_id) => {
+    console.log("called");
     //_id is photographers id
     // setConfirmAgreeVisible(false);
     // setPhotoDetails(false);
@@ -140,14 +161,16 @@ const Question9 = (props) => {
           phographerId: _id,
           address: bookingprocess.locations,
           bookingprocess,
+          transaction_id,
         },
         { headers: { authorization: token } }
       )
       .then((res) => {
         console.log(res.data);
-        alert("request sent");
+        setshowSuccess(true);
       })
       .catch((err) => {
+        alert("An error occured");
         if (err.response) {
           console.log(err.response.data.message);
         }
@@ -183,13 +206,22 @@ const Question9 = (props) => {
   };
 
   const handleFlutterPayment = useFlutterwave(config);
-
+  const handleClose = () => {
+    setshowSuccess(false);
+    history.push("/");
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  };
   const PayByflutterWave = () => {
     handleFlutterPayment({
       callback: (response) => {
         console.log(response);
-        if (response.status === "success") {
-          handleBooking(bookingprocess.choosenPhotoGrapher._id);
+        if (response.status === "successful") {
+          handleBooking(
+            bookingprocess.choosenPhotoGrapher._id,
+            response.transaction_id
+          );
         }
         closePaymentModal(); // this will close the modal programmatically
       },
@@ -306,6 +338,30 @@ const Question9 = (props) => {
           </span>
         </li>
       </Listing>
+      {showSuccess ? (
+        <SuccessBookedContainer>
+          <InsertEmoticonIcon
+            fontSize="large"
+            style={{ color: "lime", fontSize: "40px", marginTop: "30px" }}
+          />
+          <p style={{ marginTop: "30px" }}>Successfully booked a photo shoot</p>
+          <br />
+          <p style={{ marginTop: "2px" }}>
+            you will be contacted by Photographer soon
+          </p>
+          <button
+            onClick={handleClose}
+            style={{
+              border: "none",
+              padding: "10px",
+              backgroundColor: "rgb(0, 162, 149)",
+              color: "#ffffff",
+            }}
+          >
+            OK
+          </button>
+        </SuccessBookedContainer>
+      ) : null}
     </Container>
   );
 };
