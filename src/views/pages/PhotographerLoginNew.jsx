@@ -135,7 +135,9 @@ const PhotoGrapherLoginNew = () => {
         console.log(res.data);
         // setIsregistered(true)
         // history.push('/dashboard')
+        history.push("/");
         dispatch(LOGINSUCCESS(res.data));
+        window.location.reload();
       })
       .catch((err) => {
         setLoading(false);
@@ -166,7 +168,6 @@ const PhotoGrapherLoginNew = () => {
     console.log(email, password);
   };
   const handleClose = () => {
-    setEmail("");
     setPassword("");
     setErrorMessage("");
     // dispatch(clearLoginError())
