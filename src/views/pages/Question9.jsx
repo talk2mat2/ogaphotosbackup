@@ -313,7 +313,7 @@ const Question9 = (props) => {
                     fontSize="small"
                     style={{ color: "grey", marginRight: "10px" }}
                   />
-                  <p>2 hours Of uninterupted event shoot</p>
+                  <p>{bookingprocess.durations} Of uninterupted event shoot</p>
                 </VericalCenterRow>
               </span>
               <p>
