@@ -9,7 +9,7 @@ const generatePDF = (tickets) => {
   // initialize jsPDF
   tickets.choosenPhotoGrapher && delete tickets.choosenPhotoGrapher;
   tickets.lat && delete tickets.lat;
-  tickets.ln && delete tickets.lng;
+  tickets.lng && delete tickets.lng;
   const doc = new jsPDF({
     orientation: "landscape",
   });
