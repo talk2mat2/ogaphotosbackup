@@ -313,7 +313,7 @@ const Question9 = (props) => {
                     fontSize="small"
                     style={{ color: "grey", marginRight: "10px" }}
                   />
-                  <p>{bookingprocess.durations} Of uninterupted event shoot</p>
+                  <p>{bookingprocess.duration} Of uninterupted event shoot</p>
                 </VericalCenterRow>
               </span>
               <p>
@@ -347,7 +347,7 @@ const Question9 = (props) => {
           <p style={{ marginTop: "30px" }}>Successfully booked a photo shoot</p>
           <br />
           <p style={{ marginTop: "2px" }}>
-            you will be contacted by Photographer soon, <br />
+            you will be contacted by a photographer soon, <br />
             You can also check progress on your session history
           </p>
           <button
