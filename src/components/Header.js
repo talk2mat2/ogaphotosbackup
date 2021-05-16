@@ -172,8 +172,13 @@ const Header = () => {
               {/* End tt-dropdown */}
               {/* Begin call to action button */}
               <li>
-                <Link to="/Purpose" className="tt-tools-button" target="_blank">
-                  Book<span className="hide-from-sm"> Now</span>!
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to="/Purpose"
+                  className="tt-tools-button"
+                  target="_blank"
+                >
+                  Hire<span className="hide-from-sm"> a photographer</span>!
                 </Link>
               </li>
               {/* End call to action button */}

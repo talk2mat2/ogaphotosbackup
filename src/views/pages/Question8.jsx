@@ -10,6 +10,8 @@ import BusinessIcon from "@material-ui/icons/Business";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LandscapeIcon from "@material-ui/icons/Landscape";
 import TheatersIcon from "@material-ui/icons/Theaters";
+import Avatar from "@material-ui/core/Avatar";
+import avatar from "../../assets/avatar.jpg";
 import Ratings from "../users/ratings";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -96,9 +98,6 @@ const WorksAvater = styled.div`
 `;
 const PhotographersCard = (props) => {
   const { PhotoInfo, setchoosenPhotoGrapher, choosenPhotoGrapher } = props;
-  useEffect(() => {
-    console.log(choosenPhotoGrapher);
-  }, [choosenPhotoGrapher]);
 
   const HandleIsChecked = () => {
     if (choosenPhotoGrapher && choosenPhotoGrapher._id) {
@@ -106,6 +105,23 @@ const PhotographersCard = (props) => {
     }
     return PhotoInfo && PhotoInfo._id === props.item._id;
   };
+
+  const mapPortfolioworks = () => {
+    if (props.item.Porthfolio_works.length > 0) {
+      return props.item.Porthfolio_works.map((item) => {
+        return (
+          <WorksAvater>
+            <img
+              src={item.imgUri}
+              alt="img"
+              style={{ width: "100%", borderRadius: "4px" }}
+            />
+          </WorksAvater>
+        );
+      });
+    }
+  };
+
   return (
     <PhotographersContainer
       style={{
@@ -129,9 +145,15 @@ const PhotographersCard = (props) => {
           </div>
         ) : null}
         <span className="verticalRow">
-          <PermIdentityIcon
-            fontSize="large"
-            style={{ marginRight: "10px", fontSize: "40px" }}
+          <Avatar
+            style={{
+              marginRight: "10px",
+              fontSize: "40px",
+              width: "60px",
+              height: "60px",
+            }}
+            alt="Image"
+            src={props.item.profileImage || avatar}
           />
           <span>
             <p>
@@ -155,7 +177,12 @@ const PhotographersCard = (props) => {
       <VericalCenterRow>
         <span>
           <h4>Specialized in</h4>
-          <h5>Event Photography</h5>
+          {props.item.favouriteShoots ? (
+            <h5>{props.item.favouriteShoots} Photography</h5>
+          ) : (
+            <h5>Event Photography</h5>
+          )}
+
           <p>
             liked by <b>{Math.floor(Math.random() * 100)}</b> other Ogaphoto
             customers
@@ -169,10 +196,16 @@ const PhotographersCard = (props) => {
       <VericalCenterRow
         style={{ justifyContent: "space-around", marginTop: "auto" }}
       >
-        <WorksAvater />
-        <WorksAvater />
-        <WorksAvater />
-        <WorksAvater />
+        {props.item && props.item.Porthfolio_works.length > 0 ? (
+          mapPortfolioworks()
+        ) : (
+          <>
+            <WorksAvater />
+            <WorksAvater />
+            <WorksAvater />
+            <WorksAvater />
+          </>
+        )}
       </VericalCenterRow>
     </PhotographersContainer>
   );

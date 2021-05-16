@@ -13,12 +13,14 @@ import { SETBOOKINGPROCESSINFO } from "../../redux/action";
 import { EmailOutlined } from "@material-ui/icons";
 import Ratings from "../users/ratings";
 import { PaystackConsumer } from "react-paystack";
+import Avatar from "@material-ui/core/Avatar";
+import avatar from "../../assets/avatar.jpg";
 import axios from "axios";
 import { usePaystackPayment } from "react-paystack";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import { useHistory } from "react-router";
-
+import CircularProgress from "@material-ui/core/CircularProgress";
 const Container = styled.div`
   width: 100%;
   min-height: 400px;
@@ -90,6 +92,24 @@ const SuccessBookedContainer = styled.div`
   transform: translate(-50%, -50%);
   z-index: 7;
 `;
+const LoaderContainer = styled.div`
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255, 0.5);
+  text-align: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  box-sizing: border-boz;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+  z-index: 7;
+`;
 
 const Question9 = (props) => {
   const [sessionVenue, setsessionVenue] = useState({});
@@ -101,6 +121,7 @@ const Question9 = (props) => {
   const [mylocation, setMylocation] = useState(null);
   const [locations, setLocations] = useState([]);
   const [showSuccess, setshowSuccess] = useState(false);
+  const [isloading, setisloading] = useState(false);
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const userData = CurrentUser && CurrentUser.userData;
@@ -154,6 +175,7 @@ const Question9 = (props) => {
       return null;
     }
     // /bookSession
+    setisloading(true);
     await axios
       .post(
         `${process.env.REACT_APP_API_URL}/users/bookSession`,
@@ -167,12 +189,21 @@ const Question9 = (props) => {
       )
       .then((res) => {
         console.log(res.data);
+        setisloading(false);
         setshowSuccess(true);
+        setTimeout(() => {
+          history.replace("/dashboard");
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        }, 3000);
       })
       .catch((err) => {
+        setisloading(false);
         alert("An error occured");
         if (err.response) {
           console.log(err.response.data.message);
+          alert(err.response.data.message);
         }
         console.log(err);
       });
@@ -322,10 +353,22 @@ const Question9 = (props) => {
             </VericalCenterRow>
             <VericalCenterRow>
               <span className="verticalRow">
-                <PermIdentityIcon
+                <Avatar
+                  style={{
+                    marginRight: "10px",
+                    fontSize: "40px",
+                    width: "60px",
+                    height: "60px",
+                  }}
+                  alt="Image"
+                  src={
+                    bookingprocess.choosenPhotoGrapher.profileImage || avatar
+                  }
+                />
+                {/* <PermIdentityIcon
                   fontSize="large"
                   style={{ marginRight: "10px", fontSize: "40px" }}
-                />
+                /> */}
                 <span>
                   <p>
                     {bookingprocess.choosenPhotoGrapher.fname}{" "}
@@ -362,6 +405,12 @@ const Question9 = (props) => {
             OK
           </button>
         </SuccessBookedContainer>
+      ) : null}
+      {isloading ? (
+        <LoaderContainer>
+          <CircularProgress style={{ color: "tomato" }} />
+          <h4 style={{ backgroundColor: "#ffffff" }}>Processing...</h4>
+        </LoaderContainer>
       ) : null}
     </Container>
   );

@@ -233,6 +233,9 @@ const Purpose = (props) => {
   useEffect(() => {
     if (!bookingprocess.purpose) {
       history.push("/Purpose");
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 2000);
     }
   }, [bookingprocess]);
 

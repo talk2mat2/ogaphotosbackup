@@ -260,7 +260,7 @@ const Question5 = (props) => {
               ) : null}
               <em style={{ color: "dodgerblue" }}>Multiple Locations</em>
               <em style={{ color: "dodgerblue" }}>
-                Digital & Hard Copy Files Included
+                Digital Copy Files Included
               </em>
             </Horizontalcolumn>
           </li>

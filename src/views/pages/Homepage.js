@@ -86,7 +86,7 @@ const Homepage = () => {
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
-                          Book Now!
+                          Hire a photographer!
                         </a>
                         <a
                           href="/#latest-news-section"
@@ -127,7 +127,7 @@ const Homepage = () => {
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
-                          Book now!
+                          Hire a photographer!
                         </a>
                         <a
                           href="/#latest-news-section"
@@ -170,7 +170,7 @@ const Homepage = () => {
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
-                          Book Now!
+                          Hire a photographer!
                         </a>
                         <a
                           href="/#latest-news-section"
@@ -211,7 +211,7 @@ const Homepage = () => {
                           className="btn btn-primary margin-top-5 margin-right-10"
                           target="_blank"
                         >
-                          Book Now!
+                          Hire a photographer!
                         </a>
                         <a
                           href="/#latest-news-section"
@@ -1148,7 +1148,7 @@ const Homepage = () => {
                           href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Book Now
+                          Hire a photographer
                         </a>
                         <a
                           href="/#"
@@ -1196,7 +1196,7 @@ const Homepage = () => {
                           href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Book Now
+                          Hire a photographer
                         </a>
                         <a
                           href="/#"
@@ -1244,7 +1244,7 @@ const Homepage = () => {
                           href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Book Now
+                          Hire a photographer
                         </a>
                         <a
                           href="/#"
@@ -1292,7 +1292,7 @@ const Homepage = () => {
                           href="/Purpose"
                           className="btn btn-price-box btn-dark btn-lg"
                         >
-                          Book Now
+                          Hire a photographer
                         </a>
                         <a
                           href="/dashboard"
@@ -1518,10 +1518,20 @@ const Homepage = () => {
               <div className="tt-heading-inner tt-wrap">
                 {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
                 <h1 className="tt-heading-title">Specialists</h1>
-                <div className="tt-heading-subtitle">
-                  Ogaphoto has local specialists for every kind of shoot or
-                  video, and work with you to take your brand to the next level.
-                </div>
+                <span>
+                  <div className="tt-heading-subtitle">
+                    Ogaphoto has local specialists for every kind of shoot or
+                    video, and work with you to take your brand to the next
+                    level.
+                  </div>
+                  <a
+                    style={{ float: "right" }}
+                    href="/Purpose"
+                    className="btn btn-price-box btn-dark btn-lg"
+                  >
+                    Hire a photographer
+                  </a>
+                </span>
                 <hr className="hr-short" />
               </div>
               {/* /.tt-heading-inner */}
