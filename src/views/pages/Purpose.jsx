@@ -179,6 +179,8 @@ const Purpose = (props) => {
   const [stepperLevel, setStepperLevel] = useState(0);
   const [ErrorMessage, setErrorMessage] = useState("");
   const bookingprocess = useSelector((state) => state.BookingProcessReducer);
+  const CurrentUser = useSelector((state) => state.user.currentUser);
+  const userData = CurrentUser && CurrentUser.userData;
   const location = useLocation();
   const { match } = props;
   const handleLogin = (values) => {
@@ -239,6 +241,14 @@ const Purpose = (props) => {
     }
   }, [bookingprocess]);
 
+  useEffect(() => {
+    if (userData.isPhotographer) {
+      history.push("/dashboard");
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+  }, []);
   useEffect(() => {
     console.log(location.pathname);
     location.pathname === "/Purpose" && setStepperLevel(10);
