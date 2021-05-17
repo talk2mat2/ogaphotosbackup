@@ -4,10 +4,12 @@ import Button from "@material-ui/core/Button";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { GETMYBOOKINGSUCCESS } from "../../redux/action";
 import axios from "axios";
+
 import Moment from "react-moment";
 import { useSelector, useDispatch } from "react-redux";
 import { Switch, Route, Link, useHistory } from "react-router-dom";
 import generatePDF from "../pages/generatePdf";
+import { useTable } from "react-table";
 const Container = Styled.div`
 width:100%;
 display:flex;
@@ -28,21 +30,28 @@ color:grey;
 font-weight:500;
 `;
 const Listing = Styled.ul`
-margin-top:20px;
+margin-top:5px;
 display:flex;
 flex-direction:column;
 align-items:flex-start;
-background-color: #f1f0f0;
+background-color: #fffffff;
 padding:0px;
 width:95%;
 li{
 	list-style:none;
 	font-size:18px;
 	width:100%;
+  padding:10px;
+  border-radius:4px;
+  box-sizing:border-box;
 	background-color: #ffff;
 	color:grey;
 	margin-top:1.7px;
-	margin-bottom:1.7px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+	margin-bottom:4px;
+  small{
+    font-size:14px;
+  }
 }
 `;
 const Buttons = Styled(Button)`
@@ -66,7 +75,7 @@ margin-top:8px;
 // }
 const Detailevents = ({
   location: {
-    state: { data },
+    state: { Data },
   },
 }) => {
   const [BookingDetail, setBookingDetail] = useState({});
@@ -78,35 +87,157 @@ const Detailevents = ({
     bookings.length &&
       bookings.map((items) => {
         // console.log(items)
-        return items._id === data._id && setBookingDetail(items);
+        return items._id === Data._id && setBookingDetail(items);
       });
-  }, [bookings, data._id]);
+  }, [bookings, Data._id]);
 
   const handlePdfDownload = () => {
     BookingDetail.bookingProcess && generatePDF(BookingDetail.bookingProcess);
   };
+
+  const data = React.useMemo(
+    () => [
+      // {
+      //   col1: "Minsk",
+      //   col2: "27",
+      //   col3: "rain",
+
+      // },
+      BookingDetail,
+    ],
+    [BookingDetail]
+  );
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "location",
+        accessor: "address", // accessor is the "key" in the data
+      },
+      {
+        Header: "location details",
+        accessor: "bookingProcess.AdditionalAddress", // accessor is the "key" in the data
+      },
+      {
+        Header: "Category",
+        accessor: "bookingProcess.category",
+      },
+      {
+        Header: "Purpose",
+        accessor: "bookingProcess.purpose", // accessor is the "key" in the data
+      },
+      {
+        Header: "Amount(NGN)",
+        accessor: "bookingProcess.price", // accessor is the "key" in the data
+      },
+      {
+        Header: "Status",
+        accessor: "bookingProcess.status", // accessor is the "key" in the data
+      },
+      {
+        Header: "payment type",
+        accessor: "bookingProcess.payment_type", // accessor is the "key" in the data
+      },
+      {
+        Header: "Event Date",
+        accessor: "bookingProcess.date", // accessor is the "key" in the data
+      },
+      {
+        Header: "Event Duration",
+        accessor: "bookingProcess.duration", // accessor is the "key" in the data
+      },
+      {
+        Header: "Event time",
+        accessor: "bookingProcess.time", // accessor is the "key" in the data
+      },
+      {
+        Header: "Photographer Name",
+        accessor: "bookingProcess.choosenPhotoGrapher.fname", // accessor is the "key" in the data
+      },
+      {
+        Header: "Photographer no.",
+        accessor: "bookingProcess.choosenPhotoGrapher.mobile", // accessor is the "key" in the data
+      },
+    ],
+    []
+  );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({ columns, data });
   return (
-    <>
+    <div style={{ position: "relative", width: "100%" }}>
       <div
         onClick={history.goBack}
         style={{
           position: "absolute",
-          left: "60px",
-          top: "40px",
+          left: "50px",
+          top: "18px",
           cursor: "pointer",
+          zIndex: 3,
         }}
       >
         <ArrowBackIcon style={{ fontSize: "30px" }} />
       </div>
-      <BigText>Details</BigText>
+      <BigText style={{ textAlign: "center" }}>Details</BigText>
+
+      <div style={{ overflowX: "scroll", maxWidth: "90vw" }}>
+        <table {...getTableProps()} style={{ border: "solid 1px black" }}>
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th
+                    {...column.getHeaderProps()}
+                    style={{
+                      // border: "solid 3px red",
+
+                      color: "#ffffff",
+                      backgroundColor: "rgb(0, 162, 149)",
+                    }}
+                  >
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td
+                        {...cell.getCellProps()}
+                        style={{
+                          padding: "10px",
+                          border: "solid 1px gray",
+                        }}
+                      >
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div style={{ height: "30px" }} />
       <Listing>
         <li>
-          <small>{BookingDetail.address}</small>
           <br />
           {BookingDetail.timeStart && (
             <>
               {" "}
               <small>
+                {" "}
+                Event started at:{" "}
                 <Moment>{`${BookingDetail.timeStart}`}</Moment>
               </small>
               <br />
@@ -114,22 +245,24 @@ const Detailevents = ({
           )}
 
           <small>
+            Event Status:{" "}
             {BookingDetail.completed
               ? "ended"
               : null || BookingDetail.accepted
               ? "processing"
               : "pending"}
           </small>
-          <br />
-          <small>
+
+          {/* <small>
             Shots by{" "}
             {BookingDetail.photographerId && BookingDetail.photographerId.fname}
             :
-          </small>
-
+          </small> */}
+          <br />
           <Button
             onClick={handlePdfDownload}
             style={{
+              float: "right",
               marginLeft: "30px",
               backgroundColor: "dodgerblue",
               color: "#ffffff",
@@ -141,7 +274,7 @@ const Detailevents = ({
         </li>
         <br />
       </Listing>
-    </>
+    </div>
   );
 };
 
@@ -186,14 +319,7 @@ const FoodOrderHistory = (props) => {
   const BookingCards = ({ item }) => {
     return (
       <>
-        <li
-          onClick={() =>
-            history.push({
-              pathname: `${match.url}/info`,
-              state: { data: item },
-            })
-          }
-        >
+        <li>
           <small>
             request status: {!item.accepted ? "pending" : "accepted"}
           </small>
@@ -202,6 +328,22 @@ const FoodOrderHistory = (props) => {
           <small>Mobile : {item.photographerId.mobile}</small>
           <br />
           <small>Date : {item.bookingDate.substring(0, 10)}</small>
+          <span>
+            <Buttons
+              style={{
+                marginLeft: "100px",
+                fontSize: "9px",
+              }}
+              onClick={() =>
+                history.push({
+                  pathname: `${match.url}/info`,
+                  state: { Data: item },
+                })
+              }
+            >
+              View Details
+            </Buttons>
+          </span>
         </li>
       </>
     );

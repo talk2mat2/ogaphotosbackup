@@ -499,6 +499,7 @@ const Profile = (props) => {
                 Birthdays
               </textarea>
             </div>
+
             <button
               disabled={loading}
               onClick={UpdateProfile}
@@ -603,9 +604,12 @@ const Profile = (props) => {
 					types={['address']}
 					componentRestrictions={{ country: 'ng' }}
 				/> */}
-        <Grid container spacing={2} alignItems="flex-start">
+        <div style={{ height: "30px" }} />
+        <VericalCenterRow container spacing={2} alignItems="center">
           <Grid item>
-            <h4>About me:</h4>
+            <span style={{ fontSize: "19px", marginRight: "10px" }}>
+              About me:
+            </span>
           </Grid>
           <Grid
             item
@@ -620,8 +624,8 @@ const Profile = (props) => {
               <p>{userData.aboutMe}</p>
             </VericalCenterRow>
           </Grid>
-        </Grid>
-        <Grid container spacing={2} alignItems="flex-end">
+        </VericalCenterRow>
+        {/* <Grid container spacing={2} alignItems="flex-end">
           <Grid item>
             <PersonOutline />
           </Grid>
@@ -629,14 +633,14 @@ const Profile = (props) => {
             <Typography variant="subtitle1" gutterBottom>
               {userData.Email}
             </Typography>
-            {/* <TextField
+            <TextField
 							disabled
 							id='standard-disabled'
 							label='Invite Code'
 							defaultValue={auth.info.email}
-						/> */}
+						/>
           </Grid>
-        </Grid>
+        </Grid> */}
         {/* <Grid container spacing={2} alignItems='flex-end'>
 					<Grid item>
 						<LocationCityRounded />
@@ -656,6 +660,28 @@ const Profile = (props) => {
 					</Grid>
 				</Grid> */}
         <div style={{ height: "15px" }} />
+        <VericalCenterRow
+          style={{
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "19px",
+              marginRight: "3px",
+
+              minWidth: "200px",
+            }}
+          >
+            Favourite shoot type:
+          </span>
+          <span>{userData.favouriteShoots}</span>
+          <Grid container>
+            <VericalCenterRow></VericalCenterRow>
+          </Grid>
+        </VericalCenterRow>
+        <div style={{ height: "15px" }} />
         {userData.isPhotographer ? (
           <div style={{ marginTop: "auto", width: "100%" }}>
             <h4>Portfolio works</h4>
@@ -670,7 +696,8 @@ const Profile = (props) => {
             </VericalCenterRow>
           </div>
         ) : null}
-        <div style={{ height: "8px" }} />
+        <div style={{ height: "80px" }} />
+
         <button
           onClick={handleOpen}
           className="btn1 "
