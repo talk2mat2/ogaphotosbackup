@@ -2241,7 +2241,7 @@ const Homepage = () => {
                                 <ul>
                                   <li>
                                     <a
-                                      href="https://www.facebook.com/themetorium"
+                                      href="/#"
                                       className="btn btn-social-min btn-default btn-rounded-full"
                                       title="Follow me on Facebook"
                                       target="_blank"
@@ -2251,7 +2251,7 @@ const Homepage = () => {
                                   </li>
                                   <li>
                                     <a
-                                      href="https://twitter.com/Themetorium"
+                                      href="/#"
                                       className="btn btn-social-min btn-default btn-rounded-full"
                                       title="Follow me on Twitter"
                                       target="_blank"
@@ -2261,7 +2261,7 @@ const Homepage = () => {
                                   </li>
                                   <li>
                                     <a
-                                      href="https://plus.google.com/+SiiliOnu"
+                                      href="/#"
                                       className="btn btn-social-min btn-default btn-rounded-full"
                                       title="Follow me on Google+"
                                       target="_blank"
@@ -2271,7 +2271,7 @@ const Homepage = () => {
                                   </li>
                                   <li>
                                     <a
-                                      href="https://www.pinterest.com/themetorium"
+                                      href="/#"
                                       className="btn btn-social-min btn-default btn-rounded-full"
                                       title="Follow me on Pinterest"
                                       target="_blank"
@@ -2281,7 +2281,7 @@ const Homepage = () => {
                                   </li>
                                   <li>
                                     <a
-                                      href="https://dribbble.com/Themetorium"
+                                      href="/#"
                                       className="btn btn-social-min btn-default btn-rounded-full"
                                       title="Follow me on Dribbble"
                                       target="_blank"
@@ -2517,8 +2517,8 @@ const Homepage = () => {
                       <ul>
                         <li>
                           <a
-                            href="https://www.facebook.com/themetorium"
-                            className="btn btn-social-min btn-default btn-rounded-full"
+                            href="/#"
+                            className="btn2 btn-social-min "
                             title="Follow me on Facebook"
                             target="_blank"
                           >
@@ -2527,8 +2527,8 @@ const Homepage = () => {
                         </li>
                         <li>
                           <a
-                            href="https://twitter.com/Themetorium"
-                            className="btn btn-social-min btn-default btn-rounded-full"
+                            href="/#"
+                            className="btn2 btn-social-min   "
                             title="Follow me on Twitter"
                             target="_blank"
                           >
@@ -2537,8 +2537,8 @@ const Homepage = () => {
                         </li>
                         <li>
                           <a
-                            href="https://plus.google.com/+SiiliOnu"
-                            className="btn btn-social-min btn-default btn-rounded-full"
+                            href="/#"
+                            className="btn2 btn-social-min "
                             title="Follow me on Google+"
                             target="_blank"
                           >
@@ -2547,8 +2547,8 @@ const Homepage = () => {
                         </li>
                         <li>
                           <a
-                            href="https://www.pinterest.com/themetorium"
-                            className="btn btn-social-min btn-default btn-rounded-full"
+                            href="/#"
+                            className="btn2 btn-social-min "
                             title="Follow me on Pinterest"
                             target="_blank"
                           >
@@ -2557,8 +2557,8 @@ const Homepage = () => {
                         </li>
                         <li>
                           <a
-                            href="https://dribbble.com/Themetorium"
-                            className="btn btn-social-min btn-default btn-rounded-full"
+                            href="/#"
+                            className="btn2 btn-social-min "
                             title="Follow me on Dribbble"
                             target="_blank"
                           >
@@ -2568,7 +2568,7 @@ const Homepage = () => {
                         <li>
                           <a
                             href="/#"
-                            className="btn btn-social-min btn-default btn-rounded-full"
+                            className="btn2 btn-social-min "
                             title="Drop me a line"
                             target="_blank"
                           >

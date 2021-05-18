@@ -136,6 +136,9 @@ display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
+  @media(max-width:630px){
+width:90vw;
+  }
 `;
 const VericalCenterRow = Styled.div`
   margin-top: auto;
@@ -143,6 +146,17 @@ const VericalCenterRow = Styled.div`
   flex-direction: row;
   width: 100%;
   justify-content: flex-start;
+`;
+
+const Container = Styled.div`
+width:100%;
+display:flex;
+flex-direction:column;
+padding-bottom:20px;
+align-items:center;
+background-color:#f1f0f0;
+min-height:440px;
+padding-top:10px;
 `;
 const Profile = (props) => {
   const auth = useSelector((state) => state.auth);
@@ -384,182 +398,201 @@ const Profile = (props) => {
   };
 
   return (
-    <div>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
+    <Container>
+      <div
+        style={{
+          backgroundColor: "#ffffff",
+          borderRadius: "12px",
+          minHeight: "560px",
+          width: "94%",
+          padding: "10px",
+          marginTop: "20px",
+          marginBottom: "20px",
+          boxSizing: "border-box",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Fade in={open}>
-          <EditProfile>
-            <Button
-              style={{ borderRadius: "100%", height: "100px", width: "100px" }}
-              variant="contained"
-              component="label"
-            >
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open}>
+            <EditProfile>
+              <Button
+                style={{
+                  borderRadius: "100%",
+                  height: "100px",
+                  width: "100px",
+                }}
+                variant="contained"
+                component="label"
+              >
+                <Avatar
+                  className={classes.image}
+                  alt="Image"
+                  src={ImageState.file || userData.profileImage || avatar}
+                />
+                <input
+                  type="file"
+                  hidden
+                  onChange={handleProfileImgChange}
+                  accept="image/x-png,image/jpeg"
+                />
+              </Button>
+
+              <div style={{ marginTop: "auto", width: "100%" }}>
+                <h4>Email</h4>
+                <p>{userData.Email}</p>
+              </div>
+              <div style={{ marginTop: "auto", width: "100%" }}>
+                <h4>Favourite shoot type</h4>
+                <select
+                  defaultValue={favoritesShootTypes}
+                  name="favoritesShootTypes"
+                  id="favoritesShootTypes"
+                  value={favoritesShootTypes}
+                  onChange={(e) => setfavoritesShootTypes(e.target.value)}
+                  style={{
+                    width: "200px",
+                    border: "none",
+                    borderRadius: "4px",
+                    height: "30px",
+                  }}
+                >
+                  <option value="">select</option>
+                  <option value="Real estate">Real estate</option>
+                  <option value="family">family</option>
+                  <option value="Party">Party</option>
+                  <option value="Dating">Dating</option>
+                  <option value="Team/Office">Team/Office</option>
+                  <option value="Graduation">Graduation</option>
+                  <option value="Fashion">Fashion</option>
+                  <option value="media">media</option>
+                  <option value="Food">Food</option>
+                  <option value="Product">Product</option>
+                  <option value="Landscape">Landscape</option>
+                </select>
+              </div>
+              <div style={{ height: "8px" }} />
+              {userData.isPhotographer ? (
+                <div style={{ marginTop: "auto", width: "100%" }}>
+                  <h4>
+                    Portfolio works
+                    {
+                      <Button
+                        variant="contained"
+                        component="label"
+                        style={{
+                          marginLeft: "10px",
+                          padding: 0,
+                          color: "#ffffff",
+                          backgroundColor: "dodgerblue",
+                          fontSize: "9px",
+                        }}
+                      >
+                        upload
+                        <input
+                          type="file"
+                          hidden
+                          onChange={handlePhotographerImgChange}
+                          accept="image/x-png,image/jpeg"
+                        />
+                      </Button>
+                    }
+                  </h4>
+                  <VericalCenterRow
+                    style={{
+                      flexWrap: "wrap",
+                      overflowY: "scroll",
+                      Height: "100px",
+                    }}
+                  >
+                    {mapPortfolioworks2()}
+                  </VericalCenterRow>
+                </div>
+              ) : null}
+              <div style={{ marginTop: "auto", width: "100%" }}>
+                <h4 className="menuitem">About me</h4>
+                <textarea
+                  value={aboutMe}
+                  onChange={(e) => setaboutMe(e.target.value)}
+                  column="10"
+                  style={{ maxWidth: "100%", width: "100%", minWidth: "100%" }}
+                >
+                  Birthdays
+                </textarea>
+              </div>
+
+              <button
+                disabled={loading}
+                onClick={UpdateProfile}
+                className="btn1 "
+                style={{
+                  backgroundColor: "rgb(0, 162, 149)",
+                  padding: "9px",
+                  color: "#ffffff",
+                  border: "none",
+                  cursor: "pointer",
+                  minWidth: "200px",
+                  marginTop: "auto",
+                }}
+              >
+                {loading ? (
+                  <CircularProgress
+                    size={24}
+                    style={{
+                      fontSize: 20,
+                      color: "white",
+                    }}
+                  />
+                ) : (
+                  "Update"
+                )}
+              </button>
+              {isloading ? (
+                <LoaderContainer>
+                  <CircularProgress style={{ color: "tomato" }} />
+                  <h4 style={{ backgroundColor: "#ffffff" }}>Please wait...</h4>
+                </LoaderContainer>
+              ) : null}
+            </EditProfile>
+          </Fade>
+        </Modal>
+        <Paper className={classes.paper}>
+          <Grid container spacing={2}>
+            <Grid item>
               <Avatar
                 className={classes.image}
                 alt="Image"
-                src={ImageState.file || userData.profileImage || avatar}
+                src={userData.profileImage || avatar}
               />
-              <input
-                type="file"
-                hidden
-                onChange={handleProfileImgChange}
-                accept="image/x-png,image/jpeg"
-              />
-            </Button>
-
-            <div style={{ marginTop: "auto", width: "100%" }}>
-              <h4>Email</h4>
-              <p>{userData.Email}</p>
-            </div>
-            <div style={{ marginTop: "auto", width: "100%" }}>
-              <h4>Favourite shoot type</h4>
-              <select
-                defaultValue={favoritesShootTypes}
-                name="favoritesShootTypes"
-                id="favoritesShootTypes"
-                value={favoritesShootTypes}
-                onChange={(e) => setfavoritesShootTypes(e.target.value)}
-                style={{
-                  width: "200px",
-                  border: "none",
-                  borderRadius: "4px",
-                  height: "30px",
-                }}
-              >
-                <option value="">select</option>
-                <option value="Real estate">Real estate</option>
-                <option value="family">family</option>
-                <option value="Party">Party</option>
-                <option value="Dating">Dating</option>
-                <option value="Team/Office">Team/Office</option>
-                <option value="Graduation">Graduation</option>
-                <option value="Fashion">Fashion</option>
-                <option value="media">media</option>
-                <option value="Food">Food</option>
-                <option value="Product">Product</option>
-                <option value="Landscape">Landscape</option>
-              </select>
-            </div>
-            <div style={{ height: "8px" }} />
-            {userData.isPhotographer ? (
-              <div style={{ marginTop: "auto", width: "100%" }}>
-                <h4>
-                  Portfolio works
-                  {
-                    <Button
-                      variant="contained"
-                      component="label"
-                      style={{
-                        marginLeft: "10px",
-                        padding: 0,
-                        color: "#ffffff",
-                        backgroundColor: "dodgerblue",
-                        fontSize: "9px",
-                      }}
-                    >
-                      upload
-                      <input
-                        type="file"
-                        hidden
-                        onChange={handlePhotographerImgChange}
-                        accept="image/x-png,image/jpeg"
-                      />
-                    </Button>
-                  }
-                </h4>
-                <VericalCenterRow
-                  style={{
-                    flexWrap: "wrap",
-                    overflowY: "scroll",
-                    Height: "100px",
-                  }}
-                >
-                  {mapPortfolioworks2()}
-                </VericalCenterRow>
-              </div>
-            ) : null}
-            <div style={{ marginTop: "auto", width: "100%" }}>
-              <h4>About me</h4>
-              <textarea
-                value={aboutMe}
-                onChange={(e) => setaboutMe(e.target.value)}
-                column="10"
-                style={{ maxWidth: "100%", width: "100%", minWidth: "100%" }}
-              >
-                Birthdays
-              </textarea>
-            </div>
-
-            <button
-              disabled={loading}
-              onClick={UpdateProfile}
-              className="btn1 "
-              style={{
-                backgroundColor: "rgb(0, 162, 149)",
-                padding: "9px",
-                color: "#ffffff",
-                border: "none",
-                cursor: "pointer",
-                minWidth: "200px",
-                marginTop: "auto",
-              }}
-            >
-              {loading ? (
-                <CircularProgress
-                  size={24}
-                  style={{
-                    fontSize: 20,
-                    color: "white",
-                  }}
-                />
-              ) : (
-                "Update"
-              )}
-            </button>
-            {isloading ? (
-              <LoaderContainer>
-                <CircularProgress style={{ color: "tomato" }} />
-                <h4 style={{ backgroundColor: "#ffffff" }}>Please wait...</h4>
-              </LoaderContainer>
-            ) : null}
-          </EditProfile>
-        </Fade>
-      </Modal>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <Avatar
-              className={classes.image}
-              alt="Image"
-              src={userData.profileImage || avatar}
-            />
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography gutterBottom variant="h5">
-                  {userData.fname + " " + userData.lname}
-                </Typography>
-                <Typography variant="body2">{userData.mobile}</Typography>
-                <Typography variant="body2" gutterBottom>
-                  {userData.Email}
-                </Typography>
+            </Grid>
+            <Grid item xs={12} sm container>
+              <Grid item xs container direction="column" spacing={2}>
+                <Grid item xs>
+                  <Typography gutterBottom variant="h5">
+                    {userData.fname + " " + userData.lname}
+                  </Typography>
+                  <Typography variant="body2">{userData.mobile}</Typography>
+                  <Typography variant="body2" gutterBottom>
+                    {userData.Email}
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        {/* <Grid container spacing={2} alignItems='flex-end'>
+          {/* <Grid container spacing={2} alignItems='flex-end'>
 					<Grid item>
 						<PersonPinCircle />
 					</Grid>
@@ -589,7 +622,7 @@ const Profile = (props) => {
 						</FormControl>
 					</Grid>
 				</Grid> */}
-        {/* <Autocomplete
+          {/* <Autocomplete
 					placeholder='enter location'
 					apiKey={`${process.env.REACT_APP_API_KEY}`}
 					style={{
@@ -604,28 +637,28 @@ const Profile = (props) => {
 					types={['address']}
 					componentRestrictions={{ country: 'ng' }}
 				/> */}
-        <div style={{ height: "30px" }} />
-        <VericalCenterRow container spacing={2} alignItems="center">
-          <Grid item>
-            <span style={{ fontSize: "19px", marginRight: "10px" }}>
-              About me:
-            </span>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm
-            container
-            style={{
-              maxWidth: "300px",
-            }}
-          >
-            <VericalCenterRow>
-              <p>{userData.aboutMe}</p>
-            </VericalCenterRow>
-          </Grid>
-        </VericalCenterRow>
-        {/* <Grid container spacing={2} alignItems="flex-end">
+          <div style={{ height: "30px" }} />
+          <VericalCenterRow container spacing={2} alignItems="center">
+            <Grid item>
+              <span className="menuitem" style={{ marginRight: "10px" }}>
+                About me:
+              </span>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm
+              container
+              style={{
+                maxWidth: "300px",
+              }}
+            >
+              <VericalCenterRow>
+                <p>{userData.aboutMe}</p>
+              </VericalCenterRow>
+            </Grid>
+          </VericalCenterRow>
+          {/* <Grid container spacing={2} alignItems="flex-end">
           <Grid item>
             <PersonOutline />
           </Grid>
@@ -641,7 +674,7 @@ const Profile = (props) => {
 						/>
           </Grid>
         </Grid> */}
-        {/* <Grid container spacing={2} alignItems='flex-end'>
+          {/* <Grid container spacing={2} alignItems='flex-end'>
 					<Grid item>
 						<LocationCityRounded />
 					</Grid>
@@ -659,60 +692,57 @@ const Profile = (props) => {
 						</FormControl>
 					</Grid>
 				</Grid> */}
-        <div style={{ height: "15px" }} />
-        <VericalCenterRow
-          style={{
-            alignItems: "center",
-            width: "100%",
-          }}
-        >
-          <span
+          <div style={{ height: "15px" }} />
+          <VericalCenterRow
             style={{
-              fontSize: "19px",
-              marginRight: "3px",
-
-              minWidth: "200px",
+              alignItems: "center",
+              width: "100%",
             }}
           >
-            Favourite shoot type:
-          </span>
-          <span>{userData.favouriteShoots}</span>
-          <Grid container>
-            <VericalCenterRow></VericalCenterRow>
-          </Grid>
-        </VericalCenterRow>
-        <div style={{ height: "15px" }} />
-        {userData.isPhotographer ? (
-          <div style={{ marginTop: "auto", width: "100%" }}>
-            <h4>Portfolio works</h4>
-            <VericalCenterRow
+            <span
+              className="menuitem"
               style={{
-                flexWrap: "wrap",
-                overflowY: "scroll",
-                Height: "150px",
+                marginRight: "3px",
+
+                minWidth: "200px",
               }}
             >
-              {mapPortfolioworks()}
-            </VericalCenterRow>
-          </div>
-        ) : null}
-        <div style={{ height: "80px" }} />
+              Favourite shoot type: {userData.favouriteShoots}
+            </span>
+          </VericalCenterRow>
+          <div style={{ height: "15px" }} />
+          {userData.isPhotographer ? (
+            <div style={{ marginTop: "auto", width: "100%" }}>
+              <h4 className="menuitem">Portfolio works</h4>
+              <VericalCenterRow
+                style={{
+                  flexWrap: "wrap",
+                  overflowY: "scroll",
+                  Height: "150px",
+                }}
+              >
+                {mapPortfolioworks()}
+              </VericalCenterRow>
+            </div>
+          ) : null}
+          <div style={{ height: "80px" }} />
 
-        <button
-          onClick={handleOpen}
-          className="btn1 "
-          style={{
-            backgroundColor: "rgb(0, 162, 149)",
-            padding: "9px",
-            color: "#ffffff",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Edit profile
-        </button>
-      </Paper>
-    </div>
+          <button
+            onClick={handleOpen}
+            className="btn1 "
+            style={{
+              backgroundColor: "rgb(0, 162, 149)",
+              padding: "9px",
+              color: "#ffffff",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Edit profile
+          </button>
+        </Paper>
+      </div>
+    </Container>
   );
 };
 

@@ -166,7 +166,7 @@ const Question9 = (props) => {
     //   );
   };
 
-  const handleBooking = async (_id, transaction_id) => {
+  const handleBooking = React.useCallback(async (_id, transaction_id) => {
     console.log("called");
     //_id is photographers id
     // setConfirmAgreeVisible(false);
@@ -208,7 +208,7 @@ const Question9 = (props) => {
         console.log(err);
       });
     //api post request to book appointment with drivers id
-  };
+  }, []);
 
   // const config = {
   //   reference: new Date().getTime(),
@@ -244,17 +244,22 @@ const Question9 = (props) => {
       window.location.reload();
     }, 2000);
   };
-  const PayByflutterWave = () => {
-    handleFlutterPayment({
+  const handleSuccess = React.useCallback(() => {
+    console.log("u called me");
+  }, []);
+  const PayByflutterWave = async () => {
+    await handleFlutterPayment({
       callback: (response) => {
         console.log(response);
+        closePaymentModal(); // this will close the modal programmatically
         if (response.status === "successful") {
+          console.log(response);
+          // handleSuccess();
           handleBooking(
             bookingprocess.choosenPhotoGrapher._id,
             response.transaction_id
           );
         }
-        closePaymentModal(); // this will close the modal programmatically
       },
       onClose: () => {},
     });

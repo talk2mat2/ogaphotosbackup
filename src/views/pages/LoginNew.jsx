@@ -248,18 +248,23 @@ const LoginNew = () => {
                   </Buttons>
                   <Margin />
                   <div style={{ textAlign: "center" }}>
-                    <small style={{ color: "rgb(71, 178, 228)" }}>
-                      <a href="/Purpose"> Not Yet Registered ?</a>
+                    <small>
+                      <a style={{ color: "cyan" }} href="/Purpose">
+                        Not Yet Registered ?
+                      </a>
                     </small>
                   </div>
                   <Margin />
                   <div style={{ textAlign: "left" }}>
-                    <p style={{ color: "grey" }}>
-                      <Link to="/PhotoGrapherLoginNew">
+                    <h4 style={{ color: "#ffffff" }}>
+                      <Link
+                        style={{ color: "rgb(0,255,255)" }}
+                        to="/PhotoGrapherLoginNew"
+                      >
                         {" "}
                         Photographer's Login
                       </Link>
-                    </p>
+                    </h4>
                   </div>
 
                   <AlertDialog open={ErrorMessage} onClose={handleClose}>

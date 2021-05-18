@@ -31,6 +31,7 @@ import {
   ReceiptTwoTone,
   AccountBalanceWalletOutlined,
 } from "@material-ui/icons";
+
 const useStyles = makeStyles((theme) => ({
   active: {
     backgroundColor: "#444444",
@@ -41,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
       backgroundColor: "#444444",
       color: "#fff",
+
       // Reset on touch devices, it doesn't add specificity
       // '@media (hover: none)': {
       // 	backgroundColor: 'transparent',
@@ -70,7 +72,17 @@ function AppMenu(props) {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "13px",
+        paddingTop: "20px",
+        marginTop: "60px",
+        width: "90%",
+        minHeight: "80%",
+        alignSelf: "center",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -133,7 +145,7 @@ function AppMenu(props) {
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
-          <Typography variant="inherit">
+          <Typography className="menuitem" variant="inherit">
             {languageJson.dashboard_text}
           </Typography>
         </MenuItem>
@@ -163,7 +175,9 @@ function AppMenu(props) {
             <ListItemIcon>
               <ReceiptTwoTone />
             </ListItemIcon>
-            <Typography variant="inherit">Bookings received</Typography>
+            <Typography className="menuitem" variant="inherit">
+              Bookings received
+            </Typography>
           </MenuItem>
         ) : null}
         {userData.isAdmin ? (
@@ -178,7 +192,9 @@ function AppMenu(props) {
             <ListItemIcon>
               <SupervisorAccountIcon />
             </ListItemIcon>
-            <Typography variant="inherit">Admin</Typography>
+            <Typography className="menuitem" variant="inherit">
+              Admin
+            </Typography>
           </MenuItem>
         ) : null}
         {!userData.isPhotographer && !userData.isAdmin ? (
@@ -194,7 +210,9 @@ function AppMenu(props) {
             <ListItemIcon>
               <PhotoCameraIcon />
             </ListItemIcon>
-            <Typography variant="inherit">Sessions History</Typography>
+            <Typography className="menuitem" variant="inherit">
+              Sessions History
+            </Typography>
           </MenuItem>
         ) : null}
         {/* <MenuItem
@@ -240,7 +258,9 @@ function AppMenu(props) {
             <ListItemIcon>
               <AccountBalanceWalletOutlined />
             </ListItemIcon>
-            <Typography variant="inherit">{languageJson.wallet}</Typography>
+            <Typography className="menuitem" variant="inherit">
+              {languageJson.wallet}
+            </Typography>
           </MenuItem>
         ) : null}
 
@@ -259,7 +279,9 @@ function AppMenu(props) {
             <ListItemIcon>
               <OfferIcon />
             </ListItemIcon>
-            <Typography variant="inherit">{languageJson.promo}</Typography>
+            <Typography className="menuitem" variant="inherit">
+              {languageJson.promo}
+            </Typography>
           </MenuItem>
         ) : null}
         {!userData.isAdmin ? (
@@ -277,7 +299,7 @@ function AppMenu(props) {
             <ListItemIcon>
               <HeadsetMic />
             </ListItemIcon>
-            <Typography variant="inherit">
+            <Typography className="menuitem" variant="inherit">
               {languageJson.support_messages}
             </Typography>
           </MenuItem>
@@ -294,7 +316,7 @@ function AppMenu(props) {
           <ListItemIcon>
             <Settings />
           </ListItemIcon>
-          <Typography variant="inherit">
+          <Typography className="menuitem" variant="inherit">
             {languageJson.profile_settings}
           </Typography>
         </MenuItem>
@@ -304,7 +326,9 @@ function AppMenu(props) {
             <ExitIcon />
           </ListItemIcon>
 
-          <Typography variant="inherit">{languageJson.logout}</Typography>
+          <Typography className="menuitem" variant="inherit">
+            {languageJson.logout}
+          </Typography>
         </MenuItem>
       </MenuList>
     </div>

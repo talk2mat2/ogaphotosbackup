@@ -14,8 +14,9 @@ const Container = Styled.div`
 width:100%;
 display:flex;
 flex-direction:column;
+padding-bottom:20px;
 align-items:center;
-background-color:#ffff;
+background-color:#f1f0f0;
 min-height:440px;
 padding-top:10px;
 `;
@@ -146,7 +147,7 @@ const Detailevents = ({
         accessor: "bookingProcess.duration", // accessor is the "key" in the data
       },
       {
-        Header: "Event time",
+        Header: "Event time(24h)",
         accessor: "bookingProcess.time", // accessor is the "key" in the data
       },
       {
@@ -356,16 +357,168 @@ const FoodOrderHistory = (props) => {
       })
     );
   };
+  const data = React.useMemo(
+    () => [
+      // {
+      //   col1: "Minsk",
+      //   col2: "27",
+      //   col3: "rain",
+
+      // },
+      ...bookings,
+    ],
+    [bookings]
+  );
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "location",
+        accessor: "address", // accessor is the "key" in the data
+      },
+      {
+        Header: "location details",
+        accessor: "bookingProcess.AdditionalAddress", // accessor is the "key" in the data
+      },
+      {
+        Header: "Category",
+        accessor: "bookingProcess.category",
+      },
+      {
+        Header: "Purpose",
+        accessor: "bookingProcess.purpose", // accessor is the "key" in the data
+      },
+      {
+        Header: "Amnt. paid(NGN)",
+        accessor: "bookingProcess.amountPaid", // accessor is the "key" in the data
+      },
+      {
+        Header: "Status",
+        accessor: "bookingProcess.status", // accessor is the "key" in the data
+      },
+      {
+        Header: "payment type",
+        accessor: "bookingProcess.payment_type", // accessor is the "key" in the data
+      },
+      {
+        Header: "Event Date",
+        accessor: "bookingProcess.date", // accessor is the "key" in the data
+      },
+      {
+        Header: "Event Duration",
+        accessor: "bookingProcess.duration", // accessor is the "key" in the data
+      },
+      {
+        Header: "Event time(24h)",
+        accessor: "bookingProcess.time", // accessor is the "key" in the data
+      },
+      {
+        Header: "Photographer Name",
+        accessor: "bookingProcess.choosenPhotoGrapher.fname", // accessor is the "key" in the data
+      },
+      {
+        Header: "Photographer no.",
+        accessor: "bookingProcess.choosenPhotoGrapher.mobile", // accessor is the "key" in the data
+      },
+      {
+        Header: "Event Status",
+        accessor: "bookingProcess._id", // accessor is the "key" in the data
+        Cell: ({ row }) =>
+          // <a href="#" onClick={() => console.log(row.original)}>
+          //   View
+          // </a>
+          row.original.completed
+            ? "ended"
+            : null || row.original.accepted
+            ? "accepted"
+            : "pending",
+      },
+    ],
+    []
+  );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({ columns, data });
+
   return (
     <Container>
       <Switch>
         <Route exact path={match.url}>
-          <>
-            <BigText>My booking History</BigText>
-            <Listing>
+          <div
+            style={{
+              backgroundColor: "#ffffff",
+              borderRadius: "8px",
+              minHeight: "500px",
+              width: "94%",
+              padding: "10px",
+              marginTop: "20px",
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <BigText style={{ fontSize: "15px" }}>My booking History</BigText>
+            {/* <Listing>
               {bookings.length > 0 ? MapBookings() : <small>empty</small>}
-            </Listing>
-          </>
+            </Listing> */}
+            <div style={{ overflowX: "auto", maxWidth: "90vw" }}>
+              <table {...getTableProps()} style={{ border: "none" }}>
+                <thead>
+                  {headerGroups.map((headerGroup) => (
+                    <tr
+                      className="mytablerow"
+                      {...headerGroup.getHeaderGroupProps()}
+                    >
+                      {headerGroup.headers.map((column) => (
+                        <th
+                          {...column.getHeaderProps()}
+                          style={{
+                            // border: "solid 3px red",
+                            color: "grey",
+                            fontSize: "12px",
+                            padding: "2px",
+                            borderRadius: "4px",
+                            boxSizing: "border-box",
+                            backgroundColor: "#f1f0f0",
+                          }}
+                        >
+                          {column.render("Header")}
+                        </th>
+                      ))}
+                    </tr>
+                  ))}
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                  {rows.map((row) => {
+                    prepareRow(row);
+                    return (
+                      <tr className="tableRowdata" {...row.getRowProps()}>
+                        {row.cells.map((cell) => {
+                          return (
+                            <td
+                              {...cell.getCellProps()}
+                              style={{
+                                padding: "3px",
+                                boxSizing: "border-box",
+                                fontSize: "12px",
+                                border: "none",
+                              }}
+                            >
+                              {cell.render("Cell")}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </Route>
 
         <Route path={`${match.url}/info`} component={Detailevents} />

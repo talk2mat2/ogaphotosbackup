@@ -36,3 +36,25 @@ a:visited,
 a:active {
   text-decoration: none;
 }
+.btn2 {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: rgb(221, 220, 215);
+  margin: 6px;
+}
+.btn2:hover {
+  color: cornsilk;
+}
+.tableRowdata:hover {
+  background-color: #fffafa;
+}
+.tableRowdata:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.tableRowdata:nth-child(odd) {
+  background-color: #fffafa;
+}
+.menuitem {
+  font-size: 15px;
+}

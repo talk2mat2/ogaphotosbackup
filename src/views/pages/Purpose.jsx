@@ -242,7 +242,7 @@ const Purpose = (props) => {
   }, [bookingprocess]);
 
   useEffect(() => {
-    if (userData.isPhotographer) {
+    if (userData && userData.isPhotographer) {
       history.push("/dashboard");
       setTimeout(() => {
         window.location.reload();
