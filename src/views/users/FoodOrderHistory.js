@@ -483,7 +483,7 @@ const FoodOrderHistory = (props) => {
                             padding: "2px",
                             borderRadius: "4px",
                             boxSizing: "border-box",
-                            backgroundColor: "#f1f0f0",
+                            backgroundColor: "#e0dede",
                           }}
                         >
                           {column.render("Header")}
@@ -504,7 +504,7 @@ const FoodOrderHistory = (props) => {
                               style={{
                                 padding: "3px",
                                 boxSizing: "border-box",
-                                fontSize: "12px",
+                                fontSize: "13px",
                                 border: "none",
                               }}
                             >
