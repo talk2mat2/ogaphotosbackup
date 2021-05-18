@@ -451,7 +451,7 @@ const FoodOrderHistory = (props) => {
             style={{
               backgroundColor: "#ffffff",
               borderRadius: "8px",
-              minHeight: "500px",
+              minHeight: "560px",
               width: "94%",
               padding: "10px",
               marginTop: "20px",

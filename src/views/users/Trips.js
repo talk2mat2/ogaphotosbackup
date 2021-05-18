@@ -375,7 +375,7 @@ const Detailevents = ({
           </tbody>
         </table>
       </div> */}
-
+      <div style={{ height: "60px" }} />
       {BookingDetail.bookedById && (
         <Listing>
           <li>
