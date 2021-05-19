@@ -383,9 +383,29 @@ const Detailevents = ({
               {BookingDetail.bookedById.fname} {BookingDetail.bookedById.lname}
             </BigText>
 
-            <small>location: {BookingDetail.address}</small>
+            <small>Location: {BookingDetail.address}</small>
             <br />
-            <small>price per min: NGN {BookingDetail.pricePerMinutes}</small>
+            <small>Price per min: NGN {BookingDetail.pricePerMinutes}</small>
+            <br />
+            <small>
+              Address details :
+              {BookingDetail.bookingProcess &&
+                BookingDetail.bookingProcess.AdditionalAddress}
+              :
+            </small>
+            <br />
+            <small>
+              Event Time:{"   "}
+              {BookingDetail.bookingProcess &&
+                BookingDetail.bookingProcess.time}
+              :
+            </small>
+            <br />
+            <small>
+              Payment status:{"   "}
+              {BookingDetail.bookingProcess &&
+                BookingDetail.bookingProcess.status}
+            </small>
           </li>
         </Listing>
       )}
@@ -410,6 +430,7 @@ const Detailevents = ({
           <small> {BookingDetail.timeEnd ? "Ended" : "End Session"}</small>
         </Buttons>
       ) : null}
+      <div style={{ height: "30px" }}></div>
       {BookingDetail.sessionDuration || BookingDetail.sessionDuration > -1 ? (
         <div
           style={{
@@ -535,30 +556,30 @@ const Trips = (props) => {
         Header: "location",
         accessor: "address", // accessor is the "key" in the data
       },
-      {
-        Header: "location details",
-        accessor: "bookingProcess.AdditionalAddress", // accessor is the "key" in the data
-      },
+      // {
+      //   Header: "location details",
+      //   accessor: "bookingProcess.AdditionalAddress", // accessor is the "key" in the data
+      // },
       {
         Header: "Category",
         accessor: "bookingProcess.category",
       },
-      {
-        Header: "Purpose",
-        accessor: "bookingProcess.purpose", // accessor is the "key" in the data
-      },
-      {
-        Header: "Amnt. paid(NGN)",
-        accessor: "bookingProcess.amountPaid", // accessor is the "key" in the data
-      },
-      {
-        Header: "Status",
-        accessor: "bookingProcess.status", // accessor is the "key" in the data
-      },
-      {
-        Header: "payment type",
-        accessor: "bookingProcess.payment_type", // accessor is the "key" in the data
-      },
+      // {
+      //   Header: "Purpose",
+      //   accessor: "bookingProcess.purpose", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "Amnt. paid(NGN)",
+      //   accessor: "bookingProcess.amountPaid", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "Status",
+      //   accessor: "bookingProcess.status", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "payment type",
+      //   accessor: "bookingProcess.payment_type", // accessor is the "key" in the data
+      // },
       {
         Header: "Event Date",
         accessor: "bookingProcess.date", // accessor is the "key" in the data
@@ -575,10 +596,10 @@ const Trips = (props) => {
         Header: "Client Name",
         accessor: "bookedById.fname", // accessor is the "key" in the data
       },
-      {
-        Header: "Client no.",
-        accessor: "bookedById.mobile", // accessor is the "key" in the data
-      },
+      // {
+      //   Header: "Client no.",
+      //   accessor: "bookedById.mobile", // accessor is the "key" in the data
+      // },
       {
         Header: "Accept Invite",
         accessor: "accepted", // accessor is the "key" in the data
@@ -695,9 +716,10 @@ const Trips = (props) => {
                             style={{
                               // border: "solid 3px red",
                               color: "grey",
+                              height: "40px",
                               fontSize: "12px",
-                              padding: "2px",
-                              borderRadius: "4px",
+                              padding: "10px",
+                              borderRadius: "2px",
                               boxSizing: "border-box",
                               backgroundColor: "#e0dede",
                             }}
