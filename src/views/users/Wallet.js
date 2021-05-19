@@ -187,7 +187,6 @@ const Wallet = () => {
   //   }, 2000);
   // };
   const PayByflutterWave = async () => {
-    console.log(token);
     await handleFlutterPayment({
       callback: (response) => {
         console.log(response);
