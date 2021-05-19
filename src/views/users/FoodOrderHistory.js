@@ -169,7 +169,22 @@ const Detailevents = ({
     prepareRow,
   } = useTable({ columns, data });
   return (
-    <div style={{ position: "relative", width: "100%" }}>
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        borderRadius: "12px",
+        minHeight: "560px",
+        width: "94%",
+        padding: "10px",
+        marginTop: "20px",
+        marginBottom: "20px",
+        boxSizing: "border-box",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        position: "relative",
+      }}
+    >
       <div
         onClick={history.goBack}
         style={{
@@ -184,7 +199,7 @@ const Detailevents = ({
       </div>
       <BigText style={{ textAlign: "center" }}>Details</BigText>
 
-      <div style={{ overflowX: "scroll", maxWidth: "90vw" }}>
+      {/* <div style={{ overflowX: "scroll", maxWidth: "90vw" }}>
         <table {...getTableProps()} style={{ border: "solid 1px black" }}>
           <thead>
             {headerGroups.map((headerGroup) => (
@@ -228,10 +243,10 @@ const Detailevents = ({
             })}
           </tbody>
         </table>
-      </div>
-      <div style={{ height: "30px" }} />
+      </div> */}
+      {/* <div style={{ height: "30px" }} /> */}
       <Listing>
-        <li>
+        <li style={{ minHeight: "400px" }}>
           <br />
           {BookingDetail.timeStart && (
             <>
@@ -253,21 +268,22 @@ const Detailevents = ({
               ? "processing"
               : "pending"}
           </small>
-
-          {/* <small>
-            Shots by{" "}
+          <br />
+          <small>
+            Shots by
             {BookingDetail.photographerId && BookingDetail.photographerId.fname}
             :
-          </small> */}
+          </small>
           <br />
           <Button
             onClick={handlePdfDownload}
             style={{
-              float: "right",
+              float: "inline-end",
               marginLeft: "30px",
               backgroundColor: "dodgerblue",
               color: "#ffffff",
               fontSize: "9px",
+              marginTop: "120px",
             }}
           >
             Download Ticket
@@ -375,42 +391,42 @@ const FoodOrderHistory = (props) => {
         Header: "location",
         accessor: "address", // accessor is the "key" in the data
       },
-      {
-        Header: "location details",
-        accessor: "bookingProcess.AdditionalAddress", // accessor is the "key" in the data
-      },
-      {
-        Header: "Category",
-        accessor: "bookingProcess.category",
-      },
-      {
-        Header: "Purpose",
-        accessor: "bookingProcess.purpose", // accessor is the "key" in the data
-      },
-      {
-        Header: "Amnt. paid(NGN)",
-        accessor: "bookingProcess.amountPaid", // accessor is the "key" in the data
-      },
-      {
-        Header: "Status",
-        accessor: "bookingProcess.status", // accessor is the "key" in the data
-      },
-      {
-        Header: "payment type",
-        accessor: "bookingProcess.payment_type", // accessor is the "key" in the data
-      },
+      // {
+      //   Header: "location details",
+      //   accessor: "bookingProcess.AdditionalAddress", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "Category",
+      //   accessor: "bookingProcess.category",
+      // },
+      // {
+      //   Header: "Purpose",
+      //   accessor: "bookingProcess.purpose", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "Amnt. paid(NGN)",
+      //   accessor: "bookingProcess.amountPaid", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "Status",
+      //   accessor: "bookingProcess.status", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "payment type",
+      //   accessor: "bookingProcess.payment_type", // accessor is the "key" in the data
+      // },
       {
         Header: "Event Date",
         accessor: "bookingProcess.date", // accessor is the "key" in the data
       },
-      {
-        Header: "Event Duration",
-        accessor: "bookingProcess.duration", // accessor is the "key" in the data
-      },
-      {
-        Header: "Event time(24h)",
-        accessor: "bookingProcess.time", // accessor is the "key" in the data
-      },
+      // {
+      //   Header: "Event Duration",
+      //   accessor: "bookingProcess.duration", // accessor is the "key" in the data
+      // },
+      // {
+      //   Header: "Event time(24h)",
+      //   accessor: "bookingProcess.time", // accessor is the "key" in the data
+      // },
       {
         Header: "Photographer Name",
         accessor: "bookingProcess.choosenPhotoGrapher.fname", // accessor is the "key" in the data
@@ -431,6 +447,29 @@ const FoodOrderHistory = (props) => {
             : null || row.original.accepted
             ? "accepted"
             : "pending",
+      },
+      {
+        Header: "Details",
+        // accessor: "bookingProcess._id", // accessor is the "key" in the data
+        Cell: ({ row }) => (
+          <button
+            style={{
+              border: "none",
+              backgroundColor: "inherit",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              console.log(row.original);
+              history.push({
+                pathname: `${match.url}/info`,
+                state: { Data: row.original },
+              });
+            }}
+          >
+            View
+          </button>
+        ),
       },
     ],
     []
@@ -465,7 +504,7 @@ const FoodOrderHistory = (props) => {
             {/* <Listing>
               {bookings.length > 0 ? MapBookings() : <small>empty</small>}
             </Listing> */}
-            <div style={{ overflowX: "auto", maxWidth: "90vw" }}>
+            <div style={{ overflowX: "auto", maxWidth: "90%" }}>
               <table {...getTableProps()} style={{ border: "none" }}>
                 <thead>
                   {headerGroups.map((headerGroup) => (
@@ -479,9 +518,10 @@ const FoodOrderHistory = (props) => {
                           style={{
                             // border: "solid 3px red",
                             color: "grey",
+                            height: "40px",
                             fontSize: "12px",
-                            padding: "2px",
-                            borderRadius: "4px",
+                            padding: "10px",
+                            borderRadius: "2px",
                             boxSizing: "border-box",
                             backgroundColor: "#e0dede",
                           }}

@@ -2337,7 +2337,7 @@ const Homepage = () => {
                                 <input
                                   type="hidden"
                                   name="project_name"
-                                  defaultValue="yourwebsiteaddress.com"
+                                  defaultValue="y"
                                 />
                                 {/* Change value to your site name */}
                                 <input
