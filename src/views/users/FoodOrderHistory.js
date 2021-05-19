@@ -252,8 +252,7 @@ const Detailevents = ({
             <>
               {" "}
               <small>
-                {" "}
-                Event started at:{" "}
+                Event started at:{"   "}
                 <Moment>{`${BookingDetail.timeStart}`}</Moment>
               </small>
               <br />
@@ -261,7 +260,7 @@ const Detailevents = ({
           )}
 
           <small>
-            Event Status:{" "}
+            Event Status:{"   "}
             {BookingDetail.completed
               ? "ended"
               : null || BookingDetail.accepted
@@ -270,9 +269,26 @@ const Detailevents = ({
           </small>
           <br />
           <small>
-            Shots by
-            {BookingDetail.photographerId && BookingDetail.photographerId.fname}
+            Address :
+            {BookingDetail.bookingProcess &&
+              BookingDetail.bookingProcess.locations}
             :
+          </small>
+          <br />
+          <small>
+            Event Time:{"   "}
+            {BookingDetail.bookingProcess && BookingDetail.bookingProcess.time}:
+          </small>
+          <br />
+          <small>
+            Payment status:{"   "}
+            {BookingDetail.bookingProcess &&
+              BookingDetail.bookingProcess.status}
+          </small>
+          <br />
+          <small>
+            Shots by:{"   "}
+            {BookingDetail.photographerId && BookingDetail.photographerId.fname}
           </small>
           <br />
           <Button
@@ -456,7 +472,7 @@ const FoodOrderHistory = (props) => {
             style={{
               border: "none",
               backgroundColor: "inherit",
-              textDecoration: "underline",
+
               cursor: "pointer",
             }}
             onClick={() => {
