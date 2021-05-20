@@ -2506,7 +2506,7 @@ const Homepage = () => {
                         style={{ textDecoration: "none" }}
                         href="/PhotographersRegister"
                       >
-                        Join Our vast Network of photographers
+                        Join our vast network of photographers
                       </a>
                     </div>
                     <div style={{ height: "40px" }} />
