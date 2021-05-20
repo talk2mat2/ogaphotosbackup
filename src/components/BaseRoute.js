@@ -22,6 +22,12 @@ const ForgotPassword = lazy(() => import("../views/ForgotPassword"));
 const Dashboard = lazy(() => import("../views/users/Dashboard"));
 import GuestRoute from "./GuestRoute";
 import ScrollToTop from "../ScrollToTop";
+import DashboardNew from "../views/users/dashboardNew";
+import DashboardanNewMain from "../views/users/DashboardNewMainwithmap";
+import WalletNew from "../views/users/WalletNew";
+import UserSessionHistory from "../views/users/userSessionNistoryNew";
+import SupportMessageNew from "../views/users/SupportMessageNew";
+import ProfileNew from "../views/users/ProfileNew";
 
 // import Delivery from "../views/users/Delivery";
 // import Looking from "../views/users/Looking";
@@ -83,14 +89,55 @@ function BaseRoute() {
         }
       >
         <Switch>
-          <ProtectedRoute exact component={Dashboard} path="/dashboard" />
+          <Route
+            path="/dashboard"
+            render={(props) => (
+              <DashboardNew {...props}>
+                <DashboardanNewMain {...props} />
+              </DashboardNew>
+            )}
+          />
+          <Route
+            path="/wallet"
+            render={(props) => (
+              <DashboardNew {...props}>
+                <WalletNew {...props} />
+              </DashboardNew>
+            )}
+          />
+          <Route
+            path="/UserSessionHistory"
+            render={(props) => (
+              <DashboardNew {...props}>
+                <UserSessionHistory {...props} />
+              </DashboardNew>
+            )}
+          />
+          <Route
+            path="/SupportMessage"
+            render={(props) => (
+              <DashboardNew {...props}>
+                <SupportMessageNew {...props} />
+              </DashboardNew>
+            )}
+          />
+          <Route
+            path="/Profile"
+            render={(props) => (
+              <DashboardNew {...props}>
+                <ProfileNew {...props} />
+              </DashboardNew>
+            )}
+          />
+
+          {/* <ProtectedRoute exact component={Dashboard} path="/dashboard" /> */}
           {/* <ProtectedRoute exact component={Delivery} path="/delivery" /> */}
           <ProtectedRoute exact component={Looking} path="/looking" />
           <ProtectedRoute exact component={Profile} path="/profile" />
           <ProtectedRoute exact component={Promos} path="/promos" />
           <ProtectedRoute component={TransEat} path="/trans_eat" />
           <ProtectedRoute component={Trips} path="/trips" />
-          <ProtectedRoute exact component={Wallet} path="/wallet" />
+          {/* <ProtectedRoute exact component={Wallet} path="/wallet" /> */}
           <ProtectedRoute component={Support} path="/support" />
           <ProtectedRoute component={FoodOrderHistory} path="/eats" />
           <ProtectedRoute exact component={CourierHistory} path="/couriers" />
