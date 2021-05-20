@@ -272,12 +272,11 @@ const Detailevents = ({
             Address :
             {BookingDetail.bookingProcess &&
               BookingDetail.bookingProcess.locations}
-            :
           </small>
           <br />
           <small>
             Event Time:{"   "}
-            {BookingDetail.bookingProcess && BookingDetail.bookingProcess.time}:
+            {BookingDetail.bookingProcess && BookingDetail.bookingProcess.time}
           </small>
           <br />
           <small>
