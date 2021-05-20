@@ -30,6 +30,9 @@ input {
   padding: 10px;
   box-sizing: border-box;
 }
+.footer-text > a {
+  color: #dddddd;
+}
 a,
 a:hover,
 a:visited,

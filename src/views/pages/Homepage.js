@@ -2498,8 +2498,24 @@ const Homepage = () => {
                     {/* End footer logo */}
                   </div>
                   {/* /.col */}
+
+                  <div className="col-md-5">
+                    <div className="footer-text">
+                      <h4>- Join Us</h4>
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="/PhotographersRegister"
+                      >
+                        Join Our vast Network of photographers
+                      </a>
+                    </div>
+                    <div style={{ height: "40px" }} />
+                  </div>
+
                   <div className="col-md-5">
                     {/* Begin footer text */}
+
+                    {/* End footer text */}
                     <div className="footer-text">
                       <h4>- Creative Photo Studio</h4>
                       Over ther years, Ogaphotos has networked with several
@@ -2508,7 +2524,6 @@ const Homepage = () => {
                       effective Your job is ready within 2 to 3 working days You
                       are happy, We are happy, everybody is happy
                     </div>
-                    {/* End footer text */}
                   </div>
                   {/* /.col */}
                   <div className="col-md-4">
