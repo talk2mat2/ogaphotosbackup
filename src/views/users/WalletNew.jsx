@@ -10,7 +10,7 @@ const WalletNew = () => {
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const userData = CurrentUser && CurrentUser.userData;
   const token = CurrentUser && CurrentUser.token;
-  const [amount, setAmount] = React.useState(0);
+  const [amount, setAmount] = React.useState("");
   const dispatch = useDispatch();
   const [showSuccess, setshowSuccess] = useState(false);
   function numberWithCommas(x) {
@@ -108,7 +108,7 @@ const WalletNew = () => {
                 <div style={{ margin: "40px" }}>
                   <button
                     onClick={() => {
-                      setAmount(0);
+                      setAmount("");
                       setOpen(!open);
                     }}
                     className="btn btn-danger m-t-xs"
@@ -136,7 +136,7 @@ const WalletNew = () => {
                       style={{ width: "100%" }}
                       type="number"
                       name="email"
-                      placeholder="Enter Amount greater than 1000"
+                      placeholder="Enter Amount greater than 500"
                       required
                     />
                     <div style={{ height: "9px" }} />

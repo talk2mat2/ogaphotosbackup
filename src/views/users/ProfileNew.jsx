@@ -187,14 +187,16 @@ const ProfileNew = () => {
   };
   const mapPortfolioworks = () => {
     if (userData.Porthfolio_works.length > 0) {
-      return userData.Porthfolio_works.map((item) => {
+      return userData.Porthfolio_works.slice(0, 4).map((item) => {
         return (
           <WorksAvater>
-            <img
-              src={item.imgUri}
-              alt="img"
-              style={{ width: "100%", borderRadius: "4px" }}
-            />
+            <a target="_blank" href={item.imgUri}>
+              <img
+                src={item.imgUri}
+                alt="img"
+                style={{ width: "100%", borderRadius: "4px" }}
+              />
+            </a>
           </WorksAvater>
         );
       });
@@ -278,11 +280,13 @@ const ProfileNew = () => {
                       <h4>My Profile</h4>
                     </div>
                     <div className="mail-actions">
-                      <Link to="/purpose">
-                        <button type="button" className="btn btn-secondary">
-                          Hire a photographer
-                        </button>
-                      </Link>
+                      <a href="/purpose">
+                        {!userData.isPhotographer ? (
+                          <button type="button" className="btn btn-secondary">
+                            Hire a photographer
+                          </button>
+                        ) : null}
+                      </a>
                     </div>
                     <div className="mail-info">
                       <div className="mail-author">
@@ -347,6 +351,39 @@ const ProfileNew = () => {
               </div>
             </div>
           </div>
+
+          {/* here */}
+
+          {userData.isPhotographer ? (
+            <div className="col-md-12 col-lg-4">
+              <div className="card stat-widget">
+                <div
+                  className="card-body "
+                  style={{ minHeight: "300px", paddingBottom: "30px" }}
+                >
+                  <h5 className="card-title">My Porthfoli works</h5>{" "}
+                  {userData.isPhotographer &&
+                  userData.Porthfolio_works.length > 4 ? (
+                    <Link to="/viewall">view more </Link>
+                  ) : null}
+                  <div
+                    style={{
+                      margin: "1px",
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <p>
+                      <br />
+                    </p>
+                    {mapPortfolioworks()}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
       <Modal
@@ -366,7 +403,7 @@ const ProfileNew = () => {
         }}
       >
         <Fade in={open}>
-          <div style={{ maxWidth: "500px" }} className="col-sm-12 col-md-8">
+          <div style={{ maxWidth: "500px" }} className="col-sm-12 col-md-8 ">
             <div className="card">
               <div className="card-body">
                 <Button
@@ -442,7 +479,7 @@ const ProfileNew = () => {
                     <h4>
                       Portfolio works
                       {
-                        <button
+                        <Button
                           variant="contained"
                           component="label"
                           style={{
@@ -460,14 +497,15 @@ const ProfileNew = () => {
                             onChange={handlePhotographerImgChange}
                             accept="image/x-png,image/jpeg"
                           />
-                        </button>
+                        </Button>
                       }
                     </h4>
                     <VericalCenterRow
                       style={{
                         flexWrap: "wrap",
                         overflowY: "scroll",
-                        Height: "100px",
+                        height: "70px",
+                        backgroundColor: "gold",
                       }}
                     >
                       {mapPortfolioworks2()}

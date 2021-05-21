@@ -155,12 +155,12 @@ const Header = () => {
 							*/}
               {userData ? (
                 <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
-                  <Link to="/dashboard">
+                  <a href="/dashboard">
                     <PersonIcon
                       fontSize="medium"
                       // style={{ color: "#ffffff" }}
                     />
-                  </Link>
+                  </a>
                 </li>
               ) : (
                 <li className=" tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">

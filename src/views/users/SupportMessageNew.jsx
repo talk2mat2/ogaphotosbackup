@@ -102,7 +102,7 @@ const SupportMessageNew = (props) => {
                     ) : MessageState.length > 0 ? (
                       mapMessages()
                     ) : (
-                      <p>no new message</p>
+                      <p>No new message</p>
                     )}
                   </ul>
                 </div>

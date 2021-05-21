@@ -108,14 +108,16 @@ const PhotographersCard = (props) => {
 
   const mapPortfolioworks = () => {
     if (props.item.Porthfolio_works.length > 0) {
-      return props.item.Porthfolio_works.map((item) => {
+      return props.item.Porthfolio_works.slice(0, 4).map((item) => {
         return (
           <WorksAvater>
-            <img
-              src={item.imgUri}
-              alt="img"
-              style={{ width: "100%", borderRadius: "4px" }}
-            />
+            <a rel="noreferrer" target="_blank" href={item.imgUri}>
+              <img
+                src={item.imgUri}
+                alt="img"
+                style={{ width: "100%", borderRadius: "4px" }}
+              />
+            </a>
           </WorksAvater>
         );
       });

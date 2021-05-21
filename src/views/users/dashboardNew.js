@@ -45,6 +45,7 @@ const DashboardNew = (props) => {
       );
     }
   }, []);
+
   useEffect(() => {
     const updateMyLocation = (values) => {
       axios
@@ -414,24 +415,39 @@ const DashboardNew = (props) => {
                 </Link>
               </li>
               <li className="sidebar-title">Apps</li>
-              <li>
-                <Link to={`/UserSessionHistory`}>
-                  <i data-feather="inbox" />
-                  Session History
-                </Link>
-              </li>
-              <li>
-                <Link to={`/wallets`}>
-                  <i data-feather="calendar" />
-                  Wallet
-                </Link>
-              </li>
-              <li>
-                <Link to={`/Promos`}>
-                  <i data-feather="user" />
-                  Promos
-                </Link>
-              </li>
+              {!userData.isPhotographer && !userData.isAdmin ? (
+                <li>
+                  <Link to={`/UserSessionHistory`}>
+                    <i data-feather="inbox" />
+                    Session History
+                  </Link>
+                </li>
+              ) : null}
+              {userData.isPhotographer ? (
+                <li>
+                  <Link to={`/PhotoGrapherSessionHistory`}>
+                    <i data-feather="inbox" />
+                    Received Bookings
+                  </Link>
+                </li>
+              ) : null}
+              {!userData.isPhotographer && !userData.isAdmin ? (
+                <li>
+                  <Link to={`/wallets`}>
+                    <i data-feather="calendar" />
+                    Wallet
+                  </Link>
+                </li>
+              ) : null}
+              {!userData.isAdmin ? (
+                <li>
+                  <Link to={`/Promos`}>
+                    <i data-feather="user" />
+                    Promos
+                  </Link>
+                </li>
+              ) : null}
+
               <li>
                 <Link to="/SupportMessage">
                   <i data-feather="message-circle" />

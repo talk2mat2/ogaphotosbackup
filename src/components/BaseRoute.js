@@ -3,6 +3,7 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRouteNew from "./ProtectedRouteNew";
 import CircularProgress from "@material-ui/core/CircularProgress";
 // import Login from "../views/Login";
 import ErrorPage from "../views/ErrorPage";
@@ -29,6 +30,10 @@ import UserSessionHistory from "../views/users/userSessionNistoryNew";
 import SupportMessageNew from "../views/users/SupportMessageNew";
 import ProfileNew from "../views/users/ProfileNew";
 import PromosMew from "../views/users/Promosnew";
+import Viewallwork from "../views/users/Viewallworks";
+import UserSessionHistoryDetails from "../views/users/userSessionNistoryNew_Details";
+import PhotoGrapherSessionHistory from "../views/users/PhotoGrapherSessionNistoryNew";
+import PhotoSessionSessionHistoryDetails from "../views/users/PhotoSessionNistoryNew_Details";
 
 // import Delivery from "../views/users/Delivery";
 // import Looking from "../views/users/Looking";
@@ -84,80 +89,66 @@ function BaseRoute() {
               flexDirection: "column",
             }}
           >
-            <p>LOADING..</p>
+            <p>Loading..</p>
             <CircularProgress />
           </div>
         }
       >
         <Switch>
-          <Route
-            path="/dashboard"
-            render={(props) => (
-              <DashboardNew {...props}>
-                <DashboardanNewMain {...props} />
-              </DashboardNew>
-            )}
-          />
-          <Route
-            path="/wallets"
-            render={(props) => (
-              <DashboardNew {...props}>
-                <WalletNew {...props} />
-              </DashboardNew>
-            )}
-          />
-          <Route
+          <ProtectedRouteNew path="/dashboard" component={DashboardanNewMain} />
+          <ProtectedRouteNew path="/wallets" component={WalletNew} />
+          <ProtectedRouteNew
             path="/UserSessionHistory"
-            render={(props) => (
-              <DashboardNew {...props}>
-                <UserSessionHistory {...props} />
-              </DashboardNew>
-            )}
+            component={UserSessionHistory}
           />
-          <Route
+          <ProtectedRouteNew path="/viewall" component={Viewallwork} />
+          <ProtectedRouteNew
+            path="/UserSessionHistoryDetails"
+            component={UserSessionHistoryDetails}
+          />
+          <ProtectedRouteNew
+            path="/PhotoGrapherSessionHistory"
+            component={PhotoGrapherSessionHistory}
+          />
+          <ProtectedRouteNew
+            path="/PhotoSessionSessionHistoryDetails"
+            component={PhotoSessionSessionHistoryDetails}
+          />
+          <ProtectedRouteNew
             path="/SupportMessage"
+            component={SupportMessageNew}
+          />
+          <ProtectedRouteNew path="/Profile" component={ProfileNew} />
+          <ProtectedRouteNew path="/Promos" component={PromosMew} />
+
+          {/* <Route
+            path="/AdminDashboard"
             render={(props) => (
               <DashboardNew {...props}>
-                <SupportMessageNew {...props} />
+                <AdminDashboard {...props} />
               </DashboardNew>
             )}
-          />
-          <Route
-            path="/Profile"
-            render={(props) => (
-              <DashboardNew {...props}>
-                <ProfileNew {...props} />
-              </DashboardNew>
-            )}
-          />
-          <Route
-            path="/Promos"
-            render={(props) => (
-              <DashboardNew {...props}>
-                <PromosMew {...props} />
-              </DashboardNew>
-            )}
-          />
+          /> */}
 
           {/* <ProtectedRoute exact component={Dashboard} path="/dashboard" /> */}
           {/* <ProtectedRoute exact component={Delivery} path="/delivery" /> */}
-          <ProtectedRoute exact component={Looking} path="/looking" />
-          <ProtectedRoute exact component={Profile} path="/profile" />
+          {/* <ProtectedRoute exact component={Looking} path="/looking" /> */}
+          {/* <ProtectedRoute exact component={Profile} path="/profile" /> */}
           {/* <ProtectedRoute exact component={Promos} path="/promos" /> */}
-          <ProtectedRoute component={TransEat} path="/trans_eat" />
-          <ProtectedRoute component={Trips} path="/trips" />
+          {/* <ProtectedRoute component={TransEat} path="/trans_eat" /> */}
+          {/* <ProtectedRoute component={Trips} path="/trips" /> */}
           {/* <ProtectedRoute exact component={Wallet} path="/wallet" /> */}
-          <ProtectedRoute component={Support} path="/support" />
-          <ProtectedRoute component={FoodOrderHistory} path="/eats" />
-          <ProtectedRoute exact component={CourierHistory} path="/couriers" />
+          {/* <ProtectedRoute component={Support} path="/support" /> */}
+          {/* <ProtectedRoute component={FoodOrderHistory} path="/eats" /> */}
+          {/* <ProtectedRoute exact component={CourierHistory} path="/couriers" /> */}
           <GuestRoute exact component={Homepage} path="/" />
-
-          <GuestRoute exact component={About} path="/about" />
+          {/* 
+          <GuestRoute exact component={About} path="/about" /> */}
           {/* <GuestRoute exact component={Services} path="/service" /> */}
-          <GuestRoute exact component={Contact} path="/contact" />
-          <GuestRoute exact component={How_it_works} path="/How_it_works" />
+          {/* <GuestRoute exact component={Contact} path="/contact" /> */}
+          {/* <GuestRoute exact component={How_it_works} path="/How_it_works" /> */}
           {/* <GuestRoute exact component={Blog} path="/blog" /> */}
-          <GuestRoute component={Register} path="/register" />
+          {/* <GuestRoute component={Register} path="/register" /> */}
           {/* <GuestRoute component={Login} path='/login' /> */}
           <GuestRoute component={SignUp} path="/SignUp" />
           <GuestRoute

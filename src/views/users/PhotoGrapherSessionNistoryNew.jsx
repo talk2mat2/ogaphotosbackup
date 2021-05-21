@@ -12,19 +12,40 @@ import { Switch, Route, Link, useHistory } from "react-router-dom";
 import generatePDF from "../pages/generatePdf";
 import { useTable } from "react-table";
 
-const UserSessionHistory = (props) => {
+const Buttons = Styled(Button)`
+  && {
+
+
+margin-top:8px;
+    color: rgb(190, 10, 10);
+    border-color: rgb(190, 10, 10);
+    &:focus {
+      background-color: white;
+    }
+    // @media (max-width: 1100px) {
+    //   display: none;
+    // }
+	&:disabled {
+		border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+	}
+  }
+`;
+const PhotoGrapherSessionHistory = (props) => {
   const { match, history } = props;
-  const [bookings, setBookings] = useState([]);
+
   const [isLoading, setIsloading] = useState(false);
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state.user.currentUser);
   const token = CurrentUser && CurrentUser.token;
+  const bookings = useSelector((state) => state.bookings);
   // getSesssionHistory
-  const getSesssionHistory = async () => {
+  const FecthMyBookings = async () => {
     setIsloading(true);
     await axios
       .get(
-        `${process.env.REACT_APP_API_URL}/users/getSesssionHistory`,
+        `${process.env.REACT_APP_API_URL}/photographer/FectMyBookings`,
 
         {
           headers: { authorization: token },
@@ -34,13 +55,39 @@ const UserSessionHistory = (props) => {
         console.log(res.data);
         setIsloading(false);
         // setBookinmgs(res.data.userData)
-        setBookings(res.data.userData);
         dispatch(GETMYBOOKINGSUCCESS(res.data.userData));
         // setIsregistered(true)
         // history.push('/dashboard')
       })
       .catch((err) => {
-        setIsloading(false);
+        if (err.response) {
+          setIsloading(false);
+          console.log(err.response.data.message);
+          // err.response.data.message &&
+
+          // err.response.data.error && setIsregistered(false)
+        }
+        console.log(err);
+      });
+  };
+  const HandleAcceptOffer = async (id) => {
+    await axios
+      .get(
+        `${process.env.REACT_APP_API_URL}/photographer/AcceptOffer?id=${id}`,
+
+        {
+          headers: { authorization: token },
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+
+        // setBookinmgs(res.data.userData)
+        dispatch(GETMYBOOKINGSUCCESS(res.data.userData));
+        // setIsregistered(true)
+        // history.push('/dashboard')
+      })
+      .catch((err) => {
         if (err.response) {
           console.log(err.response.data.message);
           // err.response.data.message &&
@@ -52,7 +99,7 @@ const UserSessionHistory = (props) => {
   };
 
   useEffect(() => {
-    getSesssionHistory();
+    FecthMyBookings();
   }, []);
 
   const data = React.useMemo(
@@ -70,17 +117,17 @@ const UserSessionHistory = (props) => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Event Location",
+        Header: "location",
         accessor: "address", // accessor is the "key" in the data
       },
       // {
       //   Header: "location details",
       //   accessor: "bookingProcess.AdditionalAddress", // accessor is the "key" in the data
       // },
-      // {
-      //   Header: "Category",
-      //   accessor: "bookingProcess.category",
-      // },
+      {
+        Header: "Category",
+        accessor: "bookingProcess.category",
+      },
       // {
       //   Header: "Purpose",
       //   accessor: "bookingProcess.purpose", // accessor is the "key" in the data
@@ -101,58 +148,75 @@ const UserSessionHistory = (props) => {
         Header: "Event Date",
         accessor: "bookingProcess.date", // accessor is the "key" in the data
       },
-      // {
-      //   Header: "Event Duration",
-      //   accessor: "bookingProcess.duration", // accessor is the "key" in the data
-      // },
-      // {
-      //   Header: "Event time(24h)",
-      //   accessor: "bookingProcess.time", // accessor is the "key" in the data
-      // },
       {
-        Header: "Photographer Name",
-        accessor: "bookingProcess.choosenPhotoGrapher.fname", // accessor is the "key" in the data
+        Header: "Event Duration",
+        accessor: "bookingProcess.duration", // accessor is the "key" in the data
       },
       {
-        Header: "Photographer no.",
-        accessor: "bookingProcess.choosenPhotoGrapher.mobile", // accessor is the "key" in the data
+        Header: "Event time(24)",
+        accessor: "bookingProcess.time", // accessor is the "key" in the data
       },
       {
-        Header: "Event Status",
-        accessor: "bookingProcess._id", // accessor is the "key" in the data
-        Cell: ({ row }) =>
+        Header: "Client Name",
+        accessor: "bookedById.fname", // accessor is the "key" in the data
+      },
+      // {
+      //   Header: "Client no.",
+      //   accessor: "bookedById.mobile", // accessor is the "key" in the data
+      // },
+      {
+        Header: "Accept Invite",
+        accessor: "accepted", // accessor is the "key" in the data
+        Cell: ({ row }) => (
           // <a href="#" onClick={() => console.log(row.original)}>
           //   View
           // </a>
-          row.original.completed ? (
-            <span class="badge bg-success">ended</span>
-          ) : null || row.original.accepted ? (
-            <span class="badge bg-info">accepted</span>
-          ) : (
-            <span class="badge bg-warning">pending</span>
-          ),
+          // row.original.completed
+          //   ? "ended"
+          //   : null || row.original.accepted
+          //   ? "accepted"
+          //   : "pending",
+          <Buttons
+            style={{
+              // backgroundColor: "dodgerblue",
+              // color: "#ffffff",
+              fontSize: "9px",
+            }}
+            onClick={HandleAcceptOffer.bind(this, row.original._id)}
+            disabled={row.original.accepted}
+          >
+            {row.original.accepted ? "accepted" : "accept book"}
+          </Buttons>
+        ),
       },
       {
-        Header: "Details",
-        // accessor: "bookingProcess._id", // accessor is the "key" in the data
+        Header: "View Details",
+        accessor: "bookingProcess._id", // accessor is the "key" in the data
         Cell: ({ row }) => (
-          <button
+          // <a href="#" onClick={() => console.log(row.original)}>
+          //   View
+          // </a>
+          // row.original.completed
+          //   ? "ended"
+          //   : null || row.original.accepted
+          //   ? "accepted"
+          //   : "pending",
+          <Buttons
             style={{
-              border: "none",
-              backgroundColor: "inherit",
-
-              cursor: "pointer",
+              // backgroundColor: "dodgerblue",
+              // color: "#ffffff",
+              fontSize: "9px",
             }}
-            onClick={() => {
-              console.log(row.original);
+            disabled={!row.original.accepted}
+            onClick={() =>
               history.push({
-                pathname: `/UserSessionHistoryDetails`,
-                state: { Data: row.original },
-              });
-            }}
+                pathname: `/PhotoSessionSessionHistoryDetails`,
+                state: { Data: row.original, token: token },
+              })
+            }
           >
-            View more
-          </button>
+            View
+          </Buttons>
         ),
       },
     ],
@@ -285,4 +349,4 @@ const UserSessionHistory = (props) => {
   );
 };
 
-export default UserSessionHistory;
+export default PhotoGrapherSessionHistory;
