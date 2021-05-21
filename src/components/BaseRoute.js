@@ -28,6 +28,7 @@ import WalletNew from "../views/users/WalletNew";
 import UserSessionHistory from "../views/users/userSessionNistoryNew";
 import SupportMessageNew from "../views/users/SupportMessageNew";
 import ProfileNew from "../views/users/ProfileNew";
+import PromosMew from "../views/users/Promosnew";
 
 // import Delivery from "../views/users/Delivery";
 // import Looking from "../views/users/Looking";
@@ -98,7 +99,7 @@ function BaseRoute() {
             )}
           />
           <Route
-            path="/wallet"
+            path="/wallets"
             render={(props) => (
               <DashboardNew {...props}>
                 <WalletNew {...props} />
@@ -129,12 +130,20 @@ function BaseRoute() {
               </DashboardNew>
             )}
           />
+          <Route
+            path="/Promos"
+            render={(props) => (
+              <DashboardNew {...props}>
+                <PromosMew {...props} />
+              </DashboardNew>
+            )}
+          />
 
           {/* <ProtectedRoute exact component={Dashboard} path="/dashboard" /> */}
           {/* <ProtectedRoute exact component={Delivery} path="/delivery" /> */}
           <ProtectedRoute exact component={Looking} path="/looking" />
           <ProtectedRoute exact component={Profile} path="/profile" />
-          <ProtectedRoute exact component={Promos} path="/promos" />
+          {/* <ProtectedRoute exact component={Promos} path="/promos" /> */}
           <ProtectedRoute component={TransEat} path="/trans_eat" />
           <ProtectedRoute component={Trips} path="/trips" />
           {/* <ProtectedRoute exact component={Wallet} path="/wallet" /> */}

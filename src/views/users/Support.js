@@ -97,10 +97,12 @@ const Support = (props) => {
         }
       )
       .then((res) => {
+        setLoading(false);
         console.log(res.data);
         setMessageState(res.data.userData);
       })
       .catch((err) => {
+        setLoading(false);
         if (err.response) {
           console.log(err.response.data.message);
         }
@@ -129,6 +131,7 @@ const Support = (props) => {
         );
       })
     );
+    // MessageState.length<0&&<p>no new message</p>
   };
   useEffect(() => {
     FetchMessages();

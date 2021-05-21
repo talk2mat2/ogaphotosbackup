@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Route, Switch } from "react-router-dom";
-import DashboardanNewMain from "./DashboardNewMainwithmap";
-import UserSessionHistory from "./userSessionNistoryNew";
-import WalletNew from "./WalletNew";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+// import DashboardanNewMain from "./DashboardNewMainwithmap";
+// import UserSessionHistory from "./userSessionNistoryNew";
+// import WalletNew from "./WalletNew";
 import { LOGINOUTUSER } from "../../redux/action";
+import { SYNCUSERDATA } from "../../redux/action";
+import axios from "axios";
 
 const DashboardNew = (props) => {
+  const [mylocation, setMylocation] = useState(null);
+
+  const [isOpen, setisOpen] = React.useState(false);
+  const CurrentUser = useSelector((state) => state.user.currentUser);
+  const userData = CurrentUser && CurrentUser.userData;
+  const token = CurrentUser && CurrentUser.token;
+
   const { match, history } = props;
   const [sidebarhidden, setsidebarhidden] = useState("");
   const dispatch = useDispatch();
@@ -15,7 +25,73 @@ const DashboardNew = (props) => {
     sidebarhidden === "" && setsidebarhidden("sidebar-hidden");
     sidebarhidden === "sidebar-hidden" && setsidebarhidden("");
   };
+  const option = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  useEffect(() => {
+    if (mylocation === null) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setMylocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+          // alert(position.coords.latitude)
+        },
+        (err) => console.log(err),
+        option
+      );
+    }
+  }, []);
+  useEffect(() => {
+    const updateMyLocation = (values) => {
+      axios
+        .post(
+          `${process.env.REACT_APP_API_URL}/photographer/updateMyLocation`,
+          values,
+          {
+            headers: { authorization: token },
+          }
+        )
+        .then((res) => {
+          console.log(res.data);
+          // setIsregistered(true)
+          dispatch(SYNCUSERDATA(res.data.userData));
+          // history.push('/dashboard')
+        })
+        .catch((err) => {
+          if (err.response) {
+            console.log(err.response.data.message);
+            // err.response.data.message &&
 
+            // err.response.data.error && setIsregistered(false)
+          }
+          console.log(err);
+        });
+    };
+    const updateClient = () => {
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/users/updateClient`, {
+          headers: { authorization: token },
+        })
+        .then((res) => {
+          console.log(res.data);
+          dispatch(SYNCUSERDATA(res.data.userData));
+        })
+        .catch((err) => {
+          if (err.response) {
+            console.log(err.response.data.message);
+          }
+          console.log(err);
+        });
+    };
+
+    mylocation && userData.isPhotographer
+      ? updateMyLocation({ lat: mylocation.lat, lng: mylocation.lng })
+      : updateClient();
+  }, [mylocation]);
   const LogOut = () => {
     dispatch(LOGINOUTUSER());
     history.push("/");
@@ -111,7 +187,8 @@ const DashboardNew = (props) => {
                 <ul className="navbar-nav" id="leftNav">
                   <li onClick={HandleToggleNavBar} className="nav-item">
                     <a className="nav-link" id="sidebar-toggle" href="#">
-                      <i data-feather="arrow-left" />
+                      {/* <i data-feather="arrow-left" /> */}
+                      <ArrowBackIcon style={{ fontSize: "30px" }} />
                     </a>
                   </li>
 
@@ -127,7 +204,9 @@ const DashboardNew = (props) => {
                   </li> */}
                   <li className="nav-item">
                     <a className="nav-link" href="#">
-                      <div>{Greetings()} martins !</div>
+                      <div>
+                        {Greetings()} {userData.fname} !
+                      </div>
                     </a>
                   </li>
                 </ul>
@@ -342,7 +421,7 @@ const DashboardNew = (props) => {
                 </Link>
               </li>
               <li>
-                <Link to={`/wallet`}>
+                <Link to={`/wallets`}>
                   <i data-feather="calendar" />
                   Wallet
                 </Link>

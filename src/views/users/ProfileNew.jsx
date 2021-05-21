@@ -299,10 +299,10 @@ const ProfileNew = () => {
                         <div className="mail-author-info">
                           <div style={{ height: "30px" }} />
                           <span className="mail-author-name">
-                            Kenny Highland
+                            {userData.fname} {userData.lname}
                           </span>
                           <span className="mail-author-address">
-                            kenny.high@gmail.com
+                            {userData.Email}
                           </span>
                         </div>
                       </div>
@@ -398,11 +398,11 @@ const ProfileNew = () => {
 
                 <div className="mail-author-info">
                   <div style={{ height: "30px" }} />
-                  <span className="mail-author-name">Kenny Highland</span>
-                  <br />
-                  <span className="mail-author-address">
-                    kenny.high@gmail.com
+                  <span className="mail-author-name">
+                    {userData.fname} {userData.lname}
                   </span>
+                  <br />
+                  <span className="mail-author-address">{userData.Email}</span>
                 </div>
                 <br />
                 <br />
