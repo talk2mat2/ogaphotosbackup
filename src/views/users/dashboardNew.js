@@ -25,6 +25,10 @@ const DashboardNew = (props) => {
     sidebarhidden === "" && setsidebarhidden("sidebar-hidden");
     sidebarhidden === "sidebar-hidden" && setsidebarhidden("");
   };
+
+  const handlemobiletoggle = () => {
+    window.innerWidth < 980 && HandleToggleNavBar();
+  };
   const option = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -320,7 +324,7 @@ const DashboardNew = (props) => {
                           <div className="notif-image">
                             <span className="notification-badge">
                               <img
-                                src="../../assets/images/avatars/profile-image.png"
+                                src="assets3/images/avatars/profile-image.png"
                                 alt=""
                               />
                             </span>
@@ -336,7 +340,7 @@ const DashboardNew = (props) => {
                           <div className="notif-image">
                             <span className="notification-badge">
                               <img
-                                src="../../assets/images/avatars/profile-image.png"
+                                src="assets3/images/avatars/profile-image.png"
                                 alt=""
                               />
                             </span>
@@ -359,7 +363,7 @@ const DashboardNew = (props) => {
                       aria-expanded="false"
                     >
                       <img
-                        src="../../assets/images/avatars/profile-image.png"
+                        src="assets3/images/avatars/profile-image.png"
                         alt=""
                       />
                     </a>
@@ -409,7 +413,7 @@ const DashboardNew = (props) => {
             <ul className="list-unstyled accordion-menu">
               <li className="sidebar-title">Main</li>
               <li className="active-page">
-                <Link to="/dashboard">
+                <Link onClick={handlemobiletoggle} to="/dashboard">
                   <i data-feather="home" />
                   Dashboard
                 </Link>
@@ -417,7 +421,7 @@ const DashboardNew = (props) => {
               <li className="sidebar-title">Apps</li>
               {!userData.isPhotographer && !userData.isAdmin ? (
                 <li>
-                  <Link to={`/UserSessionHistory`}>
+                  <Link onClick={handlemobiletoggle} to={`/UserSessionHistory`}>
                     <i data-feather="inbox" />
                     Session History
                   </Link>
@@ -425,7 +429,10 @@ const DashboardNew = (props) => {
               ) : null}
               {userData.isPhotographer ? (
                 <li>
-                  <Link to={`/PhotoGrapherSessionHistory`}>
+                  <Link
+                    onClick={handlemobiletoggle}
+                    to={`/PhotoGrapherSessionHistory`}
+                  >
                     <i data-feather="inbox" />
                     Received Bookings
                   </Link>
@@ -433,7 +440,7 @@ const DashboardNew = (props) => {
               ) : null}
               {!userData.isPhotographer && !userData.isAdmin ? (
                 <li>
-                  <Link to={`/wallets`}>
+                  <Link onClick={handlemobiletoggle} to={`/wallets`}>
                     <i data-feather="calendar" />
                     Wallet
                   </Link>
@@ -441,7 +448,7 @@ const DashboardNew = (props) => {
               ) : null}
               {!userData.isAdmin ? (
                 <li>
-                  <Link to={`/Promos`}>
+                  <Link onClick={handlemobiletoggle} to={`/Promos`}>
                     <i data-feather="user" />
                     Promos
                   </Link>
@@ -449,13 +456,13 @@ const DashboardNew = (props) => {
               ) : null}
 
               <li>
-                <Link to="/SupportMessage">
+                <Link onClick={handlemobiletoggle} to="/SupportMessage">
                   <i data-feather="message-circle" />
                   Support Message
                 </Link>
               </li>
               <li>
-                <Link to="/Profile">
+                <Link onClick={handlemobiletoggle} to="/Profile">
                   <i data-feather="edit" />
                   Profile Settings
                 </Link>

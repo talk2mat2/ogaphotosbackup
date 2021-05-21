@@ -147,7 +147,7 @@ const SupportMessageNew = (props) => {
                           </div>
                         </div>
                         <div className="mail-other-info">
-                          <span>21 July, 18:01</span>
+                          {/* <span>21 July, 18:01</span> */}
                         </div>
                       </div>
                     </div>
