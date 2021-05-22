@@ -54,7 +54,7 @@ const SupportMessageNew = (props) => {
                 <div className="email-list-item">
                   <div className="email-author">
                     <img
-                      src="../../assets/images/avatars/profile-image.png"
+                      src="assets3/images/avatars/profile-image.png"
                       alt=""
                     />
                     <span className="author-name">
@@ -133,7 +133,7 @@ const SupportMessageNew = (props) => {
                       <div className="mail-info">
                         <div className="mail-author">
                           <img
-                            src="../../assets/images/avatars/profile-image.png"
+                            src="assets3/images/avatars/profile-image.png"
                             alt=""
                           />
                           <div className="mail-author-info">

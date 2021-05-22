@@ -454,6 +454,14 @@ const DashboardNew = (props) => {
                   </Link>
                 </li>
               ) : null}
+              {userData.isAdmin ? (
+                <li>
+                  <Link onClick={handlemobiletoggle} to={`/dashboard`}>
+                    <i data-feather="user" />
+                    Edit Picture Request
+                  </Link>
+                </li>
+              ) : null}
 
               <li>
                 <Link onClick={handlemobiletoggle} to="/SupportMessage">

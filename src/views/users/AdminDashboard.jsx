@@ -1,8 +1,159 @@
-import React from "react";
+import React, { useState } from "react";
+import TransitionsModal from "./modal";
+import { useSelector } from "react-redux";
+import MessageModal from "./MessageModal.jsx";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import axios from "axios";
 
-const AdminDashboard = () => {
+const AdminDashboard = (props) => {
+  const [open, setOpen] = React.useState(false);
+  const [countLoading, setCountLoading] = React.useState(false);
+  const [priceTag, setPricetag] = React.useState(0);
+  const [count, setCount] = React.useState({
+    usersCount: 0,
+    phographersCount: 0,
+    bookingsCount: 0,
+  });
+  const CurrentUser = useSelector((state) => state.user.currentUser);
+  const token = CurrentUser && CurrentUser.token;
+  const { item, history, match } = props;
+  const [searchUsers, setSearchUsers] = useState("");
+  const [searchPhotographers, setSearPhotographers] = useState("");
+  const [searchUsersResult, setSearchUsersResult] = useState([]);
+  const [searchPhotographersResult, setsearchPhotographersResult] = useState(
+    []
+  );
+  const [PricetagLoading, setPricetagLoading] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const fetchPriceTag = async () => {
+    setPricetagLoading(true);
+    await axios
+      .get(`${process.env.REACT_APP_API_URL}/users/GetPricePriceTag`)
+      .then((res) => {
+        setPricetagLoading(false);
+        // setLoading(false)
+        setPricetag(parseInt(res.data.userData.price));
+        console.log(res.data);
+        // setIsregistered(true)
+        // history.push('/dashboard')
+      })
+      .catch((err) => {
+        setPricetagLoading(false);
+        if (err.response) {
+          // setLoading(false)
+          console.log(err.response.data.message);
+          // err.response.data.message &&
+
+          // err.response.data.error && setIsregistered(false)
+        }
+        console.log(err);
+      });
+  };
+  const CountUsersAndPhotgraphers = async () => {
+    setCountLoading(true);
+    await axios
+      .get(`${process.env.REACT_APP_API_URL}/users/CountUsersAndPhotgraphers`)
+      .then((res) => {
+        setCountLoading(false);
+        // setLoading(false)
+        setCount({
+          ...count,
+          usersCount: res.data.userData.usersCount,
+          phographersCount: res.data.userData.phographersCount,
+          bookingsCount: res.data.userData.bookingsCount,
+        });
+        // setPricetag(parseInt(res.data.userData))
+        console.log(res.data);
+        // setIsregistered(true)
+        // history.push('/dashboard')
+      })
+      .catch((err) => {
+        setCountLoading(false);
+        // setPricetagLoading(false)
+        if (err.response) {
+          // setLoading(false)
+          console.log(err.response.data.message);
+          // err.response.data.message &&
+
+          // err.response.data.error && setIsregistered(false)
+        }
+        console.log(err);
+      });
+  };
+  const SearchUsersApi = async (search) => {
+    await axios
+      .get(
+        `${process.env.REACT_APP_API_URL}/users/SearchUsers?search=${search}`,
+        {
+          headers: { authorization: token },
+        }
+      )
+      .then((res) => {
+        console.log(res.data.userData);
+        setSearchUsersResult(res.data.userData);
+      })
+      .catch((err) => {
+        setCountLoading(false);
+
+        if (err.response) {
+          console.log(err.response.data.message);
+        }
+        console.log(err);
+      });
+  };
+  const SearchPhotographersApi = async (search) => {
+    await axios
+      .get(
+        `${process.env.REACT_APP_API_URL}/users/SearchPhotographers?search=${search}`,
+        {
+          headers: { authorization: token },
+        }
+      )
+      .then((res) => {
+        console.log(res.data.userData);
+        setsearchPhotographersResult(res.data.userData);
+      })
+      .catch((err) => {
+        setCountLoading(false);
+
+        if (err.response) {
+          console.log(err.response.data.message);
+        }
+        console.log(err);
+      });
+  };
+
+  const handleSearch = async (value) => {
+    setSearchUsers(value);
+
+    await SearchUsersApi(value);
+  };
+  const handleSearch2 = async (value) => {
+    setSearPhotographers(value);
+
+    await SearchPhotographersApi(value);
+  };
+  React.useEffect(() => {
+    fetchPriceTag();
+    CountUsersAndPhotgraphers();
+  }, []);
+
   return (
     <div className="page-content">
+      <TransitionsModal
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+        priceTag={priceTag}
+        setPricetag={setPricetag}
+      />
       <div className="main-wrapper">
         <div class="row">
           <div class="col">
@@ -26,78 +177,137 @@ const AdminDashboard = () => {
         <div className="row">
           <div className="col-md-6 col-xl-3">
             <div className="card stat-widget">
-              <div className="card-body">
-                <h5 className="card-title">Reg.Users</h5>
-                <h2>132</h2>
-                <p>From last week</p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-info progress-bar-striped"
-                    role="progressbar"
-                    style={{ width: "25%" }}
-                    aria-valuenow={25}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
+              {countLoading ? (
+                <CircularProgress
+                  size={20}
+                  style={{
+                    color: "tomato",
+
+                    marginLeft: "50%",
+                  }}
+                />
+              ) : (
+                <div className="card-body">
+                  <h5 className="card-title">Users</h5>
+                  <h2>{count.usersCount}</h2>
+                  <p>Registered</p>
+                  <div className="progress">
+                    <div
+                      className="progress-bar bg-info progress-bar-striped"
+                      role="progressbar"
+                      style={{
+                        width: (count.usersCount / 1000) * 100 + "%",
+                      }}
+                      aria-valuenow={count.usersCount}
+                      aria-valuemin={0}
+                      aria-valuemax={1000}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
           <div className="col-md-6 col-xl-3">
             <div className="card stat-widget">
-              <div className="card-body">
-                <h5 className="card-title">Reg. Photographers</h5>
-                <h2>287</h2>
-                <p>Orders in waitlist</p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-success progress-bar-striped"
-                    role="progressbar"
-                    style={{ width: "50%" }}
-                    aria-valuenow={50}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
+              {countLoading ? (
+                <CircularProgress
+                  size={20}
+                  style={{
+                    color: "tomato",
+
+                    marginLeft: "50%",
+                  }}
+                />
+              ) : (
+                <div className="card-body">
+                  <h5 className="card-title">Photographers</h5>
+                  <h2>{count.phographersCount}</h2>
+                  <p>Registered</p>
+                  <div className="progress">
+                    <div
+                      className="progress-bar bg-success progress-bar-striped"
+                      role="progressbar"
+                      style={{
+                        width: (count.phographersCount / 1000) * 100 + "%",
+                      }}
+                      aria-valuenow={count.phographersCount}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
-          {/* <div className="col-md-6 col-xl-3">
-            <div className="card stat-widget">
-              <div className="card-body">
-                <h5 className="card-title">Monthly Profit</h5>
-                <h2>7.4K</h2>
-                <p>For last 30 days</p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-danger progress-bar-striped"
-                    role="progressbar"
-                    style={{ width: "60%" }}
-                    aria-valuenow={60}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </div>
-            </div>
-          </div> */}
           <div className="col-md-6 col-xl-3">
             <div className="card stat-widget">
-              <div className="card-body">
-                <h5 className="card-title">Bookings Made</h5>
-                <h2>87</h2>
-                <p>Orders in waitlist</p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-primary progress-bar-striped"
-                    role="progressbar"
-                    style={{ width: "50%" }}
-                    aria-valuenow={50}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
+              {countLoading ? (
+                <CircularProgress
+                  size={20}
+                  style={{
+                    color: "tomato",
+
+                    marginLeft: "50%",
+                  }}
+                />
+              ) : (
+                <div className="card-body">
+                  <h5 className="card-title">Bookings Made</h5>
+                  <h2>{count.bookingsCount}</h2>
+                  <p>Total bookings</p>
+                  <div className="progress">
+                    <div
+                      className="progress-bar bg-danger progress-bar-striped"
+                      role="progressbar"
+                      style={{
+                        width: (count.bookingsCount / 1000) * 100 + "%",
+                      }}
+                      aria-valuenow={60}
+                      aria-valuemin={0}
+                      aria-valuemax={1000}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
+            </div>
+          </div>
+          <div className="col-md-6 col-xl-3">
+            <div className="card stat-widget">
+              {PricetagLoading ? (
+                <CircularProgress
+                  size={20}
+                  style={{
+                    color: "tomato",
+
+                    marginLeft: "50%",
+                  }}
+                />
+              ) : (
+                <div style={{ position: "relative" }} className="card-body">
+                  <h5 className="card-title">Shoot Price</h5>
+                  <h2>{priceTag}</h2>
+                  <button
+                    onClick={handleOpen}
+                    className="btn btn-primary"
+                    style={{ position: "absolute", top: "2px", right: "2px" }}
+                  >
+                    set
+                  </button>
+                  <p>Per minutes(naira)</p>
+                  <div className="progress">
+                    <div
+                      className="progress-bar bg-primary progress-bar-striped"
+                      role="progressbar"
+                      style={{
+                        width: (priceTag && priceTag / 300) * 100 + "%",
+                      }}
+                      aria-valuenow={50}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
