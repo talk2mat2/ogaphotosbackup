@@ -108,6 +108,11 @@ const ReceivedPhotos = (props) => {
       {
         Header: "Date Received",
         accessor: "Date_submited", // accessor is the "key" in the data
+        Cell: ({ row }) => {
+          return (
+            <Moment format="YYYY/MM/DD">{row.original.Date_submited}</Moment>
+          );
+        },
       },
       // {
       //   Header: "Event Duration",
