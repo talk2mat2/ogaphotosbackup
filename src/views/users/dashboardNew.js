@@ -191,9 +191,11 @@ const DashboardNew = (props) => {
               <div className id="navbarNav">
                 <ul className="navbar-nav" id="leftNav">
                   <li onClick={HandleToggleNavBar} className="nav-item">
-                    <a className="nav-link" id="sidebar-toggle" href="#">
+                    <a className="nav-link" id="sidebar-toggle">
                       {/* <i data-feather="arrow-left" /> */}
-                      <ArrowBackIcon style={{ fontSize: "30px" }} />
+                      <ArrowBackIcon
+                        style={{ fontSize: "30px", cursor: "pointer" }}
+                      />
                     </a>
                   </li>
 
@@ -427,6 +429,22 @@ const DashboardNew = (props) => {
                   </Link>
                 </li>
               ) : null}
+              {!userData.isPhotographer && !userData.isAdmin ? (
+                <li>
+                  <Link onClick={handlemobiletoggle} to={`/Receveived`}>
+                    <i data-feather="inbox" />
+                    Received Photos
+                  </Link>
+                </li>
+              ) : null}
+              {userData.isPhotographer ? (
+                <li>
+                  <Link onClick={handlemobiletoggle} to={`/Submitshoots`}>
+                    <i data-feather="inbox" />
+                    Submit Shoots
+                  </Link>
+                </li>
+              ) : null}
               {userData.isPhotographer ? (
                 <li>
                   <Link
@@ -456,7 +474,7 @@ const DashboardNew = (props) => {
               ) : null}
               {userData.isAdmin ? (
                 <li>
-                  <Link onClick={handlemobiletoggle} to={`/dashboard`}>
+                  <Link onClick={handlemobiletoggle} to={`/EditPhotoRequest`}>
                     <i data-feather="user" />
                     Edit Picture Request
                   </Link>

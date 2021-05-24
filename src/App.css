@@ -29,6 +29,7 @@ body {
 input {
   padding: 10px;
   box-sizing: border-box;
+  color: rgb(200, 224, 248);
 }
 .footer-text > a {
   color: #dddddd;

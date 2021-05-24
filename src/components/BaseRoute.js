@@ -2,7 +2,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ProtectedRoute from "./ProtectedRoute";
+// import ProtectedRoute from "./ProtectedRoute";
 import ProtectedRouteNew from "./ProtectedRouteNew";
 import CircularProgress from "@material-ui/core/CircularProgress";
 // import Login from "../views/Login";
@@ -34,6 +34,12 @@ import Viewallwork from "../views/users/Viewallworks";
 import UserSessionHistoryDetails from "../views/users/userSessionNistoryNew_Details";
 import PhotoGrapherSessionHistory from "../views/users/PhotoGrapherSessionNistoryNew";
 import PhotoSessionSessionHistoryDetails from "../views/users/PhotoSessionNistoryNew_Details";
+import EditPhotoRequest from "../views/users/EditPhotoRequest";
+import Submitshoots from "../views/users/submiteShoots";
+import editphotouserDetails from "../views/users/editphotouserDetails";
+import AdminUploadedits from "../views/users/AdminUploadedits";
+import ReceivedPhotos from "../views/users/ReceivedPhotos";
+import ReceivedPhotoDetails from "../views/users/ReceivedPhotoDetails";
 
 // import Delivery from "../views/users/Delivery";
 // import Looking from "../views/users/Looking";
@@ -106,10 +112,32 @@ function BaseRoute() {
             path="/UserSessionHistoryDetails"
             component={UserSessionHistoryDetails}
           />
+
+          <ProtectedRouteNew
+            path="/editphotouserDetails"
+            component={editphotouserDetails}
+          />
           <ProtectedRouteNew
             path="/PhotoGrapherSessionHistory"
             component={PhotoGrapherSessionHistory}
           />
+          <ProtectedRouteNew
+            path="/EditPhotoRequest"
+            component={EditPhotoRequest}
+          />
+          <ProtectedRouteNew path="/Receveived" component={ReceivedPhotos} />
+          <ProtectedRouteNew
+            path="/ReceivedPhotoDetails"
+            component={ReceivedPhotoDetails}
+          />
+
+          <ProtectedRouteNew path="/Submitshoots" component={Submitshoots} />
+
+          <ProtectedRouteNew
+            path="/AdminUploadedits"
+            component={AdminUploadedits}
+          />
+
           <ProtectedRouteNew
             path="/PhotoSessionSessionHistoryDetails"
             component={PhotoSessionSessionHistoryDetails}
