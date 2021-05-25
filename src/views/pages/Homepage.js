@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -9,15 +9,98 @@ import { Helmet } from "react-helmet";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import MeetOurPhoto from "./MeetOurPhoto";
 import Features from "./Features";
+import NaijaStates from "naija-state-local-government";
+import styled from "styled-components";
 
+const Listing = styled.ul`
+  margin-top: 20px;
+  // display: flex;
+  // flex-direction: row;
+  width: 200px;
+  // flex-wrap: wrap;
+  align-items: center;
+  padding: 0px;
+  align-items: center;
+  margin: 40px;
+  a {
+    color: inherit;
+  }
+  a :hover {
+    color: inherit;
+  }
+
+  li {
+    padding: 0px;
+    list-style: none;
+    font-size: 17px;
+    width: 100%;
+    margin: 10px;
+    text-align: left;
+  }
+
+  @media (max-width: 630px) {
+    margin: 5px;
+    li {
+      font-size: 14px;
+    }
+  }
+`;
 const Homepage = () => {
   const [showmenu, setShowmenu] = useState(null);
+
   const handleOpenMenu = () => {
     if (showmenu === null) {
       setShowmenu("openNav");
     } else {
       setShowmenu(null);
     }
+  };
+  useEffect(() => {
+    console.log(NaijaStates.all());
+  }, []);
+  const Mapstate = () => {
+    return NaijaStates.all()
+      .slice(0, 9)
+      .map((xx) => (
+        <Link
+          to={{ pathname: "/bestphotographers", state: { Data: xx.state } }}
+        >
+          <li value={xx.state}>{xx.state} photographers</li>
+        </Link>
+      ));
+  };
+  const Mapstate2 = () => {
+    return NaijaStates.all()
+      .slice(9, 19)
+      .map((xx) => (
+        <Link
+          to={{ pathname: "/bestphotographers", state: { Data: xx.state } }}
+        >
+          <li value={xx.state}>{xx.state} photographers</li>
+        </Link>
+      ));
+  };
+  const Mapstate3 = () => {
+    return NaijaStates.all()
+      .slice(19, 29)
+      .map((xx) => (
+        <Link
+          to={{ pathname: "/bestphotographers", state: { Data: xx.state } }}
+        >
+          <li value={xx.state}>{xx.state} photographers</li>
+        </Link>
+      ));
+  };
+  const Mapstate4 = () => {
+    return NaijaStates.all()
+      .slice(29, 36)
+      .map((xx) => (
+        <Link
+          to={{ pathname: "/bestphotographers", state: { Data: xx.state } }}
+        >
+          <li value={xx.state}>{xx.state} photographers</li>
+        </Link>
+      ));
   };
   return (
     <div>
@@ -2619,7 +2702,29 @@ const Homepage = () => {
                 {/* /.row */}
               </div>
               {/* /.footer-container */}
+
               <div className="footer-bottom">
+                <div className="row">
+                  <div
+                    style={{
+                      width: "100%",
+                      minHeight: "30px",
+
+                      marginTop: "80px",
+                      padding: "20px",
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                      alignItems: "flex-start",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Listing>{Mapstate()}</Listing>
+                    <Listing>{Mapstate2()}</Listing>
+                    <Listing>{Mapstate3()}</Listing>
+                    <Listing>{Mapstate4()}</Listing>
+                  </div>
+                </div>
                 <div className="footer-container tt-wrap">
                   <div className="row">
                     <div className="col-md-6 col-md-push-6">

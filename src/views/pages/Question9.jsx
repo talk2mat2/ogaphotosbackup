@@ -289,7 +289,7 @@ const Question9 = (props) => {
           marginTop: "8px",
         }}
       >
-        Pay with Credit Card
+        Make Payment
       </button>
 
       <Listing>

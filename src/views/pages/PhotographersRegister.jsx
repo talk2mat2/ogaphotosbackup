@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import AlertDialog from "../../components/AlertDialog";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import NaijaStates from "naija-state-local-government";
 import axios from "axios";
 import { LOGINSUCCESS } from "../../redux/action";
 import Header from "../../components/Header";
@@ -79,7 +80,8 @@ const Listing = styled.ul`
   padding: 0px;
   align-items: center;
 
-  li {
+  li,
+  select {
     padding: 0px;
     list-style: none;
     width: 100%;
@@ -124,6 +126,8 @@ const PhotographersRegister = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [Mystate, setMystate] = useState("");
+  const [Mylga, setMylga] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [mobile, setMobile] = useState("");
@@ -146,8 +150,12 @@ const PhotographersRegister = () => {
       .then((res) => {
         setLoading(false);
         console.log(res.data);
-        history.push("/dashboard");
+
         dispatch(LOGINSUCCESS(res.data));
+        history.push("/dashboard");
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       })
       .catch((err) => {
         setLoading(false);
@@ -168,23 +176,47 @@ const PhotographersRegister = () => {
     if (password !== confpass) {
       return setErrorMessage("Both password dont match");
     }
-    if (!email || !password || !fname || !lname || !mobile) {
+    if (
+      !email ||
+      !password ||
+      !fname ||
+      !lname ||
+      !mobile ||
+      !Mystate ||
+      !Mylga
+    ) {
       return setErrorMessage("Error, all fields are required");
     }
     // dispatch(signUp(email, password, mobile, fname, lname));handle
-    handleSignup({ email, password, fname, lname, mobile });
+    handleSignup({ email, password, fname, lname, mobile, Mylga, Mystate });
   };
 
   const handleClose = () => {
-    setEmail("");
-    setPassword("");
-    setConfPassword("");
-    setFname("");
-    setLname("");
-    setMobile("");
+    // setEmail("");
+    // setPassword("");
+    // setConfPassword("");
+    // setFname("");
+    // setLname("");
+    // setMobile("");
     // dispatch(clearSignupError());
     setErrorMessage("");
   };
+
+  const Mapstate = () => {
+    return NaijaStates.all().map((xx) => (
+      <option value={xx.state}>{xx.state}</option>
+    ));
+  };
+
+  const MapLga = (value) => {
+    return (
+      value &&
+      NaijaStates.lgas(value).lgas.map((xx) => <option value={xx}>{xx}</option>)
+    );
+  };
+  useEffect(() => {
+    console.log(MapLga(Mystate));
+  }, [Mystate]);
   return (
     <React.Fragment>
       {/* <Header /> */}
@@ -287,6 +319,65 @@ const PhotographersRegister = () => {
                   required
                   placeholder="Confirm password"
                 />
+              </li>
+              <li>
+                <div
+                  style={{
+                    marginTop: "auto",
+                    width: "100%",
+                    border: "1px solid grey",
+                    height: "50px",
+                    marginBottom: "6px",
+                  }}
+                >
+                  {/* <p>State:</p> */}
+                  <select
+                    defaultValue={Mystate}
+                    name="favoritesShootTypes"
+                    id="favoritesShootTypes"
+                    value={Mystate}
+                    onChange={(e) => setMystate(e.target.value)}
+                    style={{
+                      // width: "200px",
+                      border: "none",
+                      borderRadius: "4px",
+                      height: "100%",
+                    }}
+                  >
+                    <option value="">State</option>
+                    {Mapstate()}
+                  </select>
+                </div>
+              </li>
+              <li>
+                {Mystate && (
+                  <div
+                    style={{
+                      marginTop: "auto",
+                      width: "100%",
+                      border: "1px solid grey",
+                      height: "50px",
+                    }}
+                  >
+                    {/* <p>State:</p> */}
+                    <select
+                      defaultValue={Mylga}
+                      name="favoritesShootTypes"
+                      id="favoritesShootTypes"
+                      value={Mylga}
+                      onChange={(e) => setMylga(e.target.value)}
+                      style={{
+                        // width: "200px",
+                        border: "none",
+                        borderRadius: "4px",
+                        height: "100%",
+                      }}
+                    >
+                      <option value="">Select Lga</option>
+                      {MapLga(Mystate)}
+                    </select>
+                  </div>
+                )}
               </li>
               <li style={{ textAlign: "center" }}>
                 <Buttons

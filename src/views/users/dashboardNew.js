@@ -263,7 +263,7 @@ const DashboardNew = (props) => {
                     </div>
                   </li>
                   <li className="nav-item dropdown">
-                    <a
+                    {/* <a
                       className="nav-link notifications-dropdown"
                       href="#"
                       id="notificationsDropDown"
@@ -272,7 +272,7 @@ const DashboardNew = (props) => {
                       aria-expanded="false"
                     >
                       3
-                    </a>
+                    </a> */}
                     <div
                       className="dropdown-menu dropdown-menu-end notif-drop-menu"
                       aria-labelledby="notificationsDropDown"

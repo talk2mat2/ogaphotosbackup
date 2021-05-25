@@ -14,7 +14,9 @@ import TheatersIcon from "@material-ui/icons/Theaters";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import { useDispatch } from "react-redux";
 import { SETBOOKINGPROCESSINFO } from "../../redux/action";
-
+const Space = styled.div`
+  width: 1px;
+`;
 const Container = styled.div`
   width: 100%;
   min-height: 400px;
@@ -179,7 +181,7 @@ const Question5 = (props) => {
       </Hbig>
       <VericalCenterRow>
         <label className="container">
-          30 mi
+          30 mi{" "}
           <input
             value="30 minutes"
             type="radio"
@@ -192,7 +194,7 @@ const Question5 = (props) => {
           <span class="checkmark"></span>
         </label>
         <label className="container">
-          1 hr
+          1 hr{" "}
           <input
             value="1 hour"
             type="radio"
@@ -202,10 +204,9 @@ const Question5 = (props) => {
               setDurations(e.target.value);
             }}
           />
-          <span class="checkmark"></span>
         </label>
         <label className="container">
-          2 hr
+          2 hr{" "}
           <input
             value="2 hours"
             type="radio"
@@ -218,7 +219,7 @@ const Question5 = (props) => {
           <span class="checkmark"></span>
         </label>
         <label className="container">
-          3 hr
+          3 hr{" "}
           <input
             value="3 hours"
             type="radio"
@@ -231,7 +232,7 @@ const Question5 = (props) => {
           <span class="checkmark"></span>
         </label>
         <label className="container">
-          7 hr
+          7 hr{" "}
           <input
             value="7 hours"
             type="radio"
