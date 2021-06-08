@@ -89,7 +89,7 @@ const Header = () => {
       <div className="header-inner tt-wrap">
         <div id="logo">
           <a href="/" className="logo-dark">
-            <img src="media/logo-dark.png" alt="logo" />
+            <img src="/media/logo-dark.png" alt="logo" />
           </a>
           <a href="/" className="logo-light">
             <img src="assets/img/logo-light.png" alt="logo" />

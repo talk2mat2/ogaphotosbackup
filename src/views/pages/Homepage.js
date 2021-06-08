@@ -55,9 +55,7 @@ const Homepage = () => {
       setShowmenu(null);
     }
   };
-  useEffect(() => {
-    console.log(NaijaStates.all());
-  }, []);
+
   const Mapstate = () => {
     return NaijaStates.all()
       .slice(0, 9)

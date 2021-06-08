@@ -4,11 +4,41 @@ import { useSelector } from "react-redux";
 import MessageModal from "./MessageModal.jsx";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
+import Styled from "styled-components";
+import { Button } from "@material-ui/core";
 
+const VericalCenterRow = Styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+`;
+const LoaderContainer = Styled.div`
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255, 0.5);
+  text-align: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  box-sizing: border-boz;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+  z-index: 7;
+`;
 const AdminDashboard = (props) => {
   const [open, setOpen] = React.useState(false);
   const [countLoading, setCountLoading] = React.useState(false);
   const [priceTag, setPricetag] = React.useState(0);
+  const [loading, setLoading] = React.useState(false);
+  const [isloading, setisLoading] = React.useState(false);
   const [count, setCount] = React.useState({
     usersCount: 0,
     phographersCount: 0,
@@ -20,9 +50,12 @@ const AdminDashboard = (props) => {
   const [searchUsers, setSearchUsers] = useState("");
   const [searchPhotographers, setSearPhotographers] = useState("");
   const [searchUsersResult, setSearchUsersResult] = useState([]);
+  const [HomePageData, setHomePageData] = useState([]);
   const [searchPhotographersResult, setsearchPhotographersResult] = useState(
     []
   );
+
+  const userData = CurrentUser && CurrentUser.userData;
   const [PricetagLoading, setPricetagLoading] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -46,6 +79,31 @@ const AdminDashboard = (props) => {
       })
       .catch((err) => {
         setPricetagLoading(false);
+        if (err.response) {
+          // setLoading(false)
+          console.log(err.response.data.message);
+          // err.response.data.message &&
+
+          // err.response.data.error && setIsregistered(false)
+        }
+        console.log(err);
+      });
+  };
+  const GetHomePageData = async () => {
+    setPricetagLoading(true);
+    await axios
+      .get(`${process.env.REACT_APP_API_URL}/users/GetHomePageData`)
+      .then((res) => {
+        // setPricetagLoading(false);
+        // setLoading(false)
+        setHomePageData(res.data.userData);
+        // setPricetag(parseInt(res.data.userData.price));
+        console.log(res.data);
+        // setIsregistered(true)
+        // history.push('/dashboard')
+      })
+      .catch((err) => {
+        // setPricetagLoading(false);
         if (err.response) {
           // setLoading(false)
           console.log(err.response.data.message);
@@ -142,9 +200,62 @@ const AdminDashboard = (props) => {
   };
   React.useEffect(() => {
     fetchPriceTag();
+    GetHomePageData();
     CountUsersAndPhotgraphers();
   }, []);
 
+  const UpdateLatestWorks = async (imagedata) => {
+    const userInfo = {
+      userId: userData._id,
+    };
+    const image = imagedata;
+    var formData = new FormData();
+    formData.append("file", image);
+    // formData.append("file", image2);
+    formData.append("userData", JSON.stringify(userInfo));
+    setisLoading(true);
+    await axios({
+      // url: `${ProxyUrl}/users/PreRegister`,
+      url: `${process.env.REACT_APP_API_URL}/users/UpdateLatestWorks`,
+      method: "POST",
+      data: formData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+
+        // Authorization: token,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // dispatch(SYNCUSERDATA(response.data.userData));
+        setisLoading(false);
+        handleClose();
+      })
+      .catch((err) => {
+        console.log(err);
+        setisLoading(false);
+        handleClose();
+      });
+  };
+
+  function handleLatestImgChange(event) {
+    if (!event.target.files[0]) {
+      return null;
+    }
+    if (
+      event.target.files[0].type === "image/png" ||
+      event.target.files[0].type === "image/jpg" ||
+      event.target.files[0].type === "image/jpeg"
+    ) {
+      event.target.files[0] && UpdateLatestWorks(event.target.files[0]);
+      // setImageState({
+      //   file: URL.createObjectURL(event.target.files[0]),
+      //   Uri: event.target.files[0],
+      // });
+    } else {
+      return alert("select a valid image format");
+    }
+  }
   return (
     <div className="page-content">
       <TransitionsModal
@@ -285,7 +396,11 @@ const AdminDashboard = (props) => {
               ) : (
                 <div style={{ position: "relative" }} className="card-body">
                   <h5 className="card-title">Shoot Price</h5>
-                  <h2>{priceTag}</h2>
+                  <h3
+                    style={{ position: "absolute", top: "60px", right: "9px " }}
+                  >
+                    {priceTag}
+                  </h3>
                   <button
                     onClick={handleOpen}
                     className="btn btn-primary"
@@ -311,7 +426,116 @@ const AdminDashboard = (props) => {
             </div>
           </div>
         </div>
+        <div className="row">
+          <div className="col">
+            <div className="card">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-8">
+                    <h5>Home Page Control</h5>
+                  </div>
+                  <div className="col-4">
+                    {/* <h4 className="float-end">({bookings.length})</h4> */}
+                  </div>
+                </div>
+                <div style={{ height: "20px" }} />
+                <div className="row">
+                  <h6>
+                    latest works{" "}
+                    <Button
+                      variant="contained"
+                      component="label"
+                      style={{
+                        marginLeft: "10px",
+                        padding: 0,
+                        color: "#ffffff",
+                        backgroundColor: "dodgerblue",
+                        fontSize: "9px",
+                      }}
+                    >
+                      upload
+                      <input
+                        type="file"
+                        hidden
+                        onChange={handleLatestImgChange}
+                        accept="image/x-png,image/jpeg"
+                      />
+                    </Button>
+                  </h6>
+                  <VericalCenterRow
+                    style={{
+                      flexWrap: "wrap",
+                      overflowY: "auto",
+                      height: "100px",
+                      backgroundColor: "#F5FFFA",
+                    }}
+                  ></VericalCenterRow>
 
+                  <div className="col">
+                    <div className="col"></div>
+                  </div>
+                </div>
+                <div style={{ height: "20px" }} />
+                <div className="row">
+                  <h6>Specialists</h6>
+                  <VericalCenterRow
+                    style={{
+                      flexWrap: "wrap",
+                      overflowY: "auto",
+                      height: "100px",
+                      backgroundColor: "#F5FFFA",
+                    }}
+                  ></VericalCenterRow>
+
+                  <div className="col">
+                    <div className="col"></div>
+                  </div>
+                </div>
+                <div style={{ height: "20px" }} />
+                <div className="row">
+                  <h6>Our photographers</h6>
+                  <VericalCenterRow
+                    style={{
+                      flexWrap: "wrap",
+                      overflowY: "auto",
+                      height: "100px",
+                      backgroundColor: "#F5FFFA",
+                    }}
+                  ></VericalCenterRow>
+
+                  <div className="col">
+                    <div className="col"></div>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="table-responsive">
+                    {/* here */}
+
+                    {/* 
+                    Event Status: pending
+Address :Ikorodu Rd, Ikorodu, Nigeria:
+Event Time: 03:49:
+Payment status: paid
+Shots by: bill */}
+
+                    <div className="col">
+                      <div className="invoice-info"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row invoice-last">
+                  <div className="col-9">
+                    <p>
+                      <br />
+                      {/* dapibus id sollicitudin vel, luctus sit amet justo */}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* <div className="row">
           <div className="col-md-6 col-xl-3">
             <div className="card stat-widget">
@@ -790,6 +1014,12 @@ const AdminDashboard = (props) => {
             </div>
           </div>
         </div> */}
+        {isloading ? (
+          <LoaderContainer>
+            <CircularProgress style={{ color: "tomato" }} />
+            <h4 style={{ backgroundColor: "#ffffff" }}>Please wait...</h4>
+          </LoaderContainer>
+        ) : null}
       </div>
     </div>
   );

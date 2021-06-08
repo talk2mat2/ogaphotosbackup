@@ -193,12 +193,18 @@ const PhotographersCard = (props) => {
         <span>
           <h5>Portfolio Example</h5>
           <small>Event Photography</small>
+          <br />
+          {props.item.distance ? (
+            <small>About {(props.item.distance / 1000).toFixed(2)} km</small>
+          ) : null}
         </span>
       </VericalCenterRow>
       <VericalCenterRow
         style={{ justifyContent: "space-around", marginTop: "auto" }}
       >
-        {props.item && props.item.Porthfolio_works.length > 0 ? (
+        {props.item &&
+        props.item.Porthfolio_works &&
+        props.item.Porthfolio_works.length > 0 ? (
           mapPortfolioworks()
         ) : (
           <>
@@ -348,6 +354,7 @@ const Question8 = (props) => {
   return (
     <Container>
       <Hbig className="tt-heading-title">Select a photographer</Hbig>
+      <p style={{ color: "tomato" }}>** Proximity based search</p>
       <button
         // disabled={!email}
         onClick={handleSelection}
