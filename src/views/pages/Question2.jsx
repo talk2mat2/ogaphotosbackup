@@ -85,12 +85,12 @@ const Question2 = (props) => {
       <Hbig className="tt-heading-title">What do you want to Shoot?</Hbig>
       <VericalCenterRow>
         <Listing>
-          <li onClick={handleSelection.bind(this, "Real estate")}>
+          <li onClick={handleSelection.bind(this, "Real Estate")}>
             <LocalMallIcon
               style={{ color: "grey", marginRight: "15px" }}
               fontSize="large"
             />
-            Real estate
+            Real Estate
           </li>
           <li onClick={handleSelection.bind(this, "family")}>
             <PermIdentityIcon
@@ -106,35 +106,35 @@ const Question2 = (props) => {
             />
             Party
           </li>
-          <li onClick={handleSelection.bind(this, "Dating")}>
+          <li onClick={handleSelection.bind(this, "Dating/Intimate Occasion")}>
             <FavoriteIcon
               fontSize="large"
               style={{ color: "grey", marginRight: "15px" }}
             />
-            Dating
+            Dating/Intimate Occasion
           </li>
-          <li onClick={handleSelection.bind(this, "Team/Office")}>
+          <li onClick={handleSelection.bind(this, "Corporate/Office Team")}>
             <BusinessIcon
               fontSize="large"
               style={{ color: "grey", marginRight: "15px" }}
             />
-            Team/Office
+            Corporate/Office Team
           </li>
-          <li onClick={handleSelection.bind(this, "Graduation")}>
+          <li onClick={handleSelection.bind(this, "Graduation/School Event")}>
             <PermIdentityIcon
               fontSize="large"
               style={{ color: "grey", marginRight: "15px" }}
             />
-            Graduation
+            Graduation/School Event
           </li>
         </Listing>
         <Listing>
-          <li onClick={handleSelection.bind(this, "Fasshion")}>
+          <li onClick={handleSelection.bind(this, "Fashion")}>
             <LocalMallIcon
               style={{ color: "grey", marginRight: "15px" }}
               fontSize="large"
             />
-            fashion
+            Fashion
           </li>
           <li onClick={handleSelection.bind(this, "Food")}>
             <KitchenIcon
@@ -148,7 +148,7 @@ const Question2 = (props) => {
               fontSize="large"
               style={{ color: "grey", marginRight: "15px" }}
             />
-            media
+            Media
           </li>
           <li onClick={handleSelection.bind(this, "Product")}>
             <PermIdentityIcon
@@ -169,7 +169,7 @@ const Question2 = (props) => {
               fontSize="large"
               style={{ color: "grey", marginRight: "15px" }}
             />
-            ...Others
+            Not Listed
           </li>
         </Listing>
       </VericalCenterRow>

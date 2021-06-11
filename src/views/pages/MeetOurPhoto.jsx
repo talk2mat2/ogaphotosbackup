@@ -9,9 +9,20 @@ const MeetOurPhoto = () => {
           <h1 className="tt-heading-title">OUR PHOTOGRAPHERS</h1>
 
           <div className="tt-heading-subtitle">
-            Meeting the Standards matters a lot, We have Competent professionals
-            too
+            Vetted Experts in Every Field of Photography
             <hr className="hr-short" />
+            <p>
+              Ogaphoto photographers go through a rigorous vetting process,
+              their equipment is continuously checked to ensure they maintain
+              high standards, and they are trained on the best customer
+              relationship management standards. We allow creativity,
+              imagination and eye for detail guide every decision they make for
+              you. This allows them to provide results that are both original
+              and valuable. Their commitment to your project is paramount. In
+              addition, our customer care services are on hand to answer any
+              questions or complaints that may arise during your experience with
+              us.
+            </p>
           </div>
         </div>
         {/* /.tt-heading-inner */}

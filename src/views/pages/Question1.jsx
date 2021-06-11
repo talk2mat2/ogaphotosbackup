@@ -49,7 +49,7 @@ const Question1 = (props) => {
   return (
     <Container>
       <Hbig className="tt-heading-title">
-        How do you want your shoot, personal or business?
+        Will your shoot be Personal or for a Business?
       </Hbig>
       <Listing>
         <li onClick={handleSelection.bind(this, "personal")}>

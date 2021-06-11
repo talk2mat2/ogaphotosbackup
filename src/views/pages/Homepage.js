@@ -155,11 +155,13 @@ const Homepage = () => {
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
                       <h1 className="intro-title">Ogaphoto</h1>
-                      <h2 className="intro-subtitle">Photography</h2>
+                      <h2 className="intro-subtitle">The Best Photographers</h2>
                       <p className="intro-description max-width-650">
-                        Ogaphoto recommends the best-matched photographers
+                        Amazing, vetted photographers at your fingertips, in
                         <br />
-                        in real time based on your need
+                        real time, based on your need. We even take last minute
+                        bookings. Once requested, your photographer gets in
+                        touch with you in 30 mins and starts working with you.
                       </p>
                       <div className="margin-top-30">
                         <a
@@ -170,7 +172,7 @@ const Homepage = () => {
                           Hire a photographer!
                         </a>
                         <a
-                          href="/#latest-news-section"
+                          href="/Purpose"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -195,12 +197,16 @@ const Homepage = () => {
                     />
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
-                      <h1 className="intro-title">Perfect</h1>
-                      <h2 className="intro-subtitle">Photography</h2>
+                      <h2 className="intro-title">
+                        Amazing <br />
+                        Photos
+                      </h2>
+                      <h2 className="intro-subtitle">Wherever you are</h2>
                       <p className="intro-description max-width-650">
-                        Capture the magic of travel with a vacation photo shoot,
-                        <br />
-                        capture your upcoming trip memories
+                        Capture the magic of your vacation with a travel
+                        photoshoot by booking in advance, store your vacation
+                        photos and videos as they are taken, create lasting trip
+                        memories.
                       </p>
                       <div className="margin-top-30">
                         <a
@@ -211,7 +217,7 @@ const Homepage = () => {
                           Hire a photographer!
                         </a>
                         <a
-                          href="/#latest-news-section"
+                          href="/Purpose"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -236,14 +242,15 @@ const Homepage = () => {
                     />
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
-                      <h1 className="intro-title">Timely</h1>
-                      <h2 className="intro-subtitle">Ready in 48 Hours</h2>
+                      <h1 className="intro-title">Convenient</h1>
+                      <h2 className="intro-subtitle">Ready in 72 Hours</h2>
                       <p className="intro-description max-width-650">
-                        Retouched Photos are ready by Ogaphoto team in Record
-                        Time!
-                        <br />
-                        Within 48 hours of your shoot, your edited photos and
-                        videos will be delivered
+                        Retouched Photos are ready in Record Time! Within 3
+                        working days of your finished shoot, your photographers
+                        edited photos and videos will be delivered via the
+                        Ogaphoto App, with easy access to one-click sharing or
+                        downloads. *Readiness subject to quantity of photos or
+                        length of video*
                       </p>
                       <div className="margin-top-30">
                         <a
@@ -254,7 +261,7 @@ const Homepage = () => {
                           Hire a photographer!
                         </a>
                         <a
-                          href="/#latest-news-section"
+                          href="/Purpose"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -283,8 +290,9 @@ const Homepage = () => {
                       <h2 className="intro-subtitle">Photography</h2>
                       <p className="intro-description max-width-650">
                         Ogaphoto gives you stunning visuals for every budget,
-                        <br />
-                        with no hidden costs or fees, you get what you pay for
+                        with no hidden costs or fees, you get what you pay for ,
+                        We also provide after shoot support and access to
+                        storage till you are ready to receive them
                       </p>
                       <div className="margin-top-30">
                         <a
@@ -295,7 +303,7 @@ const Homepage = () => {
                           Hire a photographer!
                         </a>
                         <a
-                          href="/#latest-news-section"
+                          href="/Purpose"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -361,15 +369,14 @@ const Homepage = () => {
                           {/* End tt-heading */}
                           <div className="margin-top-30">
                             <p>
-                              <strong>Ogaphoto</strong> specializes in different
-                              types of photography including Portraits, Personal
-                              Branding, Social Content Headshots, Lifestyle,
-                              Family Shoots, Fashion, Fitness, Makeup Shoots,
-                              School Portraits. Kickstarter Campaigns, Youtube
-                              Videos, Instructional Videos, Webisodes, Company
-                              Profiles, Video Job Interviews, Family Moments,
-                              Weddings, Blogs, Sports , , Real Estate Home
-                              Tours. and other events
+                              <strong> Ogaphoto</strong> is the widest on-demand
+                              photography network in Nigeria. With the largest
+                              capacity of experienced local professionals with
+                              high grade equipment, we can tackle any size of
+                              project and craft your ideas and vision into
+                              amazing visuals. Build your personal &
+                              professional brand or business with quality images
+                              and still stay within your budget.
                             </p>
                           </div>
                           <a
@@ -394,9 +401,9 @@ const Homepage = () => {
             <div className="tt-heading tt-heading-lg padding-on text-center">
               <div className="tt-heading-inner tt-wrap">
                 {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
-                <h1 className="tt-heading-title">Latest Works</h1>
+                <h1 className="tt-heading-title">Recent Work</h1>
                 <div className="tt-heading-subtitle">
-                  Our latest photo projects
+                  Photo Projects from our past clients
                 </div>
                 <hr className="hr-short" />
               </div>
@@ -1172,11 +1179,10 @@ const Homepage = () => {
                   {/* /.col */}
                   <div className="col-md-8">
                     <p>
-                      Ogaphoto gives you stunning visuals for every budget, with
-                      no hidden costs or fees, you get what you pay for. We also
-                      provide after shoot support and access to storage till you
-                      are ready to receive them. We recommend the best-matched
-                      photographers in realtime based on your need.
+                      Our pricing is designed to fit any budget regardless of
+                      the type of project. Whether you need a studio, a
+                      luxurious outdoor set up, or a simple background, we give
+                      you the power to go wherever your creative path takes you
                     </p>
                   </div>
                   {/* /.col */}
@@ -1471,9 +1477,12 @@ const Homepage = () => {
                             {/* Begin blog list item info */}
                             <div className="bl-item-info">
                               <div className="bl-item-category"></div>
-                              <a href="/#" className="bl-item-title">
-                                <h2>Step One</h2>
-                              </a>
+
+                              <h2>Step One:</h2>
+                              <h4>
+                                <b>Book an appointment</b>
+                              </h4>
+
                               <div className="bl-item-meta"></div>
                               {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                               <div
@@ -1509,15 +1518,23 @@ const Homepage = () => {
                             {/* Begin blog list item info */}
                             <div className="bl-item-info">
                               <div className="bl-item-category"></div>
-                              <a href="/#" className="bl-item-title">
-                                <h2>Step Two</h2>
-                              </a>
+
+                              <h3 className='bl-item-title"'>
+                                <b>Step Two</b>
+                              </h3>
+                              <h4>
+                                <b>Take your photos</b>{" "}
+                              </h4>
+
                               <div className="bl-item-meta"></div>
                               {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                               <div className="bl-item-desc">
-                                Trust us to arrive with our gadgets, indoors or
-                                Outdoors, Our Creatives are ready to give you
-                                the best of experience.
+                                * Your photographer will bring their
+                                professional-grade equipment to you at the
+                                chosen time and location and you can relax
+                                knowing that you are in the hands of an
+                                experienced creative. Trust us with both your
+                                indoor, outdoor or even underwater shoots.
                               </div>
 
                               {/* Begin blog list item attributes */}
@@ -1541,20 +1558,24 @@ const Homepage = () => {
                             </a>
                             {/* Begin blog list item info */}
                             <div className="bl-item-info">
-                              <a href="/#" className="bl-item-title">
-                                <h2>Step Three</h2>
-                              </a>
+                              <h3>
+                                <b>Step Three</b>
+                              </h3>
+                              <h4>
+                                <b>Receive your work.</b>
+                              </h4>
+
                               <div className="bl-item-meta"></div>
                               {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                               <div
                                 className="bl-item-desc"
                                 data-max-words={200}
                               >
-                                Time is important to us as it is to you, Withine
-                                3 working days, your work is ready in all
-                                required and desired formats, soft/hard copy,
-                                diligently edited and perfected fory our
-                                memories
+                                Your time is valuable and important to us, that
+                                is why within 3 working days, your work is ready
+                                in all required and desired formats, soft/hard
+                                copy, diligently edited and perfected for your
+                                memories.
                               </div>
 
                               {/* Begin blog list item attributes */}
@@ -2134,7 +2155,7 @@ const Homepage = () => {
           {/* ================================
 			///// Begin latest news section /////
 			================================= */}
-          <Features />
+          {/* <Features /> */}
           {/* End latest news section */}
           {/* ===================================
 			///// Begin call to action section /////
@@ -2169,7 +2190,9 @@ const Homepage = () => {
 							*/}
                   <div className="tt-heading tt-heading-lg text-center">
                     <div className="tt-heading-inner tt-wrap">
-                      <h1 className="tt-heading-title">What Next?</h1>
+                      <h1 className="tt-heading-title">
+                        Book a Professional Photographer in 5 Mins!
+                      </h1>
                       <div className="tt-heading-subtitle">
                         Interested in a Photo shoot?
                       </div>
@@ -2179,17 +2202,10 @@ const Homepage = () => {
                   {/* End tt-heading */}
                   <div className="margin-top-30 max-width-1000 margin-auto">
                     <p>
-                      Ready to book an amazing vacation photographer for your
-                      next trip, Events or any type of photo shoot ? you have a
-                      reason to get in touch with Ogaphoto now
+                      Ready to capture your greatness? You have a reason to book
+                      a shoot right now.
                     </p>
                     <div className="margin-top-30">
-                      <a
-                        href="/#"
-                        className="btn btn-dark margin-top-5 margin-right-5"
-                      >
-                        Read More
-                      </a>
                       <a
                         href="/Purpose"
                         className="btn btn-primary margin-top-5"
@@ -2259,8 +2275,8 @@ const Homepage = () => {
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="page-header-description" data-max-words={40}>
                     <p>
-                      Please get in touch and our expert team will answer all
-                      your question
+                      Get in touch with us via email (enter email), phone number
+                      (enter phone number), or via whatsapp
                     </p>
                   </div>
                 </div>
@@ -2397,7 +2413,7 @@ const Homepage = () => {
                                   <div className="tt-heading">
                                     <div className="tt-heading-inner">
                                       <h1 className="tt-heading-title">
-                                        Drop Me a Line
+                                        Help Cente
                                       </h1>
                                       {/* <div class="tt-heading-subtitle">Subtitle Here</div> */}
                                       <hr className="hr-short" />
@@ -2407,9 +2423,8 @@ const Homepage = () => {
                                   {/* End tt-heading */}
                                   <div className="margin-top-30">
                                     <p>
-                                      Our brilliant and knowledgeable customer
-                                      service team is always ready to answer
-                                      your questions
+                                      Our customer services are standing by to
+                                      answer all your questions
                                     </p>
                                   </div>
                                 </div>
@@ -2599,11 +2614,12 @@ const Homepage = () => {
                     {/* End footer text */}
                     <div className="footer-text">
                       <h4>- Creative Photo Studio</h4>
-                      Over ther years, Ogaphotos has networked with several
-                      photographers to bring you the best hand in the industry
-                      ,We hire the best hands for the job, Our services are cost
-                      effective Your job is ready within 2 to 3 working days You
-                      are happy, We are happy, everybody is happy
+                      Over the years Ogaphoto has leveraged on our vast network
+                      of photographers to bring you the best hands in the
+                      industry. We hire only the best and therefore you must
+                      subject yourself to our continual improvement programs and
+                      standards of operations. Our services are cost effective
+                      to make sure our clients needs are always met.
                     </div>
                   </div>
                   {/* /.col */}
