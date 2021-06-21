@@ -359,9 +359,9 @@ const Homepage = () => {
                           <div className="tt-heading">
                             <div className="tt-heading-inner">
                               <h1 className="tt-heading-title">About</h1>
-                              <div className="tt-heading-subtitle">
+                              {/* <div className="tt-heading-subtitle">
                                 About Ogaphoto and what we do
-                              </div>
+                              </div> */}
                               <hr className="hr-short" />
                             </div>
                             {/* /.tt-heading-inner */}
@@ -1161,255 +1161,7 @@ const Homepage = () => {
           {/* ===========================
 			///// Begin prices section /////
 			============================ */}
-          <section id="prices-section">
-            {/* Begin tt-heading 
-				====================== 
-				* Use class "padding-on" to enable heading paddings (useful if you use tt-heading as stand alone element).
-				* Use class "text-center" or "text-right" to align tt-heading.
-				* Use classes "tt-heading-xs", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set tt-heading size.
-				*/}
-            <div className="tt-heading tt-heading-lg padding-on">
-              <div className="tt-heading-inner tt-wrap">
-                {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
-                <div className="row">
-                  <div className="col-md-4">
-                    <h1 className="tt-heading-title">Services &amp; Pricing</h1>
-                    <div className="tt-heading-subtitle">
-                      Please choose your package
-                    </div>
-                    <hr className="hr-short" />
-                  </div>
-                  {/* /.col */}
-                  <div className="col-md-8">
-                    <p>
-                      Our pricing is designed to fit any budget regardless of
-                      the type of project. Whether you need a studio, a
-                      luxurious outdoor set up, or a simple background, we give
-                      you the power to go wherever your creative path takes you
-                    </p>
-                  </div>
-                  {/* /.col */}
-                </div>
-                {/* /.row */}
-              </div>
-              {/* /.tt-heading-inner */}
-            </div>
-            {/* End tt-heading */}
-            <div className="prices-section-inner tt-wrap">
-              {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
-              {/* Begin price boxes container 
-					================================= */}
-              <div className="price-boxes-container margin-bottom-80">
-                <div className="row">
-                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    {/* Begin price box */}
-                    <div className="price-box">
-                      <div
-                        className="pr-box price-heading bg-image"
-                        style={{
-                          backgroundImage:
-                            "url(assets/img/misc/price-box-1.jpg)",
-                        }}
-                      >
-                        <div className="price-heading-inner">
-                          <i className="fas fa-umbrella" />
-                          <h3 className="price-title">Studio</h3>
-                          <div className="price-heading-text">
-                            Studio Photo Session
-                          </div>
-                        </div>
-                      </div>
-                      <div className="pr-box price-box-price">
-                        <div className="price">
-                          <span className="price-currency">N</span>20
-                          <span style={{ fontSize: "12px" }}>K</span>
-                        </div>
-                        {/* <div class="price-tenure">Per 1 Month</div> */}
-                      </div>
-                      <div className="pr-box price-features">
-                        <ul className="list-unstyled">
-                          <li>Studio space.</li>
-                          <li>Photography backdrops.</li>
-                          <li>Adjustable lighting equipment kits.</li>
-                        </ul>
-                      </div>
-                      <div className="pr-box">
-                        <a
-                          href="/Purpose"
-                          className="btn btn-price-box btn-dark btn-lg"
-                        >
-                          Hire a photographer
-                        </a>
-                        <a
-                          href="/#"
-                          className="btn btn-link btn-lg btn-block"
-                        ></a>
-                      </div>
-                    </div>
-                    {/* End price box */}
-                  </div>
-                  {/* /.col */}
-                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    {/* Begin price box (featured) */}
-                    <div className="price-box price-box-featured">
-                      <div
-                        className="pr-box price-heading bg-image"
-                        style={{
-                          backgroundImage:
-                            "url(assets/img/misc/price-box-2.jpg)",
-                        }}
-                      >
-                        <div className="price-heading-inner">
-                          <i className="fas fa-tree" />
-                          <h3 className="price-title">Outdoor</h3>
-                          <div className="price-heading-text">
-                            Outdoor Photo Session
-                          </div>
-                        </div>
-                      </div>
-                      <div className="pr-box price-box-price">
-                        <div className="price">
-                          <span className="price-currency">N</span>43
-                          <span style={{ fontSize: "12px" }}>K</span>
-                        </div>
-                        {/* <div class="price-tenure">Per 6 Month</div> */}
-                      </div>
-                      <div className="pr-box price-features">
-                        <ul className="list-unstyled">
-                          <li>Multiple Locations</li>
-                          <li>Digital & Hard Copy Files Included</li>
-                          <li>Time Based</li>
-                        </ul>
-                      </div>
-                      <div className="pr-box">
-                        <a
-                          href="/Purpose"
-                          className="btn btn-price-box btn-dark btn-lg"
-                        >
-                          Hire a photographer
-                        </a>
-                        <a
-                          href="/#"
-                          className="btn btn-link btn-lg btn-block"
-                        ></a>
-                      </div>
-                    </div>
-                    {/* End price box */}
-                  </div>
-                  {/* /.col */}
-                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    {/* Begin price box */}
-                    <div className="price-box">
-                      <div
-                        className="pr-box price-heading bg-image"
-                        style={{
-                          backgroundImage:
-                            "url(assets/img/misc/price-box-3.jpg)",
-                        }}
-                      >
-                        <div className="price-heading-inner">
-                          <i className="fas fa-user" />
-                          <h3 className="price-title">Personal</h3>
-                          <div className="price-heading-text">
-                            Personal Photo Session
-                          </div>
-                        </div>
-                      </div>
-                      <div className="pr-box price-box-price">
-                        <div className="price">
-                          <span className="price-currency">N</span>54
-                          <span style={{ fontSize: "12px" }}>K</span>
-                        </div>
-                        {/* <div class="price-tenure">Per 1 Year</div> */}
-                      </div>
-                      <div className="pr-box price-features">
-                        <ul className="list-unstyled">
-                          <li>1-2 Locations</li>
-                          <li>Digital & Hard Copy Files Included</li>
-                          <li>Time Based</li>
-                        </ul>
-                      </div>
-                      <div className="pr-box">
-                        <a
-                          href="/Purpose"
-                          className="btn btn-price-box btn-dark btn-lg"
-                        >
-                          Hire a photographer
-                        </a>
-                        <a
-                          href="/#"
-                          className="btn btn-link btn-lg btn-block"
-                        ></a>
-                      </div>
-                    </div>
-                    {/* End price box */}
-                  </div>
-                  {/* /.col */}
-                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    {/* Begin price box */}
-                    <div className="price-box">
-                      <div
-                        className="pr-box price-heading bg-image"
-                        style={{
-                          backgroundImage:
-                            "url(assets/img/misc/price-box-4.jpg)",
-                        }}
-                      >
-                        <div className="price-heading-inner">
-                          <i className="fas fa-gem" />
-                          <h3 className="price-title">Wedding</h3>
-                          <div className="price-heading-text">
-                            Wedding Photo Session
-                          </div>
-                        </div>
-                      </div>
-                      <div className="pr-box price-box-price">
-                        <div className="price">
-                          <span className="price-currency">N</span>150
-                          <span style={{ fontSize: "12px" }}>K</span>
-                        </div>
-                        {/* <div class="price-tenure">Per 1 Year</div> */}
-                      </div>
-                      <div className="pr-box price-features">
-                        <ul className="list-unstyled">
-                          <li>1-4 Locations</li>
-                          <li>Digital & Hard Copy Files Included</li>
-                          <li>Time Based</li>
-                        </ul>
-                      </div>
-                      <div className="pr-box">
-                        <a
-                          href="/Purpose"
-                          className="btn btn-price-box btn-dark btn-lg"
-                        >
-                          Hire a photographer
-                        </a>
-                        <a
-                          href="/dashboard"
-                          className="btn btn-link btn-lg btn-block"
-                        ></a>
-                      </div>
-                    </div>
-                    {/* End price box */}
-                  </div>
-                  {/* /.col */}
-                </div>
-                {/* /.row */}
-                <div className="row margin-top-70 margin-auto max-width-800">
-                  <div className="col-md-12 text-center">
-                    <p>
-                      We also provide after shoot support and access to storage
-                      till you are ready to receive them.
-                    </p>
-                  </div>
-                  {/* /.col */}
-                </div>
-                {/* /.row */}
-              </div>
-              {/* End price boxes container */}
-            </div>
-            {/* /.prices-section-inner */}
-          </section>
+
           {/* End prices section */}
           {/* =================================
 			///// Begin testimonials section /////
@@ -1618,12 +1370,261 @@ const Homepage = () => {
 
           {/* pasted here specialist start */}
 
-          <section id="specialist" style={{ margin: "10px", marginBottom: 0 }}>
-            <div className="tt-heading tt-heading-lg padding-on text-left">
+          <section id="prices-section">
+            {/* Begin tt-heading 
+				====================== 
+				* Use class "padding-on" to enable heading paddings (useful if you use tt-heading as stand alone element).
+				* Use class "text-center" or "text-right" to align tt-heading.
+				* Use classes "tt-heading-xs", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set tt-heading size.
+				*/}
+            <div className="tt-heading tt-heading-lg padding-on">
               <div className="tt-heading-inner tt-wrap">
                 {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
-                <h1 className="tt-heading-title">Specialists</h1>
-                <span>
+                <div className="row">
+                  <div className="col-md-4">
+                    <h1 className="tt-heading-title">Services &amp; Pricing</h1>
+                    <div className="tt-heading-subtitle">
+                      Please choose your package
+                    </div>
+                    <hr className="hr-short" />
+                  </div>
+                  {/* /.col */}
+                  <div className="col-md-8">
+                    <p>
+                      Our pricing is designed to fit any budget regardless of
+                      the type of project. Whether you need a studio, a
+                      luxurious outdoor set up, or a simple background, we give
+                      you the power to go wherever your creative path takes you
+                    </p>
+                  </div>
+                  {/* /.col */}
+                </div>
+                {/* /.row */}
+              </div>
+              {/* /.tt-heading-inner */}
+            </div>
+            {/* End tt-heading */}
+            <div className="prices-section-inner tt-wrap">
+              {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
+              {/* Begin price boxes container 
+					================================= */}
+              <div className="price-boxes-container">
+                <div className="row">
+                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    {/* Begin price box */}
+                    <div className="price-box">
+                      <div
+                        className="pr-box price-heading bg-image"
+                        style={{
+                          backgroundImage:
+                            "url(assets/img/misc/price-box-1.jpg)",
+                        }}
+                      >
+                        <div className="price-heading-inner">
+                          <i className="fas fa-umbrella" />
+                          <h3 className="price-title">Studio</h3>
+                          <div className="price-heading-text">
+                            Studio Photo Session
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pr-box price-box-price">
+                        <div className="price">
+                          <span className="price-currency">N</span>20
+                          <span style={{ fontSize: "12px" }}>K</span>
+                        </div>
+                        {/* <div class="price-tenure">Per 1 Month</div> */}
+                      </div>
+                      <div className="pr-box price-features">
+                        <ul className="list-unstyled">
+                          <li>Studio space.</li>
+                          <li>Photography backdrops.</li>
+                          <li>Adjustable lighting equipment kits.</li>
+                        </ul>
+                      </div>
+                      <div className="pr-box">
+                        <a
+                          href="/Purpose"
+                          className="btn btn-price-box btn-dark btn-lg"
+                        >
+                          Hire a photographer
+                        </a>
+                        <a
+                          href="/#"
+                          className="btn btn-link btn-lg btn-block"
+                        ></a>
+                      </div>
+                    </div>
+                    {/* End price box */}
+                  </div>
+                  {/* /.col */}
+                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    {/* Begin price box (featured) */}
+                    <div className="price-box price-box-featured">
+                      <div
+                        className="pr-box price-heading bg-image"
+                        style={{
+                          backgroundImage:
+                            "url(assets/img/misc/price-box-2.jpg)",
+                        }}
+                      >
+                        <div className="price-heading-inner">
+                          <i className="fas fa-tree" />
+                          <h3 className="price-title">Outdoor</h3>
+                          <div className="price-heading-text">
+                            Outdoor Photo Session
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pr-box price-box-price">
+                        <div className="price">
+                          <span className="price-currency">N</span>43
+                          <span style={{ fontSize: "12px" }}>K</span>
+                        </div>
+                        {/* <div class="price-tenure">Per 6 Month</div> */}
+                      </div>
+                      <div className="pr-box price-features">
+                        <ul className="list-unstyled">
+                          <li>Multiple Locations</li>
+                          <li>Digital & Hard Copy Files Included</li>
+                          <li>Time Based</li>
+                        </ul>
+                      </div>
+                      <div className="pr-box">
+                        <a
+                          href="/Purpose"
+                          className="btn btn-price-box btn-dark btn-lg"
+                        >
+                          Hire a photographer
+                        </a>
+                        <a
+                          href="/#"
+                          className="btn btn-link btn-lg btn-block"
+                        ></a>
+                      </div>
+                    </div>
+                    {/* End price box */}
+                  </div>
+                  {/* /.col */}
+                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    {/* Begin price box */}
+                    <div className="price-box">
+                      <div
+                        className="pr-box price-heading bg-image"
+                        style={{
+                          backgroundImage:
+                            "url(assets/img/misc/price-box-3.jpg)",
+                        }}
+                      >
+                        <div className="price-heading-inner">
+                          <i className="fas fa-user" />
+                          <h3 className="price-title">Personal</h3>
+                          <div className="price-heading-text">
+                            Personal Photo Session
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pr-box price-box-price">
+                        <div className="price">
+                          <span className="price-currency">N</span>54
+                          <span style={{ fontSize: "12px" }}>K</span>
+                        </div>
+                        {/* <div class="price-tenure">Per 1 Year</div> */}
+                      </div>
+                      <div className="pr-box price-features">
+                        <ul className="list-unstyled">
+                          <li>1-2 Locations</li>
+                          <li>Digital & Hard Copy Files Included</li>
+                          <li>Time Based</li>
+                        </ul>
+                      </div>
+                      <div className="pr-box">
+                        <a
+                          href="/Purpose"
+                          className="btn btn-price-box btn-dark btn-lg"
+                        >
+                          Hire a photographer
+                        </a>
+                        <a
+                          href="/#"
+                          className="btn btn-link btn-lg btn-block"
+                        ></a>
+                      </div>
+                    </div>
+                    {/* End price box */}
+                  </div>
+                  {/* /.col */}
+                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    {/* Begin price box */}
+                    <div className="price-box">
+                      <div
+                        className="pr-box price-heading bg-image"
+                        style={{
+                          backgroundImage:
+                            "url(assets/img/misc/price-box-4.jpg)",
+                        }}
+                      >
+                        <div className="price-heading-inner">
+                          <i className="fas fa-gem" />
+                          <h3 className="price-title">Wedding</h3>
+                          <div className="price-heading-text">
+                            Wedding Photo Session
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pr-box price-box-price">
+                        <div className="price">
+                          <span className="price-currency">N</span>150
+                          <span style={{ fontSize: "12px" }}>K</span>
+                        </div>
+                        {/* <div class="price-tenure">Per 1 Year</div> */}
+                      </div>
+                      <div className="pr-box price-features">
+                        <ul className="list-unstyled">
+                          <li>1-4 Locations</li>
+                          <li>Digital & Hard Copy Files Included</li>
+                          <li>Time Based</li>
+                        </ul>
+                      </div>
+                      <div className="pr-box">
+                        <a
+                          href="/Purpose"
+                          className="btn btn-price-box btn-dark btn-lg"
+                        >
+                          Hire a photographer
+                        </a>
+                        <a
+                          href="/dashboard"
+                          className="btn btn-link btn-lg btn-block"
+                        ></a>
+                      </div>
+                    </div>
+                    {/* End price box */}
+                  </div>
+                  {/* /.col */}
+                </div>
+                {/* /.row */}
+                <div className="row margin-top-70 margin-auto max-width-800">
+                  {/* <div className="col-md-12 text-center">
+                    <p>
+                      We also provide after shoot support and access to storage
+                      till you are ready to receive them.
+                    </p>
+                  </div> */}
+                  {/* /.col */}
+                </div>
+                {/* /.row */}
+              </div>
+              {/* End price boxes container */}
+            </div>
+            {/* /.prices-section-inner */}
+          </section>
+          <section id="specialist" style={{ margin: "10px", marginBottom: 0 }}>
+            <div className="tt-heading tt-heading-lg padding-on text-left">
+              {/* <div className="tt-heading-inner tt-wrap"> */}
+              {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
+              {/* <h1 className="tt-heading-title">Specialists</h1> */}
+              {/* <span>
                   <div className="tt-heading-subtitle">
                     Ogaphoto has local specialists for every kind of shoot or
                     video, and work with you to take your brand to the next
@@ -1638,7 +1639,7 @@ const Homepage = () => {
                   </a>
                 </span>
                 <hr className="hr-short" />
-              </div>
+              </div> */}
               {/* /.tt-heading-inner */}
             </div>
             {/* End tt-heading */}

@@ -155,9 +155,9 @@ const Question5 = (props) => {
     if (!PriceTag || !durations) {
       return null;
     }
-    if (durations === "30 minutes") {
-      return PriceTag * 30;
-    }
+    // if (durations === "30 minutes") {
+    //   return PriceTag * 30;
+    // }
     if (durations === "1 hour") {
       return PriceTag * 60;
     }
@@ -170,6 +170,10 @@ const Question5 = (props) => {
     if (durations === "7 hours") {
       return PriceTag * 420;
     }
+    if (durations === "24 hours") {
+      // return PriceTag * 1440;
+      return 100000;
+    }
   };
   useEffect(() => {
     GetPricePriceTag();
@@ -180,19 +184,6 @@ const Question5 = (props) => {
         What is the expected duration of your shoot ?
       </Hbig>
       <VericalCenterRow>
-        <label className="container">
-          30 mi{" "}
-          <input
-            value="30 minutes"
-            type="radio"
-            checked={durations === "30 minutes"}
-            name="duration"
-            onChange={(e) => {
-              setDurations(e.target.value);
-            }}
-          />
-          <span class="checkmark"></span>
-        </label>
         <label className="container">
           1 hr{" "}
           <input
@@ -237,6 +228,19 @@ const Question5 = (props) => {
             value="7 hours"
             type="radio"
             checked={durations === "7 hours"}
+            name="duration"
+            onChange={(e) => {
+              setDurations(e.target.value);
+            }}
+          />
+          <span class="checkmark"></span>
+        </label>
+        <label className="container">
+          24 hr{" "}
+          <input
+            value="24 hours"
+            type="radio"
+            checked={durations === "24 hours"}
             name="duration"
             onChange={(e) => {
               setDurations(e.target.value);

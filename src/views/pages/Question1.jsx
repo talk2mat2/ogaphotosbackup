@@ -53,18 +53,18 @@ const Question1 = (props) => {
       </Hbig>
       <Listing>
         <li onClick={handleSelection.bind(this, "personal")}>
-          <LocalMallIcon
+          <PermIdentityIcon
             style={{ color: "grey", marginRight: "15px" }}
             fontSize="large"
           />
-          personal
+          Personal
         </li>
         <li onClick={handleSelection.bind(this, "business")}>
-          <PermIdentityIcon
+          <LocalMallIcon
             fontSize="large"
             style={{ color: "grey", marginRight: "15px" }}
           />
-          business
+          Business
         </li>
       </Listing>
     </Container>

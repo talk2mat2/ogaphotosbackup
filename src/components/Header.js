@@ -244,6 +244,16 @@ const Header = () => {
 
                 {/* /.tt-submenu */}
               </li>{" "}
+              {!userData ? (
+                <li className=" tt-submenu-master ">
+                  <a href="/PhotographersRegister">
+                    <FiberManualRecordIcon fontSize="small" />
+                    Become A Photographer
+                  </a>
+
+                  {/* /.tt-submenu */}
+                </li>
+              ) : null}
               {/* End submenu (sub-master) */}
             </ul>
             {/* /.tt-menu-nav */}
