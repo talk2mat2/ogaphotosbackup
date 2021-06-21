@@ -380,12 +380,15 @@ const Homepage = () => {
                             </p>
                           </div>
                           <a
-                            href="/#"
+                            href="/#blog-list-section"
                             className="btn btn-primary margin-top-20"
                           >
                             Read More
                           </a>
-                          <a href="/#" className="btn btn-dark margin-top-20">
+                          <a
+                            href="#contact-section"
+                            className="btn btn-dark margin-top-20"
+                          >
                             Get In Touch!
                           </a>
                         </div>
@@ -1562,7 +1565,7 @@ const Homepage = () => {
                                 <b>Step Three</b>
                               </h3>
                               <h4>
-                                <b>Receive your work.</b>
+                                <b>Receive your work</b>
                               </h4>
 
                               <div className="bl-item-meta"></div>
