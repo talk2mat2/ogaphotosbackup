@@ -40,9 +40,7 @@ const MapWithAMarker = compose(
     <GoogleMap
       defaultZoom={12}
       defaultCenter={
-        props.sessionVenue.lat
-          ? props.sessionVenue
-          : props.selectedMarker.locations
+        props.mapcenter.lat ? props.mapcenter : props.selectedMarker.locations
       }
     >
       {/* {props.markers &&

@@ -1370,7 +1370,7 @@ const Homepage = () => {
 
           {/* pasted here specialist start */}
 
-          <section id="prices-section">
+          <section>
             {/* Begin tt-heading 
 				====================== 
 				* Use class "padding-on" to enable heading paddings (useful if you use tt-heading as stand alone element).

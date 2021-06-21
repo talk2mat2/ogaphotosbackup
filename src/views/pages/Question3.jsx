@@ -84,7 +84,7 @@ const Question4 = (props) => {
   const photographers = useSelector((state) => state.photographers);
   const bookingprocess = useSelector((state) => state.BookingProcessReducer);
   const [CardVisible, setCardVisible] = useState(false);
-  const [mylocation, setMylocation] = useState(null);
+  const [mylocation, setMylocation] = useState({});
   const [locations, setLocations] = useState([]);
   const dispatch = useDispatch();
 
@@ -104,6 +104,26 @@ const Question4 = (props) => {
     //   sesionlocation: { lat: lat, lng: lng, address },
     // });
   };
+  const option = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  React.useEffect(() => {
+    if (!mylocation.lat) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setMylocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+          // alert(position.coords.latitude)
+        },
+        (err) => console.log(err),
+        option
+      );
+    }
+  }, []);
   const handleplaces = async (place) => {
     // console.log(place.formatted_address)
     // console.log(place.geometry.location.lat())
@@ -162,6 +182,20 @@ const Question4 = (props) => {
         <MapWithAMarker
           mapcenter={sessionVenue}
           sessionVenue={sessionVenue}
+          selectedMarker={sessionVenue}
+          photographers={[]}
+          markers={locations}
+          onClick={() => {}}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: "100%", flex: 1 }} />}
+          mapElement={<div style={{ height: `300px`, marginBottom: "10px" }} />}
+        />
+      ) : null}
+      {mylocation.lat && !CardVisible ? (
+        <MapWithAMarker
+          mapcenter={mylocation}
+          sessionVenue={{}}
           selectedMarker={mylocation}
           photographers={[]}
           markers={locations}

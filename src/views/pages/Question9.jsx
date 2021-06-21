@@ -268,7 +268,7 @@ const Question9 = (props) => {
   const now = new Date();
   return (
     <Container>
-      <Hbig className="tt-heading-title">Confirm BookingDetail</Hbig>
+      <Hbig className="tt-heading-title">Confirm Booking Details</Hbig>
       <p style={{ textAlign: "center", marginTop: "10px" }}>
         {now.getDay() * 2} person(s) are looking for shoots within similar
         period
