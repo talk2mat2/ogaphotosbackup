@@ -218,7 +218,7 @@ const Question9 = (props) => {
   // };
 
   const config = {
-    public_key: "FLWPUBK_TEST-e96ca53411ac8244d05c06677fca3509-X",
+    public_key: process.env.REACT_APP_FLUTTERWAVE_PUBLIC_KEY,
     tx_ref: new Date().getTime() + "-" + userData._id,
     amount: parseFloat(bookingprocess.price),
     currency: "NGN",
