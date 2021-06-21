@@ -222,7 +222,7 @@ const Question9 = (props) => {
     tx_ref: new Date().getTime() + "-" + userData._id,
     amount: parseFloat(bookingprocess.price),
     currency: "NGN",
-    payment_options: "card,mobilemoney,ussd",
+    payment_options: "card,ussd,banktransfer",
     customer: {
       email: userData.Email,
       phonenumber: userData.mobile,
@@ -268,7 +268,7 @@ const Question9 = (props) => {
   const now = new Date();
   return (
     <Container>
-      <Hbig className="tt-heading-title">Confirm Your booking details ?</Hbig>
+      <Hbig className="tt-heading-title">Confirm BookingDetail</Hbig>
       <p style={{ textAlign: "center", marginTop: "10px" }}>
         {now.getDay() * 2} person(s) are looking for shoots within similar
         period

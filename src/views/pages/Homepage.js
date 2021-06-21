@@ -2497,14 +2497,23 @@ const Homepage = () => {
                                         <option value disabled selected>
                                           Select an option
                                         </option>
-                                        <option value="Say Hello">
-                                          Say hello
-                                        </option>
-                                        <option value="New Project">
-                                          New project
-                                        </option>
                                         <option value="Feedback">
                                           Feedback
+                                        </option>
+                                        <option value="Complaint">
+                                          Complaint
+                                        </option>
+                                        <option value="Problem Booking">
+                                          Problem Booking
+                                        </option>
+                                        <option value=" Problem Joining">
+                                          Problem Joining
+                                        </option>
+                                        <option value="Problem Booking">
+                                          Photo Cancellation Issue
+                                        </option>
+                                        <option value=" Photo Refund Issue">
+                                          Photo Refund Issue
                                         </option>
                                         <option value="Other">Other</option>
                                       </select>

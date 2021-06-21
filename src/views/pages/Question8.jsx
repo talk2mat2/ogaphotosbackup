@@ -143,7 +143,7 @@ const PhotographersCard = (props) => {
               boxSizing: "border-box",
             }}
           >
-            <small> Recommended</small>
+            <small>Our Recommendation</small>
           </div>
         ) : null}
         <span className="verticalRow">
@@ -178,7 +178,7 @@ const PhotographersCard = (props) => {
 
       <VericalCenterRow>
         <span>
-          <h4>Specialized in</h4>
+          <h4>Specializes in:</h4>
           {props.item.favouriteShoots ? (
             <h5>{props.item.favouriteShoots} Photography</h5>
           ) : (
@@ -186,8 +186,13 @@ const PhotographersCard = (props) => {
           )}
 
           <p>
-            liked by <b>{Math.floor(Math.random() * 100)}</b> other Ogaphoto
-            customers
+            liked by{" "}
+            <b>
+              {(props.item.fname.length + props.item.lname
+                ? props.item.lname.length
+                : 8) * 3}
+            </b>{" "}
+            other Ogaphoto customers
           </p>
         </span>
         <span>
@@ -320,8 +325,9 @@ const Question8 = (props) => {
 
   const mapPhotographers = (PhotoInfo) => {
     if (photographers && photographers.length > 0) {
-      return photographers.map((item) => (
+      return photographers.map((item, index) => (
         <PhotographersCard
+          index={index}
           item={item}
           key={item._id}
           PhotoInfo={PhotoInfo}

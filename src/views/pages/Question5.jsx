@@ -177,7 +177,7 @@ const Question5 = (props) => {
   return (
     <Container>
       <Hbig className="tt-heading-title">
-        What is the expected duration of your shoots ?
+        What is the expected duration of your shoot ?
       </Hbig>
       <VericalCenterRow>
         <label className="container">

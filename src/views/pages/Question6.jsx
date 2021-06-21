@@ -143,7 +143,7 @@ const Question6 = (props) => {
   }
   return (
     <Container>
-      <Hbig className="tt-heading-title">Which Day do you want the shoot?</Hbig>
+      <Hbig className="tt-heading-title">Choose a date for your shoot</Hbig>
       <input
         min={formatDate(now)}
         type="date"
