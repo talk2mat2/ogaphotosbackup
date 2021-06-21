@@ -15,18 +15,18 @@ const triangleCoords = [
   { lng: 3.3374639999999998, lat: 6.5997214 },
   { lng: 3.4374639999999998, lat: 6.2997214 },
 ];
-const baseIcon = "https://i.imgur.com/u5Wy1dx.png";
-const iconBase =
-  "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png";
-const iconBase2 =
-  "https://d1a3f4spazzrp4.cloudfront.net/car-types/haloProductImageBackgrounds/v1.1/imageBackground_3x_v1.png";
+// const baseIcon = "https://i.imgur.com/u5Wy1dx.png";
+// const iconBase =
+//   "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png";
+// const iconBase2 =
+//   "https://d1a3f4spazzrp4.cloudfront.net/car-types/haloProductImageBackgrounds/v1.1/imageBackground_3x_v1.png";
 const MapWithAMarker = compose(
   withScriptjs,
   withGoogleMap
 )((props) => {
   // const sessionVenue = useSelector((state) => state.sessionVenue)
   const refs = {};
-  const [state, setState] = useState({ bounds: null });
+  // const [state, setState] = useState({ bounds: null });
   const CloserPhotoGrapher = (photographers) => {
     const CloserPhotoGrapher = photographers.reduce(function (prev, curr) {
       return prev.distance < curr.distance ? prev : curr;

@@ -86,6 +86,7 @@ const Question4 = (props) => {
   const [CardVisible, setCardVisible] = useState(false);
   const [mylocation, setMylocation] = useState({});
   const [locations, setLocations] = useState([]);
+  const [DisplayAutoComplete, setDisplayAutoComplete] = useState(false);
   const dispatch = useDispatch();
 
   const handleToClick = async (long1, lat1, address) => {
@@ -109,6 +110,11 @@ const Question4 = (props) => {
     timeout: 5000,
     maximumAge: 0,
   };
+  React.useEffect(() => {
+    setTimeout(() => {
+      setDisplayAutoComplete(true);
+    }, 1000);
+  }, []);
   React.useEffect(() => {
     if (!mylocation.lat) {
       navigator.geolocation.getCurrentPosition(
@@ -192,7 +198,7 @@ const Question4 = (props) => {
           mapElement={<div style={{ height: `300px`, marginBottom: "10px" }} />}
         />
       ) : null}
-      {mylocation.lat && !CardVisible ? (
+      {mylocation.lat && !CardVisible && DisplayAutoComplete ? (
         <MapWithAMarker
           mapcenter={mylocation}
           sessionVenue={{}}
