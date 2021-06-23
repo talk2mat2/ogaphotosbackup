@@ -45,6 +45,21 @@ const Listing = styled.ul`
     }
   }
 `;
+const LatestWorks = [
+  "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-2.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-3.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-4.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-5.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-6.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-7.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-8.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-9.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-10.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-11.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-12.jpg)",
+];
+
 const Homepage = () => {
   const [showmenu, setShowmenu] = useState(null);
 
@@ -99,6 +114,65 @@ const Homepage = () => {
           <li value={xx.state}>{xx.state} photographers</li>
         </Link>
       ));
+  };
+
+  const MapLatestWorks = (LatestWorks) => {
+    return LatestWorks.map((url) => (
+      <div className="isotope-item iso-height-1">
+        {/* Begin gallery list item */}
+        <div className="gallery-list-item">
+          {/* Begin gallery list item image */}
+          <div className="gl-item-image-wrap">
+            {/* Begin gallery list item image inner */}
+            <a href="/#" className="gl-item-image-inner">
+              <div
+                className="gl-item-image bg-image"
+                style={{
+                  backgroundImage: url,
+                  backgroundPosition: "50% 50%",
+                }}
+              />
+              <span className="gl-item-image-zoom" />
+            </a>
+            {/* End gallery list item image inner */}
+            {/* Begin gallery list item meta */}
+            <ul className="gli-meta">
+              {/* <li>
+												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
+											</li> */}
+              <li>
+                {/* Begin favorite button */}
+                <div className="favorite-btn">
+                  <div className="fav-inner">
+                    <div className="icon-heart">
+                      <span className="icon-heart-empty" />
+                      <span className="icon-heart-filled" />
+                    </div>
+                  </div>
+                  <div className="fav-count">13</div>
+                </div>
+                {/* End favorite button */}
+              </li>
+            </ul>
+            {/* End gallery list item meta */}
+          </div>
+          {/* End gallery list item image */}
+          {/* Begin gallery list item info */}
+          <div className="gl-item-info">
+            <div className="gl-item-caption">
+              <h2 className="gl-item-title">
+                <a href="/#">Ogaphoto</a>
+              </h2>
+              <span className="gl-item-category">
+                <a href="/#">Photo</a>,<a href="/#"></a>
+              </span>
+            </div>
+          </div>
+          {/* End gallery list item info */}
+        </div>
+        {/* End gallery list item */}
+      </div>
+    ));
   };
   return (
     <div>
@@ -400,7 +474,7 @@ const Homepage = () => {
             </div>
           </section>
 
-          <section id="gallery-list-section">
+          <section style={{ marginBottom: "80px" }} id="gallery-list-section">
             <div className="tt-heading tt-heading-lg padding-on text-center">
               <div className="tt-heading-inner tt-wrap">
                 {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
@@ -417,731 +491,8 @@ const Homepage = () => {
               <div className="isotope col-4">
                 <div className="isotope-items-wrap gli-colored gli-alter-4">
                   <div className="grid-sizer" />
-
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-1.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">190</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">The Old Man Dreams</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Outdoor</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-2.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">85</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">These Wonderful Freckles</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Black &amp; White</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-3.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">7</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Paris Fashion Week</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Fashion</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-4.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">12</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Afternoon Photoshoot</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Outdoor</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-5.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">96</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Sit Back and Relax</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Portraits</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-6.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">56</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Something In The Water vol.2</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Fashion</a>,<a href="/#">Outdoor</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-7.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">53</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Autumn Nights</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Outdoor</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-8.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">71</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Beauty &amp; Fashion</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Fashion</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-9.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">68</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">No Colors This Time</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Black &amp; White</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-10.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">32</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Monday's Monochromes</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Outdoor</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-11.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">13</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Something In The Water</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Fashion</a>,<a href="/#">Portraits</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
-                  {/* ===================== 
-							/// Begin isotope item ///
-							========================== 
-							* If you use background image on isotope-item child element, then you need to use class "iso-height-1" or "iso-height-2" to set the item height. If you use simple image tag, then don't use height classes.
-							*/}
-                  <div className="isotope-item iso-height-1">
-                    {/* Begin gallery list item */}
-                    <div className="gallery-list-item">
-                      {/* Begin gallery list item image */}
-                      <div className="gl-item-image-wrap">
-                        {/* Begin gallery list item image inner */}
-                        <a href="/#" className="gl-item-image-inner">
-                          <div
-                            className="gl-item-image bg-image"
-                            style={{
-                              backgroundImage:
-                                "url(assets/img/gallery/gallery-list/gallery-list-12.jpg)",
-                              backgroundPosition: "50% 50%",
-                            }}
-                          />
-                          <span className="gl-item-image-zoom" />
-                        </a>
-                        {/* End gallery list item image inner */}
-                        {/* Begin gallery list item meta */}
-                        <ul className="gli-meta">
-                          {/* <li>
-												<div class="img-count" title="Image count"><i class="fas fa-camera"></i> 32</div>
-											</li> */}
-                          <li>
-                            {/* Begin favorite button */}
-                            <div className="favorite-btn">
-                              <div className="fav-inner">
-                                <div className="icon-heart">
-                                  <span className="icon-heart-empty" />
-                                  <span className="icon-heart-filled" />
-                                </div>
-                              </div>
-                              <div className="fav-count">11</div>
-                            </div>
-                            {/* End favorite button */}
-                          </li>
-                        </ul>
-                        {/* End gallery list item meta */}
-                      </div>
-                      {/* End gallery list item image */}
-                      {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
-                        <div className="gl-item-caption">
-                          <h2 className="gl-item-title">
-                            <a href="/#">Beautiful Bride</a>
-                          </h2>
-                          <span className="gl-item-category">
-                            <a href="/#">Outdoor</a>,<a href="/#">Fashion</a>
-                          </span>
-                        </div>
-                      </div>
-                      {/* End gallery list item info */}
-                    </div>
-                    {/* End gallery list item */}
-                  </div>
-                  {/* End isotope item */}
+                  {/* paste map latest works */}
+                  {MapLatestWorks(LatestWorks)}
                 </div>
                 {/* End isotope items wrap */}
                 {/* Begin isotope pagination 
