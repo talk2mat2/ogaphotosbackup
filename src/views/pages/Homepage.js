@@ -1945,7 +1945,7 @@ const Homepage = () => {
                         <img src="assets/img/logo-dark.png" alt="logo" />
                       </a>
                       <a href="/#" className="logo-light">
-                        <img src="assets/img/logo-light.png" alt="logo" />
+                        <img src="assets/img/logo-light2.png" alt="logo" />
                       </a>
                       {/* for small screens */}
                       <a href="/#" className="logo-dark-m">
