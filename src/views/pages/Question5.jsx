@@ -91,6 +91,7 @@ const Question5 = (props) => {
   const [CardVisible, setCardVisible] = useState(false);
   const [mylocation, setMylocation] = useState(null);
   const [PriceTag, setPriceTag] = useState(null);
+  const [locationPrice, setlocationPrice] = useState(null);
   const [durations, setDurations] = useState("");
   const [locations, setLocations] = useState([]);
   const dispatch = useDispatch();
@@ -142,6 +143,7 @@ const Question5 = (props) => {
       .then((res) => {
         console.log(res.data.userData.price);
         setPriceTag(res.data.userData.price);
+        setlocationPrice(res.data.userData.locationPrice);
       })
       .catch((err) => {
         if (err.response) {
@@ -260,7 +262,10 @@ const Question5 = (props) => {
                 <p>
                   <b>
                     NGN {parseFloat(CalculatetotalPrice()).toLocaleString()}
-                  </b>
+                  </b>{" "}
+                  {locationPrice
+                    ? `+ ${parseFloat(locationPrice)} (loc.)`
+                    : null}
                 </p>
               ) : null}
               <em style={{ color: "dodgerblue" }}>Multiple Locations</em>

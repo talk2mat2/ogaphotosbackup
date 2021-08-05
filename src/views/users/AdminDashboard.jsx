@@ -37,6 +37,7 @@ const AdminDashboard = (props) => {
   const [open, setOpen] = React.useState(false);
   const [countLoading, setCountLoading] = React.useState(false);
   const [priceTag, setPricetag] = React.useState(0);
+  const [locationPrice, setlocationPrice] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
   const [isloading, setisLoading] = React.useState(false);
   const [count, setCount] = React.useState({
@@ -73,6 +74,8 @@ const AdminDashboard = (props) => {
         setPricetagLoading(false);
         // setLoading(false)
         setPricetag(parseInt(res.data.userData.price));
+        res.data.userData.locationPrice &&
+          setlocationPrice(parseInt(res.data.userData.locationPrice));
         console.log(res.data);
         // setIsregistered(true)
         // history.push('/dashboard')
@@ -261,6 +264,8 @@ const AdminDashboard = (props) => {
       <TransitionsModal
         open={open}
         setOpen={setOpen}
+        locationPrice={locationPrice}
+        setlocationPrice={setlocationPrice}
         handleClose={handleClose}
         priceTag={priceTag}
         setPricetag={setPricetag}
@@ -415,6 +420,44 @@ const AdminDashboard = (props) => {
                       role="progressbar"
                       style={{
                         width: (priceTag && priceTag / 300) * 100 + "%",
+                      }}
+                      aria-valuenow={50}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="col-md-6 col-xl-3">
+            <div className="card stat-widget">
+              {PricetagLoading ? (
+                <CircularProgress
+                  size={20}
+                  style={{
+                    color: "tomato",
+
+                    marginLeft: "50%",
+                  }}
+                />
+              ) : (
+                <div style={{ position: "relative" }} className="card-body">
+                  <h5 className="card-title">Location Price</h5>
+                  <h3
+                    style={{ position: "absolute", top: "60px", right: "9px " }}
+                  >
+                    {locationPrice}
+                  </h3>
+                  {/* 
+                  <p>Per minutes(naira)</p> */}
+                  <div className="progress">
+                    <div
+                      className="progress-bar bg-primary progress-bar-striped"
+                      role="progressbar"
+                      style={{
+                        width:
+                          (locationPrice && locationPrice / 300) * 100 + "%",
                       }}
                       aria-valuenow={50}
                       aria-valuemin={0}
