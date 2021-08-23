@@ -264,7 +264,7 @@ const Question5 = (props) => {
                     NGN {parseFloat(CalculatetotalPrice()).toLocaleString()}
                   </b>{" "}
                   {locationPrice
-                    ? `+ ${parseFloat(locationPrice)} (loc.)`
+                    ? `+ ${parseFloat(locationPrice)}.00 (loc. pricing)`
                     : null}
                 </p>
               ) : null}
