@@ -57,7 +57,12 @@ const LatestWorks = [
   "url(assets/img/gallery/gallery-list/gallery-list-9.jpg)",
   "url(assets/img/gallery/gallery-list/gallery-list-10.jpg)",
   "url(assets/img/gallery/gallery-list/gallery-list-11.jpg)",
-  "url(assets/img/gallery/gallery-list/gallery-list-12.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-13.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-14.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-15.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-17.jpg)",
+  "url(assets/img/gallery/gallery-list/gallery-list-18.jpg)",
+ 
 ];
 
 const Homepage = () => {
@@ -164,7 +169,7 @@ const Homepage = () => {
                 <a href="/#">Ogaphoto</a>
               </h2>
               <span className="gl-item-category">
-                <a href="/#">Photo</a>,<a href="/#"></a>
+                <a href="/#">Gallery</a>,<a href="/#"></a>
               </span>
             </div>
           </div>

@@ -165,7 +165,7 @@ const MeetOurPhoto = () => {
                 className="cc-image bg-image"
                 style={{
                   backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-2.jpg)",
+                  "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
                   backgroundPosition: "50% 50%",
                 }}
               />
@@ -235,7 +235,7 @@ const MeetOurPhoto = () => {
                 className="cc-image bg-image"
                 style={{
                   backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-3.jpg)",
+                    "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
                   backgroundPosition: "50% 50%",
                 }}
               />
@@ -305,7 +305,7 @@ const MeetOurPhoto = () => {
                 className="cc-image bg-image"
                 style={{
                   backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-4.jpg)",
+                    "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
                   backgroundPosition: "50% 50%",
                 }}
               />
@@ -377,7 +377,7 @@ const MeetOurPhoto = () => {
                 className="cc-image bg-image"
                 style={{
                   backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-5.jpg)",
+                    "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
                   backgroundPosition: "50% 50%",
                 }}
               />
