@@ -108,7 +108,8 @@ const Buttons = styled(Button)`
       border:none;
     // background-color: rgb(71, 178, 228);
     // background-color: rgb(0, 162, 149);
-    background-color: rgb(20, 27, 37);
+    //background-color: rgb(20, 27, 37);
+    background-color: rgb(104, 7, 249);
     margin-top: 8px;
     outline:none;
     width: 200px;
@@ -249,7 +250,7 @@ const LoginNew = () => {
                   <Margin />
                   <div style={{ textAlign: "center" }}>
                     <small>
-                      <a style={{ color: "cyan" }} href="/Purpose">
+                      <a style={{ color: "rgb(104, 7, 249)" }} href="/Purpose">
                         Not Yet Registered ?
                       </a>
                     </small>
@@ -258,7 +259,7 @@ const LoginNew = () => {
                   <div style={{ textAlign: "left" }}>
                     <h4 style={{ color: "#ffffff" }}>
                       <Link
-                        style={{ color: "rgb(0,255,255)" }}
+                        style={{ color: "rgb(104, 7, 249)" ,fontWeight:"bold"}}
                         to="/PhotoGrapherLoginNew"
                       >
                         {" "}

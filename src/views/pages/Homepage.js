@@ -1773,7 +1773,7 @@ const Homepage = () => {
                                   <div className="tt-heading">
                                     <div className="tt-heading-inner">
                                       <h1 className="tt-heading-title">
-                                        Help Cente
+                                        Help Center
                                       </h1>
                                       {/* <div class="tt-heading-subtitle">Subtitle Here</div> */}
                                       <hr className="hr-short" />
