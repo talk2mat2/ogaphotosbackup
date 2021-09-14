@@ -187,12 +187,15 @@ const LoginNew = () => {
     <React.Fragment>
       <Header />
 
-      <section id="password-protected-section">
+      <section 
+      id="password-protected-section"
+      >
         <div
-          className="password-protected-inner bg-image"
+          // className="password-protected-inner bg-image"
           style={{
             backgroundImage: "url(assets/img/misc/misc-5.jpg)",
             backgroundPosition: "50% 50%",
+           
           }}
         >
           {" "}
@@ -276,10 +279,11 @@ const LoginNew = () => {
             </div>{" "}
             {/* /.post-password */}
           </div>
-          {/* End post password */}
+         
+         {/* End post password */}
         </div>{" "}
         {/* /.about-me-inner */}
-      </section>
+      </section >
       <section
         id="footer"
         className="footer-minimal no-margin-top bg-transparent"
@@ -366,16 +370,19 @@ const LoginNew = () => {
               </div>{" "}
               {/* /.col */}
             </div>{" "}
+           
             {/* /.row */}
           </div>{" "}
           {/* /.footer-container */}
         </div>{" "}
+       
         {/* /.footer-inner */}
         {/* Scroll to top button */}
         <a href="#body" className="scrolltotop sm-scroll" title="Scroll to top">
           <i className="fas fa-chevron-up" />
         </a>
       </section>
+   
     </React.Fragment>
   );
 };

@@ -23,7 +23,7 @@ import Question7 from "./Question7";
 import Question8 from "./Question8";
 import Question9 from "./Question9";
 const Container = styled.div`
-  min-height: 70vh;
+  min-height: 80vh;
   background-color: rgb(246, 249, 255);
   width: 100%;
   display: flex;

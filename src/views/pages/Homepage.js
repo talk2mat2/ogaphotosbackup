@@ -460,10 +460,11 @@ const Homepage = () => {
                           </div>
                           <a
                             href="/#blog-list-section"
-                            className="btn btn-primary margin-top-20"
+                            className="btn btn-primary margin-top-20 margin-right-20"
                           >
                             Read More
                           </a>
+                      
                           <a
                             href="#contact-section"
                             className="btn btn-dark margin-top-20"
@@ -1438,7 +1439,7 @@ const Homepage = () => {
                         className="tm-image bg-image"
                         style={{
                           backgroundImage:
-                            "url(assets/img/blog/small/avatar/avatar-2.jpg)",
+                            "url(assets/img/misc/price-box-1.jpg)",
                           backgroundPosition: "50% 50%",
                         }}
                       />
@@ -1449,7 +1450,7 @@ const Homepage = () => {
                           very helpful. I really enjoyed the family shoot that
                           we had with Ogaphoto, Thank you!
                         </p>
-                        <small>Anna Clarkson</small>
+                        <small>Tina Oyedeji</small>
                       </blockquote>
                     </div>
                     {/* End testimonial item */}
@@ -1464,7 +1465,7 @@ const Homepage = () => {
                         className="tm-image bg-image"
                         style={{
                           backgroundImage:
-                            "url(assets/img/blog/small/avatar/avatar-3.jpg)",
+                            "url(media/img_rr_02.jpg)",
                           backgroundPosition: "50% 50%",
                         }}
                       />
@@ -1473,7 +1474,7 @@ const Homepage = () => {
                           A complete game changer for my business,thanks for
                           saving the day
                         </p>
-                        <small>John Smith</small>
+                        <small>Ayo sowunmi</small>
                       </blockquote>
                     </div>
                     {/* End testimonial item */}
@@ -1488,7 +1489,7 @@ const Homepage = () => {
                         className="tm-image bg-image"
                         style={{
                           backgroundImage:
-                            "url(assets/img/blog/small/avatar/avatar-4.jpg)",
+                            "url(assets/img/misc/price-box-3.jpg)",
                           backgroundPosition: "50% 50%",
                         }}
                       />
@@ -1498,7 +1499,7 @@ const Homepage = () => {
                           need to. It has been a great experience and I love
                           anything about them,
                         </p>
-                        <small>Jack Paterson</small>
+                        <small>Chizo George</small>
                       </blockquote>
                     </div>
                     {/* End testimonial item */}
@@ -1676,12 +1677,15 @@ const Homepage = () => {
                             <div className="contact-info-wrap">
                               <div className="contact-info">
                                 <p>
-                                  <i className="fas fa-home" /> address: 121
-                                  King Street, Melbourne, Australia
+                                  <i className="fas fa-home" /> 
+                                  address: 
+                                  {/* 121
+                                  King Street, Melbourne, Australia */}
                                 </p>
                                 <p>
-                                  <i className="fas fa-phone" /> phone: +123 456
-                                  789 000
+                                  <i className="fas fa-phone" /> phone:
+                                   {/* +123 456
+                                  789 000 */}
                                 </p>
                                 <p>
                                   <i className="fas fa-envelope" /> email:
@@ -1689,7 +1693,7 @@ const Homepage = () => {
                                     href="mailto:company@email.com"
                                     target="_blank"
                                   >
-                                    company@email.com
+                                    ogaphoto@email.com
                                   </a>
                                 </p>
                               </div>
@@ -1982,7 +1986,7 @@ const Homepage = () => {
 
                     {/* End footer text */}
                     <div className="footer-text">
-                      <h4>- Creative Photo Studio</h4>
+                      <h4>- Ogaphoto Studio</h4>
                       Over the years Ogaphoto has leveraged on our vast network
                       of photographers to bring you the best hands in the
                       industry. We hire only the best and therefore you must
