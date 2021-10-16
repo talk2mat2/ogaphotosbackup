@@ -253,7 +253,7 @@ const LoginNew = () => {
                   <Margin />
                   <div style={{ textAlign: "center" }}>
                     <small>
-                      <a style={{ color: "rgb(104, 7, 249)" }} href="/Purpose">
+                      <a style={{ color: "#499f96" }} href="/Purpose">
                         Not Yet Registered ?
                       </a>
                     </small>
@@ -262,7 +262,7 @@ const LoginNew = () => {
                   <div style={{ textAlign: "left" }}>
                     <h4 style={{ color: "#ffffff" }}>
                       <Link
-                        style={{ color: "rgb(104, 7, 249)" ,fontWeight:"bold"}}
+                        style={{ color: "#499f96" ,fontWeight:"bold"}}
                         to="/PhotoGrapherLoginNew"
                       >
                         {" "}

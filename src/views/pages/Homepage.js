@@ -62,6 +62,33 @@ const LatestWorks = [
   "url(assets/img/gallery/gallery-list/gallery-list-15.jpg)",
   "url(assets/img/gallery/gallery-list/gallery-list-17.jpg)",
   "url(assets/img/gallery/gallery-list/gallery-list-18.jpg)",
+  "url(assets/img/gallery/gallery-list/20.jpg)",
+  "url(assets/img/gallery/gallery-list/21.jpg)",
+  "url(assets/img/gallery/gallery-list/22.jpg)",
+  "url(assets/img/gallery/gallery-list/23.jpg)",
+  "url(assets/img/gallery/gallery-list/24.jpg)",
+  "url(assets/img/gallery/gallery-list/25.jpg)",
+  "url(assets/img/gallery/gallery-list/26.jpg)",
+  "url(assets/img/gallery/gallery-list/27.jpg)",
+  "url(assets/img/gallery/gallery-list/28.jpg)",
+  "url(assets/img/gallery/gallery-list/29.jpg)",
+  "url(assets/img/gallery/gallery-list/30.jpg)",
+  "url(assets/img/gallery/gallery-list/31.jpg)",
+  "url(assets/img/gallery/gallery-list/32.jpg)",
+  "url(assets/img/gallery/gallery-list/33.jpg)",
+  "url(assets/img/gallery/gallery-list/34.jpg)",
+  "url(assets/img/gallery/gallery-list/35.jpg)",
+
+  "url(assets/img/gallery/gallery-list/37.jpg)",
+  "url(assets/img/gallery/gallery-list/38.jpg)",
+  "url(assets/img/gallery/gallery-list/40.jpg)",
+  "url(assets/img/gallery/gallery-list/41.jpg)",
+  "url(assets/img/gallery/gallery-list/42.jpg)",
+  "url(assets/img/gallery/gallery-list/43.jpg)",
+  "url(assets/img/gallery/gallery-list/44.jpg)",
+  "url(assets/img/gallery/gallery-list/45.jpg)",
+  "url(assets/img/gallery/gallery-list/46.jpg)",
+
  
 ];
 
@@ -584,7 +611,7 @@ const Homepage = () => {
                           <article className="blog-list-item">
                             {/* Blog list item image */}
                             <a href="/#" className="bl-item-image">
-                              <img src="media/camera.jpg" alt="" />
+                              <img src="/assets/img/gallery/gallery-list/36.jpg" alt="" />
                             </a>
                             {/* Begin blog list item info */}
                             <div className="bl-item-info">
@@ -822,7 +849,8 @@ const Homepage = () => {
                         className="pr-box price-heading bg-image"
                         style={{
                           backgroundImage:
-                            "url(assets/img/misc/price-box-2.jpg)",
+                            // "url(assets/img/misc/price-box-2.jpg)",
+                            "url(assets/img/gallery/gallery-list/37.jpg)",
                         }}
                       >
                         <div className="price-heading-inner">
@@ -918,7 +946,8 @@ const Homepage = () => {
                         className="pr-box price-heading bg-image"
                         style={{
                           backgroundImage:
-                            "url(assets/img/misc/price-box-4.jpg)",
+                            // "url(assets/img/misc/price-box-4.jpg)",
+                            "url(assets/img/gallery/gallery-list/40.jpg)",
                         }}
                       >
                         <div className="price-heading-inner">
@@ -1277,7 +1306,8 @@ const Homepage = () => {
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage: "url(media/estate.jpg)",
+                              // backgroundImage: "url(media/estate.jpg)",
+                              backgroundImage: "url(assets/img/gallery/gallery-list/30.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />

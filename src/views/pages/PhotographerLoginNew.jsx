@@ -43,7 +43,7 @@ const BigText = styled.p`
   font-size: 25px;
   font-weight: 600;
   //color: rgb(0, 162, 149);
-  color: rgb(104, 7, 249);
+  color: #499f96;
 `;
 const SelectContentContainer2 = styled.div`
   background-color: #ffff;
@@ -106,7 +106,7 @@ const Buttons = styled(Button)`
       border:none;
     // background-color: rgb(71, 178, 228);
     //background-color: rgb(0, 162, 149);
-    background-color: rgb(104, 7, 249);
+    background-color: #499f96;
     margin-top: 8px;
     outline:none;
     width: 200px;
