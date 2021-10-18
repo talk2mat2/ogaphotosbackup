@@ -67,7 +67,7 @@ const mapPhotographers=()=>{
       {" "}
       {/* max width class is optional */}
       <h2 className="cc-title">
-        <a href="blog-single.html">{data.fname} {data.lname}</a>
+        <a >{data.fname} {data.lname}</a>
       </h2>
       <div className="cc-meta">
         {/* <span className="published">May 26, 2017</span> */}
@@ -76,8 +76,8 @@ const mapPhotographers=()=>{
         </span>
       </div>{" "}
       <div className="cc-category">
-        <a href="blog-archive.html">Featured</a>{" "}
-        <a href="blog-archive.html">{data.favouriteShoots||"Photography"}</a>
+        <a >Featured</a>{" "}
+        <a >{data.favouriteShoots||"Photography"}</a>
       </div>
     </div>
     {/* End caption */}
@@ -86,7 +86,7 @@ const mapPhotographers=()=>{
       <li>
         {/* Begin comments count */}
         <a
-          href="blog-single.html#blog-post-comments"
+        
           className="cc-item-comments-count"
           title="Read the comments"
         >
