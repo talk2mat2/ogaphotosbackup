@@ -209,13 +209,13 @@ const LoginNew = () => {
               <div className="tt-post-password-icon">
                 <i className="fas fa-lock" />
               </div>
-              <div className="tt-post-password-text">Login To Your Account</div>
+              <div className="tt-post-password-text"><h3>Login To Your Account</h3></div>
               <form
                 id="tt-post-password-form"
                 // className="form-btn-inside"
               >
                 <div className="form-grou">
-                  <small>Email</small>
+                  <label>Email</label>
                   <br />
                   <Input
                     autoComplete="off"
@@ -224,7 +224,7 @@ const LoginNew = () => {
                     type="email"
                     required
                   />
-                  <small style={{ textAlign: "left" }}>Password</small>
+                  <label style={{ textAlign: "left" }}>Password</label>
                   <br />
                   <Input
                     autoComplete="off"
@@ -252,15 +252,15 @@ const LoginNew = () => {
                   </Buttons>
                   <Margin />
                   <div style={{ textAlign: "center" }}>
-                    <small>
+                    <h5>
                       <a style={{ color: "#499f96" }} href="/Purpose">
                         Not Yet Registered ?
                       </a>
-                    </small>
+                    </h5>
                   </div>
                   <Margin />
                   <div style={{ textAlign: "left" }}>
-                    <h4 style={{ color: "#ffffff" }}>
+                    <h3 style={{ color: "#ffffff" }}>
                       <Link
                         style={{ color: "#499f96" ,fontWeight:"bold"}}
                         to="/PhotoGrapherLoginNew"
@@ -268,7 +268,7 @@ const LoginNew = () => {
                         {" "}
                         Photographer's Login
                       </Link>
-                    </h4>
+                    </h3>
                   </div>
 
                   <AlertDialog open={ErrorMessage} onClose={handleClose}>

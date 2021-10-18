@@ -65,9 +65,9 @@ const LatestWorks = [
   "url(assets/img/gallery/gallery-list/20.jpg)",
   "url(assets/img/gallery/gallery-list/21.jpg)",
   "url(assets/img/gallery/gallery-list/22.jpg)",
-  "url(assets/img/gallery/gallery-list/23.jpg)",
+
   "url(assets/img/gallery/gallery-list/24.jpg)",
-  "url(assets/img/gallery/gallery-list/25.jpg)",
+
   "url(assets/img/gallery/gallery-list/26.jpg)",
   "url(assets/img/gallery/gallery-list/27.jpg)",
   "url(assets/img/gallery/gallery-list/28.jpg)",
@@ -253,8 +253,9 @@ const Homepage = () => {
                     {/* cc image */}
                     <div
                       className="cc-image bg-image"
+                      // change image--->
                       style={{
-                        backgroundImage: "url(assets/img/intro/intro-10.jpg)",
+                        backgroundImage: "url(assets/img/intro/intro-11.jpg)",
                         backgroundPosition: "50% 50%",
                       }}
                     />
@@ -265,9 +266,8 @@ const Homepage = () => {
                       <p className="intro-description max-width-650">
                         Amazing, vetted photographers at your fingertips, in
                         <br />
-                        real time, based on your need. We even take last minute
-                        bookings. Once requested, your photographer gets in
-                        touch with you in 30 mins and starts working with you.
+                        real time. Once requested, Your photographers gets in touch<br/> with you within
+                        30 minutes, last minutes bookings are welcome !
                       </p>
                       <div className="margin-top-30">
                         <a
@@ -278,7 +278,7 @@ const Homepage = () => {
                           Hire a photographer!
                         </a>
                         <a
-                          href="/Purpose"
+                          href="/#Servicepricing"
                           className="btn btn-white-bordered margin-top-5"
                         >
                           Discover More
@@ -296,8 +296,9 @@ const Homepage = () => {
                     {/* cc image */}
                     <div
                       className="cc-image bg-image"
+                      // change image here->
                       style={{
-                        backgroundImage: "url(assets/img/intro/intro-11.jpg)",
+                        backgroundImage: "url(assets/img/intro/intro-10.jpg)",
                         backgroundPosition: "50% 50%",
                       }}
                     />
@@ -348,15 +349,14 @@ const Homepage = () => {
                     />
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
-                      <h1 className="intro-title">Convenient</h1>
+                      <h1 className="intro-title">Prompt</h1>
                       <h2 className="intro-subtitle">Ready in 72 Hours</h2>
                       <p className="intro-description max-width-650">
                         Retouched Photos are ready in Record Time! Within 3
                         working days of your finished shoot, your photographers
                         edited photos and videos will be delivered via the
                         Ogaphoto App, with easy access to one-click sharing or
-                        downloads. *Readiness subject to quantity of photos or
-                        length of video*
+                        downloads.
                       </p>
                       <div className="margin-top-30">
                         <a
@@ -393,7 +393,7 @@ const Homepage = () => {
 
                     <div className="intro-caption caption-animate intro-caption-xxlg center-left">
                       <h1 className="intro-title">Fixed Price</h1>
-                      <h2 className="intro-subtitle">Photography</h2>
+                      <h2 className="intro-subtitle">Price Friendly</h2>
                       <p className="intro-description max-width-650">
                         Ogaphoto gives you stunning visuals for every budget,
                         with no hidden costs or fees, you get what you pay for ,
@@ -617,7 +617,9 @@ const Homepage = () => {
                             <div className="bl-item-info">
                               <div className="bl-item-category"></div>
 
-                              <h2>Step One:</h2>
+                              <h3 className='bl-item-title"'>
+                                <b>Step One</b>
+                              </h3>
                               <h4>
                                 <b>Book an appointment</b>
                               </h4>
@@ -628,11 +630,9 @@ const Homepage = () => {
                                 className="bl-item-desc"
                                 data-max-words={100}
                               >
-                                Get The best photographer/ videographer at your
-                                disposal, any time, any day. All you need to do
-                                is book an appointment with us, and a
-                                Photographer/Videographer will be assigned to
-                                you
+                               Book via Ogaphoto and get a photography shoot scheduled<br/>
+                               any time or day. Select what you want to shoot,where and<br/>
+                               when, and we match you with the best
                               </div>
 
                               {/* Begin blog list item attributes */}
@@ -668,12 +668,10 @@ const Homepage = () => {
                               <div className="bl-item-meta"></div>
                               {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                               <div className="bl-item-desc">
-                                * Your photographer will bring their
-                                professional-grade equipment to you at the
-                                chosen time and location and you can relax
-                                knowing that you are in the hands of an
-                                experienced creative. Trust us with both your
-                                indoor, outdoor or even underwater shoots.
+                                Your photographer will bring their
+                                professional-grade equipment to your location and you can relax knowing you are<br/>
+                                in the hands of an experienced creative you can trust<br/>
+                                with indoor,outdoor and every kind of shoot you need
                               </div>
 
                               {/* Begin blog list item attributes */}
@@ -711,10 +709,9 @@ const Homepage = () => {
                                 data-max-words={200}
                               >
                                 Your time is valuable and important to us, that
-                                is why within 3 working days, your work is ready
-                                in all required and desired formats, soft/hard
-                                copy, diligently edited and perfected for your
-                                memories.
+                                is why within 3 working days, your retouched/edited<br/>
+                                photos are ready and sent in all required formats<br/>
+                                 in soft/hard copy
                               </div>
 
                               {/* Begin blog list item attributes */}
@@ -761,7 +758,7 @@ const Homepage = () => {
 				* Use class "text-center" or "text-right" to align tt-heading.
 				* Use classes "tt-heading-xs", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set tt-heading size.
 				*/}
-            <div className="tt-heading tt-heading-lg padding-on">
+            <div id="Servicepricing" className="tt-heading tt-heading-lg padding-on">
               <div className="tt-heading-inner tt-wrap">
                 {/* add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) */}
                 <div className="row">
@@ -1077,12 +1074,15 @@ const Homepage = () => {
                       </div>
                       {/* End gallery list item image */}
                       {/* Begin gallery list item info */}
-                      <div className="gl-item-info">
+                      <div  className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="/#">Family</a>
+                            <a href="/#">Family/Events</a>
                           </h2>
                         </div>
+                        <p className='hide-mobile'> Get the whole family together and save 
+                          the date with Ogaphoto so that you can relieve
+                           all the special event that shape your family</p>
                       </div>
                       {/* End gallery list item info */}
                     </div>
@@ -1129,9 +1129,10 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="/#">Products</a>
+                            <a href="/#">Products & Branding </a>
                           </h2>
                         </div>
+                        <p className='hide-mobile'>A perfect picture sales itself, get your products and brands looking their best by taking advantage of our products shoot</p>
                       </div>
                       {/* End gallery list item info */}
                     </div>
@@ -1148,7 +1149,7 @@ const Homepage = () => {
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage: "url(media/events.jpg)",
+                              backgroundImage: "url(assets/img/gallery/gallery-list/25.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1176,11 +1177,12 @@ const Homepage = () => {
                       {/* End gallery list item image */}
                       {/* Begin gallery list item info */}
                       <div className="gl-item-info">
-                        <div className="gl-item-caption">
+                        <div className="gl-item-caption"> 
                           <h2 className="gl-item-title">
-                            <a href="/#">Events</a>
+                            <a href="/#">Office/Professsional</a>
                           </h2>
                         </div>
+                        <p className='hide-mobile'>Stand out from the croud with corporate headshots and photography</p>
                       </div>
                       {/* End gallery list item info */}
                     </div>
@@ -1231,6 +1233,8 @@ const Homepage = () => {
                             <a href="/#">Portrait</a>
                           </h2>
                         </div>
+                        <p className='hide-mobile'> Planning a corporate head shoot, or want to upgrade your social media? We have teams that <br/>
+                        specialized in set up, lighting and photo direction to bring the best out your best side</p>
                       </div>
                       {/* End gallery list item info */}
                     </div>
@@ -1252,7 +1256,7 @@ const Homepage = () => {
                           <div
                             className="gl-item-image bg-image"
                             style={{
-                              backgroundImage: "url(media/graduation.jpg)",
+                              backgroundImage: "url(assets/img/gallery/gallery-list/25.jpg)",
                               backgroundPosition: "50% 50%",
                             }}
                           />
@@ -1282,9 +1286,61 @@ const Homepage = () => {
                       <div className="gl-item-info">
                         <div className="gl-item-caption">
                           <h2 className="gl-item-title">
-                            <a href="/#">Graduation</a>
+                            <a href="/#">Fitness</a>
                           </h2>
                         </div>
+                        <p className='hide-mobile'>Hit the gym with and let us take pictures of your workout regime with our high definition camers to appeal to your clients</p>
+                      </div>
+                      {/* End gallery list item info */}
+                    </div>
+                    {/* End gallery list item */}
+                  </div>
+                  {/* End isotope item */}
+                  <div className="isotope-item iso-height-1">
+                    {/* Begin gallery list item */}
+                    <div className="gallery-list-item">
+                      {/* Begin gallery list item image */}
+                      <div className="gl-item-image-wrap">
+                        {/* Begin gallery list item image inner */}
+                        <a href="/#" className="gl-item-image-inner">
+                          <div
+                            className="gl-item-image bg-image"
+                            style={{
+                              backgroundImage: "url(assets/img/gallery/gallery-list/23.jpg)",
+                              backgroundPosition: "50% 50%",
+                            }}
+                          />
+                          <span className="gl-item-image-zoom" />
+                        </a>
+                        {/* End gallery list item image inner */}
+                        {/* Begin gallery list item meta */}
+                        <ul className="gli-meta">
+                          <li>
+                            {/* Begin favorite button */}
+                            <div className="favorite-btn">
+                              <div className="fav-inner">
+                                <div className="icon-heart">
+                                  <span className="icon-heart-empty" />
+                                  <span className="icon-heart-filled" />
+                                </div>
+                              </div>
+                              <div className="fav-count">85</div>
+                            </div>
+                            {/* End favorite button */}
+                          </li>
+                        </ul>
+                        {/* End gallery list item meta */}
+                      </div>
+                      {/* End gallery list item image */}
+                      {/* Begin gallery list item info */}
+                      <div className="gl-item-info">
+                        <div className="gl-item-caption">
+                          <h2 className="gl-item-title">
+                            <a href="/#">Lifestyle/Makeup</a>
+                          </h2>
+                        </div>
+                        <p className='hide-mobile'>Let the world in with our lifestyle or fashion photo packages
+                         which can be booked for a  whole day or multiple days at a time</p>
                       </div>
                       {/* End gallery list item info */}
                     </div>
@@ -1340,6 +1396,9 @@ const Homepage = () => {
                             <a href="/#">Real Estate</a>
                           </h2>
                         </div>
+                        <p className='hide-mobile'>
+Selling your property is 90% more effective with our super crisp clear photos
+                        </p>
                       </div>
                       {/* End gallery list item info */}
                     </div>
@@ -1527,7 +1586,7 @@ const Homepage = () => {
                         <p>
                           if you aren’t using Ogaphoto for your bookings you
                           need to. It has been a great experience and I love
-                          anything about them,
+                          everything about them,
                         </p>
                         <small>Chizo George</small>
                       </blockquote>
@@ -1584,9 +1643,9 @@ const Homepage = () => {
                       <h1 className="tt-heading-title">
                         Book a Professional Photographer in 5 Mins!
                       </h1>
-                      <div className="tt-heading-subtitle">
+                      {/* <div className="tt-heading-subtitle">
                         Interested in a Photo shoot?
-                      </div>
+                      </div> */}
                       <hr className="hr-short" />
                     </div>
                   </div>
@@ -1601,7 +1660,7 @@ const Homepage = () => {
                         href="/Purpose"
                         className="btn btn-primary margin-top-5"
                       >
-                        Book A photography shoot!
+                        Book A Photographer!
                       </a>
                     </div>
                   </div>
@@ -1666,8 +1725,9 @@ const Homepage = () => {
                   {/* Use data attributes to set text maximum characters or words (example: data-max-characters="120" or data-max-words="40") */}
                   <div className="page-header-description" data-max-words={40}>
                     <p>
-                      Get in touch with us via email (enter email), phone number
-                      (enter phone number), or via whatsapp
+                    Address: Block B11, The Atrium, 21 Mabogunje Road, Oniru, Lagos<br/>
+                    email: info@ogaphoto.com<br/>
+                    Phone Number or Whatsapp: 08061435240
                     </p>
                   </div>
                 </div>
@@ -1704,86 +1764,19 @@ const Homepage = () => {
                           {/* Begin split box content */}
                           <div className="split-box-content text-left no-padding-left no-padding-right">
                             {/* Begin contact info */}
-                            <div className="contact-info-wrap">
-                              <div className="contact-info">
-                                <p>
-                                  <i className="fas fa-home" /> 
-                                  address: 
-                                  {/* 121
-                                  King Street, Melbourne, Australia */}
-                                </p>
-                                <p>
-                                  <i className="fas fa-phone" /> phone:
-                                   {/* +123 456
-                                  789 000 */}
-                                </p>
-                                <p>
-                                  <i className="fas fa-envelope" /> email:
-                                  <a
-                                    href="mailto:company@email.com"
-                                    target="_blank"
-                                  >
-                                    ogaphoto@email.com
-                                  </a>
-                                </p>
-                              </div>
+                         
+                          
+                             
+                             
+                            <div style={{height:"300px"}}/>
+                          
                               {/* Begin social buttons */}
                               <div className="social-buttons margin-top-20">
-                                <ul>
-                                  <li>
-                                    <a
-                                      href="/#"
-                                      className="btn btn-social-min btn-default btn-rounded-full"
-                                      title="Follow me on Facebook"
-                                      target="_blank"
-                                    >
-                                      <i className="fab fa-facebook-f" />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="/#"
-                                      className="btn btn-social-min btn-default btn-rounded-full"
-                                      title="Follow me on Twitter"
-                                      target="_blank"
-                                    >
-                                      <i className="fab fa-twitter" />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="/#"
-                                      className="btn btn-social-min btn-default btn-rounded-full"
-                                      title="Follow me on Google+"
-                                      target="_blank"
-                                    >
-                                      <i className="fab fa-google-plus-g" />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="/#"
-                                      className="btn btn-social-min btn-default btn-rounded-full"
-                                      title="Follow me on Pinterest"
-                                      target="_blank"
-                                    >
-                                      <i className="fab fa-pinterest-p" />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="/#"
-                                      className="btn btn-social-min btn-default btn-rounded-full"
-                                      title="Follow me on Dribbble"
-                                      target="_blank"
-                                    >
-                                      <i className="fab fa-dribbble" />
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
+                            
+                         
                               {/* End social buttons */}
                             </div>
+                           
                             {/* End contact info */}
                           </div>
                           {/* End split box content */}
@@ -2124,22 +2117,22 @@ const Homepage = () => {
                 <div className="row">
                   <div
                     style={{
-                      width: "100%",
-                      minHeight: "30px",
+                      // width: "100%",
+                      // minHeight: "30px",
 
-                      marginTop: "80px",
-                      padding: "20px",
-                      display: "flex",
-                      flexDirection: "row",
-                      flexWrap: "wrap",
-                      alignItems: "flex-start",
-                      justifyContent: "center",
+                      // marginTop: "80px",
+                      // padding: "20px",
+                      // display: "flex",
+                      // flexDirection: "row",
+                      // flexWrap: "wrap",
+                      // alignItems: "flex-start",
+                      // justifyContent: "center",
                     }}
                   >
-                    <Listing>{Mapstate()}</Listing>
+                    {/* <Listing>{Mapstate()}</Listing>
                     <Listing>{Mapstate2()}</Listing>
                     <Listing>{Mapstate3()}</Listing>
-                    <Listing>{Mapstate4()}</Listing>
+                    <Listing>{Mapstate4()}</Listing> */}
                   </div>
                 </div>
                 <div className="footer-container tt-wrap">
@@ -2172,7 +2165,7 @@ const Homepage = () => {
                     <div className="col-md-6 col-md-pull-6">
                       {/* Begin footer copyright */}
                       <div className="footer-copyright">
-                        <p>© Ogaphot 2021 / All rights reserved</p>
+                        <p>© Ogaphoto 2021 / All rights reserved</p>
                       </div>
                       {/* End footer copyright */}
                     </div>

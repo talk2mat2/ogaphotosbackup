@@ -64,17 +64,17 @@ const UserDashboard = () => {
             <div className="card stat-widget">
               <div className="card-body " style={{ minHeight: "300px" }}>
                 <h5 className="card-title">
-                  Always the professional shoots you seek
+              Take charge of your schedule
                 </h5>
                 <div style={{ margin: "2px" }}>
-                  Your picture-perfect photo booking system.
+                And control where and when you shoot with
                   <br />
-                  Order a Shoot and let us handle the rest,
+                  our photo booking system
                   <br />
                   <br />
                   {!userData.isPhotographer ? (
                     <a href="/purpose">
-                      <button type="button" className="btn btn-primary">
+                      <button style={{color:"#fff"}} type="button" className="btn btn-primary">
                         Hire a photographer
                       </button>
                     </a>

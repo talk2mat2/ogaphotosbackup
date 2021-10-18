@@ -142,14 +142,17 @@ const Question5 = (props) => {
       .get(`${process.env.REACT_APP_API_URL}/users/GetPricePriceTag`)
       .then((res) => {
         console.log(res.data.userData.price);
-        setPriceTag(res.data.userData.price);
-        setlocationPrice(res.data.userData.locationPrice);
+        res.data&& setPriceTag(res.data.userData.price);
+        res.data&& setlocationPrice(res.data.userData.locationPrice);
       })
       .catch((err) => {
         if (err.response) {
           console.log(err.response.data.message);
         }
         console.log(err);
+        // if ierror setprice to default
+        setPriceTag(1);
+        setlocationPrice(1);
       });
   };
 

@@ -14,7 +14,7 @@ import { LOGINSUCCESS } from "../../redux/action";
 import Header from "../../components/Header2";
 const Container = styled.div`
   min-height: 100vh;
-  background-color: #ffff;
+  background-color: #fff;
   width: 100%;
 `;
 const SelectContainer = styled.div`
@@ -32,7 +32,7 @@ const SelectContentContainer1 = styled.div`
   //   justify-content: center;
   flex-direction: column;
   align-items: center;
-  //   background-color: #ffff;
+  //   background-color: #fff;
   text-align: center;
 
   @media (max-width: 630px) {
@@ -46,14 +46,14 @@ const BigText = styled.p`
   color: #499f96;
 `;
 const SelectContentContainer2 = styled.div`
-  background-color: #ffff;
+  background-color: #fff;
   min-height: 400px;
   width: 60%;
   display: flex;
   //   justify-content: center;
   flex-direction: column;
   align-items: center;
-  //   background-color: #ffff;
+  //   background-color: #fff;
   text-align: center;
 
   @media (max-width: 630px) {
@@ -91,7 +91,7 @@ const Listing = styled.ul`
 const Input = styled.input`
   width: 100%;
   border: 1px solid grey;
-  background-color: #ffff;
+  background-color: #fff;
   height: 50px;
 
   &:focus {
@@ -110,7 +110,7 @@ const Buttons = styled(Button)`
     margin-top: 8px;
     outline:none;
     width: 200px;
-    color: #ffff;
+    color: #fff;
     margin-top:20px;
  border-radius:20px;
  &:hover {
@@ -118,8 +118,8 @@ const Buttons = styled(Button)`
     // background-color: white;
     // border: 1px solid rgb(71, 178, 228);
     //background-color: rgb(0, 162, 149);
-    background-color: rgb(104, 7, 249);
-    color: #ffff;
+    background-color: #499f96;
+    color: #fff;
   }
 `;
 const PhotoGrapherLoginNew = () => {
@@ -188,8 +188,9 @@ const PhotoGrapherLoginNew = () => {
                 height: 100 + "%",
                 objectFit: "cover",
               }}
-              loginImage
-              src="/assets/img/intro/intro-8.jpg"
+              // loginImage
+              // src="/assets/img/intro/intro-8.jpg"
+              src= "assets/img/gallery/gallery-list/35.jpg"
               alt="img"
             />
           </SelectContentContainer2>
@@ -202,7 +203,7 @@ const PhotoGrapherLoginNew = () => {
 
                   objectFit: "cover",
                 }}
-                loginImage
+                // loginImage
                 src="/assets/img/logo-dark.png"
                 alt="img"
               />

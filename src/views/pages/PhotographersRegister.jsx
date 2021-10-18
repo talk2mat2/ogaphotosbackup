@@ -45,7 +45,7 @@ const BigText = styled.p`
   font-size: 25px;
   font-weight: 600;
   //color: rgb(0, 162, 149);
-  color: rgb(104, 7, 249);
+  color: #499f96;
 `;
 const SelectContentContainer2 = styled.div`
   background-color: #ffff;
@@ -108,7 +108,7 @@ const Buttons = styled(Button)`
       border:none;
     // background-color: rgb(71, 178, 228);
     //background-color: rgb(0, 162, 149);
-    background-color: rgb(104, 7, 249);
+    background-color:#499f96;
     margin-top: 8px;
     outline:none;
     width: 200px;
@@ -234,8 +234,9 @@ const PhotographersRegister = () => {
                 height: 100 + "%",
                 objectFit: "cover",
               }}
-              loginImage
-              src="/assets/img/intro/intro-8.jpg"
+              // loginImage
+              // src="/assets/img/intro/intro-8.jpg"
+              src= "assets/img/gallery/gallery-list/35.jpg"
               alt="img"
             />
           </SelectContentContainer2>
@@ -248,7 +249,7 @@ const PhotographersRegister = () => {
 
                   objectFit: "cover",
                 }}
-                loginImage
+                // loginImage
                 src="/assets/img/logo-dark.png"
                 alt="img"
               />
@@ -401,9 +402,9 @@ const PhotographersRegister = () => {
                 </Buttons>
               </li>
               <li style={{ textAlign: "center" }}>
-                <small style={{ color: "rgb(71, 178, 228)" }}>
+                <h5 style={{ color: "black" ,fontWeight:"bold"}}>
                   <Link to="/PhotoGrapherLoginNew"> Already Registered ?</Link>
-                </small>
+                </h5>
               </li>
               {/* <li style={{ textAlign: "left" }}>
                 <p style={{ color: "grey" }}>

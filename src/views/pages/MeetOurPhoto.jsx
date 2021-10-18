@@ -1,6 +1,118 @@
 import React from "react";
+import axios from "axios"
+
+
 
 const MeetOurPhoto = () => {
+const [photographers,setPhotographers] = React.useState([])
+
+  const getOurphotographers=async()=>{
+    await axios.get(
+      `${process.env.REACT_APP_API_URL}/users/getOurphotographers`,
+    )
+      .then((response) => {
+  
+    setPhotographers(response.data.userData)
+      })
+      .catch((err) => {
+        console.log(err);
+      
+      });
+  }
+  
+React.useEffect(()=>{
+
+getOurphotographers()
+},[])
+
+
+// Email: "lamyde1@gmail.com"
+// Porthfolio_works: []
+// aboutMe: ""
+// favouriteShoots: "Real estate"
+// fname: "Olamide"
+// isPhotographer: true
+// lat: 6.6143462
+// lga: "Ifako-Ijaiye"
+// lname: "Olayemi"
+// lng: 3.3732219
+// location: {type: "Point", coordinates: Array(2)}
+// mobile: "08032136992"
+// newBooking: false
+// state: "Lagos"
+
+
+const mapPhotographers=()=>{
+  return  photographers.length>0 && photographers.map(data=>{
+  return   <div className="cc-item">
+    {/* Element cover */}
+    <span className="cover bg-transparent-3-dark" />
+    {/* cc image */}
+    <div
+      className="cc-image bg-image"
+      style={{
+        backgroundImage:data.profileImage?`url(${data.profileImage})`:"url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
+     
+        //  `url(${data.profileImage})` || "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
+          //"url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
+        backgroundPosition: "50% 50%",
+      }}
+    />
+    {/* Begin caption 
+                    ===================
+                    * Position classes: "top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right". 
+                    * Size classes: "cc-caption-xs", "cc-caption-sm", "cc-caption-lg", "cc-caption-xlg", "cc-caption-xxlg".
+                    */}
+    <div className="cc-caption bottom-left max-width-1000">
+      {" "}
+      {/* max width class is optional */}
+      <h2 className="cc-title">
+        <a href="blog-single.html">{data.fname} {data.lname}</a>
+      </h2>
+      <div className="cc-meta">
+        {/* <span className="published">May 26, 2017</span> */}
+        <span className="posted-by">
+          <a href="#" title="View all posts by Martin Vegas"></a>
+        </span>
+      </div>{" "}
+      <div className="cc-category">
+        <a href="blog-archive.html">Featured</a>{" "}
+        <a href="blog-archive.html">{data.favouriteShoots||"Photography"}</a>
+      </div>
+    </div>
+    {/* End caption */}
+    {/* Begin carousel item attributes */}
+    <ul className="cc-item-attr">
+      <li>
+        {/* Begin comments count */}
+        <a
+          href="blog-single.html#blog-post-comments"
+          className="cc-item-comments-count"
+          title="Read the comments"
+        >
+          <i className="far fa-comment" /> 12
+        </a>
+        {/* End comments count */}
+      </li>
+      <li>
+        {/* Begin favorite button */}
+        <div className="favorite-btn active">
+          <div className="fav-inner">
+            <div className="icon-heart">
+              <span className="icon-heart-empty" />
+              <span className="icon-heart-filled" />
+            </div>
+          </div>
+          <div className="fav-count">47</div>
+        </div>
+        {/* End favorite button */}
+      </li>
+    </ul>
+    {/* End carousel item attributes */}
+  </div>
+ 
+  })
+}
   return (
     <>
       <div className="tt-heading tt-heading-lg padding-on text-left">
@@ -12,16 +124,18 @@ const MeetOurPhoto = () => {
             Vetted Experts in Every Field of Photography
             <hr className="hr-short" />
             <p>
-              Ogaphoto photographers go through a rigorous vetting process,
-              their equipment is continuously checked to ensure they maintain
-              high standards, and they are trained on the best customer
-              relationship management standards. We allow creativity,
-              imagination and eye for detail guide every decision they make for
-              you. This allows them to provide results that are both original
-              and valuable. Their commitment to your project is paramount. In
-              addition, our customer care services are on hand to answer any
-              questions or complaints that may arise during your experience with
-              us.
+           Ogaphoto photographers go through a rigorous vetting process, 
+           their equipment is continously checked to ensure they maintain high standards, and we empower them to prioritize
+           creativity, imagination and eye for detail, so that your result are original
+            and valuable.
+            <br/>
+             In addition to customer relationship management training, our teams are mandated to undergo
+            time management, cultural and interpersonal relationship training online and in person.
+            Integrity and respect guide all their decisions, and their commitment to your project is paramount.
+            <br/>
+             Our customers care services are available via several different channels to answer any questions or complaints
+             that may arise during your experience with us. 
+
             </p>
           </div>
         </div>
@@ -88,358 +202,23 @@ const MeetOurPhoto = () => {
             data-mobile-landscape={1}
             data-mobile-portrait={1}
           >
+            {mapPhotographers()}
             {/* Begin carousel item 
                           ========================= */}
-            <div className="cc-item">
-              {/* Element cover */}
-              <span className="cover bg-transparent-3-dark" />
-              {/* cc image */}
-              <div
-                className="cc-image bg-image"
-                style={{
-                  backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
-                  backgroundPosition: "50% 50%",
-                }}
-              />
-              {/* Begin caption 
-                              ===================
-                              * Position classes: "top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right". 
-                              * Size classes: "cc-caption-xs", "cc-caption-sm", "cc-caption-lg", "cc-caption-xlg", "cc-caption-xxlg".
-                              */}
-              <div className="cc-caption bottom-left max-width-1000">
-                {" "}
-                {/* max width class is optional */}
-                <h2 className="cc-title">
-                  <a href="blog-single.html">patrick hughes</a>
-                </h2>
-                <div className="cc-meta">
-                  {/* <span className="published">May 26, 2017</span> */}
-                  <span className="posted-by">
-                    <a href="#" title="View all posts by Martin Vegas"></a>
-                  </span>
-                </div>{" "}
-                <div className="cc-category">
-                  <a href="blog-archive.html">Featured</a>{" "}
-                  <a href="blog-archive.html">Photography</a>
-                </div>
-              </div>
-              {/* End caption */}
-              {/* Begin carousel item attributes */}
-              <ul className="cc-item-attr">
-                <li>
-                  {/* Begin comments count */}
-                  <a
-                    href="blog-single.html#blog-post-comments"
-                    className="cc-item-comments-count"
-                    title="Read the comments"
-                  >
-                    <i className="far fa-comment" /> 12
-                  </a>
-                  {/* End comments count */}
-                </li>
-                <li>
-                  {/* Begin favorite button */}
-                  <div className="favorite-btn active">
-                    <div className="fav-inner">
-                      <div className="icon-heart">
-                        <span className="icon-heart-empty" />
-                        <span className="icon-heart-filled" />
-                      </div>
-                    </div>
-                    <div className="fav-count">47</div>
-                  </div>
-                  {/* End favorite button */}
-                </li>
-              </ul>
-              {/* End carousel item attributes */}
-            </div>
+           {/* End carousel item */}
+            {/* Begin carousel item 
+                          ========================= */}
+          {/* End carousel item */}
+            {/* Begin carousel item 
+                          ========================= */}
+           {/* End carousel item */}
+            {/* Begin carousel item 
+                          ========================= */}
+       
             {/* End carousel item */}
             {/* Begin carousel item 
                           ========================= */}
-            <div className="cc-item">
-              {/* Element cover */}
-              <span className="cover bg-transparent-3-dark" />
-              {/* cc image */}
-              <div
-                className="cc-image bg-image"
-                style={{
-                  backgroundImage:
-                  "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
-                  backgroundPosition: "50% 50%",
-                }}
-              />
-              {/* Begin caption 
-                              ===================
-                              * Position classes: "top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right". 
-                              * Size classes: "cc-caption-xs", "cc-caption-sm", "cc-caption-lg", "cc-caption-xlg", "cc-caption-xxlg".
-                              */}
-              <div className="cc-caption bottom-left max-width-1000">
-                {" "}
-                {/* max width class is optional */}
-                <h2 className="cc-title">
-                  <a href="blog-single.html">Cory Zamora</a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">Photographer</span>
-                  <span className="posted-by">
-                    {/* - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a> */}
-                  </span>
-                </div>
-                <div className="cc-category">
-                  <a href="blog-archive.html">Featured</a>{" "}
-                  <a href="blog-archive.html">Photography</a>
-                </div>
-              </div>
-              {/* End caption */}
-              {/* Begin carousel item attributes */}
-              <ul className="cc-item-attr">
-                <li>
-                  {/* Begin comments count */}
-                  <a
-                    href="blog-single.html#blog-post-comments"
-                    className="cc-item-comments-count"
-                    title="Read the comments"
-                  >
-                    <i className="far fa-comment" /> 32
-                  </a>
-                  {/* End comments count */}
-                </li>
-                <li>
-                  {/* Begin favorite button */}
-                  <div className="favorite-btn">
-                    <div className="fav-inner">
-                      <div className="icon-heart">
-                        <span className="icon-heart-empty" />
-                        <span className="icon-heart-filled" />
-                      </div>
-                    </div>
-                    <div className="fav-count">61</div>
-                  </div>
-                  {/* End favorite button */}
-                </li>
-              </ul>
-              {/* End carousel item attributes */}
-            </div>
-            {/* End carousel item */}
-            {/* Begin carousel item 
-                          ========================= */}
-            <div className="cc-item">
-              {/* Element cover */}
-              <span className="cover bg-transparent-3-dark" />
-              {/* cc image */}
-              <div
-                className="cc-image bg-image"
-                style={{
-                  backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
-                  backgroundPosition: "50% 50%",
-                }}
-              />
-              {/* Begin caption 
-                              ===================
-                              * Position classes: "top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right". 
-                              * Size classes: "cc-caption-xs", "cc-caption-sm", "cc-caption-lg", "cc-caption-xlg", "cc-caption-xxlg".
-                              */}
-              <div className="cc-caption bottom-left max-width-1000">
-                {" "}
-                {/* max width class is optional */}
-                <h2 className="cc-title">
-                  <a href="blog-single.html">Coriss Ambady</a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">Photographer</span>
-                  <span className="posted-by">
-                    {/* - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a> */}
-                  </span>
-                </div>
-                <div className="cc-category">
-                  <a href="blog-archive.html">Featured</a>{" "}
-                  <a href="blog-archive.html">Photography</a>
-                </div>
-              </div>
-              {/* End caption */}
-              {/* Begin carousel item attributes */}
-              <ul className="cc-item-attr">
-                <li>
-                  {/* Begin comments count */}
-                  <a
-                    href="blog-single.html#blog-post-comments"
-                    className="cc-item-comments-count"
-                    title="Read the comments"
-                  >
-                    <i className="far fa-comment" /> 5
-                  </a>
-                  {/* End comments count */}
-                </li>
-                <li>
-                  {/* Begin favorite button */}
-                  <div className="favorite-btn active">
-                    <div className="fav-inner">
-                      <div className="icon-heart">
-                        <span className="icon-heart-empty" />
-                        <span className="icon-heart-filled" />
-                      </div>
-                    </div>
-                    <div className="fav-count">21</div>
-                  </div>
-                  {/* End favorite button */}
-                </li>
-              </ul>
-              {/* End carousel item attributes */}
-            </div>
-            {/* End carousel item */}
-            {/* Begin carousel item 
-                          ========================= */}
-            <div className="cc-item">
-              {/* Element cover */}
-              <span className="cover bg-transparent-3-dark" />
-              {/* cc image */}
-              <div
-                className="cc-image bg-image"
-                style={{
-                  backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
-                  backgroundPosition: "50% 50%",
-                }}
-              />
-              {/* Begin caption 
-                              ===================
-                              * Position classes: "top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right". 
-                              * Size classes: "cc-caption-xs", "cc-caption-sm", "cc-caption-lg", "cc-caption-xlg", "cc-caption-xxlg".
-                              */}
-              <div className="cc-caption bottom-left max-width-1000">
-                {" "}
-                {/* max width class is optional */}
-                <h2 className="cc-title">
-                  <a href="blog-single.html">barclay Windersky</a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">
-                    barclay background in mathematics gives him a sophisticated
-                  </span>
-                  <span className="posted-by">
-                    {/* - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a> */}
-                  </span>
-                </div>
-                <div className="cc-category">
-                  <a href="blog-archive.html">Featured</a>{" "}
-                  <a href="blog-archive.html">Photography</a>
-                </div>
-              </div>
-              {/* End caption */}
-              {/* Begin carousel item attributes */}
-              <ul className="cc-item-attr">
-                <li>
-                  {/* Begin comments count */}
-                  <a
-                    href="blog-single.html#blog-post-comments"
-                    className="cc-item-comments-count"
-                    title="Read the comments"
-                  >
-                    <i className="far fa-comment" /> 9
-                  </a>
-                  {/* End comments count */}
-                </li>
-                <li>
-                  {/* Begin favorite button */}
-                  <div className="favorite-btn">
-                    <div className="fav-inner">
-                      <div className="icon-heart">
-                        <span className="icon-heart-empty" />
-                        <span className="icon-heart-filled" />
-                      </div>
-                    </div>
-                    <div className="fav-count">129</div>
-                  </div>
-                  {/* End favorite button */}
-                </li>
-              </ul>
-              {/* End carousel item attributes */}
-            </div>
-            {/* End carousel item */}
-            {/* Begin carousel item 
-                          ========================= */}
-            <div className="cc-item">
-              {/* Element cover */}
-              <span className="cover bg-transparent-3-dark" />
-              {/* cc image */}
-              <div
-                className="cc-image bg-image"
-                style={{
-                  backgroundImage:
-                    "url(assets/img/blog/list/featured-carousel/blog-fc-1.jpg)",
-                  backgroundPosition: "50% 50%",
-                }}
-              />
-              {/* Begin caption 
-                              ===================
-                              * Position classes: "top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right". 
-                              * Size classes: "cc-caption-xs", "cc-caption-sm", "cc-caption-lg", "cc-caption-xlg", "cc-caption-xxlg".
-                              */}
-              <div className="cc-caption bottom-left max-width-1000">
-                {" "}
-                {/* max width class is optional */}
-                <h2 className="cc-title">
-                  <a href="blog-single.html">Nicola brooten</a>
-                </h2>
-                <div className="cc-meta">
-                  <span className="published">
-                    Nicolea's background in mathematics gives him a
-                    sophisticated grasp on the aspects of Photography
-                  </span>
-                  <span className="posted-by">
-                    {/* - by{" "}
-                    <a href="#" title="View all posts by Martin Vegas">
-                      Martin Vegas
-                    </a> */}
-                  </span>
-                </div>
-              </div>
-              <div className="cc-category">
-                <a href="blog-archive.html">Featured</a>{" "}
-                <a href="blog-archive.html">Photography</a>
-              </div>
-              {/* End caption */}
-              {/* Begin carousel item attributes */}
-              <ul className="cc-item-attr">
-                <li>
-                  {/* Begin comments count */}
-                  <a
-                    href="blog-single.html#blog-post-comments"
-                    className="cc-item-comments-count"
-                    title="Read the comments"
-                  >
-                    <i className="far fa-comment" /> 9
-                  </a>
-                  {/* End comments count */}
-                </li>
-                <li>
-                  {/* Begin favorite button */}
-                  <div className="favorite-btn">
-                    <div className="fav-inner">
-                      <div className="icon-heart">
-                        <span className="icon-heart-empty" />
-                        <span className="icon-heart-filled" />
-                      </div>
-                    </div>
-                    <div className="fav-count">456</div>
-                  </div>
-                  {/* End favorite button */}
-                </li>
-              </ul>
-              {/* End carousel item attributes */}
-            </div>
-            {/* End carousel item */}
+          {/* End carousel item */}
             {/* Begin carousel item 
                           ========================= */}
             {/* <div class="cc-item">

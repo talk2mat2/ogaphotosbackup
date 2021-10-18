@@ -361,7 +361,7 @@ const ProfileNew = () => {
                   className="card-body "
                   style={{ minHeight: "300px", paddingBottom: "30px" }}
                 >
-                  <h5 className="card-title">My Porthfoli works</h5>{" "}
+                  <h5 className="card-title">My Porthfolio</h5>{" "}
                   {userData.isPhotographer &&
                   userData.Porthfolio_works.length > 4 ? (
                     <Link to="/viewall">view more </Link>
@@ -459,25 +459,29 @@ const ProfileNew = () => {
                       height: "30px",
                     }}
                   >
-                    <option value="">select</option>
+                    <option value="">Select</option>
                     <option value="Real estate">Real estate</option>
-                    <option value="family">family</option>
+                    <option value="family">Family/Events</option>
                     <option value="Party">Party</option>
                     <option value="Dating">Dating</option>
-                    <option value="Team/Office">Team/Office</option>
+                    <option value="Team/Office">Team/Professional Head Shots</option>
                     <option value="Graduation">Graduation</option>
                     <option value="Fashion">Fashion</option>
-                    <option value="media">media</option>
+                    <option value="Media">Media</option>
                     <option value="Food">Food</option>
-                    <option value="Product">Product</option>
+                    <option value="Product/Branding">Product/Branding</option>
                     <option value="Landscape">Landscape</option>
+                    <option value="Portraits">Portraits</option>
+                    <option value="Lifestyle/Makeup">Lifestyle/Makeup</option>
+                    <option value="Fitnes">Fitness</option>
+                    <option value="Real Estate">Real Estate</option>
                   </select>
                 </div>
                 <div style={{ height: "8px" }} />
                 {userData.isPhotographer ? (
                   <div style={{ marginTop: "auto", width: "100%" }}>
                     <h4>
-                      Portfolio works
+                      Portfolio 
                       {
                         <Button
                           variant="contained"

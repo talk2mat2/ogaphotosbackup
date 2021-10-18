@@ -10626,7 +10626,11 @@ body.modal-open {
     text-align: center;
   }
 }
+
 @media (max-width: 767px) {
+ .hide-mobile{
+    display: none;
+  }
   #footer {
     margin-top: 60px;
     padding-top: 40px;
